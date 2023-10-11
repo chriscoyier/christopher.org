@@ -1,0 +1,109 @@
+ul.prli-social-buttons {
+  margin: 0 !important;
+  padding: 0 !important;
+  padding-top: 15px !important;
+  padding-bottom: 15px !important;
+}
+
+ul.prli-social-buttons li {
+  display: inline !important;
+  margin-right: 0 !important;
+  margin-left: 0 !important;
+}
+
+ul.prli-social-buttons i {
+  color: #FFFFFF !important;
+  font-size: 18px !important;
+}
+
+ul.prli-social-buttons a {
+  margin: 0 !important;
+  padding: 0 !important;
+  text-decoration: none !important;
+  padding: 10px 15px !important;
+  width: 100% !important;
+  height: 100% !important;
+  text-align: center !important;
+}
+
+.pl-social-facebook-button {
+  background-color: #3B5998 !important;
+}
+
+.pl-social-facebook-button:hover {
+  background-color: #4E69A2 !important;
+  border-bottom:5px solid #3B5998 !important;
+}
+
+.pl-social-twitter-button {
+  background-color: #00ACED !important;
+}
+
+.pl-social-twitter-button:hover {
+  background-color: #19B4EE !important;
+  border-bottom:5px solid #00ACED !important;
+}
+
+.pl-social-gplus-button {
+  background-color: #E74C3C !important;
+}
+
+.pl-social-gplus-button:hover {
+  background-color: #E95D4F !important;
+  border-bottom:5px solid #E74C3C !important;
+}
+
+.pl-social-pinterest-button {
+  background-color: #CB2027 !important;
+}
+
+.pl-social-pinterest-button:hover {
+  background-color: #D0363C !important;
+  border-bottom:5px solid #CB2027 !important;
+}
+
+.pl-social-linkedin-button {
+  background-color: #007FB1 !important;
+}
+
+.pl-social-linkedin-button:hover {
+  background-color: #198BB8 !important;
+  border-bottom:5px solid #007FB1 !important;
+}
+
+.pl-social-reddit-button {
+  background-color: #FF4500 !important;
+}
+
+.pl-social-reddit-button:hover {
+  background-color: #FF5719 !important;
+  border-bottom:5px solid #FF4500 !important;
+}
+
+.pl-social-stumbleupon-button {
+  background-color: #EB4924 !important;
+}
+
+.pl-social-stumbleupon-button:hover {
+  background-color: #ED5B39 !important;
+  border-bottom:5px solid #EB4924 !important;
+}
+
+.pl-social-digg-button {
+  background-color: #14589E !important;
+}
+
+.pl-social-digg-button:hover {
+  background-color: #2B68A7 !important;
+  border-bottom:5px solid #14589E !important;
+}
+
+.pl-social-email-button {
+  background-color: #787878 !important;
+}
+
+.pl-social-email-button:hover {
+  background-color: #858585 !important;
+  border-bottom:5px solid #787878 !important;
+}
+

@@ -1,0 +1,134 @@
+Filter/Action Reference:
+This file will be updated regularly with a complete list of filters and hooks.
+NOTE: Examples with anonymous functions require PHP 5.6+ - Otherwise you need to break function out into a separate function.
+
+/** EXAMPLE(S) *********
+//Add desc to all products:
+add_filter('getSingleAmazonProduct_manual_array',function( $manual_array ){
+  if( is_array( $manual_array ) )
+    $manual_array['desc'] = 1;
+  return $manual_array;
+}, 10, 1);
+
+// return 1 to hide 'in/out of" stock messages
+add_filter('apipp_amazon_product_array_filter', function($retArr){
+  $retArr['HideStockMsg'] = 1;
+  return $retArr;
+}, 10, 1); 
+
+// replace with $retArr['NewAmazonPricing']['New']["Price"]
+add_filter('amazon_product_array_LowestNewPrice', function($val, $asin, $retArr){
+  if(isset($retArr['NewAmazonPricing']['New']["Price"]))
+    return $retArr['NewAmazonPricing']['New']["Price"];
+    else
+      return $val;
+}, 10, 3); 
+
+//Replace "New From:" lable text
+add_filter('appip_text_newfrom', function($text){
+  return '';
+}, 10, 1);// replace with "New" or blank
+add_filter( 'amazon_product_show_curr_codes', function($val){ return false;});
+
+//Add to Plugin Setting Options
+function amazon_product_custom_options_options( $options_apipp, $current_tab ){
+	// needs tab start  wrapper first - note: 'tab' must match tab name added with 'amazon_product_options_additional_tabs' filter
+	$options_apipp[0][] = array( "name" => 'Custom Translations', "id" => 'apipp_translations_tab', "type" => "tab-wrapper-start", "tab" => 'translations', "current_tab" => $current_tab, );
+	// Tab heading
+	$options_apipp[0][] = array( "name" => 'Custom Label Translations', "type" => "heading");
+	// option settings to add
+	$options_apipp[0][] = array( "name" =>"By (author):", "id" => 'appip_text_author', "type" => "text", "desc" => '', "width" => '100', 'placeholder' => "By (author):");
+	$options_apipp[0][] = array( "name" =>"Director:", "id" => 'appip_text_director', "type" => "text", "desc" => '', "width" => '100', 'placeholder' => "Director:");
+	// close the tab wrapper
+	$options_apipp[0][] = array( "name" => 'Custom Translations End', "id" => 'apipp_translations_tab_end', "type" => "tab-wrapper-end", );
+	// return the options array
+	return $options_apipp;
+}
+add_filter( 'amazon_product_options_additional_options', 'amazon_product_custom_options_options', 10, 2 );
+
+//Add to Plugin Setting Tab
+function amazon_product_custom_options_tabs( $tab = array() ){
+	// must have slug (lcase, no spaces) and 'name' for the Tab (text on the tab itself)
+	return array('slug' => 'translations', 'name' => 'Custom Translactions');
+}
+add_filter( 'amazon_product_options_additional_tabs', 'amazon_product_custom_options_tabs', 10, 1 );
+//----------------------------------
+
+
+/**********************
+* FILTERS
+***********************/
+amz_get_fileds_to_cache                           - [array] $fields | return [array] (empty)
+amazon_product_array_{$key}						  - 3 Params: [mixed] $val (individual element value), [string] $ASIN, [array] $RetVal (entire array) | return [mixed] $val (should be same tyle as received)  
+												    {$key} can be any requested element, i.e., 'LowestNewPrice', 'title', 'lg-image', etc.
+amazon_product_in_a_post_blowoffarr_dontuse       - [array] | [array] ('BrowseNodes','SimilarProducts')
+amazon_product_in_a_post_plugin_elements_filter   - [array] $retarr | return [array]
+amazon_product_in_a_post_plugin_meta_presave      - [string] $mydata | return [string] (meta value)
+amazon_product_in_a_post_plugin_shortcode_list	  - [array] $list | return $list[array] - allows you to add to plugin list on shortcode usage page.
+amazon-product-main-image-sm					  - 2 Params: [string] $imgurl (current Samll image url), [array] $imgArr (all available images in array) | return $imgurl [string] (new image url to use)
+amazon-product-main-image-md					  - 2 Params: [string] $imgurl (current Medium image url), [array] $imgArr (all available images in array) | return $imgurl [string] (new image url to use)
+amazon-product-main-image-lg					  - 2 Params: [string] $imgurl (current Large image url), [array] $imgArr (all available images in array) | return $imgurl [string] (new image url to use)
+amazon-product-main-image-hi					  - 2 Params: [string] $imgurl (current hiRes image url), [array] $imgArr (all available images in array) | return $imgurl [string] (new image url to use)
+amazon_product_post_cache                         - [int] | [int] (3600 = 1 hour)
+amazon_product_response_group                     - 2 Params: [string] $ResponseGroup, [string] $RequestBy (amazon-element, amazonproduct, etc) | return [string] ('Large,Reviews,Offers,Variations')
+amazon_product_shortcode_help_tabs                - 2 Params: [array] $tabs, [string] $current_tab | return $tabs [array] 
+amazon_product_shortcode_help_content             - 2 Params: [array] $content, [string] $current_tab | return $content[array] 
+amazon_product_skip_cache_auth                    - [string] | return [string] ('spade') //extra key for skipping cache if needed - debug filter
+amazon_featured_post_meta_key                     - [string] | return [string] ('_amazon_featured_url')
+amazon-elements-container                         - [string] | return [string] ('div')
+amazon-elements-container-class                   - [string] | return [string] ('amazon-element-wrapper')
+amazon-product-delete-old-cache                   - [bool] | return [bool] (false)
+amazon-product-show-tmce-button                   - 2 Params: [bool] $stop, [string] $typenow | return [bool]
+amazon-product-valid-enc-modes                    - [array] Valid Encode Modes | return [array]
+apipp_amazon_product_array_filter                 - [array] $RetVal, [array] $Item | return [array]  
+appip_pre_request_array                           - [array] $api_request_array | [array] ($api_request_array)
+appip_product_array_processed                     - 5 Params: [array] $resultarr, [bool] $apippnewwindowhtml, [array] $resultarr1, [array] $resultarr2, [string] $template | return [array]
+appip_shortcode_atts_array                        - [array] $amazon_array | return [array]
+appip_single_product_filter                       - 2 Params: [string] $returnval, [array] $resultarr | return [string]
+appip_template_replace_array                      - 5 Params: [array] $replacearr, [string] $template, [array] $result, [string]$title, [string] $desc | return [string]
+appip_template_add_nofollow                       - [string] $nofollow, [array] $result | return [string]
+appip_use_ssl_images                              - [bool] | return [bool] (true)
+appip-template-filter                             - 2 Params: [array] $appip_templates, [array] $result | return [array]
+appip_metabox_context				  			  - [string] | return [string] ('normal' or 'side' for gutenberg) (available: 'normal', 'side', 'advanced') 
+appip_metabox_priority				 			  - [string] | return [string] ('high' or 'default' for gutenberg) (available: 'high', 'low', 'default') 
+appip_meta_posttypes_support					  - [array] Valid Post Types | return [array] ('post', 'page', 'product')
+appip_amazon_button_alt_text					  - 2 Params: [string:required] $alt_text, [string:optional] $ASIN | return [string] $alt_text ("buy now")
+getSingleAmazonProduct_asin                       - [array] $asins | return [array]
+getSingleAmazonProduct_extrabutton                - [bool] | return [bool] (false)
+getSingleAmazonProduct_extratext                  - [string] $extratext | return [string]
+getSingleAmazonProduct_manual_array               - [array] $manual_array | return [array]
+getSingleAmazonProduct_operation                  - [string] $operation| return [string] ("ItemLookup")
+getSingleAmazonProduct_response_group             - [string] $responseGroup | return [string] ("Large,Reviews,Offers,Variations")
+getSingleAmazonProduct_type                       - [string] $responseType | return [string] ("ASIN")
+amazon_product_options_additional_tabs		  	  - [array] $tabs | return [array] 'slug' (Slug of Tab - lcase, no spaces), 'name' ('Tab Name Text')
+amazon_product_options_additional_options	  	  - 2 Params: [array:required] $options_apipp, [string:optional] $current_tab | return [array] $options_apipp (options must be an array of items - see example above)
+
+//----------------------------------
+// LABEL/TEXT FILTERS
+//----------------------------------
+appip_amazon_button_url       - [string] $URL, [string] $region (.com,.co.uk, etc.) | return [string] (URL of button) 
+appip_text_author             - [string] | return [string] ("By (author):")
+appip_text_director           - [string] | return [string] ("Director:")
+appip_text_ESRBAgeRating      - [string] | return [string] ("ESRB Rating:")
+appip_text_feature            - [string] | return [string] ("Features:")
+appip_text_genre              - [string] | return [string] ("Genre:")
+appip_text_instock            - [string] | return [string] ("In Stock")
+appip_text_lgimage            - [string] | return [string] ("See larger image")
+appip_text_listprice          - [string] | return [string] ("List Price:") 
+appip_text_manufacturer       - [string] | return [string] ("Manufacturer:")
+appip_text_newfrom            - [string] | return [string] ("New From:")
+appip_text_notavalarea        - [string] | return [string] ("This item is may not be available in your area. Please click the image or title of product to check pricing.")
+appip_text_outofstock         - [string] | return [string] ("Out of Stock")
+appip_text_platform           - [string] | return [string] ("Platform:")
+appip_text_preorder           - [string] | return [string] ("Preorder:")
+appip_text_rating             - [string] | return [string] ("Rating:")
+appip_text_reldate            - [string] | return [string] ("Release date:")
+appip_text_releasedon         - [string] | return [string] ("This title will be released on")
+appip_text_starring           - [string] | return [string] ("Starring:")
+appip_text_usedfrom           - [string] | return [string] ("Used from:")
+appip_text_rating             - [string] | return [string] ("Rating:")
+
+/**********************
+* ACTIONS
+***********************/
+No current Actions

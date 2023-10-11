@@ -1,0 +1,3727 @@
+msgid ""
+msgstr ""
+"Project-Id-Version: Amazon Product In a Post Plugin v3.7.3.2\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2020-05-25 14:48+0000\n"
+"POT-Revision-Date: Fri Nov 06 2015 09:52:20 GMT-0500 (Eastern Standard Time)"
+"\n"
+"PO-Revision-Date: 2020-05-25 14:50+0000\n"
+"Last-Translator: \n"
+"Language-Team: English (UK)\n"
+"Language: en_GB\n"
+"Plural-Forms: nplurals=2; plural=n != 1;\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"X-Poedit-SourceCharset: utf-8\n"
+"X-Generator: Loco https://localise.biz/\n"
+"X-Poedit-KeywordsList: _:1;gettext:1;dgettext:2;ngettext:1,2;dngettext:2,3;"
+"__:1;_e:1;_c:1;_n:1,2;_n_noop:1,2;_nc:1,2;__ngettext:1,2;__ngettext_noop:1,2;"
+"_x:1,2c;_ex:1,2c;_nx:1,2,4c;_nx_noop:1,2,3c;_n_js:1,2;_nx_js:1,2,3c;"
+"esc_attr__:1;esc_html__:1;esc_attr_e:1;esc_html_e:1;esc_attr_x:1,2c;"
+"esc_html_x:1,2c;comments_number_link:2,3;t:1;st:1;trans:1;transChoice:1,2\n"
+"X-Poedit-Basepath: ../\n"
+"X-Textdomain-Support: yes\n"
+"X-Poedit-SearchPath-0: .\n"
+"X-Loco-Version: 2.3.4; wp-5.4.1"
+
+#: amazon-product-in-a-post.php:115
+msgid "Visit Amazon for Price."
+msgstr "Visit Amazon for Price."
+
+#: amazon-product-in-a-post.php:116
+msgid "Product Unavailable."
+msgstr "Product Unavailable."
+
+#: amazon-product-in-a-post.php:211
+msgid "Shortcode/Block Usage"
+msgstr "Shortcode/Block Usage"
+
+#: amazon-product-in-a-post.php:212
+msgid "FAQs"
+msgstr "FAQs"
+
+#: amazon-product-in-a-post.php:222
+msgid "Getting Started"
+msgstr "Getting Started"
+
+# @ amazon-product-in-a-post-plugin
+#: amazon-product-in-a-post.php:335
+msgid "Are you sure you want to delete this cache?"
+msgstr "Are you sure you want to delete this cache?"
+
+# @ amazon-product-in-a-post-plugin
+#: amazon-product-in-a-post.php:335
+msgid "no cached products at this time"
+msgstr "no cached products at this time"
+
+#: amazon-product-in-a-post.php:335
+msgid "there was an error - the cache could not be deleted"
+msgstr "there was an error - the cache could not be deleted"
+
+#: inc/amazon-product-in-a-post-aws-signed-request-test.php:176
+msgid "Amazon Product API Settings Test"
+msgstr "Amazon Product API Settings Test"
+
+#: inc/amazon-product-in-a-post-aws-signed-request-test.php:185
+msgid "Test Results"
+msgstr "Test Results"
+
+#: inc/amazon-product-in-a-post-aws-signed-request-test.php:186
+msgid ""
+"If you see \"Connection Test Successful\" & products shown below, then the "
+"test was successful."
+msgstr ""
+"If you see \"Connection Test Successful\" & products shown below, then the "
+"test was successful."
+
+#: inc/amazon-product-in-a-post-aws-signed-request-test.php:191
+#, php-format
+msgctxt "Debug testing to check if API is callable."
+msgid "This plugin uses %s to make Amazon API calls."
+msgstr "This plugin uses %s to make Amazon API calls."
+
+#: inc/amazon-product-in-a-post-aws-signed-request-test.php:197
+msgctxt "Response if wp_remote_request function is callable."
+msgid "is callable."
+msgstr "is callable."
+
+#: inc/amazon-product-in-a-post-aws-signed-request-test.php:199
+msgctxt "Response if wp_remote_request function is not callable."
+msgid "is NOT callable."
+msgstr "is NOT callable."
+
+#: inc/amazon-product-in-a-post-aws-signed-request-test.php:203
+msgid "Your host allows HTTP requests."
+msgstr "Your host allows HTTP requests."
+
+#: inc/amazon-product-in-a-post-aws-signed-request-test.php:205
+msgid "Your host does NOT allow HTTP requests."
+msgstr "Your host does NOT allow HTTP requests."
+
+#: inc/amazon-product-in-a-post-aws-signed-request-test.php:209
+msgid "Your host allows SSL requests."
+msgstr "Your host allows SSL requests."
+
+#: inc/amazon-product-in-a-post-aws-signed-request-test.php:211
+msgid "Your host does not allow SSL requests."
+msgstr "Your host does not allow SSL requests."
+
+#: inc/amazon-product-in-a-post-aws-signed-request-test.php:227
+msgid ""
+"You cannot use this plugin until either CURL or fopen are installed and "
+"working. Contact your host for help."
+msgstr ""
+"You cannot use this plugin until either CURL or fopen are installed and "
+"working. Contact your host for help."
+
+#: inc/amazon-product-in-a-post-aws-signed-request-test.php:231
+#, php-format
+msgid ""
+"You need to have %s and %s installed for the plugin to function correctly. "
+"Contact your host for help."
+msgstr ""
+"You need to have %s and %s installed for the plugin to function correctly. "
+"Contact your host for help."
+
+#: inc/amazon-product-in-a-post-aws-signed-request-test.php:336
+msgid "Connection Test Successful"
+msgstr "Connection Test Successful"
+
+#: inc/amazon-product-in-a-post-aws-signed-request-test.php:338
+msgid "API Transport Successful"
+msgstr "API Transport Successful"
+
+#: inc/amazon-product-in-a-post-aws-signed-request-test.php:340
+msgid "Keyword:"
+msgstr "Keyword:"
+
+#: inc/amazon-product-in-a-post-aws-signed-request-test.php:368
+msgid "Product Fetch Successful"
+msgstr "Product Fetch Successful"
+
+#: inc/amazon-product-in-a-post-aws-signed-request-test.php:369
+msgid ""
+"If you see at least one product, then your test was successfully completed"
+msgstr ""
+"If you see at least one product, then your test was successfully completed"
+
+#: inc/amazon-product-in-a-post-aws-signed-request-test.php:371
+msgid "Product Test Failed"
+msgstr "Product Test Failed"
+
+#: inc/amazon-product-in-a-post-debug.php:8
+msgid "Not set"
+msgstr "Not set"
+
+#: inc/amazon-product-in-a-post-debug.php:9
+msgid "On"
+msgstr "On"
+
+#: inc/amazon-product-in-a-post-debug.php:9
+msgid "Off"
+msgstr "Off"
+
+#: inc/amazon-product-in-a-post-debug.php:10
+#: inc/amazon-product-in-a-post-debug.php:11
+#: inc/amazon-product-in-a-post-debug.php:12
+msgid "N/A"
+msgstr "N/A"
+
+#: inc/amazon-product-in-a-post-debug.php:12
+msgid " MByte"
+msgstr " MByte"
+
+#: inc/amazon-product-in-a-post-debug.php:18
+msgid "Yes"
+msgstr "Yes"
+
+#: inc/amazon-product-in-a-post-debug.php:18
+msgid "No"
+msgstr "No"
+
+#: inc/amazon-product-in-a-post-debug.php:177
+msgid "Form submission error: verification check failed."
+msgstr "Form submission error: verification check failed."
+
+#: inc/amazon-product-in-a-post-debug.php:208
+#: inc/amazon-product-in-a-post-debug.php:217
+#, php-format
+msgid "APPIP Debug Mail From Site %s."
+msgstr "APPIP Debug Mail From Site %s."
+
+#: inc/amazon-product-in-a-post-debug.php:240
+msgid "E-mail debug information"
+msgstr "E-mail debug information"
+
+#: inc/amazon-product-in-a-post-debug.php:242
+msgid "Send Debug Info"
+msgstr "Send Debug Info"
+
+#: inc/amazon-product-in-a-post-debug.php:242
+msgid "Copy Developers"
+msgstr "Copy Developers"
+
+#: inc/amazon-product-in-a-post-debug.php:242
+msgid "Send to Developers Only"
+msgstr "Send to Developers Only"
+
+#: inc/amazon-product-in-a-post-debug.php:243
+msgid "Brief Notes or Issues, if sending to Developers"
+msgstr "Brief Notes or Issues, if sending to Developers"
+
+#: inc/amazon-product-in-a-post-functions.php:69
+msgid "Default"
+msgstr "Default"
+
+#: inc/amazon-product-in-a-post-functions.php:76
+#: inc/amazon-product-in-a-post-functions.php:77
+#: inc/amazon-product-in-a-post-functions.php:78
+#: inc/amazon-product-in-a-post-functions.php:79
+#: inc/amazon-product-in-a-post-functions.php:80
+#: inc/amazon-product-in-a-post-functions.php:81
+#: inc/amazon-product-in-a-post-functions.php:82
+#: inc/amazon-product-in-a-post-functions.php:83
+#: inc/amazon-product-in-a-post-shortcode-amazon-elements.php:569
+#: inc/amazon-product-in-a-post-shortcode-grid.php:377
+#: inc/amazon-product-in-a-post-shortcode-search.php:623
+msgid "Read More"
+msgstr "Read More"
+
+#: inc/amazon-product-in-a-post-functions.php:76
+msgid "Read More - Dk Gray"
+msgstr "Read More - Dk Grey"
+
+#: inc/amazon-product-in-a-post-functions.php:77
+msgid "Read More - Dk Gray Rounded"
+msgstr "Read More - Dk Grey Rounded"
+
+#: inc/amazon-product-in-a-post-functions.php:78
+msgid "Read More - Red"
+msgstr "Read More - Red"
+
+#: inc/amazon-product-in-a-post-functions.php:79
+msgid "Read More - Red Rounded"
+msgstr "Read More - Red Rounded"
+
+#: inc/amazon-product-in-a-post-functions.php:80
+msgid "Read More - Blue"
+msgstr "Read More - Blue"
+
+#: inc/amazon-product-in-a-post-functions.php:81
+msgid "Read More - Blue Rounded"
+msgstr "Read More - Blue Rounded"
+
+#: inc/amazon-product-in-a-post-functions.php:82
+msgid "Read More - Green"
+msgstr "Read More - Green"
+
+#: inc/amazon-product-in-a-post-functions.php:83
+msgid "Read More - Green Rounded"
+msgstr "Read More - Green Rounded"
+
+#: inc/amazon-product-in-a-post-functions.php:84
+#: inc/amazon-product-in-a-post-functions.php:85
+#: inc/amazon-product-in-a-post-functions.php:86
+#: inc/amazon-product-in-a-post-functions.php:87
+#: inc/amazon-product-in-a-post-functions.php:88
+#: inc/amazon-product-in-a-post-functions.php:89
+#: inc/amazon-product-in-a-post-functions.php:90
+#: inc/amazon-product-in-a-post-functions.php:91
+msgid "Buy from Amazon"
+msgstr "Buy from Amazon"
+
+#: inc/amazon-product-in-a-post-functions.php:84
+msgid "Buy From Amazon - Dk Gray"
+msgstr "Buy From Amazon - Dk Grey"
+
+#: inc/amazon-product-in-a-post-functions.php:85
+msgid "Buy From Amazon - Dk Gray Rounded"
+msgstr "Buy From Amazon - Dk Grey Rounded"
+
+#: inc/amazon-product-in-a-post-functions.php:86
+msgid "Buy From Amazon - Red"
+msgstr "Buy From Amazon - Red"
+
+#: inc/amazon-product-in-a-post-functions.php:87
+msgid "Buy From Amazon - Red Rounded"
+msgstr "Buy From Amazon - Red Rounded"
+
+#: inc/amazon-product-in-a-post-functions.php:88
+msgid "Buy From Amazon - Blue"
+msgstr "Buy From Amazon - Blue"
+
+#: inc/amazon-product-in-a-post-functions.php:89
+msgid "Buy From Amazon - Blue Rounded"
+msgstr "Buy From Amazon - Blue Rounded"
+
+#: inc/amazon-product-in-a-post-functions.php:90
+msgid "Buy From Amazon - Green"
+msgstr "Buy From Amazon - Green"
+
+#: inc/amazon-product-in-a-post-functions.php:91
+msgid "Buy From Amazon - Green Rounded"
+msgstr "Buy From Amazon - Green Rounded"
+
+#: inc/amazon-product-in-a-post-functions.php:682
+#: inc/amazon-product-in-a-post-functions.php:684
+msgid "Variations"
+msgstr "Variations"
+
+#: inc/amazon-product-in-a-post-functions.php:716
+#: inc/amazon-product-in-a-post-functions.php:771
+msgid "from"
+msgstr "from"
+
+#: inc/amazon-product-in-a-post-functions.php:822
+#: inc/amazon-product-in-a-post-shortcode-grid.php:318
+#: inc/amazon-product-in-a-post-shortcode-grid.php:319
+#: inc/amazon-product-in-a-post-shortcode-grid.php:320
+#: inc/amazon-product-in-a-post-shortcode-grid.php:327
+#: inc/amazon-product-in-a-post-shortcode-grid.php:328
+#: inc/amazon-product-in-a-post-shortcode-grid.php:333
+#: inc/amazon-product-in-a-post-shortcode-grid.php:334
+#: inc/amazon-product-in-a-post-shortcode-grid.php:335
+#: inc/amazon-product-in-a-post-shortcode-grid.php:382
+#: inc/amazon-product-in-a-post-shortcode-grid.php:391
+msgid "Buy Now"
+msgstr "Buy Now"
+
+#: inc/amazon-product-in-a-post-functions.php:1071
+msgid "Button Settings"
+msgstr "Button Settings"
+
+#: inc/amazon-product-in-a-post-functions.php:1170
+msgid "Current Button Image:"
+msgstr "Current Button Image:"
+
+#: inc/amazon-product-in-a-post-functions.php:1174
+msgctxt "Button text"
+msgid "Read More"
+msgstr "Read More"
+
+#: inc/amazon-product-in-a-post-functions.php:1175
+msgctxt ""
+"Button text - Locale will be appended to this text. i.e., Buy From Amazon.com"
+msgid "Buy from Amazon"
+msgstr "Buy from Amazon"
+
+#: inc/amazon-product-in-a-post-functions.php:1201
+msgid "edit"
+msgstr "edit"
+
+#: inc/amazon-product-in-a-post-functions.php:1201
+msgid "delete"
+msgstr "delete"
+
+#: inc/amazon-product-in-a-post-functions.php:1208
+msgid "Custom Buttons"
+msgstr "Custom Buttons"
+
+#: inc/amazon-product-in-a-post-functions.php:1217
+msgid "Amazon Button Settings"
+msgstr "Amazon Button Settings"
+
+#: inc/amazon-product-in-a-post-functions.php:1219
+msgid "Error. Button changes could not be saved."
+msgstr "Error. Button changes could not be saved."
+
+#: inc/amazon-product-in-a-post-functions.php:1221
+msgid "Error. Button could not be deleted."
+msgstr "Error. Button could not be deleted."
+
+#: inc/amazon-product-in-a-post-functions.php:1223
+msgid "Custom button settings saved."
+msgstr "Custom button settings saved."
+
+#: inc/amazon-product-in-a-post-functions.php:1225
+msgid "Custom button deleted."
+msgstr "Custom button deleted."
+
+#: inc/amazon-product-in-a-post-functions.php:1228
+msgid "Edit button settings below and save changes."
+msgstr "Edit button settings below and save changes."
+
+#: inc/amazon-product-in-a-post-functions.php:1230
+msgid "Custom Image Button"
+msgstr "Custom Image Button"
+
+#: inc/amazon-product-in-a-post-functions.php:1231
+msgid ""
+"Set New Default button to use with all Amazon products. Clear the upload "
+"field and save blank to delete button."
+msgstr ""
+"Set New Default button to use with all Amazon products. Clear the upload "
+"field and save blank to delete button."
+
+#: inc/amazon-product-in-a-post-functions.php:1238
+msgid "Upload Image"
+msgstr "Upload Image"
+
+#: inc/amazon-product-in-a-post-functions.php:1238
+msgid "Remove Image"
+msgstr "Remove Image"
+
+#: inc/amazon-product-in-a-post-functions.php:1239
+msgid "Save Changes"
+msgstr "Save Changes"
+
+#: inc/amazon-product-in-a-post-functions.php:1257
+msgid "Edit Custom Button"
+msgstr "Edit Custom Button"
+
+#: inc/amazon-product-in-a-post-functions.php:1257
+msgid "Other Button Options"
+msgstr "Other Button Options"
+
+#: inc/amazon-product-in-a-post-functions.php:1306
+msgid ""
+"The buttons below can be used in blocks and shortcodes. You can also add "
+"your own custom buttons to use in any shortcode or block by clicking \"Add "
+"Custom Button\"."
+msgstr ""
+"The buttons below can be used in blocks and shortcodes. You can also add "
+"your own custom buttons to use in any shortcode or block by clicking \"Add "
+"Custom Button\"."
+
+#: inc/amazon-product-in-a-post-functions.php:1306
+msgid "Add Custom Button"
+msgstr "Add Custom Button"
+
+#: inc/amazon-product-in-a-post-functions.php:1309
+msgid "Name ID"
+msgstr "Name ID"
+
+#: inc/amazon-product-in-a-post-functions.php:1310
+msgid "Name/Dropdown Name"
+msgstr "Name/Dropdown Name"
+
+#: inc/amazon-product-in-a-post-functions.php:1311
+msgid "Button Text"
+msgstr "Button Text"
+
+#: inc/amazon-product-in-a-post-functions.php:1312
+msgid "CSS Class"
+msgstr "CSS Class"
+
+#: inc/amazon-product-in-a-post-functions.php:1313
+msgid "Button Text Color"
+msgstr "Button Text Color"
+
+#: inc/amazon-product-in-a-post-functions.php:1314
+msgid "Button Text Hover Color"
+msgstr "Button Text Hover Color"
+
+#: inc/amazon-product-in-a-post-functions.php:1315
+msgid "Button Color"
+msgstr "Button Color"
+
+#: inc/amazon-product-in-a-post-functions.php:1316
+msgid "Button Hover Color"
+msgstr "Button Hover Color"
+
+#: inc/amazon-product-in-a-post-functions.php:1317
+msgid "Button Border Radius"
+msgstr "Button Border Radius"
+
+#: inc/amazon-product-in-a-post-functions.php:1318
+msgid "Save Button Changes"
+msgstr "Save Button Changes"
+
+#: inc/amazon-product-in-a-post-functions.php:1318
+msgid "Add Button"
+msgstr "Add Button"
+
+#: inc/amazon-product-in-a-post-functions.php:1324
+msgid "Button Name"
+msgstr "Button Name"
+
+#: inc/amazon-product-in-a-post-functions.php:1325
+msgid "Shortcode parameter to use:"
+msgstr "Shortcode parameter to use:"
+
+#: inc/amazon-product-in-a-post-functions.php:1326
+msgid "Output"
+msgstr "Output"
+
+#: inc/amazon-product-in-a-post-functions.php:1358
+msgid "rounded buttons"
+msgstr "rounded buttons"
+
+#: inc/amazon-product-in-a-post-get-product.php:25
+#: inc/amazon-product-in-a-post-tools.php:887
+msgid "Amazon Product Block"
+msgstr "Amazon Product Block"
+
+#: inc/amazon-product-in-a-post-get-product.php:25
+#: inc/amazon-product-in-a-post-shortcode-amazon-elements.php:75
+#: inc/amazon-product-in-a-post-shortcode-grid.php:64
+msgid "Please add at least one ASIN."
+msgstr "Please add at least one ASIN."
+
+#: inc/amazon-product-in-a-post-get-product.php:66
+#: inc/amazon-product-in-a-post-shortcode-amazon-elements.php:22
+#: inc/amazon-product-in-a-post-shortcode-grid.php:396
+#: inc/amazon-product-in-a-post-shortcode-search.php:17
+msgid "See larger image"
+msgstr "See larger image"
+
+#: inc/amazon-product-in-a-post-get-product.php:67
+msgid "List Price:"
+msgstr "List Price:"
+
+#: inc/amazon-product-in-a-post-get-product.php:68
+msgid "New From:"
+msgstr "New From:"
+
+#: inc/amazon-product-in-a-post-get-product.php:69
+msgid "Used from:"
+msgstr "Used from:"
+
+#: inc/amazon-product-in-a-post-get-product.php:70
+msgid "In Stock"
+msgstr "In Stock"
+
+#: inc/amazon-product-in-a-post-get-product.php:71
+msgid "Out of Stock"
+msgstr "Out of Stock"
+
+#: inc/amazon-product-in-a-post-get-product.php:72
+msgid "By (author):"
+msgstr "By (author):"
+
+#: inc/amazon-product-in-a-post-get-product.php:73
+msgid "Starring:"
+msgstr "Starring:"
+
+#: inc/amazon-product-in-a-post-get-product.php:74
+msgid "Director:"
+msgstr "Director:"
+
+#: inc/amazon-product-in-a-post-get-product.php:75
+msgid "Release date:"
+msgstr "Release date:"
+
+#: inc/amazon-product-in-a-post-get-product.php:76
+msgid "Preorder:"
+msgstr "Preorder:"
+
+#: inc/amazon-product-in-a-post-get-product.php:77
+msgid ""
+"This item is may not be available in your area. Please click the image or "
+"title of product to check pricing."
+msgstr ""
+"This item is may not be available in your area. Please click the image or "
+"title of product to check pricing."
+
+#: inc/amazon-product-in-a-post-get-product.php:78
+msgid "This title will be released on"
+msgstr "This title will be released on"
+
+#: inc/amazon-product-in-a-post-get-product.php:79
+msgid "Manufacturer:"
+msgstr "Manufacturer:"
+
+#: inc/amazon-product-in-a-post-get-product.php:80
+msgid "ESRB Rating:"
+msgstr "ESRB Rating:"
+
+#: inc/amazon-product-in-a-post-get-product.php:81
+msgid "Features:"
+msgstr "Features:"
+
+#: inc/amazon-product-in-a-post-get-product.php:82
+msgid "Platform:"
+msgstr "Platform:"
+
+#: inc/amazon-product-in-a-post-get-product.php:83
+msgid "Genre:"
+msgstr "Genre:"
+
+#: inc/amazon-product-in-a-post-get-product.php:84
+msgid "Rating:"
+msgstr "Rating:"
+
+#: inc/amazon-product-in-a-post-get-product.php:404
+#: inc/amazon-product-in-a-post-get-product.php:666
+#: inc/amazon-product-in-a-post-shortcode-amazon-elements.php:580
+#: inc/amazon-product-in-a-post-shortcode-grid.php:388
+#: inc/amazon-product-in-a-post-shortcode-search.php:634
+msgctxt "button text"
+msgid "Buy Now"
+msgstr "Buy Now"
+
+#: inc/amazon-product-in-a-post-get-product.php:408
+#: inc/amazon-product-in-a-post-get-product.php:670
+#: inc/amazon-product-in-a-post-shortcode-amazon-elements.php:584
+#: inc/amazon-product-in-a-post-shortcode-search.php:638
+msgid "buy now"
+msgstr "buy now"
+
+#: inc/amazon-product-in-a-post-get-product.php:469
+#: inc/amazon-product-in-a-post-get-product.php:504
+#: inc/amazon-product-in-a-post-shortcode-grid.php:403
+msgid "Additional Images"
+msgstr "Additional Images"
+
+#: inc/amazon-product-in-a-post-get-product.php:577
+#: inc/amazon-product-in-a-post-shortcode-amazon-elements.php:514
+#: inc/amazon-product-in-a-post-shortcode-amazon-products.php:325
+msgid "Check Amazon For Pricing"
+msgstr "Check Amazon For Pricing"
+
+# @ amazon-product-in-a-post-plugin
+#: inc/amazon-product-in-a-post-options.php:13
+#: inc/amazon-product-in-a-post-tools.php:770
+msgid "Amazon Product In a Post Plugin"
+msgstr "Amazon Product In a Post Plugin"
+
+#: inc/amazon-product-in-a-post-options.php:20
+msgid "Amazon API Settings"
+msgstr "Amazon API Settings"
+
+# @ amazon-product-in-a-post-plugin
+#: inc/amazon-product-in-a-post-options.php:22
+msgid "Your Amazon Locale/Region"
+msgstr "Your Amazon Locale/Region"
+
+#: inc/amazon-product-in-a-post-options.php:23
+msgid ""
+"The Locale to use for Amazon API Calls (ca, cn, com, com.au, com.br, co.uk, "
+"de, fr, jp, es, in, it). Default is \"com\" for US."
+msgstr ""
+"The Locale to use for Amazon API Calls (ca, cn, com, com.au, com.br, co.uk, "
+"de, fr, jp, es, in, it). Default is \"com\" for US."
+
+# @ amazon-product-in-a-post-plugin
+#: inc/amazon-product-in-a-post-options.php:27
+msgid "US (default)"
+msgstr "US (default)"
+
+#: inc/amazon-product-in-a-post-options.php:28
+#: inc/amazon-product-in-a-post-options.php:49
+msgid "Australia"
+msgstr "Australia"
+
+#: inc/amazon-product-in-a-post-options.php:29
+#: inc/amazon-product-in-a-post-options.php:50
+msgid "Brazil"
+msgstr "Brazil"
+
+# @ amazon-product-in-a-post-plugin
+#: inc/amazon-product-in-a-post-options.php:30
+#: inc/amazon-product-in-a-post-options.php:51
+msgid "Canada"
+msgstr "Canada"
+
+#: inc/amazon-product-in-a-post-options.php:31
+#: inc/amazon-product-in-a-post-options.php:52
+msgid "China"
+msgstr "China"
+
+# @ amazon-product-in-a-post-plugin
+#: inc/amazon-product-in-a-post-options.php:32
+#: inc/amazon-product-in-a-post-options.php:53
+msgid "France"
+msgstr "France"
+
+# @ amazon-product-in-a-post-plugin
+#: inc/amazon-product-in-a-post-options.php:33
+#: inc/amazon-product-in-a-post-options.php:54
+msgid "Germany"
+msgstr "Germany"
+
+# @ amazon-product-in-a-post-plugin
+#: inc/amazon-product-in-a-post-options.php:34
+#: inc/amazon-product-in-a-post-options.php:57
+msgid "Japan"
+msgstr "Japan"
+
+# @ amazon-product-in-a-post-plugin
+#: inc/amazon-product-in-a-post-options.php:35
+#: inc/amazon-product-in-a-post-options.php:55
+msgid "India"
+msgstr "India"
+
+# @ amazon-product-in-a-post-plugin
+#: inc/amazon-product-in-a-post-options.php:36
+#: inc/amazon-product-in-a-post-options.php:56
+msgid "Italy"
+msgstr "Italy"
+
+#: inc/amazon-product-in-a-post-options.php:37
+#: inc/amazon-product-in-a-post-options.php:58
+msgid "Mexico"
+msgstr "Mexico"
+
+# @ amazon-product-in-a-post-plugin
+#: inc/amazon-product-in-a-post-options.php:38
+#: inc/amazon-product-in-a-post-options.php:59
+msgid "Spain"
+msgstr "Spain"
+
+# @ amazon-product-in-a-post-plugin
+#: inc/amazon-product-in-a-post-options.php:39
+#: inc/amazon-product-in-a-post-options.php:60
+msgid "United Kingdom"
+msgstr "United Kingdom"
+
+# @ amazon-product-in-a-post-plugin
+#: inc/amazon-product-in-a-post-options.php:42
+msgid "Amazon Affiliate ID"
+msgstr "Amazon Affiliate ID"
+
+# @ amazon-product-in-a-post-plugin
+#: inc/amazon-product-in-a-post-options.php:43
+msgid "Your Amazon Affiliate ID"
+msgstr "Your Amazon Affiliate ID"
+
+# @ amazon-product-in-a-post-plugin
+#: inc/amazon-product-in-a-post-options.php:47
+msgid "Amazon Access Key ID"
+msgstr "Amazon Access Key ID"
+
+# @ amazon-product-in-a-post-plugin
+#: inc/amazon-product-in-a-post-options.php:48
+msgid ""
+"Your Amazon Access Key ID (or Public Key). If you do not have one, you will "
+"need to sign up for one (click a link below):"
+msgstr ""
+"Your Amazon Access Key ID (or Public Key). If you do not have one, you will "
+"need to sign up for one (click a link below):"
+
+# @ amazon-product-in-a-post-plugin
+#: inc/amazon-product-in-a-post-options.php:61
+msgid "United States"
+msgstr "United States"
+
+#: inc/amazon-product-in-a-post-options.php:62
+msgid "For general information, visit the"
+msgstr "For general information, visit the"
+
+#: inc/amazon-product-in-a-post-options.php:62
+msgid "Locale Reference for the Product Advertising API"
+msgstr "Locale Reference for the Product Advertising API"
+
+#: inc/amazon-product-in-a-post-options.php:62
+msgid "page."
+msgstr "page."
+
+# @ amazon-product-in-a-post-plugin
+#: inc/amazon-product-in-a-post-options.php:66
+msgid "Amazon Secret Access Key"
+msgstr "Amazon Secret Access Key"
+
+#: inc/amazon-product-in-a-post-options.php:67
+#, php-format
+msgid ""
+"Your Amazon Secret Access Key (or Private Key). %1$sCheck out this page%2$s "
+"for more information on the Access Key IDs and Secret Access Keys."
+msgstr ""
+"Your Amazon Secret Access Key (or Private Key). %1$sCheck out this page%2$s "
+"for more information on the Access Key IDs and Secret Access Keys."
+
+#: inc/amazon-product-in-a-post-options.php:72
+msgid "Test Settings"
+msgstr "Test Settings"
+
+#: inc/amazon-product-in-a-post-options.php:73
+msgid ""
+"Test your API settings to make sure everything is setup correctly. Save your "
+"settings before testing."
+msgstr ""
+"Test your API settings to make sure everything is setup correctly. Save your "
+"settings before testing."
+
+#: inc/amazon-product-in-a-post-options.php:75
+msgid "Test API Settings"
+msgstr "Test API Settings"
+
+# @ amazon-product-in-a-post-plugin
+#: inc/amazon-product-in-a-post-options.php:81
+msgid "Debug Key"
+msgstr "Debug Key"
+
+#: inc/amazon-product-in-a-post-options.php:82
+#, php-format
+msgid ""
+"Your Custom Debug Key. This is <strong>unique</strong> to your site.<br/>"
+"<br/>If you have problems with the plugin not working and you need help from "
+"the developers, email %1$s with this key and your website url or use the "
+"notes box below and click the \"Developers Only\" button. They will be able "
+"to use this info it to figure out issues and help resolve them for you. "
+"Without it, they can do nothing to help. If you received help and the "
+"problem is resolved, you can change this debug key to make sure the "
+"developers cannot access the debugging features again, should you feel "
+"inclined to do so.<br/><br/>If you would like to send debug info via email "
+"(to yourself or the developers), enter your email address below and click "
+"\"Send Debug Info\". If you need help and you want a copy to go to the "
+"<strong>plugin developers</strong>, click the \"Copy Developers\" button (if "
+"you add an email address and want it to be sent to you as well as the "
+"developers) or \"Send to Developers Only\" to just sned to the Developers "
+"without copying anyone else. <strong>If you send a copy to the Developers, "
+"be sure to include a note or we can't help you.</strong>"
+msgstr ""
+"Your Custom Debug Key. This is <strong>unique</strong> to your site.<br/>"
+"<br/>If you have problems with the plugin not working and you need help from "
+"the developers, email %1$s with this key and your website url or use the "
+"notes box below and click the \"Developers Only\" button. They will be able "
+"to use this info it to figure out issues and help resolve them for you. "
+"Without it, they can do nothing to help. If you received help and the "
+"problem is resolved, you can change this debug key to make sure the "
+"developers cannot access the debugging features again, should you feel "
+"inclined to do so.<br/><br/>If you would like to send debug info via email "
+"(to yourself or the developers), enter your email address below and click "
+"\"Send Debug Info\". If you need help and you want a copy to go to the "
+"<strong>plugin developers</strong>, click the \"Copy Developers\" button (if "
+"you add an email address and want it to be sent to you as well as the "
+"developers) or \"Send to Developers Only\" to just sned to the Developers "
+"without copying anyone else. <strong>If you send a copy to the Developers, "
+"be sure to include a note or we can't help you.</strong>"
+
+#: inc/amazon-product-in-a-post-options.php:106
+msgid "Advanced Settings"
+msgstr "Advanced Settings"
+
+#: inc/amazon-product-in-a-post-options.php:108
+msgid "Cache Ahead?"
+msgstr "Cache Ahead?"
+
+#: inc/amazon-product-in-a-post-options.php:109
+msgid ""
+"Allows plugin to cache products prior to the WordPress loop. If you have "
+"products on posts list pages or categories, this may be required to prevent "
+"throttling from Amazon due to rapid API requests."
+msgstr ""
+"Allows plugin to cache products prior to the WordPress loop. If you have "
+"products on posts list pages or categories, this may be required to prevent "
+"throttling from Amazon due to rapid API requests."
+
+#: inc/amazon-product-in-a-post-options.php:112
+msgid "Cache Length"
+msgstr "Cache Length"
+
+#: inc/amazon-product-in-a-post-options.php:113
+msgid ""
+"The product cache length in seconds (i.e., 60 min. = 3600 seconds). "
+"Recommend setting less than 24 hours (86400). Default is 3600."
+msgstr ""
+"The product cache length in seconds (i.e., 60 min. = 3600 seconds). "
+"Recommend setting less than 24 hours (86400). Default is 3600."
+
+#: inc/amazon-product-in-a-post-options.php:117
+msgid "Show metabox in edit page when Gutenberg is installed?"
+msgstr "Show metabox in edit page when Gutenberg is installed?"
+
+#: inc/amazon-product-in-a-post-options.php:118
+msgid ""
+"Show the Amazon Product Metabox on the edit page if the Gutenburg Editor is "
+"installed? Defaults to ture. You can turn this off if you have created "
+"products only using the BLOCKS method."
+msgstr ""
+"Show the Amazon Product Metabox on the edit page if the Gutenburg Editor is "
+"installed? Defaults to ture. You can turn this off if you have created "
+"products only using the BLOCKS method."
+
+#: inc/amazon-product-in-a-post-options.php:121
+msgid "Use Add To Cart URL?"
+msgstr "Use Add To Cart URL?"
+
+#: inc/amazon-product-in-a-post-options.php:122
+msgid ""
+"Uses the \"Add to Cart\" URL instead of product page URL for links. This can "
+"help with 90 day Cookie Conversions."
+msgstr ""
+"Uses the \"Add to Cart\" URL instead of product page URL for links. This can "
+"help with 90 day Cookie Conversions."
+
+#: inc/amazon-product-in-a-post-options.php:125
+msgid "Use Amazon Featured Image Functionality?"
+msgstr "Use Amazon Featured Image Functionality?"
+
+#: inc/amazon-product-in-a-post-options.php:126
+msgid ""
+"Adds a meta box section to the Edit Screen to add an Amazon Featured Image "
+"URL. Integrates into the WordPress Featured Image functionality."
+msgstr ""
+"Adds a meta box section to the Edit Screen to add an Amazon Featured Image "
+"URL. Integrates into the WordPress Featured Image functionality."
+
+#: inc/amazon-product-in-a-post-options.php:129
+msgid "Add Amazon Mobile Popover Functionality?"
+msgstr "Add Amazon Mobile Popover Functionality?"
+
+#: inc/amazon-product-in-a-post-options.php:130
+msgid "Disabled until future update."
+msgstr "Disabled until future update."
+
+#: inc/amazon-product-in-a-post-options.php:130
+msgid ""
+"Check if you would also like to use Mobile Popovers. IMPORTANT! Do not use "
+"if you have Amazon OneLink on your site already, as it is not compatible "
+"with Mobile Popovers."
+msgstr ""
+"Check if you would also like to use Mobile Popovers. IMPORTANT! Do not use "
+"if you have Amazon OneLink on your site already, as it is not compatible "
+"with Mobile Popovers."
+
+# @ amazon-product-in-a-post-plugin
+#: inc/amazon-product-in-a-post-options.php:133
+msgid "Hook plugin into Content?"
+msgstr "Hook plugin into Content?"
+
+#: inc/amazon-product-in-a-post-options.php:134
+msgid ""
+"If you want to have the product displayed when the <code>the_content()</code>"
+" function is called, select this box. NOTE: This is the standard call that "
+"theme's use to display the page/post content. If you disable both Excerpt "
+"and Content, the only way you can add products to a page/post is to add the "
+"shortcode. You can override this on each individual page/post."
+msgstr ""
+"If you want to have the product displayed when the <code>the_content()</code>"
+" function is called, select this box. NOTE: This is the standard call that "
+"theme's use to display the page/post content. If you disable both Excerpt "
+"and Content, the only way you can add products to a page/post is to add the "
+"shortcode. You can override this on each individual page/post."
+
+# @ amazon-product-in-a-post-plugin
+#: inc/amazon-product-in-a-post-options.php:137
+msgid "Hook plugin into Excerpt?"
+msgstr "Hook plugin into Excerpt?"
+
+#: inc/amazon-product-in-a-post-options.php:138
+msgid ""
+"If you want to have the product displayed when the <code>the_excerpt()</code>"
+" function is called, select this box. This is typically used on Post list or "
+"archive/category pages. Disable this function if your theme uses short "
+"excerpts on pages, such as the home page. You can override this on each "
+"individual page/post."
+msgstr ""
+"If you want to have the product displayed when the <code>the_excerpt()</code>"
+" function is called, select this box. This is typically used on Post list or "
+"archive/category pages. Disable this function if your theme uses short "
+"excerpts on pages, such as the home page. You can override this on each "
+"individual page/post."
+
+# @ amazon-product-in-a-post-plugin
+#: inc/amazon-product-in-a-post-options.php:141
+#: inc/amazon-product-in-a-post-tools.php:690
+msgid "Open Product Link in New Window?"
+msgstr "Open Product Link in New Window?"
+
+# @ amazon-product-in-a-post-plugin
+#: inc/amazon-product-in-a-post-options.php:142
+msgid ""
+"If you want to have the product displayed in a new window, check this box. "
+"Default is no."
+msgstr ""
+"If you want to have the product displayed in a new window, check this box. "
+"Default is no."
+
+# @ amazon-product-in-a-post-plugin
+#: inc/amazon-product-in-a-post-options.php:145
+msgid "Show on Single Page Only?"
+msgstr "Show on Single Page Only?"
+
+# @ amazon-product-in-a-post-plugin
+#: inc/amazon-product-in-a-post-options.php:146
+msgid ""
+"If you want to have the product displayed only when the page/post is "
+"singular, check this box. Default is no."
+msgstr ""
+"If you want to have the product displayed only when the page/post is "
+"singular, check this box. Default is no."
+
+#: inc/amazon-product-in-a-post-options.php:150
+msgid "Use Internal Lightbox?"
+msgstr "Use Internal Lightbox?"
+
+#: inc/amazon-product-in-a-post-options.php:151
+msgid ""
+"Use the the included Lightbox scripts for \"larger image\" popup. If you "
+"have a lightbox script already, you can turn this off so it will not "
+"conflict or show two popups."
+msgstr ""
+"Use the the included Lightbox scripts for \"larger image\" popup. If you "
+"have a lightbox script already, you can turn this off so it will not "
+"conflict or show two popups."
+
+#: inc/amazon-product-in-a-post-options.php:154
+msgid "Hide Binding in Title?"
+msgstr "Hide Binding in Title?"
+
+#: inc/amazon-product-in-a-post-options.php:155
+msgid ""
+"If selected, the binding will be not shown in the Product Title. i.e., With "
+"Binding - <code>Product Title (DVD)</code>, Without Binding - <code>Product "
+"Title</code>."
+msgstr ""
+"If selected, the binding will be not shown in the Product Title. i.e., With "
+"Binding - <code>Product Title (DVD)</code>, Without Binding - <code>Product "
+"Title</code>."
+
+# @ amazon-product-in-a-post-plugin
+#: inc/amazon-product-in-a-post-options.php:158
+msgid "Not Available Error Message"
+msgstr "Not Available Error Message"
+
+# @ amazon-product-in-a-post-plugin
+#: inc/amazon-product-in-a-post-options.php:159
+msgid ""
+"The message to display if the item is not available for some reason, i.e., "
+"your locale or no longer available."
+msgstr ""
+"The message to display if the item is not available for some reason, i.e., "
+"your locale or no longer available."
+
+# @ amazon-product-in-a-post-plugin
+#: inc/amazon-product-in-a-post-options.php:162
+msgid "Amazon Hidden Price Message"
+msgstr "Amazon Hidden Price Message"
+
+# @ amazon-product-in-a-post-plugin
+#: inc/amazon-product-in-a-post-options.php:163
+msgid ""
+"For Some products, Amazon will hide the List price of a product. When hidden,"
+" this plugin cannot show a price for the product. This message will display "
+"in the List Price area when that occurs."
+msgstr ""
+"For Some products, Amazon will hide the List price of a product. When hidden,"
+" this plugin cannot show a price for the product. This message will display "
+"in the List Price area when that occurs."
+
+# @ amazon-product-in-a-post-plugin
+#: inc/amazon-product-in-a-post-options.php:166
+msgid "Quick Fix - Hide Warnings?"
+msgstr "Quick Fix - Hide Warnings?"
+
+#: inc/amazon-product-in-a-post-options.php:167
+msgid "IMPORTANT:"
+msgstr "IMPORTANT:"
+
+#: inc/amazon-product-in-a-post-options.php:167
+msgid ""
+"Checking this box will excecute the code, <code>ini_set(\"display_errors\", "
+"0); </code> to force stop NOTICE and WARNING messages. This can be helpful "
+"if your server php configuration has error reporting on and you are getting "
+"warning messages. This WILL override any setting you have in your php.ini or "
+"php config files. It is not recommended you turn this on unless you need it."
+msgstr ""
+"Checking this box will excecute the code, <code>ini_set(\"display_errors\", "
+"0); </code> to force stop NOTICE and WARNING messages. This can be helpful "
+"if your server php configuration has error reporting on and you are getting "
+"warning messages. This WILL override any setting you have in your php.ini or "
+"php config files. It is not recommended you turn this on unless you need it."
+
+#: inc/amazon-product-in-a-post-options.php:170
+msgid "Clear data on Deactivate?"
+msgstr "Clear data on Deactivate?"
+
+#: inc/amazon-product-in-a-post-options.php:171
+#: inc/amazon-product-in-a-post-options.php:175
+msgid "CAREFUL!!"
+msgstr "CAREFUL!!"
+
+#: inc/amazon-product-in-a-post-options.php:171
+msgid ""
+"Checking this box will delete ALL <strong>settings</strong> and <strong>"
+"database</strong> items when you deativate the plugin"
+msgstr ""
+"Checking this box will delete ALL <strong>settings</strong> and <strong>"
+"database</strong> items when you deativate the plugin"
+
+#: inc/amazon-product-in-a-post-options.php:174
+msgid "Remove ALL traces on Uninstall?"
+msgstr "Remove ALL traces on Uninstall?"
+
+#: inc/amazon-product-in-a-post-options.php:175
+msgid ""
+"Checking this box AND the above box will delete <em>ALL</em> Amazon "
+"shortcodes from posts and pages, and all meta data associated with this "
+"plugin will be cleaned up and cleared out when you deativate this plugin. As "
+"a safety precaution, both boxes must be checked or data will not be removed."
+msgstr ""
+"Checking this box AND the above box will delete <em>ALL</em> Amazon "
+"shortcodes from posts and pages, and all meta data associated with this "
+"plugin will be cleaned up and cleared out when you deativate this plugin. As "
+"a safety precaution, both boxes must be checked or data will not be removed."
+
+#: inc/amazon-product-in-a-post-options.php:186
+msgid "Plugin Styles"
+msgstr "Plugin Styles"
+
+# @ amazon-product-in-a-post-plugin
+#: inc/amazon-product-in-a-post-options.php:188
+msgid "Use My Custom Styles?"
+msgstr "Use My Custom Styles?"
+
+#: inc/amazon-product-in-a-post-options.php:189
+msgid ""
+"If you want to use your own styles, check this box and enter them below. "
+"Additionally, if you want to override any plugin styles, you can put your "
+"own styles in a CSS file called <code>appip-styles.css</code> located at: "
+msgstr ""
+"If you want to use your own styles, check this box and enter them below. "
+"Additionally, if you want to override any plugin styles, you can put your "
+"own styles in a CSS file called <code>appip-styles.css</code> located at: "
+
+# @ amazon-product-in-a-post-plugin
+#: inc/amazon-product-in-a-post-options.php:192
+msgid "Product Styles"
+msgstr "Product Styles"
+
+#: inc/amazon-product-in-a-post-options.php:193
+msgid ""
+"Your Custom styles can go here. To reset the styles, remove all styles from "
+"textarea and then save the options - the default styles will be loaded."
+msgstr ""
+"Your Custom styles can go here. To reset the styles, remove all styles from "
+"textarea and then save the options - the default styles will be loaded."
+
+#: inc/amazon-product-in-a-post-options.php:339
+msgid "No Email Address Provided."
+msgstr "No Email Address Provided."
+
+#: inc/amazon-product-in-a-post-options.php:341
+msgid "Error: "
+msgstr "Error: "
+
+#: inc/amazon-product-in-a-post-shortcode-amazon-elements.php:75
+#: inc/amazon-product-in-a-post-tools.php:889
+msgid "Amazon Elements Block"
+msgstr "Amazon Elements Block"
+
+#: inc/amazon-product-in-a-post-shortcode-amazon-elements.php:428
+#: inc/amazon-product-in-a-post-shortcode-search.php:436
+msgid "Additional Images:"
+msgstr "Additional Images:"
+
+#: inc/amazon-product-in-a-post-shortcode-amazon-elements.php:491
+#: inc/amazon-product-in-a-post-shortcode-amazon-elements.php:493
+#: inc/amazon-product-in-a-post-shortcode-search.php:514
+#: inc/amazon-product-in-a-post-shortcode-search.php:516
+msgctxt "Label Text for Subscriptions, i.e., $12.00 FOR 12 months."
+msgid " for "
+msgstr " for "
+
+#: inc/amazon-product-in-a-post-shortcode-amazon-elements.php:493
+#: inc/amazon-product-in-a-post-shortcode-grid.php:359
+#: inc/amazon-product-in-a-post-shortcode-search.php:516
+msgid "Subscription: "
+msgstr "Subscription: "
+
+#: inc/amazon-product-in-a-post-shortcode-amazon-elements.php:739
+#: inc/amazon-product-in-a-post-shortcode-grid.php:641
+#: inc/amazon-product-in-a-post-shortcode-search.php:813
+msgid "Labels (optional)"
+msgstr "Labels (optional)"
+
+#: inc/amazon-product-in-a-post-shortcode-amazon-products.php:137
+msgid "Alternate"
+msgstr "Alternate"
+
+#: inc/amazon-product-in-a-post-shortcode-amazon-products.php:138
+msgid "Dark"
+msgstr "Dark"
+
+#: inc/amazon-product-in-a-post-shortcode-amazon-products.php:139
+msgid "Dark: Image Right"
+msgstr "Dark: Image Right"
+
+#: inc/amazon-product-in-a-post-shortcode-amazon-products.php:140
+msgid "Dark: Image Top"
+msgstr "Dark: Image Top"
+
+#: inc/amazon-product-in-a-post-shortcode-amazon-products.php:141
+msgid "Light"
+msgstr "Light"
+
+#: inc/amazon-product-in-a-post-shortcode-amazon-products.php:142
+msgid "Light: Image Right"
+msgstr "Light: Image Right"
+
+#: inc/amazon-product-in-a-post-shortcode-amazon-products.php:143
+msgid "Light: Image Top"
+msgstr "Light: Image Top"
+
+#: inc/amazon-product-in-a-post-shortcode-amazon-products.php:489
+msgid "Amazon Layout"
+msgstr "Amazon Layout"
+
+#: inc/amazon-product-in-a-post-shortcode-grid.php:16
+msgid "A Shortcode for displaying Amazon Prodcts in a Grid."
+msgstr "A Shortcode for displaying Amazon Prodcts in a Grid."
+
+#: inc/amazon-product-in-a-post-shortcode-grid.php:31
+msgid "see larger image"
+msgstr "see larger image"
+
+#: inc/amazon-product-in-a-post-shortcode-grid.php:64
+#: inc/amazon-product-in-a-post-tools.php:888
+msgid "Amazon Grid Block"
+msgstr "Amazon Grid Block"
+
+#: inc/amazon-product-in-a-post-shortcode-grid.php:361
+msgid "New:"
+msgstr "New:"
+
+#: inc/amazon-product-in-a-post-shortcode-grid.php:363
+msgid "Check Amazon for Pricing"
+msgstr "Check Amazon for Pricing"
+
+#: inc/amazon-product-in-a-post-shortcode-grid.php:372
+msgid "Used:"
+msgstr "Used:"
+
+#: inc/amazon-product-in-a-post-shortcode-grid.php:456
+#: inc/amazon-product-in-a-post-tools.php:928
+#: inc/amazon-product-in-a-post-tools.php:985
+#: inc/amazon-product-in-a-post-tools.php:1149
+msgid "Shortcode"
+msgstr "Shortcode"
+
+#: inc/amazon-product-in-a-post-shortcode-grid.php:457
+msgid ""
+"Shortcode implementation for a grid style layout &mdash; for when you may "
+"only want rows of products in set columns."
+msgstr ""
+"Shortcode implementation for a grid style layout &mdash; for when you may "
+"only want rows of products in set columns."
+
+#: inc/amazon-product-in-a-post-shortcode-grid.php:458
+msgid "Available Shortcode and Gutenberg Block Parameters:"
+msgstr "Available Shortcode and Gutenberg Block Parameters:"
+
+#: inc/amazon-product-in-a-post-shortcode-grid.php:460
+msgid ""
+"<span style=\"color:#ff0000;\">Required</span>. The Amazon ASIN or ASINs "
+"(add multiple by separating with a comma)."
+msgstr ""
+"<span style=\"color:#ff0000;\">Required</span>. The Amazon ASIN or ASINs "
+"(add multiple by separating with a comma)."
+
+#: inc/amazon-product-in-a-post-shortcode-grid.php:461
+msgid "(optional) Default is &quot;_blank&quot;. Applies to all ASINs in list."
+msgstr ""
+"(optional) Default is &quot;_blank&quot;. Applies to all ASINs in list."
+
+#: inc/amazon-product-in-a-post-shortcode-grid.php:462
+msgid ""
+"(optional) Fields you want to return. Any valid return field from Amazon API "
+"(see API for list) - default fields: image, title, author, price, button. "
+"Applies to all ASINs in \"asin\" field."
+msgstr ""
+"(optional) Fields you want to return. Any valid return field from Amazon API "
+"(see API for list) - default fields: image, title, author, price, button. "
+"Applies to all ASINs in \"asin\" field."
+
+#: inc/amazon-product-in-a-post-shortcode-grid.php:463
+msgid ""
+"(optional) Labels that correspond to the fields, if you want custom labels. "
+"See amazon-elements shortcode tab for more info on labels as they will "
+"function the same."
+msgstr ""
+"(optional) Labels that correspond to the fields, if you want custom labels. "
+"See amazon-elements shortcode tab for more info on labels as they will "
+"function the same."
+
+#: inc/amazon-product-in-a-post-shortcode-grid.php:464
+msgid "(optional) Number of columns in your grid. Default is 3."
+msgstr "(optional) Number of columns in your grid. Default is 3."
+
+#: inc/amazon-product-in-a-post-shortcode-grid.php:465
+msgid ""
+"(optional) URL for a different button image if you desired. See amazon-"
+"elements shortcode tab for more info on button URLs."
+msgstr ""
+"(optional) URL for a different button image if you desired. See amazon-"
+"elements shortcode tab for more info on button URLs."
+
+#: inc/amazon-product-in-a-post-shortcode-grid.php:466
+msgid ""
+"(optional) Set to &quot;1&quot; for \"Add to Cart URL\" instead of product "
+"page for Amazon links. Default is &quot;0&quot;."
+msgstr ""
+"(optional) Set to &quot;1&quot; for \"Add to Cart URL\" instead of product "
+"page for Amazon links. Default is &quot;0&quot;."
+
+#: inc/amazon-product-in-a-post-shortcode-grid.php:467
+msgid ""
+"(optional) Set to &quot;1&quot; to open Amazon links in a New Window. Defult "
+"is &quot;0&quot;."
+msgstr ""
+"(optional) Set to &quot;1&quot; to open Amazon links in a New Window. Defult "
+"is &quot;0&quot;."
+
+#: inc/amazon-product-in-a-post-shortcode-grid.php:468
+msgid ""
+"(optional) If using the `gallery` parameter, you can set the number of "
+"additional images in the gallery (`1` to `10`). Default is `-1` (all). `0` "
+"will show no additional images."
+msgstr ""
+"(optional) If using the `gallery` parameter, you can set the number of "
+"additional images in the gallery (`1` to `10`). Default is `-1` (all). `0` "
+"will show no additional images."
+
+#: inc/amazon-product-in-a-post-shortcode-grid.php:469
+msgid ""
+"(optional) Show product only on a single page. Set to `1` to show onl when "
+"the page/post is sungular (product will not show on blogroll or archive "
+"pages). Default is `0`."
+msgstr ""
+"(optional) Show product only on a single page. Set to `1` to show onl when "
+"the page/post is sungular (product will not show on blogroll or archive "
+"pages). Default is `0`."
+
+#: inc/amazon-product-in-a-post-shortcode-grid.php:470
+msgid ""
+"(optional) If you want to use an HTML button, pass one of the button IDs. "
+"Default is none (uses the default button). For this to work, you must also "
+"use `button` in the `fields` paramater. See Button Settings page for a list "
+"of available button IDs."
+msgstr ""
+"(optional) If you want to use an HTML button, pass one of the button IDs. "
+"Default is none (uses the default button). For this to work, you must also "
+"use `button` in the `fields` paramater. See Button Settings page for a list "
+"of available button IDs."
+
+#: inc/amazon-product-in-a-post-shortcode-grid.php:471
+msgid ""
+"(optional - future) Set to template ID name for registered templates (coming "
+"soon). Default is `dafault`."
+msgstr ""
+"(optional - future) Set to template ID name for registered templates (coming "
+"soon). Default is `dafault`."
+
+#: inc/amazon-product-in-a-post-shortcode-grid.php:472
+msgid ""
+"(optional) Set to the container HTML element to use to warp the output of "
+"the product. Default is `div`. Do not use &ltl; or &gt;."
+msgstr ""
+"(optional) Set to the container HTML element to use to warp the output of "
+"the product. Default is `div`. Do not use &ltl; or &gt;."
+
+#: inc/amazon-product-in-a-post-shortcode-grid.php:473
+msgid ""
+"(optional) Main class name for the wrapper element. Default is `amazon-grid-"
+"wrapper`. Please note that if you change this, you will have to create your "
+"own set of CSS styles for the grid products layout."
+msgstr ""
+"(optional) Main class name for the wrapper element. Default is `amazon-grid-"
+"wrapper`. Please note that if you change this, you will have to create your "
+"own set of CSS styles for the grid products layout."
+
+#: inc/amazon-product-in-a-post-shortcode-grid.php:474
+msgid ""
+"(optional) Used for adding an additional class or classes to the wrapper "
+"element. Also used by the Gutenberg block to add additional CSS class to the "
+"wrapper element. Default is none."
+msgstr ""
+"(optional) Used for adding an additional class or classes to the wrapper "
+"element. Also used by the Gutenberg block to add additional CSS class to the "
+"wrapper element. Default is none."
+
+#: inc/amazon-product-in-a-post-shortcode-grid.php:475
+msgid ""
+"(optional) Trim the product title(s) by setting a value from `1` to `150`. "
+"Default is `0` (show full title). Also note that a number less than `0` or "
+"greater than `150` will also show the full title."
+msgstr ""
+"(optional) Trim the product title(s) by setting a value from `1` to `150`. "
+"Default is `0` (show full title). Also note that a number less than `0` or "
+"greater than `150` will also show the full title."
+
+#: inc/amazon-product-in-a-post-shortcode-grid.php:476
+msgid ""
+"(optional) The amazon locale, i.e., co.uk, es. This is handy of you need a "
+"product from a different locale than your default one. Applies to all ASINs "
+"in list."
+msgstr ""
+"(optional) The amazon locale, i.e., co.uk, es. This is handy of you need a "
+"product from a different locale than your default one. Applies to all ASINs "
+"in list."
+
+#: inc/amazon-product-in-a-post-shortcode-grid.php:477
+msgid ""
+"(optional) Your amazon partner id. default is the one in the options. You "
+"can set a different one here if you have a different one for another locale "
+"or just want to split them up between multiple ids. Applies to all ASINs in "
+"list."
+msgstr ""
+"(optional) Your amazon partner id. default is the one in the options. You "
+"can set a different one here if you have a different one for another locale "
+"or just want to split them up between multiple ids. Applies to all ASINs in "
+"list."
+
+#: inc/amazon-product-in-a-post-shortcode-grid.php:478
+msgid ""
+"(optional) Amazon private key. Default is one set in options. You can set a "
+"different one if needed for another locale. Applies to all ASINs in list."
+msgstr ""
+"(optional) Amazon private key. Default is one set in options. You can set a "
+"different one if needed for another locale. Applies to all ASINs in list."
+
+#: inc/amazon-product-in-a-post-shortcode-grid.php:479
+msgid ""
+"(optional) Amazon public key. Default is one set in options. You can set a "
+"different one if needed for another locale. Applies to all ASINs in list."
+msgstr ""
+"(optional) Amazon public key. Default is one set in options. You can set a "
+"different one if needed for another locale. Applies to all ASINs in list."
+
+#: inc/amazon-product-in-a-post-shortcode-grid.php:481
+msgid "Example of the amazon-grid shortcode usage:"
+msgstr "Example of the amazon-grid shortcode usage:"
+
+#: inc/amazon-product-in-a-post-shortcode-grid.php:483
+#: inc/amazon-product-in-a-post-tools.php:1018
+msgid ""
+"if you want to have a product with only a large image, the title and button, "
+"you would use:"
+msgstr ""
+"if you want to have a product with only a large image, the title and button, "
+"you would use:"
+
+#: inc/amazon-product-in-a-post-shortcode-grid.php:485
+#: inc/amazon-product-in-a-post-tools.php:1022
+msgid ""
+"If you want that same product to have the list price and the new price, you "
+"would use:"
+msgstr ""
+"If you want that same product to have the list price and the new price, you "
+"would use:"
+
+#: inc/amazon-product-in-a-post-shortcode-grid.php:487
+msgid "If you want 5 columns and default fields, you would use:"
+msgstr "If you want 5 columns and default fields, you would use:"
+
+#: inc/amazon-product-in-a-post-shortcode-grid.php:491
+#: inc/amazon-product-in-a-post-tools.php:1028
+#: inc/amazon-product-in-a-post-tools.php:1199
+msgid "Available Fields for the shortcode:"
+msgstr "Available Fields for the shortcode:"
+
+#: inc/amazon-product-in-a-post-shortcode-grid.php:492
+#: inc/amazon-product-in-a-post-tools.php:1029
+#: inc/amazon-product-in-a-post-tools.php:1200
+msgid "Common Items"
+msgstr "Common Items"
+
+#: inc/amazon-product-in-a-post-shortcode-grid.php:493
+#: inc/amazon-product-in-a-post-tools.php:1030
+#: inc/amazon-product-in-a-post-tools.php:1201
+msgid "These are generally common in all products (if available)"
+msgstr "These are generally common in all products (if available)"
+
+#: inc/amazon-product-in-a-post-shortcode-grid.php:495
+#: inc/amazon-product-in-a-post-tools.php:1034
+#: inc/amazon-product-in-a-post-tools.php:1203
+msgid "Product Title."
+msgstr "Product Title."
+
+#: inc/amazon-product-in-a-post-shortcode-grid.php:496
+#: inc/amazon-product-in-a-post-tools.php:1046
+#: inc/amazon-product-in-a-post-tools.php:1204
+msgid "Product Description."
+msgstr "Product Description."
+
+#: inc/amazon-product-in-a-post-shortcode-grid.php:497
+#: inc/amazon-product-in-a-post-tools.php:1205
+msgid "Product Price."
+msgstr "Product Price."
+
+#: inc/amazon-product-in-a-post-shortcode-grid.php:498
+#: inc/amazon-product-in-a-post-tools.php:1206
+msgid "Shows both the Product list price and sale price."
+msgstr "Shows both the Product list price and sale price."
+
+#: inc/amazon-product-in-a-post-shortcode-grid.php:499
+#: inc/amazon-product-in-a-post-tools.php:1207
+msgid "Product Image (Medium Image)."
+msgstr "Product Image (Medium Image)."
+
+#: inc/amazon-product-in-a-post-shortcode-grid.php:500
+#: inc/amazon-product-in-a-post-tools.php:1208
+msgid "Product Small Image."
+msgstr "Product Small Image."
+
+#: inc/amazon-product-in-a-post-shortcode-grid.php:501
+#: inc/amazon-product-in-a-post-tools.php:1209
+msgid "Product Medium Image."
+msgstr "Product Medium Image."
+
+#: inc/amazon-product-in-a-post-shortcode-grid.php:502
+#: inc/amazon-product-in-a-post-tools.php:1210
+msgid "Product Large Image."
+msgstr "Product Large Image."
+
+#: inc/amazon-product-in-a-post-shortcode-grid.php:503
+#: inc/amazon-product-in-a-post-tools.php:1211
+msgid "Product Full Image."
+msgstr "Product Full Image."
+
+#: inc/amazon-product-in-a-post-shortcode-grid.php:504
+#: inc/amazon-product-in-a-post-tools.php:1212
+msgid "Large Image Link (shows \"See Larger Image\" link)."
+msgstr "Large Image Link (shows \"See Larger Image\" link)."
+
+#: inc/amazon-product-in-a-post-shortcode-grid.php:505
+#: inc/amazon-product-in-a-post-tools.php:1213
+msgid "Product Page Link (shows full link in anchor tag)."
+msgstr "Product Page Link (shows full link in anchor tag)."
+
+#: inc/amazon-product-in-a-post-shortcode-grid.php:506
+#: inc/amazon-product-in-a-post-tools.php:1039
+#: inc/amazon-product-in-a-post-tools.php:1214
+msgid "Product Additional Images."
+msgstr "Product Additional Images."
+
+#: inc/amazon-product-in-a-post-shortcode-grid.php:507
+#: inc/amazon-product-in-a-post-tools.php:1040
+#: inc/amazon-product-in-a-post-tools.php:1215
+msgid "Product Featured Items Text."
+msgstr "Product Featured Items Text."
+
+#: inc/amazon-product-in-a-post-shortcode-grid.php:508
+#: inc/amazon-product-in-a-post-tools.php:1047
+#: inc/amazon-product-in-a-post-tools.php:1216
+msgid "Product Manufacturer's Suggested Retail Price (SRP)."
+msgstr "Product Manufacturer's Suggested Retail Price (SRP)."
+
+#: inc/amazon-product-in-a-post-shortcode-grid.php:509
+#: inc/amazon-product-in-a-post-tools.php:1217
+msgid "No Longer Used."
+msgstr "No Longer Used."
+
+#: inc/amazon-product-in-a-post-shortcode-grid.php:510
+#: inc/amazon-product-in-a-post-tools.php:1218
+msgid ""
+"Displays default Image button or HTML button if a button templte was passed "
+"as a shortcode parameter."
+msgstr ""
+"Displays default Image button or HTML button if a button templte was passed "
+"as a shortcode parameter."
+
+#: inc/amazon-product-in-a-post-shortcode-grid.php:511
+#: inc/amazon-product-in-a-post-tools.php:1219
+msgid ""
+"Product Customer Reviews (shown in an iframe only). Not ideal for Grid "
+"layout."
+msgstr ""
+"Product Customer Reviews (shown in an iframe only). Not ideal for Grid "
+"layout."
+
+#: inc/amazon-product-in-a-post-shortcode-grid.php:513
+#: inc/amazon-product-in-a-post-tools.php:1221
+msgid ""
+"There are other fields available - bascially any field returned in the API "
+"can be used. For a more complete list, see"
+msgstr ""
+"There are other fields available - bascially any field returned in the API "
+"can be used. For a more complete list, see"
+
+#: inc/amazon-product-in-a-post-shortcode-grid.php:513
+#: inc/amazon-product-in-a-post-tools.php:1221
+msgid "shortcode page."
+msgstr "shortcode page."
+
+#: inc/amazon-product-in-a-post-shortcode-grid.php:516
+#: inc/amazon-product-in-a-post-tools.php:1223
+msgid "LowestNewPrice"
+msgstr "LowestNewPrice"
+
+#: inc/amazon-product-in-a-post-shortcode-grid.php:517
+#: inc/amazon-product-in-a-post-tools.php:1224
+msgid "LowestUsedPrice"
+msgstr "LowestUsedPrice"
+
+#: inc/amazon-product-in-a-post-shortcode-grid.php:518
+#: inc/amazon-product-in-a-post-tools.php:1225
+msgid "LowestRefurbishedPrice"
+msgstr "LowestRefurbishedPrice"
+
+#: inc/amazon-product-in-a-post-shortcode-grid.php:519
+#: inc/amazon-product-in-a-post-tools.php:1226
+msgid "LowestCollectiblePrice"
+msgstr "LowestCollectiblePrice"
+
+#: inc/amazon-product-in-a-post-shortcode-grid.php:520
+#: inc/amazon-product-in-a-post-tools.php:1227
+msgid "MoreOffersUrl"
+msgstr "MoreOffersUrl"
+
+#: inc/amazon-product-in-a-post-shortcode-grid.php:521
+#: inc/amazon-product-in-a-post-tools.php:1228
+msgid "NewAmazonPricing"
+msgstr "NewAmazonPricing"
+
+#: inc/amazon-product-in-a-post-shortcode-grid.php:522
+#: inc/amazon-product-in-a-post-tools.php:1229
+msgid "TotalCollectible"
+msgstr "TotalCollectible"
+
+#: inc/amazon-product-in-a-post-shortcode-grid.php:523
+#: inc/amazon-product-in-a-post-tools.php:1230
+msgid "TotalNew"
+msgstr "TotalNew"
+
+#: inc/amazon-product-in-a-post-shortcode-grid.php:524
+#: inc/amazon-product-in-a-post-tools.php:1231
+msgid "TotalOffers"
+msgstr "TotalOffers"
+
+#: inc/amazon-product-in-a-post-shortcode-grid.php:525
+#: inc/amazon-product-in-a-post-tools.php:1232
+msgid "TotalRefurbished"
+msgstr "TotalRefurbished"
+
+#: inc/amazon-product-in-a-post-shortcode-grid.php:526
+#: inc/amazon-product-in-a-post-tools.php:1233
+msgid "TotalUsed"
+msgstr "TotalUsed"
+
+#: inc/amazon-product-in-a-post-shortcode-grid.php:535
+msgid "Product Grid"
+msgstr "Product Grid"
+
+#: inc/amazon-product-in-a-post-shortcode-grid.php:599
+msgid "Enter ASIN or ASINs"
+msgstr "Enter ASIN or ASINs"
+
+#: inc/amazon-product-in-a-post-shortcode-search.php:78
+#: inc/amazon-product-in-a-post-tools.php:890
+msgid "Amazon Search Block"
+msgstr "Amazon Search Block"
+
+#: inc/amazon-product-in-a-post-shortcode-search.php:78
+msgid "Please add at least one Keyword."
+msgstr "Please add at least one Keyword."
+
+#: inc/amazon-product-in-a-post-shortcode-search.php:712
+msgid "Grid Layout"
+msgstr "Grid Layout"
+
+#: inc/amazon-product-in-a-post-tools.php:34
+msgid "Amazon Product In a Post Settings"
+msgstr "Amazon Product In a Post Settings"
+
+#: inc/amazon-product-in-a-post-tools.php:83
+#: inc/amazon-product-in-a-post-tools.php:93
+#: inc/amazon-product-in-a-post-tools.php:98
+msgid "Plugin Settings"
+msgstr "Plugin Settings"
+
+#: inc/amazon-product-in-a-post-tools.php:84
+#: inc/amazon-product-in-a-post-tools.php:89
+#: inc/amazon-product-in-a-post-tools.php:94
+#: inc/amazon-product-in-a-post-tools.php:99
+#: inc/amazon-product-in-a-post-tools.php:111
+msgid "Contextual Help Coming Soon."
+msgstr "Contextual Help Coming Soon."
+
+#: inc/amazon-product-in-a-post-tools.php:88
+msgid "New Product"
+msgstr "New Product"
+
+#: inc/amazon-product-in-a-post-tools.php:103
+msgid "Shortcode Usage"
+msgstr "Shortcode Usage"
+
+#: inc/amazon-product-in-a-post-tools.php:104
+msgid ""
+"Shortcodes have been a WordPress staple for many years. They are designed to "
+"be used as \"placeholder\" content and are rendered on the front of the site "
+"when it is viewed. The plugin has several shortcodes available. See the tabs "
+"below for more detailed information about each shortcode and their usage."
+msgstr ""
+"Shortcodes have been a WordPress staple for many years. They are designed to "
+"be used as \"placeholder\" content and are rendered on the front of the site "
+"when it is viewed. The plugin has several shortcodes available. See the tabs "
+"below for more detailed information about each shortcode and their usage."
+
+#: inc/amazon-product-in-a-post-tools.php:105
+msgid "Block Usage"
+msgstr "Block Usage"
+
+#: inc/amazon-product-in-a-post-tools.php:106
+msgid ""
+"Gutenberg Blocks make the plugin extremely useful for those using the "
+"Gutenberg Editor in WordPress. The blocks are designed to make it easy for "
+"you to customizing settings without the need to use shortcodes. If you have "
+"issues with any block, please see the \"Using Amazon Product In A Post "
+"Blocks\" under the \"Gutenberg Blocks\" tab for troubleshooting instructions."
+msgstr ""
+"Gutenberg Blocks make the plugin extremely useful for those using the "
+"Gutenberg Editor in WordPress. The blocks are designed to make it easy for "
+"you to customizing settings without the need to use shortcodes. If you have "
+"issues with any block, please see the \"Using Amazon Product In A Post "
+"Blocks\" under the \"Gutenberg Blocks\" tab for troubleshooting instructions."
+
+#: inc/amazon-product-in-a-post-tools.php:110
+msgid "FAQs/Help"
+msgstr "FAQs/Help"
+
+#: inc/amazon-product-in-a-post-tools.php:115
+msgid "Product Cache"
+msgstr "Product Cache"
+
+#: inc/amazon-product-in-a-post-tools.php:116
+msgid ""
+"The Product Cache page is designed to show you the response from the Amazon "
+"Product Advertising API (PA API). If there are errors, the cache line will "
+"show the errors for that requast. In the event of an error, try to fix the "
+"issues it references and then clear the cache and try the request again."
+msgstr ""
+"The Product Cache page is designed to show you the response from the Amazon "
+"Product Advertising API (PA API). If there are errors, the cache line will "
+"show the errors for that requast. In the event of an error, try to fix the "
+"issues it references and then clear the cache and try the request again."
+
+#: inc/amazon-product-in-a-post-tools.php:127
+msgid "About Us"
+msgstr "About Us"
+
+#: inc/amazon-product-in-a-post-tools.php:127
+msgid ""
+" develops custom WordPress Themes and Plugins for clients who need a more "
+"individualized look, but still want the simplicity of a WordPress website."
+msgstr ""
+" develops custom WordPress Themes and Plugins for clients who need a more "
+"individualized look, but still want the simplicity of a WordPress website."
+
+#: inc/amazon-product-in-a-post-tools.php:129
+msgid "Help Us Out:"
+msgstr "Help Us Out:"
+
+#: inc/amazon-product-in-a-post-tools.php:130
+msgid "Donate to this Plugin"
+msgstr "Donate to this Plugin"
+
+#: inc/amazon-product-in-a-post-tools.php:131
+msgid "Other Plugins"
+msgstr "Other Plugins"
+
+#: inc/amazon-product-in-a-post-tools.php:147
+#: inc/amazon-product-in-a-post-tools.php:149
+msgid "Amazon Product in a Post Important Message!"
+msgstr "Amazon Product in a Post Important Message!"
+
+#: inc/amazon-product-in-a-post-tools.php:147
+msgid ""
+"Please note: You need to add your Access Key ID and Secrect Access Key to "
+"the <a href=\"admin.php?page=apipp_plugin_admin\">options page</a> before "
+"the plugin will display any Amazon Products!<a href=\"admin.php?"
+"page=apipp_plugin_admin&dismissmsg=1\" style=\"position:absolute;top:0;right:"
+"0;padding:3px 10px;display:block;\">dismiss</a>"
+msgstr ""
+"Please note: You need to add your Access Key ID and Secrect Access Key to "
+"the <a href=\"admin.php?page=apipp_plugin_admin\">options page</a> before "
+"the plugin will display any Amazon Products!<a href=\"admin.php?"
+"page=apipp_plugin_admin&dismissmsg=1\" style=\"position:absolute;top:0;right:"
+"0;padding:3px 10px;display:block;\">dismiss</a>"
+
+#: inc/amazon-product-in-a-post-tools.php:149
+msgid ""
+"You need to enter your Amazon Partner ID in order to get credit for any "
+"products sold. <a href=\"admin.php?page=apipp_plugin_admin\">enter your "
+"partner id here</a><a href=\"admin.php?"
+"page=apipp_plugin_admin&dismissmsg=1\" style=\"position:absolute;top:0;right:"
+"0;padding:3px 10px;display:block;\">dismiss</a>"
+msgstr ""
+"You need to enter your Amazon Partner ID in order to get credit for any "
+"products sold. <a href=\"admin.php?page=apipp_plugin_admin\">enter your "
+"partner id here</a><a href=\"admin.php?"
+"page=apipp_plugin_admin&dismissmsg=1\" style=\"position:absolute;top:0;right:"
+"0;padding:3px 10px;display:block;\">dismiss</a>"
+
+#: inc/amazon-product-in-a-post-tools.php:679
+msgid "WARNING:"
+msgstr "WARNING:"
+
+#: inc/amazon-product-in-a-post-tools.php:679
+msgid ""
+"You will not get credit for Amazon purchases until you add your Amazon "
+"Affiliate ID on the <a href=\"admin.php?page=apipp_plugin_admin\">options</a>"
+" page."
+msgstr ""
+"You will not get credit for Amazon purchases until you add your Amazon "
+"Affiliate ID on the <a href=\"admin.php?page=apipp_plugin_admin\">options</a>"
+" page."
+
+#: inc/amazon-product-in-a-post-tools.php:683
+msgid "Product is Active?"
+msgstr "Product is Active?"
+
+#: inc/amazon-product-in-a-post-tools.php:683
+msgid "if checked the product will be live"
+msgstr "if checked the product will be live"
+
+#: inc/amazon-product-in-a-post-tools.php:684
+msgid "Amazon Product ASIN(s)"
+msgstr "Amazon Product ASIN(s)"
+
+#: inc/amazon-product-in-a-post-tools.php:684
+msgid ""
+"For multiple, separate with a comma. You will need to get ASINs from <a "
+"href=\"http://amazon.com/\">Amazon</a>"
+msgstr ""
+"For multiple, separate with a comma. You will need to get ASINs from <a "
+"href=\"http://amazon.com/\">Amazon</a>"
+
+#: inc/amazon-product-in-a-post-tools.php:685
+msgid "Replace Amazon Title With Below Title:"
+msgstr "Replace Amazon Title With Below Title:"
+
+#: inc/amazon-product-in-a-post-tools.php:685
+msgid ""
+"Optional. To hide title all together, type \"null\". No HTML, plain text "
+"only. Use this if you want your own title to show instead of Amazon's title."
+msgstr ""
+"Optional. To hide title all together, type \"null\". No HTML, plain text "
+"only. Use this if you want your own title to show instead of Amazon's title."
+
+#: inc/amazon-product-in-a-post-tools.php:687
+msgid "Hook into Content?"
+msgstr "Hook into Content?"
+
+#: inc/amazon-product-in-a-post-tools.php:687
+msgid ""
+"Product will show when full content is used (when <code>the_content()</code> "
+"template tag). On by default."
+msgstr ""
+"Product will show when full content is used (when <code>the_content()</code> "
+"template tag). On by default."
+
+#: inc/amazon-product-in-a-post-tools.php:688
+msgid "Hook into Excerpt?"
+msgstr "Hook into Excerpt?"
+
+#: inc/amazon-product-in-a-post-tools.php:688
+msgid ""
+"Product will show when partial excerpt content is used(when <code>"
+"the_excerpt()</code> is used. Off by default."
+msgstr ""
+"Product will show when partial excerpt content is used(when <code>"
+"the_excerpt()</code> is used. Off by default."
+
+#: inc/amazon-product-in-a-post-tools.php:689
+msgid "Show Only on Single Page?"
+msgstr "Show Only on Single Page?"
+
+#: inc/amazon-product-in-a-post-tools.php:689
+msgid ""
+"if checked the product will only show when on single page. Off by default."
+msgstr ""
+"if checked the product will only show when on single page. Off by default."
+
+#: inc/amazon-product-in-a-post-tools.php:690
+msgid ""
+"if checked the product will open a new browser window. Off by default unless "
+"set in options."
+msgstr ""
+"if checked the product will open a new browser window. Off by default unless "
+"set in options."
+
+#: inc/amazon-product-in-a-post-tools.php:692
+msgid "Where would you like your product to show within the post?"
+msgstr "Where would you like your product to show within the post?"
+
+#: inc/amazon-product-in-a-post-tools.php:693
+msgid ""
+"<strong>Above Post Content</strong> - <em>Default - Product will be first "
+"then post text</em>"
+msgstr ""
+"<strong>Above Post Content</strong> - <em>Default - Product will be first "
+"then post text</em>"
+
+#: inc/amazon-product-in-a-post-tools.php:694
+msgid ""
+"<strong>Below Post Content</strong> - <em>Post text will be first then the "
+"Product</em>"
+msgstr ""
+"<strong>Below Post Content</strong> - <em>Post text will be first then the "
+"Product</em>"
+
+#: inc/amazon-product-in-a-post-tools.php:695
+msgid ""
+"<strong>Post Text becomes Description</strong> - <em>Post text will become "
+"part of the Product layout</em>"
+msgstr ""
+"<strong>Post Text becomes Description</strong> - <em>Post text will become "
+"part of the Product layout</em>"
+
+#: inc/amazon-product-in-a-post-tools.php:697
+msgid "Use the following Template:"
+msgstr "Use the following Template:"
+
+#: inc/amazon-product-in-a-post-tools.php:698
+#: inc/amazon-product-in-a-post-tools.php:1505
+msgid "Use Add to Cart URL?"
+msgstr "Use Add to Cart URL?"
+
+#: inc/amazon-product-in-a-post-tools.php:698
+msgid ""
+"Uses Add to Cart URL instead of product page link. helps with 90 day "
+"conversion cookie."
+msgstr ""
+"Uses Add to Cart URL instead of product page link. helps with 90 day "
+"conversion cookie."
+
+#: inc/amazon-product-in-a-post-tools.php:699
+#: inc/amazon-product-in-a-post-tools.php:1510
+msgid "Show Amazon Description?"
+msgstr "Show Amazon Description?"
+
+#: inc/amazon-product-in-a-post-tools.php:699
+#: inc/amazon-product-in-a-post-tools.php:1510
+msgid "if available. This will be IN ADDITION TO your own content."
+msgstr "if available. This will be IN ADDITION TO your own content."
+
+#: inc/amazon-product-in-a-post-tools.php:700
+#: inc/amazon-product-in-a-post-tools.php:1506
+msgid "Show Image Gallery?"
+msgstr "Show Image Gallery?"
+
+#: inc/amazon-product-in-a-post-tools.php:700
+#: inc/amazon-product-in-a-post-tools.php:1506
+msgid ""
+"if available (Consists of Amazon Approved images only). Not all products "
+"have an Amazon Image Gallery."
+msgstr ""
+"if available (Consists of Amazon Approved images only). Not all products "
+"have an Amazon Image Gallery."
+
+#: inc/amazon-product-in-a-post-tools.php:701
+#: inc/amazon-product-in-a-post-tools.php:1507
+msgid "Show Amazon Features?"
+msgstr "Show Amazon Features?"
+
+#: inc/amazon-product-in-a-post-tools.php:701
+#: inc/amazon-product-in-a-post-tools.php:702
+#: inc/amazon-product-in-a-post-tools.php:703
+#: inc/amazon-product-in-a-post-tools.php:1507
+#: inc/amazon-product-in-a-post-tools.php:1508
+#: inc/amazon-product-in-a-post-tools.php:1509
+msgid "if available. Not all items have this feature."
+msgstr "if available. Not all items have this feature."
+
+#: inc/amazon-product-in-a-post-tools.php:702
+#: inc/amazon-product-in-a-post-tools.php:1508
+msgid "Show Amazon Used Price?"
+msgstr "Show Amazon Used Price?"
+
+#: inc/amazon-product-in-a-post-tools.php:703
+#: inc/amazon-product-in-a-post-tools.php:1509
+msgid "Show Amazon List Price?"
+msgstr "Show Amazon List Price?"
+
+#: inc/amazon-product-in-a-post-tools.php:770
+msgctxt "Main Menu Title"
+msgid "Amazon Product"
+msgstr "Amazon Product"
+
+#: inc/amazon-product-in-a-post-tools.php:771
+msgctxt "Page Title"
+msgid "Getting Started"
+msgstr "Getting Started"
+
+#: inc/amazon-product-in-a-post-tools.php:771
+msgctxt "Menu Title"
+msgid "Getting Started"
+msgstr "Getting Started"
+
+#: inc/amazon-product-in-a-post-tools.php:772
+msgctxt "Page Title"
+msgid "New Amazon Post"
+msgstr "New Amazon Post"
+
+#: inc/amazon-product-in-a-post-tools.php:772
+msgctxt "Menu Title"
+msgid "New Amazon Post"
+msgstr "New Amazon Post"
+
+#: inc/amazon-product-in-a-post-tools.php:773
+msgctxt "Page Title"
+msgid "Amazon Product in a Post Options"
+msgstr "Amazon Product in a Post Options"
+
+#: inc/amazon-product-in-a-post-tools.php:773
+msgctxt "Menu Title"
+msgid "Plugin Settings"
+msgstr "Plugin Settings"
+
+#: inc/amazon-product-in-a-post-tools.php:775
+msgctxt "Page Title"
+msgid "Product Cache"
+msgstr "Product Cache"
+
+#: inc/amazon-product-in-a-post-tools.php:775
+msgctxt "Menu Title"
+msgid "Product Cache"
+msgstr "Product Cache"
+
+#: inc/amazon-product-in-a-post-tools.php:776
+msgctxt "Page Title"
+msgid "Shortcodes & Blocks Usage"
+msgstr "Shortcodes & Blocks Usage"
+
+#: inc/amazon-product-in-a-post-tools.php:776
+msgctxt "Menu Title"
+msgid "Shortcodes/Blocks"
+msgstr "Shortcodes/Blocks"
+
+#: inc/amazon-product-in-a-post-tools.php:777
+msgctxt "Page Title"
+msgid "FAQs/Help"
+msgstr "FAQs/Help"
+
+#: inc/amazon-product-in-a-post-tools.php:777
+msgctxt "Menu Title"
+msgid "FAQs/Help"
+msgstr "FAQs/Help"
+
+#: inc/amazon-product-in-a-post-tools.php:784
+#: inc/amazon-product-in-a-post-tools.php:859
+#: inc/amazon-product-in-a-post-tools.php:1253
+msgid "You do not have sufficient permissions to access this page."
+msgstr "You do not have sufficient permissions to access this page."
+
+#: inc/amazon-product-in-a-post-tools.php:787
+msgid "Amazon Product In A Post CACHE"
+msgstr "Amazon Product In A Post CACHE"
+
+#: inc/amazon-product-in-a-post-tools.php:790
+msgid ""
+"Product post(s) have been saved. To edit, use the standard Post Edit options."
+msgstr ""
+"Product post(s) have been saved. To edit, use the standard Post Edit options."
+
+#: inc/amazon-product-in-a-post-tools.php:792
+#: inc/amazon-product-in-a-post-tools.php:1456
+msgid ""
+"Product post has been saved. To edit, use the standard Post Edit options."
+msgstr ""
+"Product post has been saved. To edit, use the standard Post Edit options."
+
+#: inc/amazon-product-in-a-post-tools.php:806
+msgid ""
+" minutes and then deleted automatically. To refetch a product, delete the "
+"cache and it will be updated on the next product load."
+msgstr ""
+" minutes and then deleted automatically. To refetch a product, delete the "
+"cache and it will be updated on the next product load."
+
+#: inc/amazon-product-in-a-post-tools.php:807
+msgid ""
+"The displayed JSON cache data comes directly from the Amazon API requests."
+msgstr ""
+"The displayed JSON cache data comes directly from the Amazon API requests."
+
+#: inc/amazon-product-in-a-post-tools.php:808
+#: inc/amazon-product-in-a-post-tools.php:852
+msgid "Delete Cache For ALL Products"
+msgstr "Delete Cache For ALL Products"
+
+#: inc/amazon-product-in-a-post-tools.php:812
+msgctxt "Previous Page Character"
+msgid "&laquo;"
+msgstr "&laquo;"
+
+#: inc/amazon-product-in-a-post-tools.php:813
+msgctxt "Next Page Character"
+msgid "&raquo;"
+msgstr "&raquo;"
+
+#: inc/amazon-product-in-a-post-tools.php:819
+#: inc/amazon-product-in-a-post-tools.php:820
+msgid "Cache ID"
+msgstr "Cache ID"
+
+#: inc/amazon-product-in-a-post-tools.php:819
+#: inc/amazon-product-in-a-post-tools.php:820
+msgid "Unique Call UI"
+msgstr "Unique Call UI"
+
+#: inc/amazon-product-in-a-post-tools.php:819
+#: inc/amazon-product-in-a-post-tools.php:820
+msgid "Last Updated"
+msgstr "Last Updated"
+
+#: inc/amazon-product-in-a-post-tools.php:843
+msgid "delete cache"
+msgstr "delete cache"
+
+#: inc/amazon-product-in-a-post-tools.php:848
+msgid "no cached products at this time."
+msgstr "no cached products at this time."
+
+#: inc/amazon-product-in-a-post-tools.php:864
+msgid "Amazon Product In a Post Shortcode Usage"
+msgstr "Amazon Product In a Post Shortcode Usage"
+
+#: inc/amazon-product-in-a-post-tools.php:867
+#: inc/amazon-product-in-a-post-tools.php:881
+#: inc/amazon-product-in-a-post-tools.php:884
+msgid "Gutenberg Blocks"
+msgstr "Gutenberg Blocks"
+
+#: inc/amazon-product-in-a-post-tools.php:868
+#: inc/amazon-product-in-a-post-tools.php:903
+msgid "Shortcode Basics"
+msgstr "Shortcode Basics"
+
+#: inc/amazon-product-in-a-post-tools.php:869
+msgid "Product Shortcode"
+msgstr "Product Shortcode"
+
+#: inc/amazon-product-in-a-post-tools.php:870
+msgid "Elements Shortcode"
+msgstr "Elements Shortcode"
+
+#: inc/amazon-product-in-a-post-tools.php:871
+msgid "Search Shortcode"
+msgstr "Search Shortcode"
+
+#: inc/amazon-product-in-a-post-tools.php:882
+msgid ""
+"WordPress 5.0 introduced the new Gutenberg Editor. With the new editor, "
+"comes the addition of a new way to display content in the editor. This new "
+"mothod uses what is called \"Blocks\" to allow the user to visually see how "
+"the content will be rendered and how it will layout on the page."
+msgstr ""
+"WordPress 5.0 introduced the new Gutenberg Editor. With the new editor, "
+"comes the addition of a new way to display content in the editor. This new "
+"mothod uses what is called \"Blocks\" to allow the user to visually see how "
+"the content will be rendered and how it will layout on the page."
+
+#: inc/amazon-product-in-a-post-tools.php:883
+msgid ""
+"This plugin has several pre-defined blocks available for use in the "
+"Gutenberg Editor. If you decide to not use Gutenberg, and want to use the "
+"Classic Editor, you can still use shortcodes to render your products. See "
+"the Shortcode Basic Tab for more information on Shortcodes."
+msgstr ""
+"This plugin has several pre-defined blocks available for use in the "
+"Gutenberg Editor. If you decide to not use Gutenberg, and want to use the "
+"Classic Editor, you can still use shortcodes to render your products. See "
+"the Shortcode Basic Tab for more information on Shortcodes."
+
+#: inc/amazon-product-in-a-post-tools.php:885
+msgid ""
+"A block is just a template of sorts, that allows you to easily add content "
+"to the editor. This plugin has the following blocks available:"
+msgstr ""
+"A block is just a template of sorts, that allows you to easily add content "
+"to the editor. This plugin has the following blocks available:"
+
+#: inc/amazon-product-in-a-post-tools.php:887
+msgid ""
+"This is the main block you would use if you want to add a pre-defined "
+"looking product or products to your page/post. This will output an entirely "
+"formatted Amazon product or products. You have the ability to choose some "
+"options and settings to customize the layout a little, but the main layout "
+"is set up for most sites to use without much of a hassle."
+msgstr ""
+"This is the main block you would use if you want to add a pre-defined "
+"looking product or products to your page/post. This will output an entirely "
+"formatted Amazon product or products. You have the ability to choose some "
+"options and settings to customize the layout a little, but the main layout "
+"is set up for most sites to use without much of a hassle."
+
+#: inc/amazon-product-in-a-post-tools.php:888
+msgid ""
+"This block will show Amazon products in a grid (column and row) layout. This "
+"option requires a little more input from the user, but you can create a "
+"pretty nice layout of products. This block has less elements available than "
+"the Amazon Product Block and is great for streamlined product layouts."
+msgstr ""
+"This block will show Amazon products in a grid (column and row) layout. This "
+"option requires a little more input from the user, but you can create a "
+"pretty nice layout of products. This block has less elements available than "
+"the Amazon Product Block and is great for streamlined product layouts."
+
+#: inc/amazon-product-in-a-post-tools.php:889
+msgid ""
+"This block is designed to add single Amazon elements to a page/post. This "
+"works great for nesting inside of Column blocks or other blocks where you "
+"can nest blocks and content together. You can also use it to simply add a "
+"buy button or image to the page (or similar elements)."
+msgstr ""
+"This block is designed to add single Amazon elements to a page/post. This "
+"works great for nesting inside of Column blocks or other blocks where you "
+"can nest blocks and content together. You can also use it to simply add a "
+"buy button or image to the page (or similar elements)."
+
+#: inc/amazon-product-in-a-post-tools.php:890
+msgid ""
+"This block allows you to set keywords and display the search results as "
+"products. This block is more advanced than the others, requires more user "
+"input and requires some knowledge of Amazon's Search parameters - but can "
+"make adding multiple related products to the page a lot easier than manually "
+"adding them."
+msgstr ""
+"This block allows you to set keywords and display the search results as "
+"products. This block is more advanced than the others, requires more user "
+"input and requires some knowledge of Amazon's Search parameters - but can "
+"make adding multiple related products to the page a lot easier than manually "
+"adding them."
+
+#: inc/amazon-product-in-a-post-tools.php:896
+msgid "Using Amazon Product In A Post Blocks"
+msgstr "Using Amazon Product In A Post Blocks"
+
+#: inc/amazon-product-in-a-post-tools.php:897
+msgid ""
+"To use a block, you simply add it to the editor from the blocks list. From "
+"there you can adjust the settings to get your product they way you need it. "
+"See the videos below, to learn more about each block."
+msgstr ""
+"To use a block, you simply add it to the editor from the blocks list. From "
+"there you can adjust the settings to get your product they way you need it. "
+"See the videos below, to learn more about each block."
+
+#: inc/amazon-product-in-a-post-tools.php:904
+msgid ""
+"WordPress shortcodes were introduced in WordPress version 2.5. A shortcode "
+"is basically a placeholder for content that you want to put in a specific "
+"spot in a page or post. The content is usually generated when the page/post "
+"is loaded on the front end by the viewer. Shortcodes make it very easy to "
+"add all sorts of advanced content without the need to know any programming "
+"and without needing to modify any theme or template code."
+msgstr ""
+"WordPress shortcodes were introduced in WordPress version 2.5. A shortcode "
+"is basically a placeholder for content that you want to put in a specific "
+"spot in a page or post. The content is usually generated when the page/post "
+"is loaded on the front end by the viewer. Shortcodes make it very easy to "
+"add all sorts of advanced content without the need to know any programming "
+"and without needing to modify any theme or template code."
+
+#: inc/amazon-product-in-a-post-tools.php:905
+msgid "Anatomy of a Shortcode"
+msgstr "Anatomy of a Shortcode"
+
+#: inc/amazon-product-in-a-post-tools.php:906
+msgid ""
+"A Shortcode is comprised of a few simple elements. The main thing you will "
+"notice is that a shortcode is placed in square brackets"
+msgstr ""
+"A Shortcode is comprised of a few simple elements. The main thing you will "
+"notice is that a shortcode is placed in square brackets"
+
+#: inc/amazon-product-in-a-post-tools.php:906
+msgid ""
+"Inside the brackets you add the <strong>shortcode name</strong> and any "
+"<strong>attributes</strong> and values needed to produce the desired effect. "
+"The outcome depends on how the shortcode was programmed and the number of "
+"attributes can be zero (none) up to an unlimited number - again, depending "
+"on how it was programmed."
+msgstr ""
+"Inside the brackets you add the <strong>shortcode name</strong> and any "
+"<strong>attributes</strong> and values needed to produce the desired effect. "
+"The outcome depends on how the shortcode was programmed and the number of "
+"attributes can be zero (none) up to an unlimited number - again, depending "
+"on how it was programmed."
+
+#: inc/amazon-product-in-a-post-tools.php:907
+msgid ""
+"In its simplest form, a shortcode is just a name or word inside the brackets "
+"and nothing else, like so:"
+msgstr ""
+"In its simplest form, a shortcode is just a name or word inside the brackets "
+"and nothing else, like so:"
+
+#: inc/amazon-product-in-a-post-tools.php:909
+msgid ""
+"A shortcode can also contain a closing \"tag\" is you want to include text "
+"with the shortcode, like:"
+msgstr ""
+"A shortcode can also contain a closing \"tag\" is you want to include text "
+"with the shortcode, like:"
+
+#: inc/amazon-product-in-a-post-tools.php:910
+msgid "Put your content here"
+msgstr "Put your content here"
+
+#: inc/amazon-product-in-a-post-tools.php:911
+msgid ""
+"Not all shortcodes use closing tags and not all of them allow content text, "
+"so check with the documentation when you use one for a specific plugin or "
+"theme."
+msgstr ""
+"Not all shortcodes use closing tags and not all of them allow content text, "
+"so check with the documentation when you use one for a specific plugin or "
+"theme."
+
+#: inc/amazon-product-in-a-post-tools.php:913
+msgid "Examples:"
+msgstr "Examples:"
+
+#: inc/amazon-product-in-a-post-tools.php:913
+msgid "Your Content Here"
+msgstr "Your Content Here"
+
+#: inc/amazon-product-in-a-post-tools.php:913
+msgid "or"
+msgstr "or"
+
+#: inc/amazon-product-in-a-post-tools.php:914
+msgid ""
+"Once you know what attributes you can use and the acceptable values, you can "
+"add them to do whatever you want - again, depending on what they are for and "
+"how they are programmed."
+msgstr ""
+"Once you know what attributes you can use and the acceptable values, you can "
+"add them to do whatever you want - again, depending on what they are for and "
+"how they are programmed."
+
+#: inc/amazon-product-in-a-post-tools.php:915
+msgid ""
+"The Amazon Product In a Post Plugin comes with several shortcodes for you to "
+"use. They each have their own set of allowed Attributes/Parameters."
+msgstr ""
+"The Amazon Product In a Post Plugin comes with several shortcodes for you to "
+"use. They each have their own set of allowed Attributes/Parameters."
+
+#: inc/amazon-product-in-a-post-tools.php:915
+msgid "Click the name to see how to use each one:"
+msgstr "Click the name to see how to use each one:"
+
+#: inc/amazon-product-in-a-post-tools.php:917
+msgid "The main Shortcode. You can also use"
+msgstr "The main Shortcode. You can also use"
+
+#: inc/amazon-product-in-a-post-tools.php:917
+msgid ""
+"all lowercase. This will output an entirely formatted Amazon product (the "
+"same as if you do not use a shortcode for your products)."
+msgstr ""
+"all lowercase. This will output an entirely formatted Amazon product (the "
+"same as if you do not use a shortcode for your products)."
+
+#: inc/amazon-product-in-a-post-tools.php:918
+msgid ""
+"A Shortcode specifically designed to make adding individual elements of an "
+"Amazon product. Can also use the singular"
+msgstr ""
+"A Shortcode specifically designed to make adding individual elements of an "
+"Amazon product. Can also use the singular"
+
+#: inc/amazon-product-in-a-post-tools.php:919
+msgid "A Shortcode for displaying Amazon search results."
+msgstr "A Shortcode for displaying Amazon search results."
+
+#: inc/amazon-product-in-a-post-tools.php:929
+msgid ""
+"Usage in the most basic form is simply the Shortcode and the ASIN written as "
+"follows (where the XXXXXXXXX is the Amazon ASIN):"
+msgstr ""
+"Usage in the most basic form is simply the Shortcode and the ASIN written as "
+"follows (where the XXXXXXXXX is the Amazon ASIN):"
+
+#: inc/amazon-product-in-a-post-tools.php:931
+msgid ""
+"Please note that the following alias shortcodes where added for backward "
+"compatibility: "
+msgstr ""
+"Please note that the following alias shortcodes where added for backward "
+"compatibility: "
+
+#: inc/amazon-product-in-a-post-tools.php:932
+msgid ""
+"There are additional parameters that can be added if you need them are "
+"listed below with a description of each:"
+msgstr ""
+"There are additional parameters that can be added if you need them are "
+"listed below with a description of each:"
+
+#: inc/amazon-product-in-a-post-tools.php:934
+msgid ""
+"this is the ASIN or ASINs comma separated. <em>This is the only required "
+"parameter.</em>"
+msgstr ""
+"this is the ASIN or ASINs comma separated. <em>This is the only required "
+"parameter.</em>"
+
+#: inc/amazon-product-in-a-post-tools.php:935
+msgid ""
+"using 1 shows Amazon description (if available) and 0 hides it &mdash; "
+"default is 0."
+msgstr ""
+"using 1 shows Amazon description (if available) and 0 hides it &mdash; "
+"default is 0."
+
+#: inc/amazon-product-in-a-post-tools.php:936
+msgid ""
+"using 1 shows Amazon Features (if available) and 0 hides it  &mdash; default "
+"is 0."
+msgstr ""
+"using 1 shows Amazon Features (if available) and 0 hides it  &mdash; default "
+"is 0."
+
+#: inc/amazon-product-in-a-post-tools.php:937
+msgid "using 1 shows the List Price and 0 hides it &mdash; default is 1."
+msgstr "using 1 shows the List Price and 0 hides it &mdash; default is 1."
+
+#: inc/amazon-product-in-a-post-tools.php:938
+msgid "using 1 shows the Used Price and 0 hides it &mdash; default is 1."
+msgstr "using 1 shows the Used Price and 0 hides it &mdash; default is 1."
+
+#: inc/amazon-product-in-a-post-tools.php:939
+msgid "using 1 shows the New Price and 0 hides it &mdash; default is 1."
+msgstr "using 1 shows the New Price and 0 hides it &mdash; default is 1."
+
+#: inc/amazon-product-in-a-post-tools.php:940
+msgid ""
+"used mostly for Gutenberg Block Layout. Default is 'default'. Others include "
+msgstr ""
+"used mostly for Gutenberg Block Layout. Default is 'default'. Others include "
+
+#: inc/amazon-product-in-a-post-tools.php:941
+msgid "using 1 shows extra photos/gallery &mdash; default is 0."
+msgstr "using 1 shows extra photos/gallery &mdash; default is 0."
+
+#: inc/amazon-product-in-a-post-tools.php:942
+msgid ""
+"Replace product with your own title. If using multiple ASINs, you can "
+"separate the titles for each, using '::', for example: "
+msgstr ""
+"Replace product with your own title. If using multiple ASINs, you can "
+"separate the titles for each, using '::', for example: "
+
+#: inc/amazon-product-in-a-post-tools.php:943
+#: inc/amazon-product-in-a-post-tools.php:1002
+#: inc/amazon-product-in-a-post-tools.php:1171
+msgid ""
+"using a number greater than 0 will trim the title to that number of "
+"characters. Anything above 150 will show full title. default is 0 (show full "
+"title)."
+msgstr ""
+"using a number greater than 0 will trim the title to that number of "
+"characters. Anything above 150 will show full title. default is 0 (show full "
+"title)."
+
+#: inc/amazon-product-in-a-post-tools.php:944
+msgid ""
+"using 1 hides the title and 0 shows the title &mdash; default is 0 (title "
+"will be shown)."
+msgstr ""
+"using 1 hides the title and 0 shows the title &mdash; default is 0 (title "
+"will be shown)."
+
+#: inc/amazon-product-in-a-post-tools.php:945
+msgid ""
+"using 1 hides the Large Product Image and 0 shows it &mdash; default is 0 "
+"(large image will be shown)."
+msgstr ""
+"using 1 hides the Large Product Image and 0 shows it &mdash; default is 0 "
+"(large image will be shown)."
+
+#: inc/amazon-product-in-a-post-tools.php:946
+msgid ""
+"using 1 hides the \"See larger Image\" Link and 0 shows it &mdash; default "
+"is 0 (link will be shown)."
+msgstr ""
+"using 1 hides the \"See larger Image\" Link and 0 shows it &mdash; default "
+"is 0 (link will be shown)."
+
+#: inc/amazon-product-in-a-post-tools.php:947
+msgid ""
+"using 1 hides the Release Date for Games or Pre-orders and 0 shows it (only "
+"when present) &mdash; default is 0 (release date will be shown when "
+"available)."
+msgstr ""
+"using 1 hides the Release Date for Games or Pre-orders and 0 shows it (only "
+"when present) &mdash; default is 0 (release date will be shown when "
+"available)."
+
+#: inc/amazon-product-in-a-post-tools.php:948
+#: inc/amazon-product-in-a-post-tools.php:1003
+#: inc/amazon-product-in-a-post-tools.php:1172
+msgid ""
+"using 1 shows the product on a Single page/post only (not on archive or "
+"blogroll) and 0 shows it on single or list pages/posts &mdash; default is 0 "
+"(product will be shown on single or list pages)."
+msgstr ""
+"using 1 shows the product on a Single page/post only (not on archive or "
+"blogroll) and 0 shows it on single or list pages/posts &mdash; default is 0 "
+"(product will be shown on single or list pages)."
+
+#: inc/amazon-product-in-a-post-tools.php:949
+#: inc/amazon-product-in-a-post-tools.php:995
+#: inc/amazon-product-in-a-post-tools.php:1173
+msgid ""
+"this is the number of images to show for the Gallery. Only used when the "
+msgstr ""
+"this is the number of images to show for the Gallery. Only used when the "
+
+#: inc/amazon-product-in-a-post-tools.php:949
+#: inc/amazon-product-in-a-post-tools.php:995
+#: inc/amazon-product-in-a-post-tools.php:1173
+msgid ""
+" parameter flag is set to 1 &mdash; default is -1 (show all). Other options "
+"are 1 to 10 - anything over 10 shows all."
+msgstr ""
+" parameter flag is set to 1 &mdash; default is -1 (show all). Other options "
+"are 1 to 10 - anything over 10 shows all."
+
+#: inc/amazon-product-in-a-post-tools.php:950
+#: inc/amazon-product-in-a-post-tools.php:1006
+#: inc/amazon-product-in-a-post-tools.php:1174
+msgid ""
+"this is a special parameter to tell if this is a Block element or a "
+"shortcode element. <i>Used internally only.</i> &mdash; default is 0 (0 for "
+"shortcode or 1 for block)."
+msgstr ""
+"this is a special parameter to tell if this is a Block element or a "
+"shortcode element. <i>Used internally only.</i> &mdash; default is 0 (0 for "
+"shortcode or 1 for block)."
+
+#: inc/amazon-product-in-a-post-tools.php:951
+#: inc/amazon-product-in-a-post-tools.php:991
+#: inc/amazon-product-in-a-post-tools.php:1170
+msgid ""
+"using 'true' will use the Cart URL link and 'false' will use the product "
+"page link &mdash; default is 'false' (product page link)."
+msgstr ""
+"using 'true' will use the Cart URL link and 'false' will use the product "
+"page link &mdash; default is 'false' (product page link)."
+
+#: inc/amazon-product-in-a-post-tools.php:952
+#: inc/amazon-product-in-a-post-tools.php:992
+#: inc/amazon-product-in-a-post-tools.php:1169
+msgid ""
+"this is for the new HTML Buttons. can be any valid registered HTML Button "
+"&mdash; default is blank. Available core pluign buttons can be seen"
+msgstr ""
+"this is for the new HTML Buttons. can be any valid registered HTML Button "
+"&mdash; default is blank. Available core pluign buttons can be seen"
+
+#: inc/amazon-product-in-a-post-tools.php:953
+msgid "not used at this time."
+msgstr "not used at this time."
+
+#: inc/amazon-product-in-a-post-tools.php:954
+#: inc/amazon-product-in-a-post-tools.php:1001
+#: inc/amazon-product-in-a-post-tools.php:1175
+msgid ""
+"this is for the Gutenberg additional className attribute. You could also use "
+"it to pass an additional class name to the product wrapper. Comma or space "
+"seperate multiple class names."
+msgstr ""
+"this is for the Gutenberg additional className attribute. You could also use "
+"it to pass an additional class name to the product wrapper. Comma or space "
+"seperate multiple class names."
+
+#: inc/amazon-product-in-a-post-tools.php:955
+#: inc/amazon-product-in-a-post-tools.php:1181
+msgid ""
+"this is the Amazon locale you want to get the product from, i.e., com, co.uk,"
+" fr, etc. default is your plugin setting."
+msgstr ""
+"this is the Amazon locale you want to get the product from, i.e., com, co.uk,"
+" fr, etc. default is your plugin setting."
+
+#: inc/amazon-product-in-a-post-tools.php:956
+#: inc/amazon-product-in-a-post-tools.php:1182
+msgid ""
+"allows you to add a different parent ID if different for other locale &mdash;"
+" default is ID in settings."
+msgstr ""
+"allows you to add a different parent ID if different for other locale &mdash;"
+" default is ID in settings."
+
+#: inc/amazon-product-in-a-post-tools.php:957
+#: inc/amazon-product-in-a-post-tools.php:1183
+msgid ""
+"allows you to add different private key for locale if different &mdash; "
+"default is private key in settings."
+msgstr ""
+"allows you to add different private key for locale if different &mdash; "
+"default is private key in settings."
+
+#: inc/amazon-product-in-a-post-tools.php:958
+#: inc/amazon-product-in-a-post-tools.php:1184
+msgid ""
+"allows you to add a different private key for locale if different &mdash; "
+"default is public key in settings."
+msgstr ""
+"allows you to add a different private key for locale if different &mdash; "
+"default is public key in settings."
+
+#: inc/amazon-product-in-a-post-tools.php:959
+#: inc/amazon-product-in-a-post-tools.php:960
+#: inc/amazon-product-in-a-post-tools.php:961
+#: inc/amazon-product-in-a-post-tools.php:962
+#: inc/amazon-product-in-a-post-tools.php:963
+msgid "add for backward compatibily only - see this parameter for usage: "
+msgstr "add for backward compatibily only - see this parameter for usage: "
+
+#: inc/amazon-product-in-a-post-tools.php:965
+#: inc/amazon-product-in-a-post-tools.php:1191
+msgid "Examples of it&rsquo;s usage:"
+msgstr "Examples of it&rsquo;s usage:"
+
+#: inc/amazon-product-in-a-post-tools.php:967
+msgid ""
+"If you want to add a .com item and you have the same partner id, public key, "
+"private key and want the features showing:<br>"
+msgstr ""
+"If you want to add a .com item and you have the same partner id, public key, "
+"private key and want the features showing:<br>"
+
+#: inc/amazon-product-in-a-post-tools.php:969
+msgid ""
+"Show the Description, Features, New Price, Gallery with 4 images, and a Blue "
+"Buy from Amazon Button:<br>"
+msgstr ""
+"Show the Description, Features, New Price, Gallery with 4 images, and a Blue "
+"Buy from Amazon Button:<br>"
+
+#: inc/amazon-product-in-a-post-tools.php:971
+msgid ""
+"If you want to add a .com item and you have a different partner id, public "
+"key, private key and want the description showing but features not showing:"
+"<br>"
+msgstr ""
+"If you want to add a .com item and you have a different partner id, public "
+"key, private key and want the description showing but features not showing:"
+"<br>"
+
+#: inc/amazon-product-in-a-post-tools.php:973
+msgid ""
+"If you just want to use your same locale but want 2 items with no list price "
+"and features showing:<br>"
+msgstr ""
+"If you just want to use your same locale but want 2 items with no list price "
+"and features showing:<br>"
+
+#: inc/amazon-product-in-a-post-tools.php:975
+msgid "If you just want 2 products with regular settings:<br>"
+msgstr "If you just want 2 products with regular settings:<br>"
+
+#: inc/amazon-product-in-a-post-tools.php:977
+msgid "If you want to add text to a product:<br>"
+msgstr "If you want to add text to a product:<br>"
+
+#: inc/amazon-product-in-a-post-tools.php:986
+msgid ""
+"shortcode implementation for elements only &mdash; for when you may only "
+"want specific element(s) like the title, price and image or image and "
+"description, or the title and the buy now button, etc."
+msgstr ""
+"shortcode implementation for elements only &mdash; for when you may only "
+"want specific element(s) like the title, price and image or image and "
+"description, or the title and the buy now button, etc."
+
+#: inc/amazon-product-in-a-post-tools.php:988
+msgid "Required"
+msgstr "Required"
+
+#: inc/amazon-product-in-a-post-tools.php:988
+msgid "the Amazon ASIN (up to 10 comma sep)."
+msgstr "the Amazon ASIN (up to 10 comma sep)."
+
+#: inc/amazon-product-in-a-post-tools.php:989
+#: inc/amazon-product-in-a-post-tools.php:1157
+msgid ""
+"the product fields to show for this product, comma separated. Default fields "
+"are:"
+msgstr ""
+"the product fields to show for this product, comma separated. Default fields "
+"are:"
+
+#: inc/amazon-product-in-a-post-tools.php:990
+msgid ""
+"Labels that correspond to the fields (if you want custom labels). They "
+"should match the fields and be comma separated and :: separated for the "
+"field name and value i.e., field name::label text,field-two::value 2, etc. "
+"(optional)"
+msgstr ""
+"Labels that correspond to the fields (if you want custom labels). They "
+"should match the fields and be comma separated and :: separated for the "
+"field name and value i.e., field name::label text,field-two::value 2, etc. "
+"(optional)"
+
+#: inc/amazon-product-in-a-post-tools.php:993
+msgid ""
+"URL for a button image, if you want to use a different image than the "
+"default one. ASIN Specific - separate the list of URLs with a comma to "
+"correspond with the ASIN. i.e., if you had 3 ASINs and wanted the first and "
+"third to have custom buttons, but the second to have the default button, use "
+"<code>button_url=\"http://first.com/image1.jpg,,http://first.com/image1."
+"jpg\"</code> (optional)"
+msgstr ""
+"URL for a button image, if you want to use a different image than the "
+"default one. ASIN Specific - separate the list of URLs with a comma to "
+"correspond with the ASIN. i.e., if you had 3 ASINs and wanted the first and "
+"third to have custom buttons, but the second to have the default button, use "
+"<code>button_url=\"http://first.com/image1.jpg,,http://first.com/image1."
+"jpg\"</code> (optional)"
+
+#: inc/amazon-product-in-a-post-tools.php:994
+msgid ""
+"using 'true' will make the button use the Cart URL. setting use_carturl to "
+"true will make this true as well, unless you specifically set to false."
+msgstr ""
+"using 'true' will make the button use the Cart URL. setting use_carturl to "
+"true will make this true as well, unless you specifically set to false."
+
+#: inc/amazon-product-in-a-post-tools.php:996
+#: inc/amazon-product-in-a-post-tools.php:1167
+msgid "the in stock message can be overridden here &mdash; default is "
+msgstr "the in stock message can be overridden here &mdash; default is "
+
+#: inc/amazon-product-in-a-post-tools.php:997
+#: inc/amazon-product-in-a-post-tools.php:1168
+msgid "the out of stock message can be overridden here &mdash; default is "
+msgstr "the out of stock message can be overridden here &mdash; default is "
+
+#: inc/amazon-product-in-a-post-tools.php:998
+#: inc/amazon-product-in-a-post-tools.php:1166
+msgid ""
+"used mostly for Gutenberg Block Layout. Default is 'default'. Other option: "
+msgstr ""
+"used mostly for Gutenberg Block Layout. Default is 'default'. Other option: "
+
+#: inc/amazon-product-in-a-post-tools.php:999
+#: inc/amazon-product-in-a-post-tools.php:1178
+msgid "the HTML container wrapper element &mdash; default is "
+msgstr "the HTML container wrapper element &mdash; default is "
+
+#: inc/amazon-product-in-a-post-tools.php:999
+#: inc/amazon-product-in-a-post-tools.php:1178
+msgid "Do not use &lt; or &gt;."
+msgstr "Do not use &lt; or &gt;."
+
+#: inc/amazon-product-in-a-post-tools.php:1000
+#: inc/amazon-product-in-a-post-tools.php:1179
+msgid "the class name for the outer wapper &mdash; default is "
+msgstr "the class name for the outer wapper &mdash; default is "
+
+#: inc/amazon-product-in-a-post-tools.php:1004
+#: inc/amazon-product-in-a-post-tools.php:1176
+msgid ""
+"the target name when open in a new window setting is active &mdash; default "
+"is "
+msgstr ""
+"the target name when open in a new window setting is active &mdash; default "
+"is "
+
+#: inc/amazon-product-in-a-post-tools.php:1005
+msgid ""
+"using 1 will open the product links in a new window &mdash; default is 0 "
+"(product open in the same window)."
+msgstr ""
+"using 1 will open the product links in a new window &mdash; default is 0 "
+"(product open in the same window)."
+
+#: inc/amazon-product-in-a-post-tools.php:1007
+msgid ""
+"the amazon locale, i.e., co.uk, es. This is handy of you need a product from "
+"a different locale than your default one. Applies to all ASINs in list. "
+"(optional)"
+msgstr ""
+"the amazon locale, i.e., co.uk, es. This is handy of you need a product from "
+"a different locale than your default one. Applies to all ASINs in list. "
+"(optional)"
+
+#: inc/amazon-product-in-a-post-tools.php:1008
+msgid ""
+"your amazon partner id. default is the one in the options. You can set a "
+"different one here if you have a different one for another locale or just "
+"want to split them up between multiple ids. Applies to all ASINs in list. "
+"(optional)"
+msgstr ""
+"your amazon partner id. default is the one in the options. You can set a "
+"different one here if you have a different one for another locale or just "
+"want to split them up between multiple ids. Applies to all ASINs in list. "
+"(optional)"
+
+#: inc/amazon-product-in-a-post-tools.php:1009
+msgid ""
+"amazon private key. Default is one set in options. You can set a different "
+"one if needed for another locale. Applies to all ASINs in list. (optional)"
+msgstr ""
+"amazon private key. Default is one set in options. You can set a different "
+"one if needed for another locale. Applies to all ASINs in list. (optional)"
+
+#: inc/amazon-product-in-a-post-tools.php:1010
+msgid ""
+"amazon public key. Default is one set in options. You can set a different "
+"one if needed for another locale. Applies to all ASINs in list. (optional)"
+msgstr ""
+"amazon public key. Default is one set in options. You can set a different "
+"one if needed for another locale. Applies to all ASINs in list. (optional)"
+
+#: inc/amazon-product-in-a-post-tools.php:1016
+msgid "Example of usage:"
+msgstr "Example of usage:"
+
+#: inc/amazon-product-in-a-post-tools.php:1020
+msgid "If you want that same product to have the description, you would use:"
+msgstr "If you want that same product to have the description, you would use:"
+
+#: inc/amazon-product-in-a-post-tools.php:1024
+msgid "The msg_instock and msg_outofstock are optional fields."
+msgstr "The msg_instock and msg_outofstock are optional fields."
+
+#: inc/amazon-product-in-a-post-tools.php:1025
+msgid ""
+"If you want to add some of your own text to a product, and makeit part of "
+"the post, you could do something like this:<br>"
+msgstr ""
+"If you want to add some of your own text to a product, and makeit part of "
+"the post, you could do something like this:<br>"
+
+#: inc/amazon-product-in-a-post-tools.php:1032
+msgid "Product Identification Number."
+msgstr "Product Identification Number."
+
+#: inc/amazon-product-in-a-post-tools.php:1033
+msgid "Product page URL on Amazon."
+msgstr "Product page URL on Amazon."
+
+#: inc/amazon-product-in-a-post-tools.php:1035
+msgid "Product Sale Price."
+msgstr "Product Sale Price."
+
+#: inc/amazon-product-in-a-post-tools.php:1036
+msgid "Product Small Image URL."
+msgstr "Product Small Image URL."
+
+#: inc/amazon-product-in-a-post-tools.php:1037
+msgid "Product Medium Image URL."
+msgstr "Product Medium Image URL."
+
+#: inc/amazon-product-in-a-post-tools.php:1038
+msgid "Product Large Image URL."
+msgstr "Product Large Image URL."
+
+#: inc/amazon-product-in-a-post-tools.php:1041
+msgid "Product Format. I.e., DVD, Blu-ray, etc."
+msgstr "Product Format. I.e., DVD, Blu-ray, etc."
+
+#: inc/amazon-product-in-a-post-tools.php:1042
+msgid "Product Part Number."
+msgstr "Product Part Number."
+
+#: inc/amazon-product-in-a-post-tools.php:1043
+msgid "Product Category. I.e., Books, Sproting Goods, etc."
+msgstr "Product Category. I.e., Books, Sproting Goods, etc."
+
+#: inc/amazon-product-in-a-post-tools.php:1044
+msgid "Product Category Name. I.e., CAMERA_DIGITAL"
+msgstr "Product Category Name. I.e., CAMERA_DIGITAL"
+
+#: inc/amazon-product-in-a-post-tools.php:1045
+msgid "Product ISBN number."
+msgstr "Product ISBN number."
+
+#: inc/amazon-product-in-a-post-tools.php:1048
+msgid "Product's Unique Stock Keeping Unit (SKU)."
+msgstr "Product's Unique Stock Keeping Unit (SKU)."
+
+#: inc/amazon-product-in-a-post-tools.php:1049
+msgid ""
+"Universal Product Code, which is a 12 digit number, 6 of which represents an "
+"item's manufacturer. These numbers are translated into a bar code that is "
+"printed on an item or its packaging."
+msgstr ""
+"Universal Product Code, which is a 12 digit number, 6 of which represents an "
+"item's manufacturer. These numbers are translated into a bar code that is "
+"printed on an item or its packaging."
+
+#: inc/amazon-product-in-a-post-tools.php:1050
+msgid "Product Customer Reviews (shown in an iframe only)."
+msgstr "Product Customer Reviews (shown in an iframe only)."
+
+#: inc/amazon-product-in-a-post-tools.php:1052
+msgid "Offer/Pricing Elements"
+msgstr "Offer/Pricing Elements"
+
+#: inc/amazon-product-in-a-post-tools.php:1053
+msgid "\t\t\tThese are generally returned for most products."
+msgstr "\t\t\tThese are generally returned for most products."
+
+#: inc/amazon-product-in-a-post-tools.php:1067
+msgid "Items Attributes"
+msgstr "Items Attributes"
+
+#: inc/amazon-product-in-a-post-tools.php:1068
+msgid ""
+"\t\t\tAvailable only to their select product groups and not available in all "
+"locales. Try it first to see if it returns a value. For example, the Actor "
+"field is not going to be returned if the product is a computer or some form "
+"of electronics, but would be returned if the product was a DVD or Blu-ray "
+"Movie."
+msgstr ""
+"\t\t\tAvailable only to their select product groups and not available in all "
+"locales. Try it first to see if it returns a value. For example, the Actor "
+"field is not going to be returned if the product is a computer or some form "
+"of electronics, but would be returned if the product was a DVD or Blu-ray "
+"Movie."
+
+#: inc/amazon-product-in-a-post-tools.php:1150
+msgid ""
+"Usage in the most basic form is the Shortcode and the keywords written as "
+"follows:"
+msgstr ""
+"Usage in the most basic form is the Shortcode and the keywords written as "
+"follows:"
+
+#: inc/amazon-product-in-a-post-tools.php:1152
+msgid ""
+"There are additional parameters that can be added if you need to refine your "
+"search. They are listed below with a description of each:"
+msgstr ""
+"There are additional parameters that can be added if you need to refine your "
+"search. They are listed below with a description of each:"
+
+#: inc/amazon-product-in-a-post-tools.php:1155
+msgid "this is keywords to use for the search &mdash; required."
+msgstr "this is keywords to use for the search &mdash; required."
+
+#: inc/amazon-product-in-a-post-tools.php:1156
+msgid ""
+"using 1 will turn the keyword search into a title only search (more narrow "
+"search) &mdash; default is 0."
+msgstr ""
+"using 1 will turn the keyword search into a title only search (more narrow "
+"search) &mdash; default is 0."
+
+#: inc/amazon-product-in-a-post-tools.php:1158
+msgid ""
+"the search index to use for the Amazon Search &mdash; default is 'All'. Some "
+"options are: "
+msgstr ""
+"the search index to use for the Amazon Search &mdash; default is 'All'. Some "
+"options are: "
+
+#: inc/amazon-product-in-a-post-tools.php:1159
+msgid "NOTES:"
+msgstr "NOTES:"
+
+#: inc/amazon-product-in-a-post-tools.php:1159
+msgid ""
+"When performing a title search, the search_index cannot be 'All' or "
+"'Blended'. "
+msgstr ""
+"When performing a title search, the search_index cannot be 'All' or "
+"'Blended'. "
+
+#: inc/amazon-product-in-a-post-tools.php:1160
+msgid ""
+"The condition of the products to display &mdash; default is 'New'. Available "
+"options: "
+msgstr ""
+"The condition of the products to display &mdash; default is 'New'. Available "
+"options: "
+
+#: inc/amazon-product-in-a-post-tools.php:1161
+msgid ""
+"the sorting column to use for returned products  &mdash; default is "
+"'titlerank'."
+msgstr ""
+"the sorting column to use for returned products  &mdash; default is "
+"'titlerank'."
+
+#: inc/amazon-product-in-a-post-tools.php:1162
+msgid ""
+"the number of products to display &mdash; default is 10 which is also the "
+"maximum."
+msgstr ""
+"the number of products to display &mdash; default is 10 which is also the "
+"maximum."
+
+#: inc/amazon-product-in-a-post-tools.php:1163
+msgid ""
+"the page of products in the search result to return &mdash; default is 1 "
+"(first page of results). Max page is 5 for 'All' or 'Blended' search index "
+"or 10 for everything else."
+msgstr ""
+"the page of products in the search result to return &mdash; default is 1 "
+"(first page of results). Max page is 5 for 'All' or 'Blended' search index "
+"or 10 for everything else."
+
+#: inc/amazon-product-in-a-post-tools.php:1164
+msgid ""
+"use this to refine your search. Cannot be used when `search_index` is 'All' "
+"or 'Blended' &mdash; default is none."
+msgstr ""
+"use this to refine your search. Cannot be used when `search_index` is 'All' "
+"or 'Blended' &mdash; default is none."
+
+#: inc/amazon-product-in-a-post-tools.php:1165
+msgid "alias for item_page."
+msgstr "alias for item_page."
+
+#: inc/amazon-product-in-a-post-tools.php:1177
+msgid ""
+"use this to set an image button. Add the full URL for the button &mdash; "
+"default is blank."
+msgstr ""
+"use this to set an image button. Add the full URL for the button &mdash; "
+"default is blank."
+
+#: inc/amazon-product-in-a-post-tools.php:1180
+msgid ""
+"the labels to use for selected fields. Use ':' to sepatate field and label "
+"values."
+msgstr ""
+"the labels to use for selected fields. Use ':' to sepatate field and label "
+"values."
+
+#: inc/amazon-product-in-a-post-tools.php:1193
+msgid "Title Search with red Buy From button:"
+msgstr "Title Search with red Buy From button:"
+
+#: inc/amazon-product-in-a-post-tools.php:1195
+msgid "Keyword Search with Grid Layout, blue Buy From button and price:"
+msgstr "Keyword Search with Grid Layout, blue Buy From button and price:"
+
+#: inc/amazon-product-in-a-post-tools.php:1267
+msgid "Amazon Product In A Post - GETTING STARTED"
+msgstr "Amazon Product In A Post - GETTING STARTED"
+
+#: inc/amazon-product-in-a-post-tools.php:1272
+msgid "Amazon Affiliate Account"
+msgstr "Amazon Affiliate Account"
+
+#: inc/amazon-product-in-a-post-tools.php:1273
+msgid "Amazon Product Advertising API Sign-up"
+msgstr "Amazon Product Advertising API Sign-up"
+
+#: inc/amazon-product-in-a-post-tools.php:1274
+#: inc/amazon-product-in-a-post-tools.php:1335
+msgid "Next Steps"
+msgstr "Next Steps"
+
+#: inc/amazon-product-in-a-post-tools.php:1275
+#: inc/amazon-product-in-a-post-tools.php:1358
+msgid "Need Help?"
+msgstr "Need Help?"
+
+#: inc/amazon-product-in-a-post-tools.php:1283
+msgid "Setting Up an Amazon Affiliate Account"
+msgstr "Setting Up an Amazon Affiliate Account"
+
+#: inc/amazon-product-in-a-post-tools.php:1284
+msgid ""
+"There are 2 steps to using this plug-in to make additional income as an "
+"Amazon Affiliate. The first is to sign up for an Amazon Affiliate Account. "
+"The second is to get a set of Product Advertising API keys so the plug-in "
+"can access the product API and return the correct products. Both of these "
+"steps are a little intense, but if you have about 15-20 minutes, you can set "
+"up everything you need to start making money."
+msgstr ""
+"There are 2 steps to using this plug-in to make additional income as an "
+"Amazon Affiliate. The first is to sign up for an Amazon Affiliate Account. "
+"The second is to get a set of Product Advertising API keys so the plug-in "
+"can access the product API and return the correct products. Both of these "
+"steps are a little intense, but if you have about 15-20 minutes, you can set "
+"up everything you need to start making money."
+
+#: inc/amazon-product-in-a-post-tools.php:1286
+msgid "Step 1 - Getting Your Amazon Affiliate/Partner ID"
+msgstr "Step 1 - Getting Your Amazon Affiliate/Partner ID"
+
+#: inc/amazon-product-in-a-post-tools.php:1287
+msgid ""
+"Sign up for your Amazon Affiliate/Partner account at one of the following "
+"URLs (choose the correct link based on your Amazon location):"
+msgstr ""
+"Sign up for your Amazon Affiliate/Partner account at one of the following "
+"URLs (choose the correct link based on your Amazon location):"
+
+#: inc/amazon-product-in-a-post-tools.php:1289
+msgid "Australia (com.au):"
+msgstr "Australia (com.au):"
+
+#: inc/amazon-product-in-a-post-tools.php:1290
+msgid "Brazil (com.br):"
+msgstr "Brazil (com.br):"
+
+#: inc/amazon-product-in-a-post-tools.php:1291
+msgid "Canada (ca):"
+msgstr "Canada (ca):"
+
+#: inc/amazon-product-in-a-post-tools.php:1292
+msgid "China (cn):"
+msgstr "China (cn):"
+
+#: inc/amazon-product-in-a-post-tools.php:1293
+msgid "France (fr):"
+msgstr "France (fr):"
+
+#: inc/amazon-product-in-a-post-tools.php:1294
+msgid "Germany (de):"
+msgstr "Germany (de):"
+
+#: inc/amazon-product-in-a-post-tools.php:1295
+msgid "India (in):"
+msgstr "India (in):"
+
+#: inc/amazon-product-in-a-post-tools.php:1296
+msgid "Italy (it):"
+msgstr "Italy (it):"
+
+#: inc/amazon-product-in-a-post-tools.php:1297
+msgid "Japan (co.jp):"
+msgstr "Japan (co.jp):"
+
+#: inc/amazon-product-in-a-post-tools.php:1298
+msgid "Spain (es):"
+msgstr "Spain (es):"
+
+#: inc/amazon-product-in-a-post-tools.php:1299
+msgid "United Kingdom (co.uk):"
+msgstr "United Kingdom (co.uk):"
+
+#: inc/amazon-product-in-a-post-tools.php:1300
+msgid "United States (com):"
+msgstr "United States (com):"
+
+#: inc/amazon-product-in-a-post-tools.php:1302
+msgid ""
+"Amazon requires that you have a different affiliate ID for each country (aka,"
+" locale)."
+msgstr ""
+"Amazon requires that you have a different affiliate ID for each country (aka,"
+" locale)."
+
+#: inc/amazon-product-in-a-post-tools.php:1303
+msgid ""
+"Since the Affiliate signup has not changed much over the years, and it is "
+"not too difficult, I will not go into it in any more detail. Follow the "
+"steps until you are issued your affiliate partner ID. Paste that into the "
+"plug-in options page."
+msgstr ""
+"Since the Affiliate signup has not changed much over the years, and it is "
+"not too difficult, I will not go into it in any more detail. Follow the "
+"steps until you are issued your affiliate partner ID. Paste that into the "
+"plug-in options page."
+
+#: inc/amazon-product-in-a-post-tools.php:1310
+msgid "Step 2 - Signing Up for the Amazon Product Advertising API"
+msgstr "Step 2 - Signing Up for the Amazon Product Advertising API"
+
+#: inc/amazon-product-in-a-post-tools.php:1311
+msgid ""
+"This next step can be a little frustrating and one of the most time "
+"consuming. Not for the amount of actual time it takes to sign up, but for "
+"the time you may have to wait to get your API approval."
+msgstr ""
+"This next step can be a little frustrating and one of the most time "
+"consuming. Not for the amount of actual time it takes to sign up, but for "
+"the time you may have to wait to get your API approval."
+
+#: inc/amazon-product-in-a-post-tools.php:1312
+msgid ""
+"After you have created your Amazon Affiliate Account, sign in. Then go to "
+"\"TOOLS\" and \"Product Advertising API\". If your account was approved "
+"previously (if you already had an account), then you can move right on to "
+"signing up for the Product Advertising API."
+msgstr ""
+"After you have created your Amazon Affiliate Account, sign in. Then go to "
+"\"TOOLS\" and \"Product Advertising API\". If your account was approved "
+"previously (if you already had an account), then you can move right on to "
+"signing up for the Product Advertising API."
+
+#: inc/amazon-product-in-a-post-tools.php:1313
+msgid ""
+"If your account is not yet approved, there are some things you need to be "
+"aware of:"
+msgstr ""
+"If your account is not yet approved, there are some things you need to be "
+"aware of:"
+
+#: inc/amazon-product-in-a-post-tools.php:1317
+msgid "The approval process takes time!"
+msgstr "The approval process takes time!"
+
+#: inc/amazon-product-in-a-post-tools.php:1318
+msgid ""
+"Using Amazon's other link building methods (located on the affiliate site), "
+"you will need to create a few links to start generating traffic and get a "
+"few sales. You can start setting up your site (if you have not done so "
+"already) and add the links into products or sidebars."
+msgstr ""
+"Using Amazon's other link building methods (located on the affiliate site), "
+"you will need to create a few links to start generating traffic and get a "
+"few sales. You can start setting up your site (if you have not done so "
+"already) and add the links into products or sidebars."
+
+#: inc/amazon-product-in-a-post-tools.php:1319
+msgid ""
+"After you generate a few sales, you will then be able to use the plugin to "
+"create actual product layouts on your site."
+msgstr ""
+"After you generate a few sales, you will then be able to use the plugin to "
+"create actual product layouts on your site."
+
+#: inc/amazon-product-in-a-post-tools.php:1320
+msgid ""
+"See the \"Next Steps\" tab for some helpful tips on getting approved by "
+"Amazon."
+msgstr ""
+"See the \"Next Steps\" tab for some helpful tips on getting approved by "
+"Amazon."
+
+#: inc/amazon-product-in-a-post-tools.php:1322
+msgid ""
+"IMPORTANT! Once you get access to the Amazon Product Advertisig API and "
+"receive your API Keys, DO NOT give then outto just anyone. Intentionally "
+"disclosing your Secret Key to other parties is against Amazon's terms of use "
+"and is considered grounds for account suspension or deletion (without "
+"payment of any due earnings). They take the key security very seriously and "
+"you can be held accountable for any misuse of your keys, should you give "
+"them out to anyone. So keep them secret. If you request help from us to "
+"solve an issue, we may ask you to change your keys after we are done helping "
+"you - just so you can feel safe and secure about the secrecy of your keys."
+msgstr ""
+"IMPORTANT! Once you get access to the Amazon Product Advertisig API and "
+"receive your API Keys, DO NOT give then outto just anyone. Intentionally "
+"disclosing your Secret Key to other parties is against Amazon's terms of use "
+"and is considered grounds for account suspension or deletion (without "
+"payment of any due earnings). They take the key security very seriously and "
+"you can be held accountable for any misuse of your keys, should you give "
+"them out to anyone. So keep them secret. If you request help from us to "
+"solve an issue, we may ask you to change your keys after we are done helping "
+"you - just so you can feel safe and secure about the secrecy of your keys."
+
+#: inc/amazon-product-in-a-post-tools.php:1326
+msgid "MISC Information"
+msgstr "MISC Information"
+
+#: inc/amazon-product-in-a-post-tools.php:1327
+msgid ""
+"If already have an approved Amazon Affiliate Account and you are using the "
+"Amazon IAM Management Console, your Access Key ID will be located under the "
+"\"Your Security Credentials\" page. They will NOT show you your Secret "
+"Access Key here. If you loose it, you MUST generate a new Root Key."
+msgstr ""
+"If already have an approved Amazon Affiliate Account and you are using the "
+"Amazon IAM Management Console, your Access Key ID will be located under the "
+"\"Your Security Credentials\" page. They will NOT show you your Secret "
+"Access Key here. If you loose it, you MUST generate a new Root Key."
+
+#: inc/amazon-product-in-a-post-tools.php:1328
+msgid ""
+"After you generate the Root Key, it will serve the browser with a csv file "
+"that has both the Access Key ID and the Secret Access Key inside."
+msgstr ""
+"After you generate the Root Key, it will serve the browser with a csv file "
+"that has both the Access Key ID and the Secret Access Key inside."
+
+#: inc/amazon-product-in-a-post-tools.php:1336
+msgid ""
+"To ensure that your Amazon Affiliate application is accepted, you will need "
+"to follow some trusted guidelines:"
+msgstr ""
+"To ensure that your Amazon Affiliate application is accepted, you will need "
+"to follow some trusted guidelines:"
+
+#: inc/amazon-product-in-a-post-tools.php:1338
+msgid "Your website needs to be LIVE."
+msgstr "Your website needs to be LIVE."
+
+#: inc/amazon-product-in-a-post-tools.php:1338
+msgid ""
+"If your website is not live, or you have an \"under construction page\" or a "
+"Maintenance page displayed, you will not be approved."
+msgstr ""
+"If your website is not live, or you have an \"under construction page\" or a "
+"Maintenance page displayed, you will not be approved."
+
+#: inc/amazon-product-in-a-post-tools.php:1339
+msgid "Add the required Disclaimer to your site."
+msgstr "Add the required Disclaimer to your site."
+
+#: inc/amazon-product-in-a-post-tools.php:1339
+msgid ""
+"See below for information on the disclaimer. Amazon WILL NOT approve your "
+"site without one"
+msgstr ""
+"See below for information on the disclaimer. Amazon WILL NOT approve your "
+"site without one"
+
+#: inc/amazon-product-in-a-post-tools.php:1340
+msgid "Set up a few products links."
+msgstr "Set up a few products links."
+
+#: inc/amazon-product-in-a-post-tools.php:1340
+msgid ""
+"If you are a new affiliate, your site needs to have some links or buttons to "
+"Amazon products. Amazon wants to see that you are linking correctly "
+"according to their terms of service agreement."
+msgstr ""
+"If you are a new affiliate, your site needs to have some links or buttons to "
+"Amazon products. Amazon wants to see that you are linking correctly "
+"according to their terms of service agreement."
+
+#: inc/amazon-product-in-a-post-tools.php:1341
+msgid "Have some unique content."
+msgstr "Have some unique content."
+
+#: inc/amazon-product-in-a-post-tools.php:1341
+msgid ""
+"You need to have some other content besides just Amazon Links or Products. "
+"If all you have is a site with links to Amazon, you will not be approved. "
+"Add some content to your pages like your own review or even some helpful "
+"information about the product you are trying to sell. The most successful "
+"Amazon affiliates use products to enhance their unique content."
+msgstr ""
+"You need to have some other content besides just Amazon Links or Products. "
+"If all you have is a site with links to Amazon, you will not be approved. "
+"Add some content to your pages like your own review or even some helpful "
+"information about the product you are trying to sell. The most successful "
+"Amazon affiliates use products to enhance their unique content."
+
+#: inc/amazon-product-in-a-post-tools.php:1342
+msgid "Limit Banners/Ads on the site."
+msgstr "Limit Banners/Ads on the site."
+
+#: inc/amazon-product-in-a-post-tools.php:1342
+msgid ""
+"If your site uses an lot of advertising but does not have a lot of content, "
+"then Amazon will not approve you. They do not like sites that are Ad heavy. "
+"You should have more content than you do advertisements. Ad heavy sites look "
+"like revenue traps to the visitor and Amazon does not want to be associated "
+"with that."
+msgstr ""
+"If your site uses an lot of advertising but does not have a lot of content, "
+"then Amazon will not approve you. They do not like sites that are Ad heavy. "
+"You should have more content than you do advertisements. Ad heavy sites look "
+"like revenue traps to the visitor and Amazon does not want to be associated "
+"with that."
+
+#: inc/amazon-product-in-a-post-tools.php:1343
+msgid "Make your products relevant to your site's focus/market"
+msgstr "Make your products relevant to your site's focus/market"
+
+#: inc/amazon-product-in-a-post-tools.php:1343
+msgid ""
+"Try to use relevant products whenever possible. For example, if you blob "
+"about Home Gardening, use products related to Home Gardening - not TVs or "
+"Electronics. Amazon will see you are serious about your affiliate account if "
+"you have relative products with a good proportion of unique content to "
+"products."
+msgstr ""
+"Try to use relevant products whenever possible. For example, if you blob "
+"about Home Gardening, use products related to Home Gardening - not TVs or "
+"Electronics. Amazon will see you are serious about your affiliate account if "
+"you have relative products with a good proportion of unique content to "
+"products."
+
+#: inc/amazon-product-in-a-post-tools.php:1344
+msgid "Be Patient."
+msgstr "Be Patient."
+
+#: inc/amazon-product-in-a-post-tools.php:1344
+msgid ""
+"It can take several weeks or longer for Amazon to review everything and they "
+"will not fully approve the application until after you refer 3 sales in "
+"within the first 180 days after you sign up."
+msgstr ""
+"It can take several weeks or longer for Amazon to review everything and they "
+"will not fully approve the application until after you refer 3 sales in "
+"within the first 180 days after you sign up."
+
+#: inc/amazon-product-in-a-post-tools.php:1346
+msgid ""
+"After your affiliate account is approved, you can make some \"tweaks\" if "
+"needed - mainly you can start adding products via the plugin to make things "
+"easier. Don't immediately throw in tons of products or stop adding content "
+"and only products. If Amazon gets a complaint or they think you are abusing "
+"the terms of use, they can review the site again and decide to revoke your "
+"affiliate account. Once they do that, you have very little chance of getting "
+"it back."
+msgstr ""
+"After your affiliate account is approved, you can make some \"tweaks\" if "
+"needed - mainly you can start adding products via the plugin to make things "
+"easier. Don't immediately throw in tons of products or stop adding content "
+"and only products. If Amazon gets a complaint or they think you are abusing "
+"the terms of use, they can review the site again and decide to revoke your "
+"affiliate account. Once they do that, you have very little chance of getting "
+"it back."
+
+#: inc/amazon-product-in-a-post-tools.php:1349
+msgid ""
+"All Amazon Affiliates that sell products on their websites are required to "
+"have a disclaimer on their site in a visible location that states that they "
+"are earning money from Amazon sales. We recommend that you add something "
+"like the following statement to your site footer or in a sidebar widget near "
+"the bottom of your site (change <strong>[Website Name]</strong> to your "
+"website name):"
+msgstr ""
+"All Amazon Affiliates that sell products on their websites are required to "
+"have a disclaimer on their site in a visible location that states that they "
+"are earning money from Amazon sales. We recommend that you add something "
+"like the following statement to your site footer or in a sidebar widget near "
+"the bottom of your site (change <strong>[Website Name]</strong> to your "
+"website name):"
+
+#: inc/amazon-product-in-a-post-tools.php:1350
+msgid ""
+"[Website Name] is a participant in the Amazon Services LLC Associates "
+"Program, an affiliate advertising program designed to provide a means for "
+"website owners to earn advertising fees by advertising and linking to amazon."
+"com, audible.com, and any other website that may be affiliated with Amazon "
+"Service LLC Associates Program. As an Amazon Associate [I or we] earn from "
+"qualifying purchases.</span>"
+msgstr ""
+"[Website Name] is a participant in the Amazon Services LLC Associates "
+"Programme, an affiliate advertising programme designed to provide a means "
+"for website owners to earn advertising fees by advertising and linking to "
+"amazon.com, audible.com, and any other website that may be affiliated with "
+"Amazon Service LLC Associates Program. As an Amazon Associate [I or we] earn "
+"from qualifying purchases.</span>"
+
+#: inc/amazon-product-in-a-post-tools.php:1351
+msgid ""
+"If you want to use a shorter disclaimer, you must, at the very least, use "
+"something like this:"
+msgstr ""
+"If you want to use a shorter disclaimer, you must, at the very least, use "
+"something like this:"
+
+#: inc/amazon-product-in-a-post-tools.php:1352
+msgid "As an Amazon Associate [I or we] earn from qualifying purchases.</span>"
+msgstr ""
+"As an Amazon Associate [I or we] earn from qualifying purchases.</span>"
+
+#: inc/amazon-product-in-a-post-tools.php:1353
+msgid ""
+"The above disclaimer is the correct minimum according to Amazon's Terms of "
+"Service/Use as of May 1, 2018. This may change so be sure to check the terms "
+"of use regularly."
+msgstr ""
+"The above disclaimer is the correct minimum according to Amazon's Terms of "
+"Service/Use as of May 1, 2018. This may change so be sure to check the terms "
+"of use regularly."
+
+#: inc/amazon-product-in-a-post-tools.php:1359
+msgid ""
+"If you need help trying to figure out what you need to do to be approved, or "
+"you want us to help you set up your site so you will be approved, please let "
+"us know."
+msgstr ""
+"If you need help trying to figure out what you need to do to be approved, or "
+"you want us to help you set up your site so you will be approved, please let "
+"us know."
+
+#: inc/amazon-product-in-a-post-tools.php:1360
+msgid ""
+"We do charge a very modest fee for this service. Costs generally range from "
+"about $50 to $250 depending on how much help you need setting everything up."
+msgstr ""
+"We do charge a very modest fee for this service. Costs generally range from "
+"about $50 to $250 depending on how much help you need setting everything up."
+
+#: inc/amazon-product-in-a-post-tools.php:1361
+msgid "Please email us at"
+msgstr "Please email us at"
+
+#: inc/amazon-product-in-a-post-tools.php:1361
+msgid "Or call us at"
+msgstr "Or call us at"
+
+#: inc/amazon-product-in-a-post-tools.php:1361
+msgid "M-F 9:00am - 4:00pm Pacific."
+msgstr "M-F 9:00am - 4:00pm Pacific."
+
+#: inc/amazon-product-in-a-post-tools.php:1362
+msgid "What we CAN help with:"
+msgstr "What we CAN help with:"
+
+#: inc/amazon-product-in-a-post-tools.php:1364
+msgid ""
+"Give you guidance on what you need to do on your site to increase your "
+"chances of being approved by Amazon."
+msgstr ""
+"Give you guidance on what you need to do on your site to increase your "
+"chances of being approved by Amazon."
+
+#: inc/amazon-product-in-a-post-tools.php:1365
+msgid ""
+"We can add disclaimers to your site that comply with Amazon's terms of "
+"service."
+msgstr ""
+"We can add disclaimers to your site that comply with Amazon's terms of "
+"service."
+
+#: inc/amazon-product-in-a-post-tools.php:1366
+msgid "We can add Amazon Banners or Promotions."
+msgstr "We can add Amazon Banners or Promotions."
+
+#: inc/amazon-product-in-a-post-tools.php:1367
+msgid ""
+"We can give suggestions on the type of links or products that are a right "
+"fit for your site."
+msgstr ""
+"We can give suggestions on the type of links or products that are a right "
+"fit for your site."
+
+#: inc/amazon-product-in-a-post-tools.php:1368
+msgid "We can help fix general WordPress errors and issues."
+msgstr "We can help fix general WordPress errors and issues."
+
+#: inc/amazon-product-in-a-post-tools.php:1370
+msgid "What we CAN'T help with:"
+msgstr "What we CAN'T help with:"
+
+#: inc/amazon-product-in-a-post-tools.php:1372
+msgid ""
+"We cannot sign up for your Affiliate Account or Product Advertising API "
+"account for you."
+msgstr ""
+"We cannot sign up for your Affiliate Account or Product Advertising API "
+"account for you."
+
+#: inc/amazon-product-in-a-post-tools.php:1373
+msgid ""
+"We cannot set up all of your products for you (well, <em>we can</em>, but "
+"the costs will be much greater than $250)."
+msgstr ""
+"We cannot set up all of your products for you (well, <em>we can</em>, but "
+"the costs will be much greater than $250)."
+
+#: inc/amazon-product-in-a-post-tools.php:1374
+msgid "We cannot generate Amazon sales/traffic for you."
+msgstr "We cannot generate Amazon sales/traffic for you."
+
+#: inc/amazon-product-in-a-post-tools.php:1375
+msgid ""
+"We cannot create your website for you (again, <em>we can</em>, but the costs "
+"will be much greater than $250)."
+msgstr ""
+"We cannot create your website for you (again, <em>we can</em>, but the costs "
+"will be much greater than $250)."
+
+#: inc/amazon-product-in-a-post-tools.php:1377
+msgid ""
+"If you need help with anything other than plugin related items, please "
+"contact us for a quote on our services - i.e., General WordPress consulting, "
+"Theme Programming/Modifications, Plugin creation/modification - or just "
+"about any WordPress related item."
+msgstr ""
+"If you need help with anything other than plugin related items, please "
+"contact us for a quote on our services - i.e., General WordPress consulting, "
+"Theme Programming/Modifications, Plugin creation/modification - or just "
+"about any WordPress related item."
+
+#: inc/amazon-product-in-a-post-tools.php:1407
+msgid "Amazon Product in a Post FAQs/Help"
+msgstr "Amazon Product in a Post FAQs/Help"
+
+#: inc/amazon-product-in-a-post-tools.php:1408
+#, php-format
+msgid ""
+"The FAQS are now on a feed that can be updated on the fly. If you have a "
+"question and don't see an answer, please send an email to %1$s and ask your "
+"question. If it is relevant to the plugin, it will be added to the FAQs feed "
+"so it will show up here. Please be sure to include the plugin you are asking "
+"a question about (Amazon Product in a Post Plugin), the Debugging Key "
+"(located on the options page) and any other information like your WordPress "
+"version and examples if the plugin is not working correctly for you. THANKS!"
+msgstr ""
+"The FAQS are now on a feed that can be updated on the fly. If you have a "
+"question and don't see an answer, please send an email to %1$s and ask your "
+"question. If it is relevant to the plugin, it will be added to the FAQs feed "
+"so it will show up here. Please be sure to include the plugin you are asking "
+"a question about (Amazon Product in a Post Plugin), the Debugging Key "
+"(located on the options page) and any other information like your WordPress "
+"version and examples if the plugin is not working correctly for you. THANKS!"
+
+#: inc/amazon-product-in-a-post-tools.php:1426
+msgid "Table of Contents"
+msgstr "Table of Contents"
+
+#: inc/amazon-product-in-a-post-tools.php:1430
+msgid "Questions/Answers"
+msgstr "Questions/Answers"
+
+#: inc/amazon-product-in-a-post-tools.php:1441
+msgid "Amazon Styling Options"
+msgstr "Amazon Styling Options"
+
+#: inc/amazon-product-in-a-post-tools.php:1454
+msgid "Add New Amazon Product Post"
+msgstr "Add New Amazon Product Post"
+
+#: inc/amazon-product-in-a-post-tools.php:1458
+msgid ""
+"This function will allow you to add a new post for an Amazon Product - no "
+"need to create a post then add the ASIN. Once you add a Product Post, you "
+"can edit the information with the normal Post Edit options."
+msgstr ""
+"This function will allow you to add a new post for an Amazon Product - no "
+"need to create a post then add the ASIN. Once you add a Product Post, you "
+"can edit the information with the normal Post Edit options."
+
+#: inc/amazon-product-in-a-post-tools.php:1463
+msgid "Category/Taxonomy for Pages"
+msgstr "Category/Taxonomy for Pages"
+
+#: inc/amazon-product-in-a-post-tools.php:1464
+msgid "No Categories/Taxonomy Available for Pages."
+msgstr "No Categories/Taxonomy Available for Pages."
+
+#: inc/amazon-product-in-a-post-tools.php:1476
+msgid "Category/Taxonomy for "
+msgstr "Category/Taxonomy for "
+
+#: inc/amazon-product-in-a-post-tools.php:1482
+msgid "No Categories/Taxonomy Available for this Post type."
+msgstr "No Categories/Taxonomy Available for this Post type."
+
+#: inc/amazon-product-in-a-post-tools.php:1505
+msgid ""
+"Uses Add to Cart URL instead of product page URL. Heps with 90 day "
+"conversion cookie."
+msgstr ""
+"Uses Add to Cart URL instead of product page URL. Heps with 90 day "
+"conversion cookie."
+
+#: inc/amazon-product-in-a-post-tools.php:1524
+msgid "Title"
+msgstr "Title"
+
+#: inc/amazon-product-in-a-post-tools.php:1528
+msgid "Post Status"
+msgstr "Post Status"
+
+#: inc/amazon-product-in-a-post-tools.php:1536
+msgid "Post Type"
+msgstr "Post Type"
+
+#: inc/amazon-product-in-a-post-tools.php:1540
+msgid "Amazon ASIN Number"
+msgstr "Amazon ASIN Number"
+
+#: inc/amazon-product-in-a-post-tools.php:1541
+msgid "You can use up to 10 comma separated ASINs."
+msgstr "You can use up to 10 comma separated ASINs."
+
+#: inc/amazon-product-in-a-post-tools.php:1544
+msgid "Split ASINs?"
+msgstr "Split ASINs?"
+
+#: inc/amazon-product-in-a-post-tools.php:1545
+msgid "Check to make all ASINs individual posts/pages"
+msgstr "Check to make all ASINs individual posts/pages"
+
+#: inc/amazon-product-in-a-post-tools.php:1548
+msgid "Post Content"
+msgstr "Post Content"
+
+#: inc/amazon-product-in-a-post-tools.php:1553
+msgid "Product Location"
+msgstr "Product Location"
+
+#: inc/amazon-product-in-a-post-tools.php:1555
+msgid ""
+"<strong>Above Post Content </strong><em>- Default - Product will be first "
+"then post text</em>"
+msgstr ""
+"<strong>Above Post Content </strong><em>- Default - Product will be first "
+"then post text</em>"
+
+#: inc/amazon-product-in-a-post-tools.php:1556
+msgid ""
+"<strong>Below Post Content</strong><em> - Post text will be first then the "
+"Product</em>"
+msgstr ""
+"<strong>Below Post Content</strong><em> - Post text will be first then the "
+"Product</em>"
+
+#: inc/amazon-product-in-a-post-tools.php:1557
+msgid ""
+"<strong>Post Text becomes Description</strong><em> - Post text will become "
+"part of the Product layout</em>"
+msgstr ""
+"<strong>Post Text becomes Description</strong><em> - Post text will become "
+"part of the Product layout</em>"
+
+#: inc/amazon-product-in-a-post-tools.php:1561
+msgid "Additional Items"
+msgstr "Additional Items"
+
+#: inc/amazon-product-in-a-post-tools.php:1567
+#: inc/amazon-product-in-a-post-tools.php:1568
+msgid "Create Product & Return Here"
+msgstr "Create Product & Return Here"
+
+#: inc/amazon-product-in-a-post-tools.php:1567
+msgid "Create Product & Edit NOW"
+msgstr "Create Product & Edit NOW"
+
+#: inc/amazon-product-in-a-post-tools.php:1568
+msgid "Create Amazon Product Post & Edit NOW"
+msgstr "Create Amazon Product Post & Edit NOW"
+
+#. Name of the plugin
+msgid "Amazon Product In a Post"
+msgstr "Amazon Product In a Post"
+
+#. Description of the plugin
+msgid ""
+"Add stylized Amazon Products to your site via the Product Advertising API."
+msgstr ""
+"Add stylized Amazon Products to your site via the Product Advertising API."
+
+#. URI of the plugin
+msgid ""
+"https://www.fischercreativemedia.com/wordpress-plugins/amazon-affiliate-"
+"product-in-a-post/"
+msgstr ""
+"https://www.fischercreativemedia.com/wordpress-plugins/amazon-affiliate-"
+"product-in-a-post/"
+
+#. Author of the plugin
+msgid "Fischer Creative Media, LLC."
+msgstr "Fischer Creative Media, LLC."
+
+#. Author URI of the plugin
+msgid "https://www.fischercreativemedia.com/"
+msgstr "https://www.fischercreativemedia.com/"

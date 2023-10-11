@@ -1,0 +1,51 @@
+body {
+  font-family: Arial;
+  text-align: center;
+  margin-top: 25px;
+}
+
+.icon-clipboardjs {
+  cursor: pointer;
+}
+
+.prli-public-logo {
+  width: 400px;
+  height: 64px;
+  margin: auto;
+  display: block;
+  margin-top: 50px;
+  margin-bottom: 50px;
+}
+
+.prli-public-label, .prli-public-target, .prli-public-social {
+  font-size: 18px;
+  color: #aaaaaa;
+}
+
+.prli-public-label, .prli-public-target {
+  margin-bottom: 25px;
+}
+
+.prli-public-name, .prli-public-pretty-link {
+  font-size: 24px;
+  font-weight: bold;
+}
+
+.prli-public-pretty-link {
+  margin-bottom: 25px;
+}
+
+.prli-public-name, .prli-public-pretty-link a {
+  text-decoration: none;
+  color: #1f487e;
+}
+
+.prli-public-name, .prli-public-pretty-link a:hover {
+  text-decoration: none;
+  color: blue;
+}
+
+.prli-public-back {
+  margin-top: 25px;
+}
+

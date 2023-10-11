@@ -1,0 +1,30 @@
+.pretty-link-cta-button {
+  display: inline-block;
+  margin: 0 auto;
+  background-color: #FD9C27;
+  color: #fff;
+  padding: 15px 25px;
+  font-size: 18px;
+  font-weight: bold;
+  text-decoration: none;
+  border-radius: 5px;
+}
+
+#pretty-links-sidebar.postbox .pretty-link-cta-button {
+  padding: 10px 20px;
+  font-size: 12px;
+}
+
+#pretty-links-sidebar.postbox .inside h2 {
+  padding: 0;
+  margin-bottom: 10px;
+  font-weight: 700;
+}
+
+.plp-post-sidebar-statistics {
+  margin-bottom: 25px;
+}
+
+.plp-post-sidebar-replacements {
+  margin-top: 15px;
+}

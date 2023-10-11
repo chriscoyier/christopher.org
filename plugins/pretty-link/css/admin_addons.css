@@ -1,0 +1,223 @@
+.prli-addons, .prli-addons * {
+  -webkit-box-sizing: border-box;
+  -moz-box-sizing: border-box;
+  box-sizing: border-box;
+}
+
+#prli-addons-container .prli-clearfix:before,
+#prli-addons-container .prli-clearfix:after {
+  content: " ";
+  display: block;
+}
+
+#prli-addons-container .prli-clearfix:after {
+  clear: both;
+}
+
+.add-new-h2.prli-addons-refresh {
+  margin-left: 20px;
+}
+
+#prli-addons-search {
+  background-color: #fff;
+  border: 1px solid #ddd;
+  border-radius: 3px;
+  box-shadow: none;
+  color: #333;
+  vertical-align: middle;
+  padding: 8px 12px;
+  margin: -4px 10px 0 0;
+  min-height: 30px;
+  line-height: 1.5;
+  width: 200px;
+  float: right;
+}
+
+#prli-addons-search:focus {
+  border-color: #bbb;
+}
+
+#prli-admin-addons h4 {
+  font-size: 17px;
+  font-weight: 700;
+}
+
+.prli-addons {
+  margin: 30px -20px 0 -20px;
+}
+
+.prli-addon {
+  padding: 0 20px;
+  float: left;
+  width: 33.333333%;
+}
+
+.prli-addon-inner {
+  background-color: #fff;
+  border: 1px solid #ddd;
+  border-radius: 3px;
+  margin: 0 0 40px 0;
+}
+
+.prli-addon-details {
+  padding: 30px 20px;
+  padding-bottom: 50px;
+}
+
+.prli-addon-details img {
+  border: 1px solid #eee;
+  float: left;
+  max-width: 75px;
+}
+
+.prli-addon-details h5 {
+  margin: 0 0 10px 100px;
+  font-size: 16px;
+}
+
+.prli-addon-details p {
+  margin: 0 0 0 100px;
+}
+
+.prli-addon-actions {
+  background-color: #f7f7f7;
+  border-top: 1px solid #ddd;
+  padding: 20px;
+  position: relative;
+}
+
+.prli-addon-action {
+  float: right;
+}
+
+.prli-addon-status {
+  float: left;
+  padding-top: 8px;
+}
+
+.prli-addon-status-download .prli-addon-status-label {
+  color: #666;
+}
+
+.prli-addon .prli-addon-action button .pl-icon {
+  font-size: 13px;
+  margin-right: 8px;
+  color: #999;
+}
+
+.prli-addon-status-active .prli-addon-status-label,
+.prli-addon-status-active .prli-addon-action button .pl-icon {
+  color: #2a9b39;
+}
+
+.prli-addon-status-inactive .prli-addon-status-label,
+.prli-addon-status-inactive .prli-addon-action button .pl-icon {
+  color: #f00;
+}
+
+.prli-addon-action button {
+  background: none;
+  border: 1px solid #ddd;
+  border-radius: 3px;
+  box-shadow: none;
+  cursor: pointer;
+  font-weight: 600;
+  text-align: center;
+  padding: 8px 15px;
+  font-size: 13px;
+  line-height: 1.30769230769;
+}
+
+.prli-addon-action button:hover,
+.prli-addon-action button.prli-loading {
+  background-color: #e9e9e9;
+}
+
+.prli-addon .prli-addon-action button .pl-icon.pl-icon-spinner {
+  color: #999;
+  margin-right: 0;
+}
+
+.prli-addon-action button .pl-icon {
+  font-size: 13px;
+  margin-right: 8px;
+  color: #999;
+}
+
+.prli-addon .prli-addon-actions .prli-addon-message {
+  background-color: #f7f7f7;
+  position: absolute;
+  text-align: center;
+  font-weight: 600;
+  top: 0;
+  left: 0;
+  height: 100%;
+  width: 100%;
+  z-index: 99;
+  padding: 20px;
+  display: -webkit-box;
+  display: -moz-box;
+  display: -ms-flexbox;
+  display: -webkit-flex;
+  display: flex;
+  -webkit-align-items: center;
+  -ms-flex-align: center;
+  align-items: center;
+  justify-content: center;
+}
+
+.prli-addon .prli-addon-actions .prli-addon-message.prli-addon-message-success {
+  color: #2a9b39;
+}
+
+.prli-addon .prli-addon-actions .prli-addon-message.prli-addon-message-error {
+  color: red;
+}
+
+.prli-addon-action-upgrade {
+  text-align: center;
+  float: none;
+}
+
+.prli-addon-action-upgrade a {
+  border-radius: 3px;
+  cursor: pointer;
+  display: inline-block;
+  margin: 0;
+  text-decoration: none;
+  text-align: center;
+  vertical-align: middle;
+  white-space: nowrap;
+  box-shadow: none;
+  background-color: #f5f5f5;
+  border: 1px solid #ccc;
+  color: #666;
+  font-size: 13px;
+  line-height: 1.30769230769;
+  font-weight: 600;
+  padding: 8px 28px;
+}
+
+@media (max-width: 1249px) {
+  .prli-addon {
+      width: 50%;
+  }
+}
+
+@media (max-width: 767px) {
+  #prli-addons-search {
+      width: 100%;
+      float: none;
+      display: block;
+      margin: 30px 0 0 0;
+  }
+
+  .prli-addon {
+      width: 100%;
+      margin-bottom: 20px;
+  }
+
+  .prli-addon-inner {
+      margin: 0;
+  }
+}

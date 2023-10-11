@@ -1,0 +1,16 @@
+/* Make this shnizzle full screen and responsive */
+body {
+    margin: 0;
+}
+/* fix for older browsers */
+iframe, object, embed {
+    height: 100%;
+    width: 100%;
+}
+iframe, object, embed {
+    display: block;
+    /*background: #000;*/
+    border: none;
+    height: 100vh;
+    width: 100vw;
+}

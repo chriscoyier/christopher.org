@@ -1,0 +1,35 @@
+{
+	"name": "kadamwhite/civil-footnotes",
+	"description": "Create footnotes using a simple, easy-to-read syntax.",
+	"type": "wordpress-plugin",
+	"license": "GPL2+",
+	"authors": [
+		{
+			"name": "Austin Sweeney",
+			"homepage": "https://defomicron.net"
+		},
+		{
+			"name": "K Adam White",
+			"homepage": "https://kadamwhite.com"
+		}
+	],
+	"require": {
+		"composer/installers": "~1.0",
+		"php": "^7.0"
+	},
+	"require-dev": {
+		"10up/wp_mock": "^0.4.2",
+		"dealerdirect/phpcodesniffer-composer-installer": "^0.5.0",
+		"phpcompatibility/phpcompatibility-wp": "^2.0",
+		"phpunit/phpunit": "^8",
+		"squizlabs/php_codesniffer": "^3.3.1",
+		"wp-coding-standards/wpcs": "^2.1.1"
+	},
+	"scripts": {
+		"test": "vendor/bin/phpunit",
+		"lint": "vendor/bin/phpcs",
+		"lint:fix": "vendor/bin/phpcbf",
+		"post-install-cmd": "\"vendor/bin/phpcs\" --config-set installed_paths vendor/wp-coding-standards/wpcs",
+		"post-update-cmd" : "\"vendor/bin/phpcs\" --config-set installed_paths vendor/wp-coding-standards/wpcs"
+	}
+}

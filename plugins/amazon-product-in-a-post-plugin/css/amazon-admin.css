@@ -1,0 +1,268 @@
+html {
+	-webkit-font-smoothing: antialiased;
+}
+[id^="amazonProductInAPostBox"] em {
+	display: inline;
+}
+.appip-tos-price-cache-notice-tooltip {
+	cursor: pointer;
+}
+.appip-tos-price-cache-notice-tooltip:hover {
+	text-decoration: underline;
+}
+.appip-em-sample {
+	display: inline-block;
+	font-style: italic;
+}
+.amazon-product-new-title {
+	width: 50%;
+	display: block;
+}
+.appip-example-image img {
+	border: 1px dotted #aaa;
+	background: #fff;
+	max-width: 100%;
+}
+.appip-example-image {
+	float: right;
+	max-width: 100%;
+}
+/*clean it up a bit if in side bar area of edit page*/
+#side-sortables [id^="amazonProductInAPostBox"] #amazon-product-new-title, #side-sortables [id^="amazonProductInAPostBox"] #amazon-product-single-asin {
+	width: 100%
+}
+#side-sortables [id^="amazonProductInAPostBox"] .appip-em-sample {
+	display: none;
+}
+#side-sortables [id^="amazonProductInAPostBox"] em {
+	display: none;
+}
+#post_content_app {
+	width: 100%
+}
+.appip-new-post-cat {
+	float: left;
+	margin: .3%;
+	width: 24.25%;
+	min-width: 175px;
+}
+.apip-new-pppy tbody > tr > td:first-child {
+	width: auto;
+	white-space: nowrap;
+	text-align: right;
+	font-weight: bold;
+}
+/* icons etc */
+div#icon-amazon {
+	background: url(../images/aicon.png) no-repeat !important;
+}
+/*add new post page*/
+.apip-posttypes {
+}
+.apip-ptype {
+	float: left;
+}
+.apip-ptype label {
+	display: block;
+	margin: 3px 15px 5px 0;
+}
+.apip-ptypecb {
+}
+.apip-new-pppy {
+	max-width: 100%;
+	min-width: 50%;
+	margin-top: 50px;
+}
+.apip-new-pppy tbody > tr > td:first-child {
+	width: 227px;
+}
+.apip-new-pppy > tr > td:first-child {
+	width: 225px;
+}
+.apip-new-pppy tr:nth-child(odd) {
+	background-color: #efefef;
+}
+.apip-new-pppy tr:nth-child(even) {
+	background-color: transparent;
+}
+.apip-extra-pad-bot td {
+	padding-bottom: 15px;
+}
+.apip-extra-pad-top td {
+	padding-top: 15px;
+}
+.taxonomy_blocks {
+	display: none;
+	background: #efefef;
+}
+.appip_shortcode_help {
+}
+.appip_shortcode_help code {
+	font-family: monospace;
+	color: #053A85;
+	padding: 1px 5px;
+	background: #FFFFFF;
+}
+.appip_shortcode_help ul {
+	margin-left: 25px;
+	list-style-type: disc;
+	list-style-position: inside;
+}
+.appip_shortcode_help .appip_elements_code {
+	clear: both;
+	margin-top: 0;
+}
+.appip_shortcode_help h3 {
+	margin-bottom: 5px;
+}
+.appip_shortcode_help ul.as_code li {
+	font-family: monospace;
+	color: #053A85;
+	padding: 1px 5px;
+	display: block;
+	font-weight:bold;
+}
+.appip_shortcode_help ul.as_code li span.small-text {
+    font-style: italic;
+    color: #777;
+    font-weight: normal;
+}
+.appip_shortcode_help hr {
+	height: 0px;
+	border-top: 1px solid #CCC;
+	background: transparent;
+	margin: 2% 0;
+}
+input#splitASINs {
+	vertical-align: middle;
+	zoom: 1.35;
+}
+.apip-new-pppy td {
+	padding: 1% .5%;
+}
+/* icons */
+@font-face {
+	font-family: 'appipfonts';
+	src: url('../fonts/appipfonts.eot');
+	src: url('../fonts/appipfonts.eot') format('embedded-opentype'), url('../fonts/appipfonts.ttf') format('truetype'), url('../fonts/appipfonts.woff') format('woff'), url('../fonts/appipfonts.svg') format('svg');
+	font-weight: normal;
+	font-style: normal;
+}
+[class^="appipfont-"]:before, [class*=" appipfont-"]:before, .dashicons-before.dashicons-amazon:before {
+	font-family: 'appipfonts';
+	speak: none;
+	font-style: normal;
+	font-weight: normal;
+	font-variant: normal;
+	text-transform: none;
+	line-height: 1;
+	-webkit-font-smoothing: antialiased;
+	-moz-osx-font-smoothing: grayscale;
+}
+.appipfont-amazon:before, .dashicons-amazon:before {
+	content: "\e600";
+	margin-left: -5px;
+}
+.appipfont-save:before {
+	content: "\e602";
+}
+.appipfont-not:before {
+	content: "\e603";
+	color: #FF0000;
+	padding-right: 5px;
+}
+.appipfont-cancel:before {
+	content: "\e601";
+}
+.appipfont-on:before {
+	content: "\e604";
+	color: #0F9A0A;
+	padding-right: 5px;
+}
+.appipfont-off:before {
+	content: "\e605";
+}
+.appipfont-save {*zoom: expression(this.runtimeStyle['zoom'] = '1', this.innerHTML = '&#xe602;');}
+.appipfont-not {*zoom: expression(this.runtimeStyle['zoom'] = '1', this.innerHTML = '&#xe603;');}
+.appipfont-amazon, .dashicons-amazon {*zoom: expression(this.runtimeStyle['zoom'] = '1', this.innerHTML = '&#xe600;');}
+.appipfont-cancel {*zoom: expression(this.runtimeStyle['zoom'] = '1', this.innerHTML = '&#xe601;');}
+.appipfont-on {*zoom: expression(this.runtimeStyle['zoom'] = '1', this.innerHTML = '&#xe604;');}
+.appipfont-off {*zoom: expression(this.runtimeStyle['zoom'] = '1', this.innerHTML = '&#xe605;');}
+
+ul.appip_debug_settings {
+	transition: all 2s ease;
+	max-height: 18px;
+	overflow: hidden;
+	position: relative;
+	padding-top: 30px;
+	margin-top: 0;
+}
+ul.appip_debug_settings.showing {
+	max-height: 2000px;
+}
+.row-actions .amazon-plugin-action-icon .dashicons:before {
+	width: 20px;
+	font-size: 20px !important;
+	box-shadow: none !important;
+	background-color: transparent !important;
+	color: inherit;
+}
+a.amazon-plugin-action-icon {
+    display: inline-block;
+}
+.row-actions .amazon-plugin-action-icon .dashicons {
+	width: 20px !important;
+	height: 20px !important;
+	padding-right: 5px !important;
+}
+.appip_debug_settings_click {
+	font-size: 12px;
+	color: #0085ba;
+	text-decoration: underline;
+	cursor: pointer;
+	display: block;
+	margin-top: 10px;
+}
+[name="appip_debug_notes"] {
+	width: 90%;
+}
+.plugins .row-actions span.dashicons:before,
+.plugins [data-plugin*=load] .row-actions .dashicons:before{padding:0;width:12px;height:12px;font-size:20px;background:0 0;border:0;-webkit-box-shadow:none;-moz-box-shadow:none;box-shadow:none;color:inherit}
+.plugins .row-actions span.dashicons-yes:before,.plugins [data-plugin*=load] .row-actions .dashicons-yes:before{color:#080}
+.plugins .row-actions span.dashicons,.plugins [data-plugin*=load] .row-actions .dashicons{width:20px;height:20px;background:0 0;padding:0 2px 0 0;float:none}
+
+.apipp_product_styles-wrapper.disabled {
+    position: relative;
+}
+.apipp_product_styles-wrapper.disabled #apipp_product_styles {
+    color: #555;
+    font-style: italic;
+    overflow: hidden;
+    cursor: not-allowed;
+    -webkit-user-select: none; /* Safari */        
+    -moz-user-select: none; /* Firefox */
+    -ms-user-select: none; /* IE10+/Edge */
+    user-select: none; /* Standard */
+    position:relative;
+}
+.apipp_product_styles-wrapper.disabled:before{
+	background-color: rgba(255, 255, 255, 0.60);
+    content: " ";
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    display: block;
+    z-index: 1;
+    border: 1px solid #ccc;
+    box-shadow: 0 0 20px inset #ccc;
+    text-align: center;
+    font-size: 13px;
+    vertical-align: middle;
+    box-sizing: border-box;
+}
+[id^="amazonProductInAPostBox"] em {line-height: 1.5;display: inline;vertical-align: middle;font-size: .9em;}
+[id^="amazonProductInAPostBox"] p { margin: .5em;}
+[id^="amazonProductInAPostBox"] [name="amazon-product-single-asin"] + em {display: block;}
+[id^="amazonProductInAPostBox"] [name="amazon-product-single-asin"] {width: 100%;}

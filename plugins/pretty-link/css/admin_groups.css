@@ -1,0 +1,17 @@
+.advanced_toggle {
+  line-height: 34px;
+  font-size: 12px;
+  font-weight: bold;
+  padding-bottom: 10px;
+}
+.edit_group {
+  height: 50px;
+}
+.group_name {
+  font-size: 12px;
+  font-weight: bold;
+}
+.group_actions {
+  padding-top: 5px;
+}
+

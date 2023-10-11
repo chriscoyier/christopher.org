@@ -1,0 +1,244 @@
+#options-table {
+  width: 100%;
+  margin-top: 10px; }
+#pro-options-table {
+  width: 100%;
+  margin-top: 10px;
+  display: none;
+}
+
+#options-table td {
+  padding: 10px;
+}
+
+#pro-options-table td {
+  padding: 10px;
+}
+
+.defaultTextActive {
+  color: #a1a1a1;
+  font-style: italic;
+}
+
+#add_group_message {
+  padding-left: 5px;
+  display: inline;
+}
+
+.prli-clipboard {
+  padding: 2px 0 2px 0;
+  width: 24px;
+  display: inline-block;
+}
+
+.icon-clipboardjs {
+  cursor: pointer;
+}
+
+#prli-bulk-action-form .title {
+  width: 100px !important;
+}
+
+#prli_bulk_action_dropdown {
+  padding-top: 2px;
+  float: left;
+  display: inline;
+}
+
+.advanced-link-options {
+  width: 100%;
+  clear: none !important;
+}
+
+.pl-list-icon {
+  font-size: 18px;
+}
+
+.post-type-pretty-link #pretty_link_errors {
+  background: #fff;
+  border: 1px solid rgba(0,0,0,.125);
+  border-left: 4px solid #dc3232;
+  box-shadow: 0 1px 1px 0 rgba(0,0,0,0.1);
+  margin: 5px 0 15px;
+  padding: 5px 12px;
+}
+
+.post-type-pretty-link #submitdiv #misc-publishing-actions,
+.post-type-pretty-link #submitdiv #minor-publishing-actions {
+  display: none;
+}
+
+.column-settings {
+  width: 10% !important;
+}
+
+.column-title {
+  width: 25% !important;
+}
+
+.column-taxonomy-pretty-link-category,
+.column-pro-pretty-link-category {
+  width: 10% !important;
+}
+
+.column-taxonomy-pretty-link-tag,
+.column-pro-pretty-link-tag {
+  width: 8% !important;
+}
+
+.column-keywords {
+  width: 12% !important;
+}
+
+.column-clicks {
+  width: 10% !important;
+}
+
+.column-date {
+  width: 10% !important;
+}
+
+.column-links {
+  width: 25% !important;
+}
+
+.column-slug {
+  width: 15% !important;
+}
+
+.column-target {
+  width: 15% !important;
+}
+
+.column-health_status {
+  width: 5% !important;
+}
+
+#pretty-link-settings.postbox .inside,
+#pretty-link-settings.postbox .prli-settings-table {
+  padding: 0;
+  margin: 0;
+}
+
+#pretty-link-settings.postbox .prli-settings-table {
+  width: 100%;
+}
+
+#pretty-link-settings.postbox .prli-settings-table-pages {
+  padding-top: 0;
+}
+
+#pretty-link-settings.postbox h2.hndle {
+  color: white;
+  background-color: #444;
+  border-bottom: none;
+}
+
+#pretty-link-settings.postbox button.handlediv {
+  height: 35px;
+}
+
+table.wp-list-table .prli-pro-only-indicator a {
+  /* position: absolute; */
+  /* right: 10px; */
+  /* top: 20px; */
+  color: #fff;
+  background: #0074a2;
+  font-size: 10px;
+  line-height: 1.3;
+  text-transform: uppercase;
+  padding: 2px 3px;
+  -webkit-border-radius: 3px;
+  -moz-border-radius: 3px;
+  border-radius: 3px;
+  text-decoration: none;
+}
+
+table.wp-list-table .prli-pro-only-indicator a:hover {
+  background: #3390b5;
+}
+
+@media screen and (max-width: 782px) {
+  .wp-list-table .type-pretty-link .column-settings,
+  .wp-list-table .type-pretty-link.is-expanded .column-settings {
+    display: table-cell !important;
+  }
+  .wp-list-table .type-pretty-link .column-settings:before {
+    content: "" !important;
+  }
+  .wp-list-table .type-pretty-link .column-links {
+    text-align: inherit;
+  }
+  .wp-list-table .type-pretty-link .column-links input {
+    width: calc(100% - 30px) !important;
+  }
+}
+
+span#prli_bulk_edit_spinner {
+  display:block;
+  text-align:right;
+  width:100%;
+}
+span#prli_bulk_edit_spinner img {
+  display:none;
+  padding-top:10px;
+}
+
+tr.type-pretty-link td.page-title strong {
+  display: flex;
+  align-items: center;
+}
+
+.post-type-pretty-link .subsubsub {
+  display: flex;
+  align-items: center;
+}
+
+.prli_broken_links a {
+  margin: 0 5px;
+}
+
+div.prli-pd-head {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+div.prli-pd-head h2 {
+  font-size: 32px !important;
+}
+
+#prli-pd-clipboard-btn {
+  font-size: 16px !important;
+  background-color: #ff9000;
+  cursor: pointer;
+  padding: 12px 24px;
+  border-color: transparent;
+  border-radius: 4px;
+  color: #fff;
+}
+
+#prli-pd-clipboard-btn:hover {
+  background-color: #e67700;
+  border-color: transparent;
+}
+
+#product-display .form-table th {
+  width: 250px;
+}
+
+li.prli_broken_links .tooltip {
+  background: #c72323;
+  color: #fff;
+  padding: 2px 8px 2px;
+  border-radius: 5px;
+  border: 1px solid #a71919;
+}
+
+a.prli-link-health-upgrade {
+  color: rgb(253, 156, 39);
+}
+
+a.prli-link-health-upgrade:hover {
+  color: rgba(253, 156, 39, 0.6);
+}

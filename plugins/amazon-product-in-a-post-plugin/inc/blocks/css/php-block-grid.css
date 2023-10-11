@@ -1,0 +1,26 @@
+.amazon-grid-wrapper { display: flex;/* align-items: flex-start; */ align-content: flex-start; flex-flow: row wrap; -webkit-box-sizing: border-box; -moz-box-sizing: border-box; box-sizing: border-box; }
+.amazon-grid-element {margin: 0 auto;padding: 2%;/* align-self: flex-start; */-webkit-box-sizing: border-box;-moz-box-sizing: border-box;box-sizing: border-box;/* min-width: 125px; */}
+.amazon-grid-element > div { display: block; width: 100%; text-align: center; padding: .5% 0; }
+.amazon-grid-element.amz-grid-1 { width: 100%; }
+.amazon-grid-element.amz-grid-2 { width: 50%; }
+.amazon-grid-element.amz-grid-3, .amazon-grid-element.amz-grid- { width: 33.3333%; }
+.amazon-grid-element.amz-grid-4 { width: 25%; }
+.amazon-grid-element.amz-grid-5 { width: 20%; }
+.amazon-grid-element.amz-grid-6 { width: 16.666%; }
+.amazon-grid-element.amz-grid-7 { width: 14.2857%; }
+.amazon-grid-element.amz-grid-8 { width: 12.50%; }
+.amazon-grid-element.amz-grid-9 { width: 11.1111%; }
+.amazon-grid-element.amz-grid-10 { width: 10%; }
+.amazon-grid-image img { max-width: 100%; width: auto; -webkit-box-shadow: 0 0 15px rgba(0, 0, 0, 0.5); -moz-box-shadow: 0 0 15px rgba(0, 0, 0, 0.5); box-shadow: 0 0 15px rgba(0, 0, 0, 0.5); max-height: 250px; }
+h3.amazon-grid-title-h3 { font-size: 16px; font-weight: normal; line-height: 1.35em; margin: .25em 0; }
+.amazon-grid-image > a { display: inline-block; }
+.amazon-grid-element .label { font-style: italic; font-weight: bold; color: #333; }
+.amazon-grid-price { }
+.amazon-grid-author { font-size: 12px; line-height: 1.25em; }
+.amazon-grid-element:nth-child(odd) { background-color: #f4f4f4; border-bottom: 1px solid #f1f1f1; border-top: 1px solid #f1f1f1; }
+.amazon-grid-element:nth-child(even) { background-color: #fff; border-bottom: 1px solid #f4f4f4; border-top: 1px solid #f4f4f4; }
+.btn {display: inline-block;font-weight: 400;line-height: 1.25;text-align: center;white-space: nowrap;vertical-align: middle;-webkit-user-select: none;-moz-user-select: none;-ms-user-select: none;user-select: none;border: 1px solid #0000;padding: .5rem 1rem;font-size: 1rem;border-radius: .25rem;-webkit-transition: all .2s ease-in-out;transition: all .2s ease-in-out;}
+.btn-primary {color: #fff;background-color: #0275d8;border-color: #0275d8;text-decoration:none;}
+.amazon-grid-lg-image img {max-height: 140px;height: auto;mix-blend-mode: multiply;}
+.amazon-grid-element > div {display: block;width: 100%;text-align: center;padding: .5% 0;}
+.amazon-grid-element .amazon-grid-title {line-height: 1.35;font-family: inherit;font-size: .85em;margin-bottom: .5em;}

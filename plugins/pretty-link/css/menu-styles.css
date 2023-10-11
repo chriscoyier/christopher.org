@@ -1,0 +1,77 @@
+@charset "UTF-8";
+
+.icon-pretty-link-logo:before {
+  /* content: "\e843"; */
+  content: "\e847";
+}
+
+.menu-icon-pretty-link div.wp-menu-image img {
+  display: none;
+}
+
+.menu-icon-pretty-link div.wp-menu-image:before {
+  /* content: "\e843"; */
+  content: "\e847";
+  font-family: "pretty-link";
+}
+
+/* For the menu items */
+.prli-menu-red {
+  font-weight: 900;
+  color: red !important;
+}
+
+.prli-menu-red:hover {
+  color: #01B8EE !important;
+}
+
+/* For the menu items */
+.current .prli-menu-red {
+  color: white !important;
+}
+
+.prli-menu-green {
+  font-weight: 900;
+  color: limegreen !important;
+}
+
+.prli-menu-green:hover {
+  color: #01B8EE !important;
+}
+
+/* For the menu items */
+.current .prli-menu-green {
+  color: white !important;
+}
+
+.prli-red-notice {
+  color: white;
+  box-sizing: border-box;
+  font-weight: 600;
+  background-color: #800020;
+  width: 98%;
+  padding: 15px 20px;
+  margin-top: 35px;
+  margin-bottom: 35px;
+  -webkit-border-radius: 5px;
+  -moz-border-radius: 5px;
+  border-radius: 5px;
+  background-color:#800020;
+  -webkit-box-shadow: #B3B3B3 5px 5px 5px;
+  -moz-box-shadow: #B3B3B3 5px 5px 5px;
+  box-shadow: #B3B3B3 5px 5px 5px;
+}
+
+.prli-red-notice h2 {
+  color: white;
+}
+
+.prli-red-notice a {
+  color: #ababab;
+  text-decoration: underline;
+}
+
+.prli-red-notice a:hover {
+  color: #dedede;
+}
+

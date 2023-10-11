@@ -1,0 +1,189 @@
+.appip-block-wrapper {
+    clear: both;
+}
+.appip-div-clear{clear:both;}
+.paapi5-pa-ad-unit {
+    border: 1px solid #eee;
+    margin:2px !important;
+    position: relative;
+    overflow: hidden;
+    padding: 22px 20px !important;
+    line-height: 1.1em;
+}
+
+.paapi5-pa-ad-unit * {
+    box-sizing: content-box;
+    box-shadow: none;
+    font-family: Arial, Helvetica, sans-serif;
+    margin: 0;
+    outline: 0;
+    padding: 0;
+}
+
+.paapi5-pa-ad-unit.pull-left {
+    float: left;
+}
+
+.paapi5-pa-ad-unit.pull-right {
+    float: right;
+}
+
+.paapi5-pa-ad-unit a {
+    box-shadow: none !important;
+}
+
+.paapi5-pa-ad-unit a:hover {
+    color: #c45500;
+}
+
+.paapi5-pa-product-container {
+    width: 180px;
+    height: 210px;
+}
+.paapi5-pa-product-image {
+    display: table;
+    width: 150px;
+    height: 150px;
+    margin: 0 auto;
+    text-align: center;
+}
+.paapi5-pa-product-image-wrapper {
+    display: table-cell;
+    vertical-align: middle;
+}
+
+.paapi5-pa-product-image-link {
+    position: relative;
+    display: inline-block;
+    vertical-align: middle;
+}
+
+.paapi5-pa-product-image-source {
+    max-width: 150px;
+    max-height: 150px;
+    vertical-align: bottom;
+}
+
+.paapi5-pa-percent-off {
+    display: block;
+    width: 32px;
+    height: 25px;
+    padding-top: 8px;
+    position: absolute;
+    top: -16px;
+    right: -16px;
+    color: #ffffff;
+    font-size: 12px;
+    text-align: center;
+    -webkit-border-radius: 50%;
+    -moz-border-radius: 50%;
+    -ms-border-radius: 50%;
+    border-radius: 50%;
+    background-color: #a50200;
+    background-image: -webkit-linear-gradient(top, #cb0400, #a50200);
+    background-image: linear-gradient(to bottom, #cb0400, #a50200);
+}
+
+.paapi5-pa-ad-unit.hide-percent-off-badge .paapi5-pa-percent-off {
+    display: none;
+}
+
+.paapi5-pa-product-details {
+    display: inline-block;
+    max-width: 100%;
+    margin-top: 11px;
+    text-align: center;
+    width: 100%;
+}
+
+.paapi5-pa-ad-unit .paapi5-pa-product-title a {
+    display: block;
+    width: 100%;
+    overflow: hidden;
+    white-space: nowrap;
+    text-overflow: ellipsis;
+    font-size: 13px;
+    color: #0066c0;
+    text-decoration: none;
+    margin-bottom: 3px;
+}
+
+.paapi5-pa-ad-unit .paapi5-pa-product-title a:hover {
+    text-decoration: underline;
+    color: #c45500;
+}
+
+.paapi5-pa-ad-unit.no-truncate .paapi5-pa-product-title a {
+    text-overflow: initial;
+    white-space: initial;
+}
+
+.paapi5-pa-product-offer-price {
+    font-size: 13px;
+    color: #111111;
+}
+
+.paapi5-pa-product-offer-price-value {
+    color: #AB1700;
+    font-weight: bold;
+    font-size: 1.1em;
+    margin-right: 3px;
+}
+
+.paapi5-pa-product-list-price {
+    font-size: 13px;
+    color: #565656;
+}
+
+.paapi5-pa-product-list-price-value {
+    text-decoration: line-through;
+    font-size: 0.99em;
+}
+
+.paapi5-pa-product-prime-icon .icon-prime-all {
+    background: url("https://images-na.ssl-images-amazon.com/images/G/01/AUIClients/AmazonUIBaseCSS-sprite_2x_weblab_AUI_100106_T1-4e9f4ae74b1b576e5f55de370aae7aedaedf390d._V2_.png") no-repeat;
+    display: inline-block;
+    margin-top: -1px;
+    vertical-align: middle;
+    background-position: -192px -911px;
+    background-size: 560px 938px;
+    width: 52px;
+    height: 15px;
+}
+
+.paapi5-pa-product-offer-price,
+.paapi5-pa-product-list-price,
+.paapi5-pa-product-prime-icon {
+    display: inline-block;
+    margin-right: 3px;
+}
+
+@media (-webkit-min-device-pixel-ratio: 2), (min-resolution: 192dpi) {
+    .paapi5-pa-ad-unit .paapi5-pa-product-prime-icon .icon-prime-all {
+        background: url("https://images-na.ssl-images-amazon.com/images/G/01/AUIClients/AmazonUIBaseCSS-sprite_2x_weblab_AUI_100106_T1-4e9f4ae74b1b576e5f55de370aae7aedaedf390d._V2_.png") no-repeat;
+        display: inline-block;
+        margin-top: -1px;
+        vertical-align: middle;
+        background-position: -192px -911px;
+        background-size: 560px 938px;
+        width: 52px;
+        height: 15px;
+    }
+}
+
+@media  screen and (max-width: 440px) {
+    .paapi5-pa-ad-unit {
+        float: none;
+        width: 100%;
+    }
+
+    .paapi5-pa-product-container {
+        margin: 0 auto;
+        width: 100%;
+    }
+
+    .paapi5-pa-product-details {
+        text-align: center;
+        margin-top: 11px;
+    }
+}
