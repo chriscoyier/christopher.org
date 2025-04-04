@@ -1,0 +1,384 @@
+# Copyright (C) 2015 DevPress
+# This file is distributed under the GNU General Public License v2 or later.
+msgid ""
+msgstr ""
+"Project-Id-Version: Luminate 1.1.0\n"
+"Report-Msgid-Bugs-To: https://devpress.com/\n"
+"POT-Creation-Date: 2015-06-04 16:01:24+00:00\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=utf-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"PO-Revision-Date: 2015-MO-DA HO:MI+ZONE\n"
+"Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
+"Language-Team: LANGUAGE <LL@li.org>\n"
+"X-Generator: grunt-wp-i18n 0.4.9\n"
+"X-Poedit-KeywordsList: "
+"__;_e;_x:1,2c;_ex:1,2c;_n:1,2;_nx:1,2,4c;_n_noop:1,2;_nx_noop:1,2,3c;esc_"
+"attr__;esc_html__;esc_attr_e;esc_html_e;esc_attr_x:1,2c;esc_html_x:1,2c;\n"
+"Language: en_US\n"
+"Plural-Forms: nplurals=2; plural=(n != 1);\n"
+"X-Poedit-Country: United States\n"
+"X-Poedit-SourceCharset: UTF-8\n"
+"X-Poedit-Basepath: ../\n"
+"X-Poedit-SearchPath-0: .\n"
+"X-Poedit-Bookmarks: \n"
+"X-Textdomain-Support: yes\n"
+
+#: 404.php:16
+msgid "404 - Page Not Found"
+msgstr ""
+
+#: 404.php:20
+msgid "The page you are looking for doesn't exist. Try a search?"
+msgstr ""
+
+#: archive-jetpack-testimonial.php:13
+msgid "Testimonials"
+msgstr ""
+
+#: comments.php:38 comments.php:60
+msgid "Comment navigation"
+msgstr ""
+
+#: comments.php:41 comments.php:63
+msgid "Older Comments"
+msgstr ""
+
+#: comments.php:42 comments.php:64
+msgid "Newer Comments"
+msgstr ""
+
+#: comments.php:76
+msgid "Comments are closed."
+msgstr ""
+
+#: functions.php:44
+msgid "Top Menu"
+msgstr ""
+
+#: functions.php:45
+msgid "Primary Menu"
+msgstr ""
+
+#: functions.php:46
+msgid "Footer Menu"
+msgstr ""
+
+#: functions.php:78
+msgid "Single Column"
+msgstr ""
+
+#: functions.php:79
+msgid "Narrow Column"
+msgstr ""
+
+#: functions.php:80
+msgid "Sidebar Right"
+msgstr ""
+
+#: functions.php:81
+msgid "Sidebar Left"
+msgstr ""
+
+#: functions.php:155 inc/extras.php:81
+msgid "Sidebar"
+msgstr ""
+
+#: functions.php:165 inc/customizer.php:132
+msgid "Footer"
+msgstr ""
+
+#: header.php:22
+msgid "Skip to content"
+msgstr ""
+
+#: header.php:88
+msgid "Menu"
+msgstr ""
+
+#: inc/customizer.php:17
+msgid "Top Navigation"
+msgstr ""
+
+#: inc/customizer.php:27
+msgid "Top Navigation Text"
+msgstr ""
+
+#: inc/customizer.php:28
+msgid "Text will display in top navigation bar."
+msgstr ""
+
+#: inc/customizer.php:40
+msgid "Display Site Title"
+msgstr ""
+
+#: inc/customizer.php:51
+msgid "Display Site Description"
+msgstr ""
+
+#: inc/customizer.php:62
+msgid "Logo"
+msgstr ""
+
+#. Template Name of the plugin/theme
+msgid "Page Showcase"
+msgstr ""
+
+#: inc/customizer.php:84
+msgid "Select Page"
+msgstr ""
+
+#: inc/customizer.php:91 inc/customizer.php:100 templates/page-showcase.php:87
+msgid "Read More"
+msgstr ""
+
+#: inc/customizer.php:96
+msgid "Link text. Set blank to hide."
+msgstr ""
+
+#: inc/customizer.php:113
+msgid "Highlight Color"
+msgstr ""
+
+#: inc/customizer.php:125
+msgid "Highlight Hover"
+msgstr ""
+
+#: inc/customizer.php:142
+msgid "Footer Text"
+msgstr ""
+
+#: inc/customizer.php:157
+msgid "Site Title, Tagline and Logo"
+msgstr ""
+
+#: inc/mods.php:53
+msgid "Powered by %s"
+msgstr ""
+
+#: inc/mods.php:54
+msgid "http://wordpress.org/"
+msgstr ""
+
+#: inc/mods.php:58
+msgid "%1$s by %2$s."
+msgstr ""
+
+#: inc/template-tags.php:48 inc/template-tags.php:57
+#. translators: used between list items, there is a space after the comma
+msgid ", "
+msgstr ""
+
+#: inc/template-tags.php:65 partials/content-page.php:24
+msgid "Edit"
+msgstr ""
+
+#: inc/theme-layouts.php:458 inc/theme-layouts.php:565
+#: inc/theme-layouts.php:650
+msgid "Layout"
+msgstr ""
+
+#: inc/theme-layouts.php:683
+msgid "Global Layout"
+msgstr ""
+
+#: inc/updater/theme-updater.php:27
+msgid "Theme License"
+msgstr ""
+
+#: inc/updater/theme-updater.php:28
+msgid "Enter your theme license key."
+msgstr ""
+
+#: inc/updater/theme-updater.php:29
+msgid "License Key"
+msgstr ""
+
+#: inc/updater/theme-updater.php:30
+msgid "License Action"
+msgstr ""
+
+#: inc/updater/theme-updater.php:31
+msgid "Deactivate License"
+msgstr ""
+
+#: inc/updater/theme-updater.php:32
+msgid "Activate License"
+msgstr ""
+
+#: inc/updater/theme-updater.php:33 inc/updater/theme-updater.php:45
+msgid "License status is unknown."
+msgstr ""
+
+#: inc/updater/theme-updater.php:34
+msgid "Renew?"
+msgstr ""
+
+#: inc/updater/theme-updater.php:35
+msgid "unlimited"
+msgstr ""
+
+#: inc/updater/theme-updater.php:36
+msgid "License key is active."
+msgstr ""
+
+#: inc/updater/theme-updater.php:37
+msgid "Expires %s."
+msgstr ""
+
+#: inc/updater/theme-updater.php:38
+msgid "You have %1$s / %2$s sites activated."
+msgstr ""
+
+#: inc/updater/theme-updater.php:39
+msgid "License key expired %s."
+msgstr ""
+
+#: inc/updater/theme-updater.php:40
+msgid "License key has expired."
+msgstr ""
+
+#: inc/updater/theme-updater.php:41
+msgid "License keys do not match."
+msgstr ""
+
+#: inc/updater/theme-updater.php:42
+msgid "License is inactive."
+msgstr ""
+
+#: inc/updater/theme-updater.php:43
+msgid "License key is disabled."
+msgstr ""
+
+#: inc/updater/theme-updater.php:44
+msgid "Site is inactive."
+msgstr ""
+
+#: inc/updater/theme-updater.php:46
+msgid ""
+"Updating this theme will lose any customizations you have made. 'Cancel' to "
+"stop, 'OK' to update."
+msgstr ""
+
+#: inc/updater/theme-updater.php:47
+msgid ""
+"<strong>%1$s %2$s</strong> is available. <a href=\"%3$s\" "
+"class=\"thickbox\" title=\"%4s\">Check out what's new</a> or <a "
+"href=\"%5$s\"%6$s>update now</a>."
+msgstr ""
+
+#: partials/content-none.php:14
+msgid "Nothing Found"
+msgstr ""
+
+#: partials/content-none.php:20
+msgid "Ready to publish your first post? <a href=\"%1$s\">Get started here</a>."
+msgstr ""
+
+#: partials/content-none.php:24
+msgid ""
+"Sorry, but nothing matched your search terms. Please try again with some "
+"different keywords."
+msgstr ""
+
+#: partials/content-none.php:29
+msgid ""
+"It seems we can&rsquo;t find what you&rsquo;re looking for. Perhaps "
+"searching can help."
+msgstr ""
+
+#: partials/content-page.php:18 partials/content-single.php:32
+#: partials/content.php:34
+msgid "Pages:"
+msgstr ""
+
+#: partials/content-single.php:46
+msgid "About %s"
+msgstr ""
+
+#: partials/content.php:30
+msgid "Continue reading <span class=\"meta-nav\">&rarr;</span>"
+msgstr ""
+
+#: search.php:11
+msgid "Search Results for: %s"
+msgstr ""
+
+#: searchform.php:11 searchform.php:12
+msgid "Search for:"
+msgstr ""
+
+#: searchform.php:12 searchform.php:15
+msgid "Search..."
+msgstr ""
+
+#: templates/page-showcase.php:105
+msgid "There are no pages available to display."
+msgstr ""
+
+#: templates/page-showcase.php:107
+msgid "Please check your settings in the <a href=\"%s\">customizer</a>."
+msgstr ""
+
+#. Theme Name of the plugin/theme
+msgid "Luminate"
+msgstr ""
+
+#. Theme URI of the plugin/theme
+msgid "https://devpress.com/luminate"
+msgstr ""
+
+#. Description of the plugin/theme
+msgid ""
+"Luminate allows you to quickly set up a website for your small business or "
+"organization."
+msgstr ""
+
+#. Author of the plugin/theme
+msgid "DevPress"
+msgstr ""
+
+#. Author URI of the plugin/theme
+msgid "https://devpress.com"
+msgstr ""
+
+#: comments.php:29
+msgctxt "comments title"
+msgid "One thought on &ldquo;%2$s&rdquo;"
+msgid_plural "%1$s thoughts on &ldquo;%2$s&rdquo;"
+msgstr[0] ""
+msgstr[1] ""
+
+#: functions.php:192
+#. Translators: If there are characters in your language that are not
+#. * supported by Lora, translate this to 'off'. Do not translate
+#. * into your own language.
+msgctxt "Roboto font: active or inactive"
+msgid "active"
+msgstr ""
+
+#: inc/template-tags.php:24
+msgctxt "post date"
+msgid "%s"
+msgstr ""
+
+#: inc/template-tags.php:29
+msgctxt "post author"
+msgid "By %s"
+msgstr ""
+
+#: inc/theme-layouts.php:363
+#. Translators: Default theme layout option.
+msgctxt "theme layout"
+msgid "Default"
+msgstr ""
+
+#: single.php:19
+msgctxt "Previous post link"
+msgid "<span class=\"meta-nav\">&larr;</span> %title"
+msgstr ""
+
+#: single.php:20
+msgctxt "Next post link"
+msgid "%title <span class=\"meta-nav\">&rarr;</span>"
+msgstr ""

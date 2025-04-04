@@ -1,0 +1,36 @@
+/*
+Theme Name: Luminate
+Theme URI: https://devpress.com/luminate
+Author: DevPress
+Author URI: https://devpress.com
+Description: Luminate allows you to quickly set up a website for your small business or organization.
+Version: 1.1.0
+License: GNU General Public License v2 or later
+License URI: http://www.gnu.org/licenses/gpl-2.0.html
+Text Domain: luminate
+Tags: responsive-layout, one-column, two-columns, translation-ready
+
+This theme, like WordPress, is licensed under the GPL.
+Use it to make something cool, have fun, and share what you've learned with others.
+
+*/
+
+/*
+
+This theme uses Grunt tasks to build and minify the styles.
+
+If WP_DEBUG is set to TRUE, css/style.css is loaded (for development).
+IF WP_DEBUG is set to FALSE, css/style.css.min is loaded (for production).
+
+If you wish to add styles, there are a number of options:
+
+1. Use the JetPack CSS module and override styles inline.
+2. Create a child theme and add styles to the style.css of your child theme.
+3. Edit styles in sass folder directly and use Grunt build tasks.
+
+*/
+
+pre > code {
+	line-height: inherit !important;
+	background: black;
+}

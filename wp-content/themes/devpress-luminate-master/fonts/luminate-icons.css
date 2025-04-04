@@ -1,0 +1,101 @@
+@font-face {
+	font-family: 'luminate-icons';
+	src:url('luminate-icons.eot?v1');
+	src:url('luminate-icons.eot?#v1') format('embedded-opentype'),
+		url('luminate-icons.woff?v1') format('woff'),
+		url('luminate-icons.ttf?v1') format('truetype'),
+		url('luminate-icons.svg?v1#luminate') format('svg');
+	font-weight: normal;
+	font-style: normal;
+}
+
+[class^="luminate-icon-"], [class*=" luminate-icon-"] {
+	font-family: 'luminate-icons';
+	speak: none;
+	font-style: normal;
+	font-weight: normal;
+	font-variant: normal;
+	text-transform: none;
+	line-height: 1;
+	-webkit-font-smoothing: antialiased;
+	-moz-osx-font-smoothing: grayscale;
+}
+
+.luminate-icon-search:before {
+	content: "\f002";
+}
+.luminate-icon-search-plus:before {
+	content: "\f00e";
+}
+.luminate-icon-search-minus:before {
+	content: "\f010";
+}
+.luminate-icon-tags:before {
+	content: "\f02c";
+}
+.luminate-icon-pencil:before {
+	content: "\f040";
+}
+.luminate-icon-folder-open:before {
+	content: "\f07c";
+}
+.luminate-icon-twitter:before {
+	content: "\f099";
+}
+.luminate-icon-facebook:before {
+	content: "\f09a";
+}
+.luminate-icon-github:before {
+	content: "\f09b";
+}
+.luminate-icon-navicon:before {
+	content: "\f0c9";
+}
+.luminate-icon-pinterest:before {
+	content: "\f0d2";
+}
+.luminate-icon-google-plus:before {
+	content: "\f0d5";
+}
+.luminate-icon-linkedin:before {
+	content: "\f0e1";
+}
+.luminate-icon-mail-reply:before {
+	content: "\f112";
+}
+.luminate-icon-pencil-square:before {
+	content: "\f14b";
+}
+.luminate-icon-instagram:before {
+	content: "\f16d";
+}
+.luminate-icon-flickr:before {
+	content: "\f16e";
+}
+.luminate-icon-tumblr:before {
+	content: "\f173";
+}
+.luminate-icon-dribbble:before {
+	content: "\f17d";
+}
+.luminate-icon-skype:before {
+	content: "\f17e";
+}
+.luminate-icon-vimeo-square:before {
+	content: "\f194";
+}
+.luminate-icon-wordpress:before {
+	content: "\f19a";
+}
+.luminate-icon-behance:before {
+	content: "\f1b4";
+}
+.luminate-icon-spotify:before {
+	content: "\f1bc";
+}
+.luminate-icon-link:before {
+	content: "\f0c1";
+}
+.luminate-icon-caret-down:before {
+	content: "\f0d7";
+}

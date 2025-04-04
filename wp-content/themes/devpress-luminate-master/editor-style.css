@@ -1,0 +1,177 @@
+/* Body Styles */
+
+body {
+	color: #333;
+	font-size: 17px;
+	line-height: 1.5;
+	font-family: "Roboto","Helvetica Neue", sans-serif;
+}
+
+/* Header Styles */
+
+h1, h2, h3, h4, h5, h6 {
+	font-family: "Helvetica Neue", sans-serif;
+	font-weight: 400;
+	margin-bottom: .5em;
+	clear: both;
+}
+h1 {
+	font-size: 36px;
+}
+h2 {
+	font-size: 29px;
+}
+h3 {
+	font-size: 22px;
+}
+h4, h5, h6 {
+	font-size: 18px;
+}
+
+/* Globals */
+
+p {
+	margin-bottom: 1em;
+}
+b, strong {
+	font-weight: bold;
+}
+dfn, cite, em, i {
+	font-style: italic;
+}
+blockquote {
+	margin: 0 1em;
+}
+address {
+	margin: 0 0 1em;
+}
+pre {
+	background: rgba(0, 0, 0, 0.05);
+	font-family: "Courier 10 Pitch", Courier, monospace;
+	font-size: 14px;
+	padding: 20px;
+}
+code, kbd, tt, var {
+	font: 14px Monaco, Consolas, "Andale Mono", "DejaVu Sans Mono", monospace;
+}
+abbr, acronym {
+	border-bottom: 1px dotted #666;
+	cursor: help;
+}
+mark, ins {
+	background: #fff9c0;
+	text-decoration: none;
+}
+sup,
+sub {
+	font-size: 75%;
+	height: 0;
+	line-height: 0;
+	position: relative;
+	vertical-align: baseline;
+}
+sup {
+	bottom: 1ex;
+}
+sub {
+	top: .5ex;
+}
+small {
+	font-size: 80%;
+}
+big {
+	font-size: 120%;
+}
+hr {
+	background-color: #ccc;
+	border: 0;
+	height: 1px;
+	margin-bottom: 1em;
+}
+img {
+	height: auto;
+	/* Make sure images are scaled correctly. */
+	max-width: 100%;
+	/* Adhere to container width. */
+}
+
+/* Typographic Elements */
+
+blockquote {
+	background: rgba(0, 0, 0, 0.05);
+	margin: 0 0 20px;
+	padding: 20px;
+	border-left: 4px solid #999;
+}
+
+/* Make sure embeds and iframes fit their containers */
+
+embed,
+iframe,
+object {
+	max-width: 100%;
+}
+
+/* Captions */
+
+.wp-caption {
+	margin-bottom: 15px;
+	max-width: 100%;
+}
+.wp-caption img[class*="wp-image-"] {
+	display: block;
+	margin: 0 auto;
+}
+.wp-caption-text {
+	text-align: center;
+}
+.wp-caption .wp-caption-text {
+	font-size: 14px;
+	margin: 5px 0;
+}
+
+/* Galleries */
+
+.gallery {
+	margin-bottom: 20px;
+}
+.gallery-item {
+	display: inline-block;
+	text-align: center;
+	vertical-align: top;
+	width: 100%;
+}
+.gallery-item img {
+	width:100%;
+	display: block;
+	padding-right:5%;
+	padding-bottom:5%;
+}
+.gallery-columns-1 .gallery-item img {
+	padding-right:0;
+	padding-bottom:15px;
+}
+.gallery-columns-2 .gallery-item {
+	max-width: 50%;
+}
+.gallery-columns-3 .gallery-item {
+	max-width: 33.33%;
+}
+.gallery-columns-4 .gallery-item {
+	max-width: 25%;
+}
+.gallery-columns-5 .gallery-item {
+	max-width: 20%;
+}
+.gallery-columns-6 .gallery-item {
+	max-width: 16.66%;
+}
+.gallery-columns-7 .gallery-item {
+	max-width: 14.28%;
+}
+.gallery-columns-8 .gallery-item {
+	max-width: 12.5%;
+}
+.gallery-columns-9 .gallery-item {
+	max-width: 11.11%;
+}
