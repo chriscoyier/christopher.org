@@ -14,7 +14,7 @@ Description: This file is only enqueued for page-showcase.php
   width: 100%;
 }
 .page-template-page-showcase .entry-image-link:hover img {
-  opacity: .8;
+  opacity: 0.8;
 }
 .page-template-page-showcase .fallback-thumbnail {
   background: #67acc0;
@@ -36,7 +36,7 @@ Description: This file is only enqueued for page-showcase.php
 @media screen and (min-width: 740px) {
   .page-template-page-showcase .hentry:not(.featured-1) .entry-title {
     font-size: 24px;
-    margin-bottom: .5em;
+    margin-bottom: 0.5em;
   }
   .page-template-page-showcase .entry-content {
     min-height: 60px;
@@ -70,7 +70,7 @@ Description: This file is only enqueued for page-showcase.php
   .layout-sidebar-left.page-template-page-showcase .hentry:not(.featured-1),
   .layout-narrow-column.page-template-page-showcase .hentry:not(.featured-1) {
     float: left;
-    max-width: calc( 50% - 15px );
+    max-width: calc(50% - 15px);
   }
   .layout-sidebar-right.page-template-page-showcase .featured-2,
   .layout-sidebar-right.page-template-page-showcase .featured-4,
@@ -88,15 +88,15 @@ Description: This file is only enqueued for page-showcase.php
   .layout-single-column.page-template-page-showcase .featured-1 .entry-image {
     margin: 0;
     float: left;
-    max-width: calc( 66.6% - 10px );
+    max-width: calc(66.6% - 10px);
   }
   .layout-single-column.page-template-page-showcase .featured-1 .entry-header {
-    max-width: calc( 33.3% - 20px );
+    max-width: calc(33.3% - 20px);
     float: left;
     padding: 4% 4% 2%;
   }
   .layout-single-column.page-template-page-showcase .featured-1 .entry-content {
-    max-width: calc( 33.3% - 20px );
+    max-width: calc(33.3% - 20px);
     float: left;
     padding: 0 4% 0;
   }
@@ -109,7 +109,7 @@ Description: This file is only enqueued for page-showcase.php
     text-align: center;
   }
   .layout-single-column.page-template-page-showcase .hentry:not(.featured-1) {
-    width: calc( 33.3% - 20px );
+    width: calc(33.3% - 20px);
     float: left;
     font-size: 16px;
   }
