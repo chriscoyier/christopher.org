@@ -11,6 +11,8 @@
 
 namespace Automattic\Jetpack;
 
+use Store_Product_List;
+
 /**
  * Fetch data about available Plans from WordPress.com
  */
@@ -32,7 +34,7 @@ class Plans {
 		}
 
 		// We're on Jetpack, so it's safe to use this namespace.
-		$request = Automattic\Jetpack\Connection\Client::wpcom_json_api_request_as_user(
+		$request = \Automattic\Jetpack\Connection\Client::wpcom_json_api_request_as_user(
 			'/plans?_locale=' . get_user_locale(),
 			// We're using version 1.5 of the endpoint rather than the default version 2
 			// since the latter only returns Jetpack Plans, but we're also interested in
@@ -41,7 +43,7 @@ class Plans {
 			array(
 				'method'  => 'GET',
 				'headers' => array(
-					'X-Forwarded-For' => ( new Automattic\Jetpack\Status\Visitor() )->get_ip( true ),
+					'X-Forwarded-For' => ( new \Automattic\Jetpack\Status\Visitor() )->get_ip( true ),
 				),
 			),
 			null,
@@ -76,5 +78,34 @@ class Plans {
 				return $plan;
 			}
 		}
+	}
+
+	/**
+	 * Efficiently get the short name of a plan from a slug.
+	 *
+	 * @param string $plan_slug Plan slug.
+	 * @return string|null Short product name or null if not round.
+	 */
+	public static function get_plan_short_name( $plan_slug ) {
+		if ( defined( 'IS_WPCOM' ) && IS_WPCOM ) {
+			if ( ! class_exists( 'Store_Product_List' ) ) {
+				require WP_CONTENT_DIR . '/admin-plugins/wpcom-billing/store-product-list.php';
+			}
+
+			// Skip additional work like processing of coupons, since we only need the plan's short name.
+			$products = Store_Product_List::get();
+
+			foreach ( $products as $product ) {
+				if ( isset( $product['product_slug'] ) && $product['product_slug'] === $plan_slug ) {
+					return $product['product_name_short'] ?? null;
+				}
+			}
+
+			return null;
+		}
+
+		// Fallback to less efficient method for Jetpack environments.
+		$plan = self::get_plan( $plan_slug );
+		return $plan->product_name_short ?? null;
 	}
 }

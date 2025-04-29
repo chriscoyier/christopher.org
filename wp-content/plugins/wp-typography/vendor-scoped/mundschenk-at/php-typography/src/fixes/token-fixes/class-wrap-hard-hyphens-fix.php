@@ -97,4 +97,4 @@ class Wrap_Hard_Hyphens_Fix extends Abstract_Token_Fix
  *
  * @since 5.0.0
  */
-\class_alias('WP_Typography\\Vendor\\PHP_Typography\\Fixes\\Token_Fixes\\Wrap_Hard_Hyphens_Fix', 'PHP_Typography\\Fixes\\Token_Fixes\\Wrap_Hard_Hyphens_Fix', \false);
+\class_alias('WP_Typography\Vendor\PHP_Typography\Fixes\Token_Fixes\Wrap_Hard_Hyphens_Fix', 'PHP_Typography\Fixes\Token_Fixes\Wrap_Hard_Hyphens_Fix', \false);

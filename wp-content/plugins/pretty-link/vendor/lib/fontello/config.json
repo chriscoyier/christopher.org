@@ -541,6 +541,24 @@
       ]
     },
     {
+      "uid": "9affc98d652b86628d650ee58dbf0357",
+      "css": "basket",
+      "code": 59464,
+      "src": "fontawesome"
+    },
+    {
+      "uid": "399ef63b1e23ab1b761dfbb5591fa4da",
+      "css": "right-open",
+      "code": 59465,
+      "src": "fontawesome"
+    },
+    {
+      "uid": "ccddff8e8670dcd130e3cb55fdfc2fd0",
+      "css": "down-open",
+      "code": 59466,
+      "src": "fontawesome"
+    },
+    {
       "uid": "d6766bdaa85d9c748c93f000702f0a44",
       "css": "star",
       "code": 59392,

@@ -522,6 +522,7 @@ class PrliUpdateController {
     if(($this->is_activated() && !$this->is_installed()) || (isset($curr_version) && version_compare($curr_version, PRLI_VERSION, '>'))) {
       $transient->response[PRLI_PLUGIN_SLUG] = (object)array(
         'id'          => $curr_version,
+        'plugin'      => PRLI_PLUGIN_SLUG,
         'slug'        => 'pretty-link',
         'new_version' => $curr_version,
         'url'         => 'https://prettylinks.com/pl/update/url',
@@ -786,7 +787,6 @@ class PrliUpdateController {
     $license_info = get_site_transient('prli_license_info');
     $mothership_license = $this->mothership_license;
 
-
     if(!$license_info && !empty($mothership_license)) {
       try {
         $domain = urlencode(PrliUtils::site_domain());
@@ -800,6 +800,11 @@ class PrliUpdateController {
     }
 
     return $license_info;
+  }
+  public function upgrade_products() {
+    $section_title = esc_html__( 'Products Display', 'pretty-link' );
+    $upgrade_link = 'https://prettylinks.com/pl/main-menu/upgrade?products';
+    include_once PRLI_VIEWS_PATH . "/admin/upgrade/products.php";
   }
 
 } //End class

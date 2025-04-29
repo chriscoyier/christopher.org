@@ -63,7 +63,7 @@ class Cache
      * @param string     $lang       A language code.
      * @param Hyphenator $hyphenator The object to cache.
      */
-    public function set_hyphenator($lang, Hyphenator $hyphenator) : void
+    public function set_hyphenator($lang, Hyphenator $hyphenator): void
     {
         $this->cache[$lang] = $hyphenator;
         $this->changed = \true;
@@ -100,4 +100,4 @@ class Cache
  *
  * @author Peter Putzer <github@mundschenk.at>
  */
-\class_alias('WP_Typography\\Vendor\\PHP_Typography\\Hyphenator\\Cache', 'PHP_Typography\\Hyphenator\\Cache', \false);
+\class_alias('WP_Typography\Vendor\PHP_Typography\Hyphenator\Cache', 'PHP_Typography\Hyphenator\Cache', \false);

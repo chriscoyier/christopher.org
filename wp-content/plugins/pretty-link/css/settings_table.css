@@ -29,6 +29,7 @@ table.prli-settings-table td.prli-settings-table-nav ul {
   vertical-align: top;
 /*  padding: 0 15px 30px 0; */
   margin: 0;
+  padding-left: unset;
   color: white !important;
 }
 
@@ -253,4 +254,60 @@ table.prli-settings-table tr.prli-mobile-nav {
 .prlipro-chip.selected {
   background-color: #0074A2;
   color: #ffffff;
+}
+
+.prli-payment-option-prompt {
+  background: rgba(139, 139, 150, 0.1);
+  box-shadow: 0 0 1px #bbb;
+  align-items: center;
+  justify-content: center;
+  padding: 1em;
+  color: #0a2540;
+  text-align: center;
+  font-size: 15px;
+}
+
+.prli-payment-option-prompt .stripe-feature-list {
+  margin: auto;
+}
+
+.prli-payment-option-prompt .stripe-features li {
+  text-align: left;
+}
+
+.prli-payment-option-prompt  .stripe-features li img {
+  padding-right: 3px;
+}
+
+.prli-payment-option-prompt.connected {
+  display: flex;
+  gap: 15px;
+  padding-bottom: 0;
+  background: #f3f3f3;
+  box-shadow: none;
+}
+
+.prli-payment-option-prompt.connected .stripe-btn {
+  border-radius: 7px;
+  background: #00528c;
+  color: white;
+  font-weight: bold;
+  padding: 0px 10px;
+}
+
+.prli-payment-option-prompt .stripe-title {
+  font-size: 1.5em;
+  font-weight: bold;
+  color: #0a2540;
+}
+
+.prli-payment-option-prompt .prli-stripe-method {
+  position: relative;
+}
+
+.prli-payment-stripe-connect td {padding: 2px !important;}
+@media (max-width: 1100px) {
+  .prli-payment-option-prompt {
+    width: auto;
+  }
 }

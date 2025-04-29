@@ -13,6 +13,7 @@ namespace Automattic\Jetpack\Extensions;
 use Automattic\Jetpack\Blocks;
 use Automattic\Jetpack\Current_Plan as Jetpack_Plan;
 use Automattic\Jetpack\Status;
+use Automattic\Jetpack\Status\Host;
 use Jetpack;
 use Jetpack_Gutenberg;
 
@@ -22,9 +23,6 @@ use Jetpack_Gutenberg;
  * @since 7.3
  */
 class Tiled_Gallery {
-	const FEATURE_NAME = 'tiled-gallery';
-	const BLOCK_NAME   = 'jetpack/' . self::FEATURE_NAME;
-
 	/* Values for building srcsets */
 	const IMG_SRCSET_WIDTH_MAX  = 2000;
 	const IMG_SRCSET_WIDTH_MIN  = 600;
@@ -40,7 +38,7 @@ class Tiled_Gallery {
 			|| ( new Status() )->is_offline_mode()
 		) {
 			Blocks::jetpack_register_block(
-				self::BLOCK_NAME,
+				__DIR__,
 				array(
 					'render_callback' => array( __CLASS__, 'render' ),
 				)
@@ -57,10 +55,11 @@ class Tiled_Gallery {
 	 * @return string
 	 */
 	public static function render( $attr, $content ) {
-		Jetpack_Gutenberg::load_assets_as_required( self::FEATURE_NAME );
+		Jetpack_Gutenberg::load_assets_as_required( __DIR__ );
 
 		$is_squareish_layout = self::is_squareish_layout( $attr );
-
+		// For backward compatibility (ensuring Tiled Galleries using now deprecated versions of the block are not affected).
+		// See isVIP() in utils/index.js.
 		$jetpack_plan = Jetpack_Plan::get();
 		wp_localize_script( 'jetpack-gallery-settings', 'jetpack_plan', array( 'data' => $jetpack_plan['product_slug'] ) );
 
@@ -90,7 +89,7 @@ class Tiled_Gallery {
 
 					// Because URLs are already "photon", the photon function used short-circuits
 					// before ssl is added. Detect ssl and add is if necessary.
-					$is_ssl = ! empty( $src_parts[1] ) && false !== strpos( $src_parts[1], 'ssl=1' );
+					$is_ssl = ! empty( $src_parts[1] ) && str_contains( $src_parts[1], 'ssl=1' );
 
 					if ( ! $orig_width || ! $orig_height || ! $orig_src ) {
 						continue;
@@ -153,6 +152,9 @@ class Tiled_Gallery {
 			}
 		}
 
+		// Apply non-interactive markup last to clean up interactivity attributes.
+		$content = self::non_interactive_markup( $attr, $content );
+
 		/**
 		 * Filter the output of the Tiled Galleries content.
 		 *
@@ -166,13 +168,38 @@ class Tiled_Gallery {
 	}
 
 	/**
+	 * Removes tabindex and role markup for images that should not be interactive.
+	 *
+	 * @param array  $attr Attributes key/value array.
+	 * @param string $content String containing the block content.
+	 */
+	private static function non_interactive_markup( $attr, $content ) {
+		$link_to = $attr['linkTo'] ?? 'none';
+
+		$host             = new Host();
+		$is_module_active = $host->is_wpcom_simple()
+		? get_option( 'carousel_enable_it' )
+		: Jetpack::is_module_active( 'carousel' );
+
+		if ( $link_to === 'none' && ! $is_module_active ) {
+			// Remove tabIndex and role="button" by replacing the content
+			$content = preg_replace(
+				'/\s*(role="button"|tabindex="0")/',
+				'',
+				$content
+			);
+		}
+		return $content;
+	}
+
+	/**
 	 * Determines whether a Tiled Gallery block uses square or circle images (1:1 ratio)
 	 *
 	 * Layouts are block styles and will be available as `is-style-[LAYOUT]` in the className
 	 * attribute. The default (rectangular) will be omitted.
 	 *
-	 * @param  {Array} $attr Attributes key/value array.
-	 * @return {boolean} True if layout is squareish, otherwise false.
+	 * @param array $attr Attributes key/value array.
+	 * @return boolean True if layout is squareish, otherwise false.
 	 */
 	private static function is_squareish_layout( $attr ) {
 		return isset( $attr['className'] )
@@ -183,4 +210,4 @@ class Tiled_Gallery {
 	}
 }
 
-Tiled_Gallery::register();
+add_action( 'init', array( Tiled_Gallery::class, 'register' ) );

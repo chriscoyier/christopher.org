@@ -8,17 +8,25 @@
 namespace Automattic\Jetpack\Forms\Dashboard;
 
 use Automattic\Jetpack\Assets;
+use Automattic\Jetpack\Connection\Initial_State as Connection_Initial_State;
 use Automattic\Jetpack\Connection\Manager as Connection_Manager;
+use Automattic\Jetpack\Forms\ContactForm\Contact_Form_Plugin;
 use Automattic\Jetpack\Forms\Jetpack_Forms;
 use Automattic\Jetpack\Forms\Service\Google_Drive;
 use Automattic\Jetpack\Redirect;
 use Automattic\Jetpack\Status;
-use Automattic\Jetpack\Status\Host;
+use Automattic\Jetpack\Tracking;
 
 /**
  * Handles the Jetpack Forms dashboard.
  */
 class Dashboard {
+	/**
+	 * Script handle for the JS file we enqueue in the Feedback admin page.
+	 *
+	 * @var string
+	 */
+	const SCRIPT_HANDLE = 'jp-forms-dashboard';
 
 	/**
 	 * Priority for the dashboard menu.
@@ -65,7 +73,7 @@ class Dashboard {
 		}
 
 		Assets::register_script(
-			'jp-forms-dashboard',
+			self::SCRIPT_HANDLE,
 			'../../dist/dashboard/jetpack-forms-dashboard.js',
 			__FILE__,
 			array(
@@ -76,29 +84,22 @@ class Dashboard {
 			)
 		);
 
+		if ( Contact_Form_Plugin::can_use_analytics() ) {
+			Tracking::register_tracks_functions_scripts( true );
+		}
+
+		// Adds Connection package initial state.
+		Connection_Initial_State::render_script( self::SCRIPT_HANDLE );
+
 		$api_root = defined( 'IS_WPCOM' ) && IS_WPCOM
 			? sprintf( '/wpcom/v2/sites/%s/', esc_url_raw( rest_url() ) )
 			: '/wp-json/wpcom/v2/';
 
 		wp_add_inline_script(
-			'jp-forms-dashboard',
+			self::SCRIPT_HANDLE,
 			'window.jetpackFormsData = ' . wp_json_encode( array( 'apiRoot' => $api_root ) ) . ';',
 			'before'
 		);
-
-		if ( ( new Host() )->is_wpcom_platform() ) {
-			Assets::register_script(
-				'jp-forms-dashboard-wpcom',
-				'../../dist/dashboard/jetpack-forms-dashboard.wpcom.js',
-				__FILE__,
-				array(
-					'in_footer'    => true,
-					'textdomain'   => 'jetpack-forms',
-					'enqueue'      => true,
-					'dependencies' => array( 'jp-forms-dashboard' ),
-				)
-			);
-		}
 	}
 
 	/**
@@ -111,7 +112,7 @@ class Dashboard {
 				'',
 				__( 'Form Responses', 'jetpack-forms' ),
 				_x( 'Feedback', 'post type name shown in menu', 'jetpack-forms' ),
-				'read',
+				'edit_pages',
 				'jetpack-forms',
 				array( $this, 'render_dashboard' )
 			);
@@ -124,7 +125,7 @@ class Dashboard {
 		add_menu_page(
 			__( 'Form Responses', 'jetpack-forms' ),
 			_x( 'Feedback', 'post type name shown in menu', 'jetpack-forms' ),
-			'read',
+			'edit_pages',
 			'jetpack-forms',
 			array( $this, 'render_dashboard' ),
 			'dashicons-feedback',
@@ -160,7 +161,7 @@ class Dashboard {
 			'hasAI'                   => $has_ai,
 		);
 		?>
-		<div id="jp-forms-dashboard" style="min-height: calc(100vh - 100px);" data-config="<?php echo esc_attr( wp_json_encode( $config, JSON_FORCE_OBJECT ) ); ?>"></div>
+		<div id="jp-forms-dashboard" data-config="<?php echo esc_attr( wp_json_encode( $config, JSON_FORCE_OBJECT ) ); ?>"></div>
 		<?php
 	}
 

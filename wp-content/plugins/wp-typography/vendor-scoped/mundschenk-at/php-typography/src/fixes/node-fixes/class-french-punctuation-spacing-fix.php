@@ -46,10 +46,10 @@ use WP_Typography\Vendor\PHP_Typography\U;
 class French_Punctuation_Spacing_Fix extends Abstract_Node_Fix
 {
     // Regular expressions with mandatary Unicode modifier.
-    const INSERT_NARROW_SPACE = '/(\\w+(?:\\s?»)?)(\\s?)([?!;])(\\s|\\Z)/u';
-    const INSERT_FULL_SPACE = '/(\\w+(?:\\s?»)?)(\\s?)(:)(\\s|\\Z)/u';
-    const INSERT_SPACE_AFTER_OPENING_QUOTE = '/(\\s|\\A|[\\(\\[])(«)(\\s?)(\\w+)/u';
-    const INSERT_SPACE_BEFORE_CLOSING_QUOTE = '/(\\w+[.?!]?)(\\s?)(»)(\\s|[.,?!:\\)\\]]|\\Z)/u';
+    const INSERT_NARROW_SPACE = '/(\w+(?:\s?»)?)(\s?)([?!;])(\s|\Z)/u';
+    const INSERT_FULL_SPACE = '/(\w+(?:\s?»)?)(\s?)(:)(\s|\Z)/u';
+    const INSERT_SPACE_AFTER_OPENING_QUOTE = '/(\s|\A|[\(\[])(«)(\s?)(\w+)/u';
+    const INSERT_SPACE_BEFORE_CLOSING_QUOTE = '/(\w+[.?!]?)(\s?)(»)(\s|[.,?!:\)\]]|\Z)/u';
     /**
      * Apply the fix to a given textnode.
      *
@@ -94,4 +94,4 @@ class French_Punctuation_Spacing_Fix extends Abstract_Node_Fix
  *
  * @since 5.0.0
  */
-\class_alias('WP_Typography\\Vendor\\PHP_Typography\\Fixes\\Node_Fixes\\French_Punctuation_Spacing_Fix', 'PHP_Typography\\Fixes\\Node_Fixes\\French_Punctuation_Spacing_Fix', \false);
+\class_alias('WP_Typography\Vendor\PHP_Typography\Fixes\Node_Fixes\French_Punctuation_Spacing_Fix', 'PHP_Typography\Fixes\Node_Fixes\French_Punctuation_Spacing_Fix', \false);

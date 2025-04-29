@@ -2,7 +2,7 @@
 /**
  *  This file is part of wp-Typography.
  *
- *  Copyright 2018-2022 Peter Putzer.
+ *  Copyright 2018-2024 Peter Putzer.
  *
  *  This program is free software; you can redistribute it and/or
  *  modify it under the terms of the GNU General Public License
@@ -27,9 +27,7 @@
 namespace WP_Typography\Typography;
 
 use PHP_Typography\Settings;
-
 use PHP_Typography\Text_Parser\Token;
-
 use PHP_Typography\Fixes\Token_Fixes\Abstract_Token_Fix;
 
 /**
@@ -56,7 +54,7 @@ class Custom_Token_Fix extends Abstract_Token_Fix {
 	 *
 	 * @throws \InvalidArgumentException The exception is thrown if `$type` is any other string.
 	 */
-	public function __construct( $type ) {
+	public function __construct( string $type ) {
 		$valid_types = [
 			'mixed_words'    => self::MIXED_WORDS,
 			'compound_words' => self::COMPOUND_WORDS,
@@ -65,7 +63,7 @@ class Custom_Token_Fix extends Abstract_Token_Fix {
 		];
 
 		if ( ! isset( $valid_types[ $type ] ) ) {
-			throw new \InvalidArgumentException( "$type is not a valid word type." );
+			throw new \InvalidArgumentException( \esc_html( $type ) . ' is not a valid word type.' );
 		}
 
 		parent::__construct( $valid_types[ $type ], true );
@@ -84,7 +82,7 @@ class Custom_Token_Fix extends Abstract_Token_Fix {
 	 *
 	 * @return Token[] An array of tokens.
 	 */
-	public function apply( array $tokens, Settings $settings, $is_title = false, \DOMText $textnode = null ) : array {
+	public function apply( array $tokens, Settings $settings, $is_title = false, ?\DOMText $textnode = null ): array {
 
 		/**
 		 * Filters the tokenized text node content (limited to a certain "word" type).

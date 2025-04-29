@@ -198,7 +198,7 @@ class Settings implements \ArrayAccess, \JsonSerializable
      * @param string $key   The settings key.
      * @param mixed  $value The settings value.
      */
-    public function __set($key, $value) : void
+    public function __set($key, $value): void
     {
         $this->data[$key] = $value;
     }
@@ -218,7 +218,7 @@ class Settings implements \ArrayAccess, \JsonSerializable
      *
      * @param string $key The settings key.
      */
-    public function __unset($key) : void
+    public function __unset($key): void
     {
         unset($this->data[$key]);
     }
@@ -228,7 +228,7 @@ class Settings implements \ArrayAccess, \JsonSerializable
      * @param string $offset The settings key.
      * @param mixed  $value  The settings value.
      */
-    public function offsetSet($offset, $value) : void
+    public function offsetSet($offset, $value): void
     {
         if (!empty($offset)) {
             $this->data[$offset] = $value;
@@ -239,7 +239,7 @@ class Settings implements \ArrayAccess, \JsonSerializable
      *
      * @param string $offset The settings key.
      */
-    public function offsetExists($offset) : bool
+    public function offsetExists($offset): bool
     {
         return isset($this->data[$offset]);
     }
@@ -248,7 +248,7 @@ class Settings implements \ArrayAccess, \JsonSerializable
      *
      * @param string $offset The settings key.
      */
-    public function offsetUnset($offset) : void
+    public function offsetUnset($offset): void
     {
         unset($this->data[$offset]);
     }
@@ -282,7 +282,7 @@ class Settings implements \ArrayAccess, \JsonSerializable
      * @param  string $char     The remapped character.
      * @param  string $new_char The character to actually use.
      */
-    public function remap_character($char, $new_char) : void
+    public function remap_character($char, $new_char): void
     {
         if ($char !== $new_char) {
             $this->unicode_mapping[$char] = $new_char;
@@ -370,7 +370,7 @@ class Settings implements \ArrayAccess, \JsonSerializable
     /**
      * (Re)set various options to their default values.
      */
-    public function set_defaults() : void
+    public function set_defaults(): void
     {
         // General attributes.
         $this->set_tags_to_ignore();
@@ -437,7 +437,7 @@ class Settings implements \ArrayAccess, \JsonSerializable
      *
      * @param bool $on Optional. Default false.
      */
-    public function set_ignore_parser_errors($on = \false) : void
+    public function set_ignore_parser_errors($on = \false): void
     {
         $this->data[self::PARSER_ERRORS_IGNORE] = $on;
     }
@@ -448,7 +448,7 @@ class Settings implements \ArrayAccess, \JsonSerializable
      *
      * @param callable|null $handler Optional. A callable that takes an array of error strings as its parameter. Default null.
      */
-    public function set_parser_errors_handler(callable $handler = null) : void
+    public function set_parser_errors_handler(callable $handler = null): void
     {
         $this->data[self::PARSER_ERRORS_HANDLER] = $handler;
     }
@@ -459,7 +459,7 @@ class Settings implements \ArrayAccess, \JsonSerializable
      *
      * @param bool $on Optional. Default false.
      */
-    public function set_true_no_break_narrow_space($on = \false) : void
+    public function set_true_no_break_narrow_space($on = \false): void
     {
         if ($on) {
             $this->remap_character(U::NO_BREAK_NARROW_SPACE, U::NO_BREAK_NARROW_SPACE);
@@ -472,18 +472,18 @@ class Settings implements \ArrayAccess, \JsonSerializable
      *
      * @param string|string[] $tags A comma separated list or an array of tag names.
      */
-    public function set_tags_to_ignore($tags = ['code', 'head', 'kbd', 'object', 'option', 'pre', 'samp', 'script', 'noscript', 'noembed', 'select', 'style', 'textarea', 'title', 'var', 'math']) : void
+    public function set_tags_to_ignore($tags = ['code', 'head', 'kbd', 'object', 'option', 'pre', 'samp', 'script', 'noscript', 'noembed', 'select', 'style', 'textarea', 'title', 'var', 'math']): void
     {
         // Ensure that we pass only lower-case tag names to XPath.
-        $tags = \array_filter(\array_map('strtolower', Strings::maybe_split_parameters($tags)), 'ctype_alnum');
-        $this->data[self::IGNORE_TAGS] = \array_unique(\array_merge($tags, \array_flip(DOM::inappropriate_tags())));
+        $tags = array_filter(array_map('strtolower', Strings::maybe_split_parameters($tags)), 'ctype_alnum');
+        $this->data[self::IGNORE_TAGS] = array_unique(array_merge($tags, array_flip(DOM::inappropriate_tags())));
     }
     /**
      * Sets classes for which the typography of their children will be left untouched.
      *
      * @param string|string[] $classes A comma separated list or an array of class names.
      */
-    public function set_classes_to_ignore($classes = ['vcard', 'noTypo']) : void
+    public function set_classes_to_ignore($classes = ['vcard', 'noTypo']): void
     {
         $this->data[self::IGNORE_CLASSES] = Strings::maybe_split_parameters($classes);
     }
@@ -492,7 +492,7 @@ class Settings implements \ArrayAccess, \JsonSerializable
      *
      * @param string|string[] $ids A comma separated list or an array of tag names.
      */
-    public function set_ids_to_ignore($ids = []) : void
+    public function set_ids_to_ignore($ids = []): void
     {
         $this->data[self::IGNORE_IDS] = Strings::maybe_split_parameters($ids);
     }
@@ -501,7 +501,7 @@ class Settings implements \ArrayAccess, \JsonSerializable
      *
      * @param bool $on Optional. Default true.
      */
-    public function set_smart_quotes($on = \true) : void
+    public function set_smart_quotes($on = \true): void
     {
         $this->data[self::SMART_QUOTES] = $on;
     }
@@ -529,7 +529,7 @@ class Settings implements \ArrayAccess, \JsonSerializable
      *
      * @throws \DomainException Thrown if $style constant is invalid.
      */
-    public function set_smart_quotes_primary($style = Quote_Style::DOUBLE_CURLED) : void
+    public function set_smart_quotes_primary($style = Quote_Style::DOUBLE_CURLED): void
     {
         $this->primary_quote_style = $this->get_quote_style($style);
     }
@@ -557,7 +557,7 @@ class Settings implements \ArrayAccess, \JsonSerializable
      *
      * @throws \DomainException Thrown if $style constant is invalid.
      */
-    public function set_smart_quotes_secondary($style = Quote_Style::SINGLE_CURLED) : void
+    public function set_smart_quotes_secondary($style = Quote_Style::SINGLE_CURLED): void
     {
         $this->secondary_quote_style = $this->get_quote_style($style);
     }
@@ -581,7 +581,7 @@ class Settings implements \ArrayAccess, \JsonSerializable
      * @param string[] $exceptions Optional. An array of replacements indexed by the ”non-smart" form.
      *                             Default a list of English words beginning with an apostrophy.
      */
-    public function set_smart_quotes_exceptions($exceptions = ["'tain't" => U::APOSTROPHE . 'tain' . U::APOSTROPHE . 't', "'twere" => U::APOSTROPHE . 'twere', "'twas" => U::APOSTROPHE . 'twas', "'tis" => U::APOSTROPHE . 'tis', "'til" => U::APOSTROPHE . 'til', "'bout" => U::APOSTROPHE . 'bout', "'nuff" => U::APOSTROPHE . 'nuff', "'round" => U::APOSTROPHE . 'round', "'cause" => U::APOSTROPHE . 'cause', "'splainin" => U::APOSTROPHE . 'splainin', "'em'" => U::APOSTROPHE . 'em']) : void
+    public function set_smart_quotes_exceptions($exceptions = ["'tain't" => U::APOSTROPHE . 'tain' . U::APOSTROPHE . 't', "'twere" => U::APOSTROPHE . 'twere', "'twas" => U::APOSTROPHE . 'twas', "'tis" => U::APOSTROPHE . 'tis', "'til" => U::APOSTROPHE . 'til', "'bout" => U::APOSTROPHE . 'bout', "'nuff" => U::APOSTROPHE . 'nuff', "'round" => U::APOSTROPHE . 'round', "'cause" => U::APOSTROPHE . 'cause', "'splainin" => U::APOSTROPHE . 'splainin', "'em'" => U::APOSTROPHE . 'em']): void
     {
         $this->data[self::SMART_QUOTES_EXCEPTIONS] = ['patterns' => \array_keys($exceptions), 'replacements' => \array_values($exceptions)];
     }
@@ -617,7 +617,7 @@ class Settings implements \ArrayAccess, \JsonSerializable
      *
      * @param bool $on Optional. Default true.
      */
-    public function set_smart_dashes($on = \true) : void
+    public function set_smart_dashes($on = \true): void
     {
         $this->data[self::SMART_DASHES] = $on;
     }
@@ -632,7 +632,7 @@ class Settings implements \ArrayAccess, \JsonSerializable
      *
      * @throws \DomainException Thrown if $style constant is invalid.
      */
-    public function set_smart_dashes_style($style = Dash_Style::TRADITIONAL_US) : void
+    public function set_smart_dashes_style($style = Dash_Style::TRADITIONAL_US): void
     {
         $this->dash_style = $this->get_style($style, Settings\Dashes::class, [Dash_Style::class, 'get_styled_dashes'], 'dash');
     }
@@ -641,7 +641,7 @@ class Settings implements \ArrayAccess, \JsonSerializable
      *
      * @param bool $on Optional. Default true.
      */
-    public function set_smart_ellipses($on = \true) : void
+    public function set_smart_ellipses($on = \true): void
     {
         $this->data[self::SMART_ELLIPSES] = $on;
     }
@@ -650,7 +650,7 @@ class Settings implements \ArrayAccess, \JsonSerializable
      *
      * @param bool $on Optional. Default true.
      */
-    public function set_smart_diacritics($on = \true) : void
+    public function set_smart_diacritics($on = \true): void
     {
         $this->data[self::SMART_DIACRITICS] = $on;
     }
@@ -659,7 +659,7 @@ class Settings implements \ArrayAccess, \JsonSerializable
      *
      * @param string $lang Has to correspond to a filename in 'diacritics'. Optional. Default 'en-US'.
      */
-    public function set_diacritic_language($lang = 'en-US') : void
+    public function set_diacritic_language($lang = 'en-US'): void
     {
         if (isset($this->data[self::DIACRITIC_LANGUAGE]) && $this->data[self::DIACRITIC_LANGUAGE] === $lang) {
             return;
@@ -683,7 +683,7 @@ class Settings implements \ArrayAccess, \JsonSerializable
      * @param string|array<string,string> $custom_replacements An array formatted [needle=>replacement, needle=>replacement...],
      *                                                         or a string formatted `"needle"=>"replacement","needle"=>"replacement",...
      */
-    public function set_diacritic_custom_replacements($custom_replacements = []) : void
+    public function set_diacritic_custom_replacements($custom_replacements = []): void
     {
         if (!\is_array($custom_replacements)) {
             $custom_replacements = $this->parse_diacritics_replacement_string($custom_replacements);
@@ -710,7 +710,7 @@ class Settings implements \ArrayAccess, \JsonSerializable
         $replacements = [];
         foreach (\preg_split('/,/', $custom_replacements, -1, \PREG_SPLIT_NO_EMPTY) ?: [] as $replacement) {
             // phpcs:ignore WordPress.PHP.DisallowShortTernary -- Ensure array type in case of error.
-            if (\preg_match('/(?<kquo>"|\')(?<key>(?:(?!\\k<kquo>).)+)\\k<kquo>\\s*=>\\s*(?<rquo>"|\')(?<replacement>(?:(?!\\k<rquo>).)+)\\k<rquo>/', $replacement, $match)) {
+            if (\preg_match('/(?<kquo>"|\')(?<key>(?:(?!\k<kquo>).)+)\k<kquo>\s*=>\s*(?<rquo>"|\')(?<replacement>(?:(?!\k<rquo>).)+)\k<rquo>/', $replacement, $match)) {
                 $replacements[$match['key']] = $match['replacement'];
             }
         }
@@ -731,7 +731,7 @@ class Settings implements \ArrayAccess, \JsonSerializable
      *
      * @return array<T>
      */
-    protected static function array_map_assoc(callable $callback, array $array) : array
+    protected static function array_map_assoc(callable $callback, array $array): array
     {
         $new = [];
         foreach ($array as $k => $v) {
@@ -748,7 +748,7 @@ class Settings implements \ArrayAccess, \JsonSerializable
      * Should be called whenever a new diacritics replacement language is selected or
      * when the custom replacements are updated.
      */
-    private function update_diacritics_replacement_arrays() : void
+    private function update_diacritics_replacement_arrays(): void
     {
         $patterns = [];
         $replacements = [];
@@ -767,10 +767,10 @@ class Settings implements \ArrayAccess, \JsonSerializable
      * @param string[]             $patterns         Resulting patterns. Passed by reference.
      * @param array<string,string> $replacements     Resulting replacements. Passed by reference.
      */
-    private function parse_diacritics_rules(array $diacritics_rules, array &$patterns, array &$replacements) : void
+    private function parse_diacritics_rules(array $diacritics_rules, array &$patterns, array &$replacements): void
     {
         foreach ($diacritics_rules as $needle => $replacement) {
-            $patterns[] = '/\\b(?<!\\w[' . U::NO_BREAK_SPACE . U::SOFT_HYPHEN . '])' . $needle . '\\b(?![' . U::NO_BREAK_SPACE . U::SOFT_HYPHEN . ']\\w)/u';
+            $patterns[] = '/\b(?<!\w[' . U::NO_BREAK_SPACE . U::SOFT_HYPHEN . '])' . $needle . '\b(?![' . U::NO_BREAK_SPACE . U::SOFT_HYPHEN . ']\w)/u';
             $replacements[$needle] = $replacement;
         }
     }
@@ -779,7 +779,7 @@ class Settings implements \ArrayAccess, \JsonSerializable
      *
      * @param bool $on Optional. Default true.
      */
-    public function set_smart_marks($on = \true) : void
+    public function set_smart_marks($on = \true): void
     {
         $this->data[self::SMART_MARKS] = $on;
     }
@@ -788,7 +788,7 @@ class Settings implements \ArrayAccess, \JsonSerializable
      *
      * @param bool $on Optional. Default true.
      */
-    public function set_smart_math($on = \true) : void
+    public function set_smart_math($on = \true): void
     {
         $this->data[self::SMART_MATH] = $on;
     }
@@ -797,7 +797,7 @@ class Settings implements \ArrayAccess, \JsonSerializable
      *
      * @param bool $on Optional. Default true.
      */
-    public function set_smart_exponents($on = \true) : void
+    public function set_smart_exponents($on = \true): void
     {
         $this->data[self::SMART_EXPONENTS] = $on;
     }
@@ -806,7 +806,7 @@ class Settings implements \ArrayAccess, \JsonSerializable
      *
      * @param bool $on Optional. Default true.
      */
-    public function set_smart_fractions($on = \true) : void
+    public function set_smart_fractions($on = \true): void
     {
         $this->data[self::SMART_FRACTIONS] = $on;
     }
@@ -815,7 +815,7 @@ class Settings implements \ArrayAccess, \JsonSerializable
      *
      * @param bool $on Optional. Default true.
      */
-    public function set_smart_ordinal_suffix($on = \true) : void
+    public function set_smart_ordinal_suffix($on = \true): void
     {
         $this->data[self::SMART_ORDINAL_SUFFIX] = $on;
     }
@@ -826,7 +826,7 @@ class Settings implements \ArrayAccess, \JsonSerializable
      *
      * @param bool $on Optional. Default false.
      */
-    public function set_smart_ordinal_suffix_match_roman_numerals($on = \false) : void
+    public function set_smart_ordinal_suffix_match_roman_numerals($on = \false): void
     {
         $this->data[self::SMART_ORDINAL_SUFFIX_ROMAN_NUMERALS] = $on;
     }
@@ -835,7 +835,7 @@ class Settings implements \ArrayAccess, \JsonSerializable
      *
      * @param bool $on Optional. Default true.
      */
-    public function set_smart_area_units($on = \true) : void
+    public function set_smart_area_units($on = \true): void
     {
         $this->data[self::SMART_AREA_UNITS] = $on;
     }
@@ -844,7 +844,7 @@ class Settings implements \ArrayAccess, \JsonSerializable
      *
      * @param bool $on Optional. Default true.
      */
-    public function set_single_character_word_spacing($on = \true) : void
+    public function set_single_character_word_spacing($on = \true): void
     {
         $this->data[self::SINGLE_CHARACTER_WORD_SPACING] = $on;
     }
@@ -853,7 +853,7 @@ class Settings implements \ArrayAccess, \JsonSerializable
      *
      * @param bool $on Optional. Default true.
      */
-    public function set_fraction_spacing($on = \true) : void
+    public function set_fraction_spacing($on = \true): void
     {
         $this->data[self::FRACTION_SPACING] = $on;
     }
@@ -862,7 +862,7 @@ class Settings implements \ArrayAccess, \JsonSerializable
      *
      * @param bool $on Optional. Default true.
      */
-    public function set_unit_spacing($on = \true) : void
+    public function set_unit_spacing($on = \true): void
     {
         $this->data[self::UNIT_SPACING] = $on;
     }
@@ -871,7 +871,7 @@ class Settings implements \ArrayAccess, \JsonSerializable
      *
      * @param bool $on Optional. Default true.
      */
-    public function set_numbered_abbreviation_spacing($on = \true) : void
+    public function set_numbered_abbreviation_spacing($on = \true): void
     {
         $this->data[self::NUMBERED_ABBREVIATION_SPACING] = $on;
     }
@@ -882,7 +882,7 @@ class Settings implements \ArrayAccess, \JsonSerializable
      *
      * @param bool $on Optional. Default false.
      */
-    public function set_french_punctuation_spacing($on = \false) : void
+    public function set_french_punctuation_spacing($on = \false): void
     {
         $this->data[self::FRENCH_PUNCTUATION_SPACING] = $on;
     }
@@ -891,7 +891,7 @@ class Settings implements \ArrayAccess, \JsonSerializable
      *
      * @param string|string[] $units A comma separated list or an array of units.
      */
-    public function set_units($units = []) : void
+    public function set_units($units = []): void
     {
         $this->data[self::UNITS] = Strings::maybe_split_parameters($units);
         $this->custom_units = $this->update_unit_pattern($this->data[self::UNITS]);
@@ -920,7 +920,7 @@ class Settings implements \ArrayAccess, \JsonSerializable
      *
      * @param bool $on Optional. Default true.
      */
-    public function set_dash_spacing($on = \true) : void
+    public function set_dash_spacing($on = \true): void
     {
         $this->data[self::DASH_SPACING] = $on;
     }
@@ -929,7 +929,7 @@ class Settings implements \ArrayAccess, \JsonSerializable
      *
      * @param bool $on Optional. Default true.
      */
-    public function set_space_collapse($on = \true) : void
+    public function set_space_collapse($on = \true): void
     {
         $this->data[self::SPACE_COLLAPSE] = $on;
     }
@@ -938,7 +938,7 @@ class Settings implements \ArrayAccess, \JsonSerializable
      *
      * @param bool $on Optional. Default true.
      */
-    public function set_dewidow($on = \true) : void
+    public function set_dewidow($on = \true): void
     {
         $this->data[self::DEWIDOW] = $on;
     }
@@ -947,7 +947,7 @@ class Settings implements \ArrayAccess, \JsonSerializable
      *
      * @param int $length Defaults to 5. Trying to set the value to less than 2 resets the length to the default.
      */
-    public function set_max_dewidow_length($length = 5) : void
+    public function set_max_dewidow_length($length = 5): void
     {
         $length = $length > 1 ? $length : 5;
         $this->data[self::DEWIDOW_MAX_LENGTH] = $length;
@@ -957,7 +957,7 @@ class Settings implements \ArrayAccess, \JsonSerializable
      *
      * @param int $number Defaults to 1. Only 1, 2 and 3 are valid.
      */
-    public function set_dewidow_word_number($number = 1) : void
+    public function set_dewidow_word_number($number = 1): void
     {
         $number = $number > 3 || $number < 1 ? 1 : $number;
         $this->data[self::DEWIDOW_WORD_NUMBER] = $number;
@@ -967,7 +967,7 @@ class Settings implements \ArrayAccess, \JsonSerializable
      *
      * @param int $length Defaults to 5. Trying to set the value to less than 2 resets the length to the default.
      */
-    public function set_max_dewidow_pull($length = 5) : void
+    public function set_max_dewidow_pull($length = 5): void
     {
         $length = $length > 1 ? $length : 5;
         $this->data[self::DEWIDOW_MAX_PULL] = $length;
@@ -977,7 +977,7 @@ class Settings implements \ArrayAccess, \JsonSerializable
      *
      * @param bool $on Optional. Default true.
      */
-    public function set_wrap_hard_hyphens($on = \true) : void
+    public function set_wrap_hard_hyphens($on = \true): void
     {
         $this->data[self::HYPHEN_HARD_WRAP] = $on;
     }
@@ -986,7 +986,7 @@ class Settings implements \ArrayAccess, \JsonSerializable
      *
      * @param bool $on Optional. Default true.
      */
-    public function set_url_wrap($on = \true) : void
+    public function set_url_wrap($on = \true): void
     {
         $this->data[self::URL_WRAP] = $on;
     }
@@ -995,7 +995,7 @@ class Settings implements \ArrayAccess, \JsonSerializable
      *
      * @param bool $on Optional. Default true.
      */
-    public function set_email_wrap($on = \true) : void
+    public function set_email_wrap($on = \true): void
     {
         $this->data[self::EMAIL_WRAP] = $on;
     }
@@ -1004,7 +1004,7 @@ class Settings implements \ArrayAccess, \JsonSerializable
      *
      * @param int $length Defaults to 5. Trying to set the value to less than 1 resets the length to the default.
      */
-    public function set_min_after_url_wrap($length = 5) : void
+    public function set_min_after_url_wrap($length = 5): void
     {
         $length = $length > 0 ? $length : 5;
         $this->data[self::URL_MIN_AFTER_WRAP] = $length;
@@ -1014,7 +1014,7 @@ class Settings implements \ArrayAccess, \JsonSerializable
      *
      * @param bool $on Optional. Default true.
      */
-    public function set_style_ampersands($on = \true) : void
+    public function set_style_ampersands($on = \true): void
     {
         $this->data[self::STYLE_AMPERSANDS] = $on;
     }
@@ -1023,7 +1023,7 @@ class Settings implements \ArrayAccess, \JsonSerializable
      *
      * @param bool $on Optional. Default true.
      */
-    public function set_style_caps($on = \true) : void
+    public function set_style_caps($on = \true): void
     {
         $this->data[self::STYLE_CAPS] = $on;
     }
@@ -1032,7 +1032,7 @@ class Settings implements \ArrayAccess, \JsonSerializable
      *
      * @param bool $on Optional. Default true.
      */
-    public function set_style_initial_quotes($on = \true) : void
+    public function set_style_initial_quotes($on = \true): void
     {
         $this->data[self::STYLE_INITIAL_QUOTES] = $on;
     }
@@ -1041,7 +1041,7 @@ class Settings implements \ArrayAccess, \JsonSerializable
      *
      * @param bool $on Optional. Default true.
      */
-    public function set_style_numbers($on = \true) : void
+    public function set_style_numbers($on = \true): void
     {
         $this->data[self::STYLE_NUMBERS] = $on;
     }
@@ -1050,7 +1050,7 @@ class Settings implements \ArrayAccess, \JsonSerializable
      *
      * @param bool $on Optional. Default true.
      */
-    public function set_style_hanging_punctuation($on = \true) : void
+    public function set_style_hanging_punctuation($on = \true): void
     {
         $this->data[self::STYLE_HANGING_PUNCTUATION] = $on;
     }
@@ -1059,7 +1059,7 @@ class Settings implements \ArrayAccess, \JsonSerializable
      *
      * @param string|string[] $tags A comma separated list or an array of tag names.
      */
-    public function set_initial_quote_tags($tags = ['p', 'h1', 'h2', 'h3', 'h4', 'h5', 'h6', 'blockquote', 'li', 'dd', 'dt']) : void
+    public function set_initial_quote_tags($tags = ['p', 'h1', 'h2', 'h3', 'h4', 'h5', 'h6', 'blockquote', 'li', 'dd', 'dt']): void
     {
         // Make array if handed a list of tags as a string.
         if (!\is_array($tags)) {
@@ -1074,7 +1074,7 @@ class Settings implements \ArrayAccess, \JsonSerializable
      *
      * @param bool $on Optional. Default true.
      */
-    public function set_hyphenation($on = \true) : void
+    public function set_hyphenation($on = \true): void
     {
         $this->data[self::HYPHENATION] = $on;
     }
@@ -1083,7 +1083,7 @@ class Settings implements \ArrayAccess, \JsonSerializable
      *
      * @param string $lang Has to correspond to a filename in 'lang'. Optional. Default 'en-US'.
      */
-    public function set_hyphenation_language($lang = 'en-US') : void
+    public function set_hyphenation_language($lang = 'en-US'): void
     {
         if (isset($this->data[self::HYPHENATION_LANGUAGE]) && $this->data[self::HYPHENATION_LANGUAGE] === $lang) {
             return;
@@ -1096,7 +1096,7 @@ class Settings implements \ArrayAccess, \JsonSerializable
      *
      * @param int $length Defaults to 5. Trying to set the value to less than 2 resets the length to the default.
      */
-    public function set_min_length_hyphenation($length = 5) : void
+    public function set_min_length_hyphenation($length = 5): void
     {
         $length = $length > 1 ? $length : 5;
         $this->data[self::HYPHENATION_MIN_LENGTH] = $length;
@@ -1106,7 +1106,7 @@ class Settings implements \ArrayAccess, \JsonSerializable
      *
      * @param int $length Defaults to 3. Trying to set the value to less than 1 resets the length to the default.
      */
-    public function set_min_before_hyphenation($length = 3) : void
+    public function set_min_before_hyphenation($length = 3): void
     {
         $length = $length > 0 ? $length : 3;
         $this->data[self::HYPHENATION_MIN_BEFORE] = $length;
@@ -1116,7 +1116,7 @@ class Settings implements \ArrayAccess, \JsonSerializable
      *
      * @param int $length Defaults to 2. Trying to set the value to less than 1 resets the length to the default.
      */
-    public function set_min_after_hyphenation($length = 2) : void
+    public function set_min_after_hyphenation($length = 2): void
     {
         $length = $length > 0 ? $length : 2;
         $this->data[self::HYPHENATION_MIN_AFTER] = $length;
@@ -1126,7 +1126,7 @@ class Settings implements \ArrayAccess, \JsonSerializable
      *
      * @param bool $on Optional. Default true.
      */
-    public function set_hyphenate_headings($on = \true) : void
+    public function set_hyphenate_headings($on = \true): void
     {
         $this->data[self::HYPHENATE_HEADINGS] = $on;
     }
@@ -1135,7 +1135,7 @@ class Settings implements \ArrayAccess, \JsonSerializable
      *
      * @param bool $on Optional. Default true.
      */
-    public function set_hyphenate_all_caps($on = \true) : void
+    public function set_hyphenate_all_caps($on = \true): void
     {
         $this->data[self::HYPHENATE_ALL_CAPS] = $on;
     }
@@ -1144,7 +1144,7 @@ class Settings implements \ArrayAccess, \JsonSerializable
      *
      * @param bool $on Optional. Default true.
      */
-    public function set_hyphenate_title_case($on = \true) : void
+    public function set_hyphenate_title_case($on = \true): void
     {
         $this->data[self::HYPHENATE_TITLE_CASE] = $on;
     }
@@ -1153,7 +1153,7 @@ class Settings implements \ArrayAccess, \JsonSerializable
      *
      * @param bool $on Optional. Default true.
      */
-    public function set_hyphenate_compounds($on = \true) : void
+    public function set_hyphenate_compounds($on = \true): void
     {
         $this->data[self::HYPHENATE_COMPOUNDS] = $on;
     }
@@ -1163,7 +1163,7 @@ class Settings implements \ArrayAccess, \JsonSerializable
      * @param string|string[] $exceptions An array of words with all hyphenation points marked with a hard hyphen (or a string list of such words).
      *        In the latter case, only alphanumeric characters and hyphens are recognized. The default is empty.
      */
-    public function set_hyphenation_exceptions($exceptions = []) : void
+    public function set_hyphenation_exceptions($exceptions = []): void
     {
         $this->data[self::HYPHENATION_CUSTOM_EXCEPTIONS] = Strings::maybe_split_parameters($exceptions);
     }
@@ -1196,4 +1196,4 @@ class Settings implements \ArrayAccess, \JsonSerializable
  *
  * @implements \ArrayAccess<string,mixed>
  */
-\class_alias('WP_Typography\\Vendor\\PHP_Typography\\Settings', 'PHP_Typography\\Settings', \false);
+\class_alias('WP_Typography\Vendor\PHP_Typography\Settings', 'PHP_Typography\Settings', \false);

@@ -3,7 +3,7 @@
 /**
  * This file is part of wp-Typography.
  *
- * Copyright 2020 Peter Putzer.
+ * Copyright 2020-2024 Peter Putzer.
  *
  * This program is free software; you can redistribute it and/or
  * modify it under the terms of the GNU General Public License
@@ -24,13 +24,17 @@
  * @file     This file handles the Typography block.
  * @author   Peter Putzer <github@mundschenk.at>
  * @since    5.7.0
- * @requires Gutenberg 4.3
  */
 
 /**
  * WordPress dependencies
  */
 import { __ } from '@wordpress/i18n';
+
+/**
+ * Type checking dependencies
+ */
+import PropTypes from 'prop-types';
 
 /**
  * Internal dependencies
@@ -49,6 +53,10 @@ export const settings = {
 	supports: {
 		align: false,
 		html: false,
+	},
+
+	propTypes: {
+		className: PropTypes.string.isRequired,
 	},
 
 	edit,

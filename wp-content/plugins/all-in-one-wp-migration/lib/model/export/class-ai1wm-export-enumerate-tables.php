@@ -45,7 +45,7 @@ class Ai1wm_Export_Enumerate_Tables {
 		}
 
 		// Set progress
-		Ai1wm_Status::info( __( 'Gathering database tables...', AI1WM_PLUGIN_NAME ) );
+		Ai1wm_Status::info( __( 'Gathering database tables...', 'all-in-one-wp-migration' ) );
 
 		// Get database client
 		$db_client = Ai1wm_Database_Utility::create_client();
@@ -77,7 +77,7 @@ class Ai1wm_Export_Enumerate_Tables {
 		}
 
 		// Set progress
-		Ai1wm_Status::info( __( 'Database tables gathered.', AI1WM_PLUGIN_NAME ) );
+		Ai1wm_Status::info( __( 'Database tables gathered.', 'all-in-one-wp-migration' ) );
 
 		// Set total tables count
 		$params['total_tables_count'] = $total_tables_count;

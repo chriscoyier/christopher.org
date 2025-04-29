@@ -176,7 +176,10 @@ class Red_Item {
 		}
 
 		$this->regex = (bool) $this->regex;
-		$this->last_access = ( $this->last_access === '1970-01-01 00:00:00' || $this->last_access === '0000-00-00 00:00:00' ) ? 0 : mysql2date( 'U', $this->last_access );
+
+		if ( isset( $values['last_access'] ) ) {
+			$this->last_access = ( $this->last_access === '1970-01-01 00:00:00' || $this->last_access === '0000-00-00 00:00:00' ) ? 0 : mysql2date( 'U', $this->last_access );
+		}
 
 		$this->load_matcher();
 		$this->load_action();
@@ -368,7 +371,7 @@ class Red_Item {
 	 * Return only the 'item' element
 	 *
 	 * @param array $item Item.
-	 * @return String
+	 * @return string
 	 */
 	public static function reduce_sorted_items( $item ) {
 		return $item['item'];
@@ -443,7 +446,7 @@ class Red_Item {
 	/**
 	 * Disable all redirects that match the URL
 	 *
-	 * @param String $url URL to match.
+	 * @param string $url URL to match.
 	 * @return void
 	 */
 	public static function disable_where_matches( $url ) {
@@ -622,8 +625,8 @@ class Red_Item {
 	/**
 	 * Register a visit against this redirect
 	 *
-	 * @param String      $url Full URL that is visited, including query parameters.
-	 * @param String|true $target Target URL, if appropriate.
+	 * @param string      $url Full URL that is visited, including query parameters.
+	 * @param string|true $target Target URL, if appropriate.
 	 * @return void
 	 */
 	public function visit( $url, $target ) {
@@ -874,7 +877,7 @@ class Red_Item {
 	/**
 	 * Get action data
 	 *
-	 * @return String
+	 * @return string
 	 */
 	public function get_action_data() {
 		return $this->action_data ? $this->action_data : '';
@@ -936,7 +939,7 @@ class Red_Item {
 	 * Get a filtered list of redirects
 	 *
 	 * @param array $params Filter parameters.
-	 * @return array<total: integer, items: Red_Item[]>
+	 * @return array{total:integer,items:Red_Item[]}
 	 */
 	public static function get_filtered( array $params ) {
 		global $wpdb;

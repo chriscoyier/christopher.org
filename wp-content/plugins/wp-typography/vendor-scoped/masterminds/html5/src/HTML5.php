@@ -27,7 +27,7 @@ class HTML5
     protected $errors = array();
     public function __construct(array $defaultOptions = array())
     {
-        $this->defaultOptions = \array_merge($this->defaultOptions, $defaultOptions);
+        $this->defaultOptions = array_merge($this->defaultOptions, $defaultOptions);
     }
     /**
      * Get the current default options.
@@ -59,10 +59,10 @@ class HTML5
     public function load($file, array $options = array())
     {
         // Handle the case where file is a resource.
-        if (\is_resource($file)) {
-            return $this->parse(\stream_get_contents($file), $options);
+        if (is_resource($file)) {
+            return $this->parse(stream_get_contents($file), $options);
         }
-        return $this->parse(\file_get_contents($file), $options);
+        return $this->parse(file_get_contents($file), $options);
     }
     /**
      * Parse a HTML Document from a string.
@@ -127,7 +127,7 @@ class HTML5
      */
     public function hasErrors()
     {
-        return \count($this->errors) > 0;
+        return count($this->errors) > 0;
     }
     /**
      * Parse an input string.
@@ -140,7 +140,7 @@ class HTML5
     public function parse($input, array $options = array())
     {
         $this->errors = array();
-        $options = \array_merge($this->defaultOptions, $options);
+        $options = array_merge($this->defaultOptions, $options);
         $events = new DOMTreeBuilder(\false, $options);
         $scanner = new Scanner($input, !empty($options['encoding']) ? $options['encoding'] : 'UTF-8');
         $parser = new Tokenizer($scanner, $events, !empty($options['xmlNamespaces']) ? Tokenizer::CONFORMANT_XML : Tokenizer::CONFORMANT_HTML);
@@ -161,7 +161,7 @@ class HTML5
      */
     public function parseFragment($input, array $options = array())
     {
-        $options = \array_merge($this->defaultOptions, $options);
+        $options = array_merge($this->defaultOptions, $options);
         $events = new DOMTreeBuilder(\true, $options);
         $scanner = new Scanner($input, !empty($options['encoding']) ? $options['encoding'] : 'UTF-8');
         $parser = new Tokenizer($scanner, $events, !empty($options['xmlNamespaces']) ? Tokenizer::CONFORMANT_XML : Tokenizer::CONFORMANT_HTML);
@@ -182,13 +182,13 @@ class HTML5
     public function save($dom, $file, $options = array())
     {
         $close = \true;
-        if (\is_resource($file)) {
+        if (is_resource($file)) {
             $stream = $file;
             $close = \false;
         } else {
-            $stream = \fopen($file, 'wb');
+            $stream = fopen($file, 'wb');
         }
-        $options = \array_merge($this->defaultOptions, $options);
+        $options = array_merge($this->defaultOptions, $options);
         $rules = new OutputRules($stream, $options);
         $trav = new Traverser($dom, $stream, $rules, $options);
         $trav->walk();
@@ -197,7 +197,7 @@ class HTML5
          */
         $rules->unsetTraverser();
         if ($close) {
-            \fclose($stream);
+            fclose($stream);
         }
     }
     /**
@@ -213,10 +213,10 @@ class HTML5
      */
     public function saveHTML($dom, $options = array())
     {
-        $stream = \fopen('php://temp', 'wb');
-        $this->save($dom, $stream, \array_merge($this->defaultOptions, $options));
-        $html = \stream_get_contents($stream, -1, 0);
-        \fclose($stream);
+        $stream = fopen('php://temp', 'wb');
+        $this->save($dom, $stream, array_merge($this->defaultOptions, $options));
+        $html = stream_get_contents($stream, -1, 0);
+        fclose($stream);
         return $html;
     }
 }

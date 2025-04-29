@@ -2,7 +2,7 @@
 /**
  * This file is part of wp-Typography.
  *
- * Copyright 2020-2022 Peter Putzer.
+ * Copyright 2020-2024 Peter Putzer.
  *
  * This program is free software; you can redistribute it and/or
  * modify it under the terms of the GNU General Public License
@@ -39,7 +39,7 @@ namespace WP_Typography;
 class Requirements extends \WP_Typography\Vendor\Mundschenk\WP_Requirements {
 
 	const REQUIREMENTS = [
-		'php'              => '7.2.0',
+		'php'              => '7.4.0',
 		'multibyte'        => true,
 		'utf-8'            => true,
 		'dom'              => true,
@@ -69,7 +69,7 @@ class Requirements extends \WP_Typography\Vendor\Mundschenk\WP_Requirements {
 	 *     notice     : callable,
 	 * }>
 	 */
-	protected function get_requirements() : array {
+	protected function get_requirements(): array {
 		$requirements   = parent::get_requirements();
 		$requirements[] = [
 			'enable_key' => 'dom',
@@ -85,14 +85,14 @@ class Requirements extends \WP_Typography\Vendor\Mundschenk\WP_Requirements {
 	 *
 	 * @return bool
 	 */
-	protected function check_dom_support() : bool {
+	protected function check_dom_support(): bool {
 		return \class_exists( 'DOMDocument' );
 	}
 
 	/**
 	 * Prints 'DOM extension missing' admin notice
 	 */
-	public function admin_notices_dom_disabled() : void {
+	public function admin_notices_dom_disabled(): void {
 		$this->display_error_notice(
 			/* translators: 1: plugin name 2: GD documentation URL */
 			\__( 'The activated plugin %1$s requires the DOM PHP extension to be enabled on your server. Please deactivate this plugin, or <a href="%2$s">enable the extension</a>.', 'wp-typography' ),

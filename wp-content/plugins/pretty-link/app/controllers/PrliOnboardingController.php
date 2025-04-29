@@ -1002,7 +1002,9 @@ class PrliOnboardingController extends PrliBaseController {
 
     global $wpdb, $prli_link;
 
-    if($prli_link->get_count() > 0) {
+    $prli_db = new PrliDb();
+
+    if($prli_db->table_exists($prli_db->links) && $prli_link->get_count() > 0) {
       return;
     }
 

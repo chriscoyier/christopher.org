@@ -40,16 +40,16 @@ use WP_Typography\Vendor\PHP_Typography\U;
 class Unit_Spacing_Fix extends Simple_Regex_Replacement_Fix
 {
     const REPLACEMENT = '$1' . U::NO_BREAK_NARROW_SPACE . '$2';
-    const REGEX = '/(\\d\\.?)\\s(' . self::STANDARD_UNITS . ')' . self::WORD_BOUNDARY . '/Sxu';
+    const REGEX = '/(\d\.?)\s(' . self::STANDARD_UNITS . ')' . self::WORD_BOUNDARY . '/Sxu';
     private const STANDARD_UNITS = '
 		### Temporal units
-		(?:ms|s|secs?|mins?|hrs?)\\.?|
+		(?:ms|s|secs?|mins?|hrs?)\.?|
 		milliseconds?|seconds?|minutes?|hours?|days?|years?|decades?|century|centuries|millennium|millennia|
 
 		### Imperial units
-		(?:in|ft|yd|mi)\\.?|
-		(?:ac|ha|oz|pt|qt|gal|lb|st)\\.?
-		s\\.f\\.|sf|s\\.i\\.|si|square[ ]feet|square[ ]foot|
+		(?:in|ft|yd|mi)\.?|
+		(?:ac|ha|oz|pt|qt|gal|lb|st)\.?
+		s\.f\.|sf|s\.i\.|si|square[ ]feet|square[ ]foot|
 		inch|inches|foot|feet|yards?|miles?|acres?|hectares?|ounces?|pints?|quarts?|gallons?|pounds?|stones?|
 
 		### Metric units (with prefixes)
@@ -62,7 +62,7 @@ class Unit_Spacing_Fix extends Simple_Regex_Replacement_Fix
 		[kKMGT]?(?:[oBb]|[oBb]ps|flops)|
 
 		### Money
-		¢|M?(?:£|¥|€|\\$)|
+		¢|M?(?:£|¥|€|\$)|
 
 		### Other units
 		°[CF]? |
@@ -70,7 +70,7 @@ class Unit_Spacing_Fix extends Simple_Regex_Replacement_Fix
 	';
     // required modifiers: x (multiline pattern), u (unicode).
     // (?=\p{^L})|\z) is used instead of \b because otherwise the special symbols ($, € etc.) would not match properly (they are not word characters).
-    const WORD_BOUNDARY = '(?:(?=\\p{^L})|\\z)';
+    const WORD_BOUNDARY = '(?:(?=\p{^L})|\z)';
     /**
      * Creates a new fix object.
      *
@@ -101,4 +101,4 @@ class Unit_Spacing_Fix extends Simple_Regex_Replacement_Fix
  *
  * @since 5.0.0
  */
-\class_alias('WP_Typography\\Vendor\\PHP_Typography\\Fixes\\Node_Fixes\\Unit_Spacing_Fix', 'PHP_Typography\\Fixes\\Node_Fixes\\Unit_Spacing_Fix', \false);
+\class_alias('WP_Typography\Vendor\PHP_Typography\Fixes\Node_Fixes\Unit_Spacing_Fix', 'PHP_Typography\Fixes\Node_Fixes\Unit_Spacing_Fix', \false);

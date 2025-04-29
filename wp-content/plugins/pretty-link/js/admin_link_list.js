@@ -83,7 +83,8 @@ jQuery(document).ready(function($) {
         post_ids: post_ids,
         nofollow: nofollow,
         sponsored: sponsored,
-        tracking: tracking
+        tracking: tracking,
+        _ajax_nonce: PrliLinkList.nonce
       }
     });
   });
@@ -102,4 +103,39 @@ jQuery(document).ready(function($) {
     contentAsHTML: true,
     content: PrliLinkList.broken_link_text
   });
+
+  var url_params = new URLSearchParams(window.location.search.substring(1));
+
+  if (url_params.get('post_type') === 'pretty-link' && url_params.get('prettypay') === '1') {
+    $('#posts-filter').append('<input type="hidden" name="prettypay" value="1">');
+  }
+
+  var $customer_portal_notice_popup = $('#prli-customer-portal-notice-popup');
+
+  if($customer_portal_notice_popup.length && $.magnificPopup) {
+    $.magnificPopup.open({
+      items: {
+        src: $customer_portal_notice_popup,
+        type: 'inline'
+      },
+      mainClass: 'mfp-prli',
+      closeOnBgClick: false,
+      callbacks: {
+        close: function () {
+          $.ajax({
+            method: 'POST',
+            url: ajaxurl,
+            data: {
+              action: 'prli_dismiss_customer_portal_notice',
+              _ajax_nonce: $customer_portal_notice_popup.data('nonce')
+            }
+          });
+        }
+      }
+    });
+
+    $('#prli-customer-portal-notice-close').on('click', function () {
+      $.magnificPopup.close();
+    });
+  }
 });

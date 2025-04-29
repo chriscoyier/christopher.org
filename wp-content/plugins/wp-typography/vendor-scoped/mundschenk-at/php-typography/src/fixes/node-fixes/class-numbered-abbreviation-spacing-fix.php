@@ -41,7 +41,7 @@ use WP_Typography\Vendor\PHP_Typography\RE;
  */
 class Numbered_Abbreviation_Spacing_Fix extends Simple_Regex_Replacement_Fix
 {
-    private const ISO = 'ISO(?:\\/(?:IEC|TR|TS))?';
+    private const ISO = 'ISO(?:\/(?:IEC|TR|TS))?';
     private const ABBREVIATIONS = '
 		### Internationl standards
 		' . self::ISO . '|
@@ -52,8 +52,8 @@ class Numbered_Abbreviation_Spacing_Fix extends Simple_Regex_Replacement_Fix
 		DIN[ ]EN[ ]ISP
 		DIN[ ]' . self::ISO . '|
 		DIN[ ]IEC|
-		DIN[ ]CEN\\/TS|
-		DIN[ ]CLC\\/TS|
+		DIN[ ]CEN\/TS|
+		DIN[ ]CLC\/TS|
 		DIN[ ]CWA|
 		DIN[ ]VDE|
 
@@ -72,7 +72,7 @@ class Numbered_Abbreviation_Spacing_Fix extends Simple_Regex_Replacement_Fix
 	';
     // required modifiers: x (multiline pattern).
     const REPLACEMENT = '$1' . U::NO_BREAK_SPACE . '$2';
-    const REGEX = '/\\b(' . self::ABBREVIATIONS . ')[' . RE::NORMAL_SPACES . ']+([0-9]+)/xu';
+    const REGEX = '/\b(' . self::ABBREVIATIONS . ')[' . RE::NORMAL_SPACES . ']+([0-9]+)/xu';
     /**
      * Creates a new fix object.
      *
@@ -92,4 +92,4 @@ class Numbered_Abbreviation_Spacing_Fix extends Simple_Regex_Replacement_Fix
  *
  * @since 5.0.0
  */
-\class_alias('WP_Typography\\Vendor\\PHP_Typography\\Fixes\\Node_Fixes\\Numbered_Abbreviation_Spacing_Fix', 'PHP_Typography\\Fixes\\Node_Fixes\\Numbered_Abbreviation_Spacing_Fix', \false);
+\class_alias('WP_Typography\Vendor\PHP_Typography\Fixes\Node_Fixes\Numbered_Abbreviation_Spacing_Fix', 'PHP_Typography\Fixes\Node_Fixes\Numbered_Abbreviation_Spacing_Fix', \false);

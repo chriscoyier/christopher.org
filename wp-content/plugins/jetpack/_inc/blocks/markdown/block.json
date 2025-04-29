@@ -3,7 +3,7 @@
     "apiVersion": 3,
     "name": "jetpack/markdown",
     "title": "Markdown",
-    "description": "Use regular characters and punctuation to style text, links, and lists.",
+    "description": "Add headings, lists, or links to plain text with ease.",
     "keywords": [
         "formatting",
         "syntax",
@@ -33,6 +33,10 @@
             "type": "string"
         }
     },
-    "editorScript": "file:../editor.js",
-    "editorStyle": "file:../editor.css"
+    "example": {
+        "attributes": {
+            "source": "## ## Try Markdown\n\nMarkdown is a text formatting syntax that is converted into HTML. You can _emphasize_ text or **make it strong** with just a few characters."
+        }
+    },
+    "editorScript": "jetpack-blocks-editor"
 }

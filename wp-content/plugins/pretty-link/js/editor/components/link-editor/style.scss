@@ -6,3 +6,23 @@
 		margin-top: 30px;
 	}
 }
+.prli-input__suggestions {
+	> button {
+		display: flex;
+		align-items: center;
+		justify-content: space-between;
+
+		> span {
+			display: flex;
+			flex-shrink: 0;
+
+			> span {
+				color: #fff;
+				background-color: #0074A2;
+				padding: 4px;
+				border-radius: 4px;
+				font-size: 11px;
+			}
+		}
+	}
+}

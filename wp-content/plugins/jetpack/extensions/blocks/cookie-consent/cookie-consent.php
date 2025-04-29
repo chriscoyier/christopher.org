@@ -12,9 +12,7 @@ namespace Automattic\Jetpack\Extensions\CookieConsent;
 use Automattic\Jetpack\Blocks;
 use Jetpack_Gutenberg;
 
-const FEATURE_NAME = 'cookie-consent';
-const BLOCK_NAME   = 'jetpack/' . FEATURE_NAME;
-const COOKIE_NAME  = 'eucookielaw';
+const COOKIE_NAME = 'eucookielaw';
 
 /**
  * Should the block be registered?
@@ -48,10 +46,10 @@ function register_block() {
 	}
 
 	Blocks::jetpack_register_block(
-		BLOCK_NAME,
-		array( 'render_callback' => __NAMESPACE__ . '\load_assets' ),
+		__DIR__,
 		array(
-			'attributes' => array(
+			'render_callback' => __NAMESPACE__ . '\load_assets',
+			'attributes'      => array(
 				'render_from_template' => array(
 					'default' => false,
 					'type'    => 'boolean',
@@ -76,6 +74,19 @@ function load_assets( $attr, $content ) {
 	// and we should send fresh HTML with the cookie block in it.
 	notify_batcache_that_content_changed();
 
+	if (
+		/**
+		 * Filters the display of the Cookie-consent Block e.g by GDPR CMP banner on WordAds sites.
+		 *
+		 * @since 13.2
+		 *
+		 * @param bool $disable_cookie_consent_block Whether to disable the Cookie-consent Block.
+		 */
+		apply_filters( 'jetpack_disable_cookie_consent_block', false )
+	) {
+		return '';
+	}
+
 	// If the user has already accepted the cookie consent, don't show the block.
 	if ( isset( $_COOKIE[ COOKIE_NAME ] ) ) {
 		return '';
@@ -89,11 +100,11 @@ function load_assets( $attr, $content ) {
 	/*
 	 * Enqueue necessary scripts and styles.
 	 */
-	Jetpack_Gutenberg::load_assets_as_required( FEATURE_NAME );
+	Jetpack_Gutenberg::load_assets_as_required( __DIR__ );
 
 	return sprintf(
 		'<div class="%1$s">%2$s</div>',
-		esc_attr( Blocks::classes( FEATURE_NAME, $attr ) ),
+		esc_attr( Blocks::classes( Blocks::get_block_feature( __DIR__ ), $attr ) ),
 		$content
 	);
 }

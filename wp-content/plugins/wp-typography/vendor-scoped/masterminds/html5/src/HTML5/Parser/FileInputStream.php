@@ -26,7 +26,7 @@ class FileInputStream extends StringInputStream implements InputStream
     public function __construct($data, $encoding = 'UTF-8', $debug = '')
     {
         // Get the contents of the file.
-        $content = \file_get_contents($data);
+        $content = file_get_contents($data);
         parent::__construct($content, $encoding, $debug);
     }
 }

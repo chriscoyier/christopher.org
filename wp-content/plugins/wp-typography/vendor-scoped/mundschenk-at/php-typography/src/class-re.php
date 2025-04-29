@@ -48,43 +48,43 @@ abstract class RE
      *      zero-width-non-joiner ("&#8205;", "&#x200d;", "&zwnj;")
      */
     const HTML_SPACES = '
-		\\x{00a0}		# no-break space
+		\x{00a0}		# no-break space
 		|
-		\\x{1361}		# ethiopic wordspace
+		\x{1361}		# ethiopic wordspace
 		|
-		\\x{2000}		# en quad-space
+		\x{2000}		# en quad-space
 		|
-		\\x{2001}		# em quad-space
+		\x{2001}		# em quad-space
 		|
-		\\x{2002}		# en space
+		\x{2002}		# en space
 		|
-		\\x{2003}		# em space
+		\x{2003}		# em space
 		|
-		\\x{2004}		# three-per-em space
+		\x{2004}		# three-per-em space
 		|
-		\\x{2005}		# four-per-em space
+		\x{2005}		# four-per-em space
 		|
-		\\x{2006}		# six-per-em space
+		\x{2006}		# six-per-em space
 		|
-		\\x{2007}		# figure space
+		\x{2007}		# figure space
 		|
-		\\x{2008}		# punctuation space
+		\x{2008}		# punctuation space
 		|
-		\\x{2009}		# thin space
+		\x{2009}		# thin space
 		|
-		\\x{200a}		# hair space
+		\x{200a}		# hair space
 		|
-		\\x{200b}		# zero-width space
+		\x{200b}		# zero-width space
 		|
-		\\x{200c}		# zero-width joiner
+		\x{200c}		# zero-width joiner
 		|
-		\\x{200d}		# zero-width non-joiner
+		\x{200d}		# zero-width non-joiner
 		|
-		\\x{202f}		# narrow no-break space
+		\x{202f}		# narrow no-break space
 		|
-		\\x{205f}		# medium mathematical space
+		\x{205f}		# medium mathematical space
 		|
-		\\x{3000}		# ideographic space
+		\x{3000}		# ideographic space
 		';
     // required modifiers: x (multiline pattern) i (case insensitive) u (utf8).
     const NORMAL_SPACES = ' \f\n\r\t\v';
@@ -151,7 +151,7 @@ abstract class RE
      */
     public static function escape_tags($tags)
     {
-        return \str_replace(['<', '>'], [self::ESCAPED_HTML_OPEN, self::ESCAPED_HTML_CLOSE], $tags);
+        return str_replace(['<', '>'], [self::ESCAPED_HTML_OPEN, self::ESCAPED_HTML_CLOSE], $tags);
     }
     /**
      * Replace tag escape markers with < and >.
@@ -162,7 +162,7 @@ abstract class RE
      */
     public static function unescape_tags($tags)
     {
-        return \str_replace([self::ESCAPED_HTML_OPEN, self::ESCAPED_HTML_CLOSE], ['<', '>'], $tags);
+        return str_replace([self::ESCAPED_HTML_OPEN, self::ESCAPED_HTML_CLOSE], ['<', '>'], $tags);
     }
 }
 /**
@@ -170,4 +170,4 @@ abstract class RE
  *
  * @since 5.0.0
  */
-\class_alias('WP_Typography\\Vendor\\PHP_Typography\\RE', 'PHP_Typography\\RE', \false);
+\class_alias('WP_Typography\Vendor\PHP_Typography\RE', 'PHP_Typography\RE', \false);

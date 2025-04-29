@@ -39,13 +39,18 @@
         "color": {
             "type": "string"
         },
+        "ratingStyle": {
+            "type": "string",
+            "default": "star"
+        },
+        "className": {
+            "type": "string"
+        },
         "align": {
             "type": "string",
             "default": "left"
         }
     },
-    "editorScript": "file:../editor.js",
-    "editorStyle": "file:../editor.css",
-    "viewScript": "file:./view.js",
-    "style": "file:./view.css"
+    "example": {},
+    "editorScript": "jetpack-blocks-editor"
 }

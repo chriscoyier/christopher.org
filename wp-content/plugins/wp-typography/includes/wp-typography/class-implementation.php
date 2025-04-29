@@ -2,7 +2,7 @@
 /**
  *  This file is part of wp-Typography.
  *
- *  Copyright 2014-2022 Peter Putzer.
+ *  Copyright 2014-2025 Peter Putzer.
  *  Copyright 2009-2011 KINGdesk, LLC.
  *
  *  This program is free software; you can redistribute it and/or
@@ -155,30 +155,80 @@ class Implementation extends \WP_Typography {
 	 * Retrieves and caches the list of valid hyphenation languages.
 	 *
 	 * @since 4.0.0
-	 * @since 5.0.0 Language names are translated.
-	 * @since 5.3.0 The method can be called both statically and dynamically.
+	 * @since 5.0.0  Language names are translated.
+	 * @since 5.3.0  The method can be called both statically and dynamically.
+	 * @since 5.10.0 Optional parameter `$translate` added.
+	 *
+	 * @param  bool $translate Optional. Determines whether language names will be translated. Default true.
 	 *
 	 * @return string[] An array in the form of ( $language_code => $language ).
 	 */
-	public function get_hyphenation_languages() : array {
-		return $this->load_languages( 'hyphenate_languages', [ PHP_Typography::class, 'get_hyphenation_languages' ], 'hyphenate' );
+	public function get_hyphenation_languages( bool $translate = true ): array {
+		return $this->load_languages( 'hyphenate_languages', [ PHP_Typography::class, 'get_hyphenation_languages' ], 'hyphenate', $translate );
 	}
 
 	/**
 	 * Retrieves and caches the list of valid diacritic replacement languages.
 	 *
 	 * @since 4.0.0
-	 * @since 5.0.0 Language names are translated.
-	 * @since 5.3.0 The method can be called both statically and dynamically.
+	 * @since 5.0.0  Language names are translated.
+	 * @since 5.3.0  The method can be called both statically and dynamically.
+	 * @since 5.10.0 Optional parameter `$translate` added.
+	 *
+	 * @param  bool $translate Optional. Determines whether language names will be translated. Default true.
 	 *
 	 * @return string[] An array in the form of ( $language_code => $language ).
 	 */
-	public function get_diacritic_languages() : array {
-		return $this->load_languages( 'diacritic_languages', [ PHP_Typography::class, 'get_diacritic_languages' ], 'diacritic' );
+	public function get_diacritic_languages( bool $translate = true ): array {
+		return $this->load_languages( 'diacritic_languages', [ PHP_Typography::class, 'get_diacritic_languages' ], 'diacritic', $translate );
 	}
 
 	/**
 	 * Load and cache given language list.
+	 *
+	 * @since 5.10.0 Optional parameter `$translate` added.
+	 *
+	 * @param  string   $cache_key         A cache key.
+	 * @param  callable $get_language_list Retrieval function for the language list.
+	 * @param  string   $type              Either 'diacritic' or 'hyphenate'.
+	 * @param  bool     $translate         Optional. Determines whether language names need to be translated. Default true.
+	 *
+	 * @return string[]
+	 */
+	protected function load_languages( string $cache_key, callable $get_language_list, string $type, bool $translate = true ): array {
+		if ( $translate ) {
+			// Try to load hyphenation language list from cache.
+			$languages = $this->cache->get( $cache_key, $found );
+
+			// Dynamically generate the list of hyphenation language patterns.
+			if ( false === $found || ! \is_array( $languages ) ) {
+				$languages = $this->translate_languages( $this->maybe_load_untranslated_languages_from_disk( $cache_key, $get_language_list, $type ) );
+
+				/**
+				 * Filters the caching duration for the language plugin lists.
+				 *
+				 * @since 3.2.0
+				 * @since 5.9.0 Type of parameter `$duration` corrected to `int`.
+				 *
+				 * @param int    $duration The duration in seconds. Defaults to 1 week.
+				 * @param string $list     The name language plugin list.
+				 */
+				$duration = \apply_filters( 'typo_language_list_caching_duration', WEEK_IN_SECONDS, "{$type}_languages" );
+
+				// Cache translated hyphenation languages.
+				$this->cache->set( $cache_key, $languages, $duration );
+			}
+		} else {
+			$languages = $this->maybe_load_untranslated_languages_from_disk( $cache_key, $get_language_list, $type );
+		}
+
+		return $languages;
+	}
+
+	/**
+	 * Load given language list from disk without translating the language names.
+	 *
+	 * @since 5.10.0
 	 *
 	 * @param  string   $cache_key         A cache key.
 	 * @param  callable $get_language_list Retrieval function for the language list.
@@ -186,27 +236,20 @@ class Implementation extends \WP_Typography {
 	 *
 	 * @return string[]
 	 */
-	protected function load_languages( $cache_key, callable $get_language_list, $type ) : array {
-		// Try to load hyphenation language list from cache.
-		$languages = $this->cache->get( $cache_key, $found );
+	protected function maybe_load_untranslated_languages_from_disk( string $cache_key, callable $get_language_list, string $type ): array {
+		// Try to load language list from cache.
+		$cache_key_raw = "{$cache_key}_raw";
+		$languages     = $this->cache->get( $cache_key_raw, $found );
 
 		// Dynamically generate the list of hyphenation language patterns.
 		if ( false === $found || ! \is_array( $languages ) ) {
-			$languages = self::translate_languages( $get_language_list() );
+			/** This filter is documented in wp-typography/components/class-multilingual-support.php */
+			$duration = \apply_filters( 'typo_language_list_caching_duration', WEEK_IN_SECONDS, "raw_{$type}_languages" );
 
-			/**
-			 * Filters the caching duration for the language plugin lists.
-			 *
-			 * @since 3.2.0
-			 * @since 5.9.0 Type of parameter `$duration` corrected to `int`.
-			 *
-			 * @param int    $duration The duration in seconds. Defaults to 1 week.
-			 * @param string $list     The name language plugin list.
-			 */
-			$duration = \apply_filters( 'typo_language_list_caching_duration', WEEK_IN_SECONDS, "{$type}_languages" );
+			$languages = $get_language_list();
 
 			// Cache translated hyphenation languages.
-			$this->cache->set( $cache_key, $languages, $duration );
+			$this->cache->set( $cache_key_raw, $languages, $duration );
 		}
 
 		return $languages;
@@ -215,14 +258,16 @@ class Implementation extends \WP_Typography {
 	/**
 	 * Translate language list.
 	 *
+	 * @since 5.10.0 Changed into a protected method for easier unit testing.
+	 *
 	 * @param string[] $languages An array in the form [ LANGUAGE_CODE => LANGUAGE ].
 	 *
 	 * @return string[] The same array with the language name translated.
 	 */
-	private static function translate_languages( array $languages ) : array {
+	protected function translate_languages( array $languages ): array {
 		\array_walk(
 			$languages,
-			function( &$lang, $code ) {
+			function ( &$lang ) {
 				// The language names are made visible to GlotPress via the
 				// autogenerated source file `_language_names.php` (which is not
 				// actually included anywhere).
@@ -241,7 +286,7 @@ class Implementation extends \WP_Typography {
 	 *
 	 * @return array<string,string|int|bool>
 	 */
-	public function get_config() : array {
+	public function get_config(): array {
 		if ( ! isset( $this->configuration ) ) {
 			$config = $this->options->get( Options::CONFIGURATION );
 			if ( \is_array( $config ) ) {
@@ -280,13 +325,13 @@ class Implementation extends \WP_Typography {
 	 *
 	 * @return Settings
 	 */
-	public function get_settings() : Settings {
+	public function get_settings(): Settings {
 
 		// Initialize Settings instance.
 		if ( empty( $this->typo_settings ) ) {
 			$config    = $this->get_config();
 			$transient = 'php_settings_' . \md5( (string) \wp_json_encode( $config ) );
-			$settings  = $this->transients->get_large_object( $transient );
+			$settings  = $this->transients->get_large_object( $transient, [ Settings::class ] );
 
 			if ( ! $settings instanceof Settings ) {
 				// OK, we have to initialize the PHP_Typography instance manually.
@@ -321,7 +366,7 @@ class Implementation extends \WP_Typography {
 	 *
 	 * @return string                 The processed `$text`.
 	 */
-	public function process_title( $text, Settings $settings = null ) : string {
+	public function process_title( $text, ?Settings $settings = null ): string {
 		return $this->process( $text, true, false, $settings );
 	}
 
@@ -337,7 +382,7 @@ class Implementation extends \WP_Typography {
 	 *
 	 * @return string                 The processed `$text`.
 	 */
-	public function process_feed_title( $text, Settings $settings = null ) : string {
+	public function process_feed_title( $text, ?Settings $settings = null ): string {
 		return $this->process_feed( $text, true, $settings );
 	}
 
@@ -356,7 +401,7 @@ class Implementation extends \WP_Typography {
 	 *
 	 * @return string                 The processed `$text`.
 	 */
-	public function process_feed( $text, $is_title = false, Settings $settings = null ) : string {
+	public function process_feed( $text, $is_title = false, ?Settings $settings = null ): string {
 		return $this->process( $text, $is_title, true, $settings );
 	}
 
@@ -372,11 +417,11 @@ class Implementation extends \WP_Typography {
 	 *
 	 * @return string[]
 	 */
-	public function process_title_parts( array $title_parts, Settings $settings = null ) : array {
+	public function process_title_parts( array $title_parts, ?Settings $settings = null ): array {
 		foreach ( $title_parts as $index => $part ) {
 			// Remove "&shy;" and "&#8203;" after processing title part.
 			$title_parts[ $index ] = \wp_strip_all_tags(
-				\str_replace( [ \PHP_Typography\U::SOFT_HYPHEN, \PHP_Typography\U::ZERO_WIDTH_SPACE ], '', $this->process( $part, true, true, $settings ) )
+				\str_replace( [ U::SOFT_HYPHEN, U::ZERO_WIDTH_SPACE ], '', $this->process( $part, true, true, $settings ) )
 			);
 		}
 
@@ -397,7 +442,7 @@ class Implementation extends \WP_Typography {
 	 *
 	 * @return string                   The processed `$text`.
 	 */
-	public function process( $text, $is_title = false, $force_feed = false, Settings $settings = null ) : string {
+	public function process( $text, $is_title = false, $force_feed = false, ?Settings $settings = null ): string {
 		// Check if processing is disabled for this post.
 		$post_id = \get_the_ID();
 		$disable = ! empty( $post_id ) && \get_post_meta( $post_id, REST_API::WP_TYPOGRAPHY_DISABLED_META_KEY, true );
@@ -417,7 +462,7 @@ class Implementation extends \WP_Typography {
 
 		// Return original HTML fragment if processing has been disabled.
 		if ( $disable ) {
-			return $text;
+			return (string) $text;
 		}
 
 		// Use default settings if no argument was given.
@@ -450,7 +495,7 @@ class Implementation extends \WP_Typography {
 	 *
 	 * @return string            The processed `$text`.
 	 */
-	protected function maybe_process_fragment( $text, $is_title, $is_feed, Settings $settings ) : string {
+	protected function maybe_process_fragment( $text, $is_title, $is_feed, Settings $settings ): string {
 		// Construct cache key.
 		$key = 'frag_' . \md5( $text ) . '_' . $settings->get_hash( 32, false ) . '_' . ( $is_feed ? 'f' : '' ) . ( $is_title ? 't' : 's' );
 
@@ -486,7 +531,7 @@ class Implementation extends \WP_Typography {
 	 *
 	 * @return string[]
 	 */
-	public function filter_body_class( array $classes ) : array {
+	public function filter_body_class( array $classes ): array {
 		$this->body_classes = $classes;
 
 		return $classes;
@@ -499,7 +544,7 @@ class Implementation extends \WP_Typography {
 	 *
 	 * @return PHP_Typography
 	 */
-	protected function get_typography_instance() : PHP_Typography {
+	protected function get_typography_instance(): PHP_Typography {
 
 		// Retrieve options.
 		$config = $this->get_config();
@@ -507,7 +552,7 @@ class Implementation extends \WP_Typography {
 		// Initialize PHP_Typography instance.
 		if ( ! isset( $this->typography ) ) {
 			$transient = 'php_' . \md5( (string) \wp_json_encode( $config ) );
-			$typo      = $this->transients->get_large_object( $transient );
+			$typo      = $this->transients->get_large_object( $transient, [ PHP_Typography::class ] );
 
 			if ( ! $typo instanceof PHP_Typography ) {
 				// OK, we have to initialize the PHP_Typography instance manually.
@@ -523,7 +568,7 @@ class Implementation extends \WP_Typography {
 		// Also cache hyphenators (the pattern tries are expensive to build).
 		if ( $config[ Config::ENABLE_HYPHENATION ] && ! isset( $this->hyphenator_cache ) ) {
 			$transient    = 'php_hyphenator_cache';
-			$hyphen_cache = $this->transients->get_large_object( $transient );
+			$hyphen_cache = $this->transients->get_large_object( $transient, [ Hyphenator_Cache::class ] );
 
 			if ( ! $hyphen_cache instanceof Hyphenator_Cache ) {
 				$hyphen_cache = $this->typography->get_hyphenator_cache();
@@ -543,7 +588,7 @@ class Implementation extends \WP_Typography {
 	/**
 	 * Save hyphenator cache for the next request.
 	 */
-	public function save_hyphenator_cache_on_shutdown() : void {
+	public function save_hyphenator_cache_on_shutdown(): void {
 		if ( isset( $this->hyphenator_cache ) && $this->hyphenator_cache->has_changed() ) {
 			$this->transients->cache_object( 'php_hyphenator_cache', $this->hyphenator_cache, 'hyphenator_cache' );
 		}
@@ -555,7 +600,7 @@ class Implementation extends \WP_Typography {
 	 * @param Settings $s      The settings instance to initialize.
 	 * @param mixed[]  $config The array of configuration entries.
 	 */
-	protected function init_settings_from_options( Settings $s, array $config ) : void {
+	protected function init_settings_from_options( Settings $s, array $config ): void {
 		// Necessary for full Settings initialization.
 		$s->set_smart_dashes_style( $config[ Config::SMART_DASHES_STYLE ] );
 		$s->set_smart_quotes_primary( $config[ Config::SMART_QUOTES_PRIMARY ] );
@@ -690,7 +735,7 @@ class Implementation extends \WP_Typography {
 	 * @return string[]                  An array of replacements, indexed by the
 	 *                                   key and sorted by descending key length.
 	 */
-	protected function prepare_smart_quotes_exceptions( $custom_exceptions ) : array {
+	protected function prepare_smart_quotes_exceptions( $custom_exceptions ): array {
 		global $wp_cockneyreplace;
 
 		// The combined exceptions list.
@@ -728,7 +773,7 @@ class Implementation extends \WP_Typography {
 				)
 			);
 
-			$exceptions = \array_combine( $patterns, $replacements ) ?: []; // phpcs:ignore WordPress.PHP.DisallowShortTernary -- ensure array type.
+			$exceptions = \array_combine( $patterns, $replacements ) ?: []; // phpcs:ignore Universal.Operators.DisallowShortTernary -- ensure array type.
 		}
 
 		// If necessary, merge custom exceptions.
@@ -740,8 +785,8 @@ class Implementation extends \WP_Typography {
 		// Longest strings first.
 		\uksort(
 			$exceptions,
-			function( $a, $b ) {
-				return ( \strlen( $b ) - \strlen( $a ) ) ?: \strcmp( $a, $b ); // phpcs:ignore WordPress.PHP.DisallowShortTernary
+			function ( $a, $b ) {
+				return ( \strlen( $b ) - \strlen( $a ) ) ?: \strcmp( $a, $b ); // phpcs:ignore Universal.Operators.DisallowShortTernary
 			}
 		);
 
@@ -753,7 +798,7 @@ class Implementation extends \WP_Typography {
 	 *
 	 * @param bool $force_defaults Optional. Default false.
 	 */
-	public function set_default_options( $force_defaults = false ) : void {
+	public function set_default_options( $force_defaults = false ): void {
 		$update = $force_defaults;
 
 		// Grab configuration variables.
@@ -782,7 +827,7 @@ class Implementation extends \WP_Typography {
 	 *
 	 * @return array<string,string|int|bool>
 	 */
-	public function get_default_options() : array {
+	public function get_default_options(): array {
 		if ( empty( $this->default_settings ) ) {
 			/**
 			 * Filters the default settings used to initialize the plugin.
@@ -800,7 +845,7 @@ class Implementation extends \WP_Typography {
 	/**
 	 * Clears all transients set by the plugin.
 	 */
-	public function clear_cache() : void {
+	public function clear_cache(): void {
 		$this->transients->invalidate();
 		$this->cache->invalidate();
 
@@ -814,7 +859,7 @@ class Implementation extends \WP_Typography {
 	 *
 	 * @return string[]         The filtered array.
 	 */
-	public function parser_errors_handler( $errors ) : array {
+	public function parser_errors_handler( $errors ): array {
 		/**
 		 * Filters the HTML parser errors (if there are any).
 		 *

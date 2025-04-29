@@ -35,7 +35,7 @@ class Ai1wm_Export_Config {
 		global $table_prefix, $wp_version;
 
 		// Set progress
-		Ai1wm_Status::info( __( 'Preparing configuration...', AI1WM_PLUGIN_NAME ) );
+		Ai1wm_Status::info( __( 'Preparing configuration...', 'all-in-one-wp-migration' ) );
 
 		// Get options
 		$options = wp_load_alloptions();
@@ -179,7 +179,7 @@ class Ai1wm_Export_Config {
 		ai1wm_close( $handle );
 
 		// Set progress
-		Ai1wm_Status::info( __( 'Configuration prepared.', AI1WM_PLUGIN_NAME ) );
+		Ai1wm_Status::info( __( 'Configuration prepared.', 'all-in-one-wp-migration' ) );
 
 		return $params;
 	}

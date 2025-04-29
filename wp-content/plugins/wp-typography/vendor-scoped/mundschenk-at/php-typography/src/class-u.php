@@ -85,4 +85,4 @@ interface U
  *
  * @since 5.0.0
  */
-\class_alias('WP_Typography\\Vendor\\PHP_Typography\\U', 'PHP_Typography\\U', \false);
+\class_alias('WP_Typography\Vendor\PHP_Typography\U', 'PHP_Typography\U', \false);

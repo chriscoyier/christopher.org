@@ -1,0 +1,87 @@
+.prli-prettypay-invoice {
+  margin-top: 24px;
+}
+.prli-prettypay-invoice > p {
+  color: #5e5e5e;
+  text-align: center;
+  margin: 0 0 20px 0;
+}
+.prli-prettypay-invoice > p a {
+  color: #5e5e5e;
+}
+.prli-prettypay-invoice svg.prli-check {
+  fill: none;
+  color: #06429e;
+  width: 64px;
+  height: auto;
+  display: block;
+  margin: 0 auto;
+}
+.prli-prettypay-invoice > p.prli-invoice-amount {
+  font-size: 48px;
+  color: #1D1D1D;
+}
+.prli-prettypay-invoice-table {
+  color: #5e5e5e;
+  border: 0;
+  border-collapse: collapse;
+  width: 500px;
+  max-width: 100%;
+  margin: 20px auto;
+}
+.prli-prettypay-invoice-table th,
+.prli-prettypay-invoice-table td {
+  border: 0;
+  text-align: left;
+  padding: 10px;
+}
+.prli-prettypay-invoice-table th:first-child,
+.prli-prettypay-invoice-table td:first-child {
+  text-align: left;
+}
+.prli-prettypay-invoice-table th:last-child,
+.prli-prettypay-invoice-table td:last-child {
+  text-align: right;
+  width: 180px;
+}
+.prli-prettypay-invoice-table th.prli-text-align-right,
+.prli-prettypay-invoice-table td.prli-text-align-right {
+  text-align: right;
+}
+.prli-prettypay-invoice-table .prli-line-item-row td:first-child {
+  width: 40px;
+}
+.prli-line-item-image-url {
+  background-size: contain;
+  background-repeat: no-repeat;
+  width: 40px;
+  height: 40px;
+  border-radius: 4px;
+}
+.prli-line-item-image-default {
+  display: flex;
+  padding: 12px;
+  background-color: rgba(247, 250, 252, 0.5);
+  box-shadow: rgb(235, 238, 241) 0 0 0 1px;
+  color: rgb(192, 200, 210);
+  border-radius: 6px;
+}
+.prli-line-item-image-default svg {
+  fill: currentColor;
+  width: 16px;
+  height: 16px;
+  max-width: none;
+}
+.prli-prettypay-invoice-table .prli-subtotal-row td {
+  border-bottom: 1px solid #dbdbdb;
+}
+.prli-prettypay-invoice-table .prli-total-row td {
+  border-top: 1px solid #dbdbdb;
+}
+.prli-prettypay-invoice-table .prli-subtotal-row td:first-child,
+.prli-prettypay-invoice-table .prli-total-row td:first-child {
+  border: 0;
+}
+.prli-prettypay-invoice-table .prli-font-weight-bold {
+  font-weight: bold;
+}

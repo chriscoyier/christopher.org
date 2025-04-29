@@ -55,4 +55,4 @@ interface Quotes
  *
  * @since 5.0.0
  */
-\class_alias('WP_Typography\\Vendor\\PHP_Typography\\Settings\\Quotes', 'PHP_Typography\\Settings\\Quotes', \false);
+\class_alias('WP_Typography\Vendor\PHP_Typography\Settings\Quotes', 'PHP_Typography\Settings\Quotes', \false);

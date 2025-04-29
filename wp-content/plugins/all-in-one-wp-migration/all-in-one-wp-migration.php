@@ -1,11 +1,11 @@
 <?php
 /**
- * Plugin Name: All-in-One WP Migration
+ * Plugin Name: All-in-One WP Migration and Backup
  * Plugin URI: https://servmask.com/
  * Description: All-in-One WP Migration makes moving your entire WordPress site simple. Export or import your database, media, plugins, and themes with just a few clicks.
  * Author: ServMask
  * Author URI: https://servmask.com/
- * Version: 7.91
+ * Version: 7.93
  * Text Domain: all-in-one-wp-migration
  * Domain Path: /languages
  * Network: True

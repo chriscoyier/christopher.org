@@ -81,7 +81,8 @@
         "autoplay": true,
         "ids": [
             22,
-            23
+            23,
+            24
         ],
         "images": [
             {
@@ -99,14 +100,11 @@
             {
                 "alt": "",
                 "caption": "",
-                "id": 23,
+                "id": 24,
                 "url": "./slideshowExample3.png"
             }
         ],
         "effect": "slide"
     },
-    "editorScript": "file:../editor.js",
-    "editorStyle": "file:../editor.css",
-    "viewScript": "file:./view.js",
-    "style": "file:./view.css"
+    "editorScript": "jetpack-blocks-editor"
 }

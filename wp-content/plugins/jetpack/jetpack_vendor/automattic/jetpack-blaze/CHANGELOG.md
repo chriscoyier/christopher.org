@@ -5,14 +5,371 @@ All notable changes to this project will be documented in this file.
 The format is based on [Keep a Changelog](https://keepachangelog.com/en/1.0.0/)
 and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0.html).
 
+## [0.25.18] - 2025-03-31
+### Changed
+- Update dependencies. [#42678]
+
+### Fixed
+- Utilities: Changing from Post Editor to Site Editor for better compatibility and preventing console warnings. [#42652]
+
+## [0.25.17] - 2025-03-24
+### Changed
+- Update dependencies. [#42565]
+
+## [0.25.16] - 2025-03-18
+### Changed
+- Update package dependencies. [#42511]
+
+## [0.25.15] - 2025-03-17
+### Changed
+- Update dependencies. [#42498]
+
+## [0.25.14] - 2025-03-12
+### Changed
+- Update package dependencies. [#42384]
+
+## [0.25.13] - 2025-03-10
+### Changed
+- Internal updates.
+
+## [0.25.12] - 2025-03-03
+### Changed
+- Update package dependencies. [#42163]
+
+## [0.25.11] - 2025-02-24
+### Changed
+- Update dependencies. [#39855]
+
+## [0.25.10] - 2025-02-17
+### Changed
+- Update dependencies. [#39855]
+
+## [0.25.9] - 2025-02-11
+### Changed
+- Update dependencies. [#39855]
+
+## [0.25.8] - 2025-02-10
+### Changed
+- Updated package dependencies. [#41491]
+
+## [0.25.7] - 2025-02-03
+### Changed
+- Updated package dependencies. [#41286]
+
+### Fixed
+- Blaze: Ensure Blaze still available after quick edit in post list. [#41339]
+
+## [0.25.6] - 2025-01-20
+### Changed
+- Updated package dependencies. [#41099]
+
+## [0.25.5] - 2025-01-10
+### Fixed
+- Blaze: Ensure post list quick link is added after quick edit. [#40889]
+- Blaze: Fix external icon alignment on "Blaze this Post" button. [#40825]
+
+## [0.25.4] - 2024-12-16
+### Changed
+- Updated package dependencies. [#40564]
+
+## [0.25.3] - 2024-12-04
+### Changed
+- Updated package dependencies. [#40363]
+
+## [0.25.2] - 2024-11-26
+### Changed
+- Update dependencies. [#39855]
+
+## [0.25.1] - 2024-11-25
+### Changed
+- Updated dependencies. [#40286]
+- Updated package dependencies. [#40288]
+
+## [0.25.0] - 2024-11-18
+### Removed
+- General: Update minimum PHP version to 7.2. [#40147]
+
+## [0.24.0] - 2024-11-11
+### Added
+- Adds /stats endpoints to the whitelist [#39995]
+
+### Changed
+- Updated package dependencies. [#39999] [#40060]
+
+## [0.23.3] - 2024-11-04
+### Added
+- Enable test coverage. [#39961]
+
+## [0.23.2] - 2024-10-21
+### Changed
+- Update dependencies. [#39781]
+
+## [0.23.1] - 2024-10-14
+### Changed
+- Only include `wp-polyfill` as a script dependency when needed. [#39629]
+- Updated package dependencies. [#39707]
+
+## [0.23.0] - 2024-10-07
+### Changed
+- Changes the error Blaze shows during sync to be a warning. [#39515]
+- Updated package dependencies. [#39594]
+
+## [0.22.12] - 2024-09-30
+### Changed
+- Remove user connection nudges where they aren't needed. Add user connection nudges where needed [#39533]
+- Update dependencies. [#39528]
+
+## [0.22.11] - 2024-09-23
+### Fixed
+- Increases the timeout for the Blaze payment checkout endpoint [#39420]
+
+## [0.22.10] - 2024-09-10
+### Changed
+- Updated package dependencies. [#39302]
+
+## [0.22.9] - 2024-09-09
+### Changed
+- Updated package dependencies. [#39176]
+
+### Fixed
+- Address React usage errors found by eslint. [#39214]
+
+## [0.22.8] - 2024-08-30
+### Changed
+- Updated package dependencies. [#39111]
+
+## [0.22.7] - 2024-08-23
+### Changed
+- Updated package dependencies. [#39004]
+
+## [0.22.6] - 2024-08-21
+### Changed
+- Internal updates.
+
+## [0.22.5] - 2024-08-19
+### Changed
+- Updated package dependencies. [#38662]
+
+## [0.22.4] - 2024-08-12
+### Changed
+- Allows request to the v1.1 endpoints of Blaze campaigns [#38771]
+
+## [0.22.3] - 2024-07-26
+### Changed
+- Update dependencies. [#37356]
+
+## [0.22.2] - 2024-07-23
+### Fixed
+- Updated package dependencies. [#38464]
+
+## [0.22.1] - 2024-07-22
+### Changed
+- Update dependencies. [#37356]
+
+## [0.22.0] - 2024-07-08
+### Changed
+- As we've launched untangling & nav redesign, the wpcom_is_nav_redesign_enabled() function name is not relevant anymore and can be confusing for future developers, so we replace it with the equivalent get_option call. [#38197]
+- Updated package dependencies. [#38132]
+
+### Fixed
+- Fixes a bug in the Blaze endpoint blaze/posts that happens when we get a non-200 from WPCOM [#38070]
+
+## [0.21.10] - 2024-06-28
+### Changed
+- Eligibility checks: when a request to the WordPress.com API fails, store the response for an hour to avoid spamming the API. [#38066]
+
+### Fixed
+- Eligibility checks: shortcircuit Blaze feature earlier when a site is not properly connected to WordPress.com. [#38066]
+
+## [0.21.9] - 2024-06-21
+### Changed
+- Update dependencies. [#37356]
+
+## [0.21.8] - 2024-06-19
+### Added
+- Added a Jetpack sync check when listing the posts. [#37865]
+
+## [0.21.7] - 2024-06-17
+### Changed
+- Updated package dependencies. [#37796]
+
+## [0.21.6] - 2024-06-10
+### Changed
+- Updated package dependencies. [#37669]
+
+## [0.21.5] - 2024-05-27
+### Changed
+- Update dependencies. [#37356]
+
+## [0.21.4] - 2024-05-20
+### Changed
+- Updated package dependencies. [#37379] [#37380]
+
+## [0.21.3] - 2024-05-13
+### Changed
+- Update dependencies. [#37280]
+
+## [0.21.2] - 2024-05-06
+### Changed
+- Updated package dependencies. [#37147]
+
+### Fixed
+- Blaze: Fix translations of "Blaze this %s" labels. [#36466]
+
+## [0.21.1] - 2024-04-25
+### Changed
+- Internal updates.
+
+## [0.21.0] - 2024-04-22
+### Added
+- Add new filters for the Blaze module. [#36950]
+
+## [0.20.3] - 2024-04-15
+### Fixed
+- Update configs to accomodate for Simple Classic for Blaze. [#36842]
+
+## [0.20.2] - 2024-04-08
+### Changed
+- Updated package dependencies. [#36760]
+
+## [0.20.1] - 2024-04-01
+### Added
+- Change Phan baselines. [#36627]
+
+## [0.20.0] - 2024-03-27
+### Added
+- Adds the atomic flag to the Jetpack Blaze base site's configuration [#36562]
+
+### Changed
+- Updated package dependencies. [#36585]
+
+## [0.19.3] - 2024-03-25
+### Changed
+- Internal updates.
+
+## [0.19.2] - 2024-03-18
+### Changed
+- Internal updates.
+
+## [0.19.1] - 2024-03-12
+### Changed
+- Updated package dependencies. [#36325]
+
+### Fixed
+- Fixes the response body for the errors returned by the Blaze controller [#36134]
+
+## [0.19.0] - 2024-03-04
+### Added
+- Add support for running DSP Campaign Creation API endpoint v1.1 from DSP widget [#36120]
+
+### Changed
+- Updated package dependencies.
+
+## [0.18.1] - 2024-02-27
+### Changed
+- Update dependencies. [#35170]
+
+## [0.18.0] - 2024-02-26
+### Changed
+- Blaze: Enable the Dashboard behind the feature flag [#35724]
+
+### Fixed
+- added a "use WC_Product" to include this in the post fetching endpoint for blaze [#35870]
+- Changes to use the user's locale to render the dashboard [#35832]
+
+## [0.17.0] - 2024-02-19
+### Added
+- Added price in blaze/posts endpoint [#35066]
+
+### Changed
+- Changes the Blaze Dashboard entry points to be compatible with Woo Blaze [#34964]
+- Post Links: allow third-parties to toggle them depending on post type. [#35730]
+
+## [0.16.0] - 2024-02-13
+### Added
+- Blaze: Whiteliste /media/new WPCOM REST API call for image uploading [#34790]
+- Quick Action Links: introduce new filter allowing to disable quick links in the Posts screen. [#35586]
+
+### Changed
+- Updated package dependencies. [#35608]
+
+## [0.15.3] - 2024-02-05
+### Changed
+- Updated package dependencies. [#35384]
+
+## [0.15.2] - 2024-01-29
+### Changed
+- Update dependencies. [#35170]
+
+## [0.15.1] - 2024-01-22
+### Changed
+- Update dependencies. [#35117]
+
+## [0.15.0] - 2024-01-15
+### Changed
+- Changes the Blaze Dashboard paths to use the new format [#34896]
+
+## [0.14.3] - 2024-01-04
+### Changed
+- Updated package dependencies. [#34815]
+
+## [0.14.2] - 2023-12-11
+### Changed
+- Updated package dependencies. [#34416]
+
+## [0.14.1] - 2023-12-03
+### Changed
+- Updated package dependencies. [#34411]
+
+## [0.14.0] - 2023-11-24
+### Added
+- Added whitelisting for the payments endpoint. [#34227]
+
+## [0.13.0] - 2023-11-20
+### Changed
+- Updated required PHP version to >= 7.0. [#34192]
+
+## [0.12.3] - 2023-11-14
+### Changed
+- Updated package dependencies. [#34093]
+
+## [0.12.2] - 2023-11-13
+### Changed
+- Updated dependencies. [#33960]
+
+## [0.12.1] - 2023-11-03
+### Changed
+- Updated dependencies. [#33946]
+
+## [0.12.0] - 2023-10-31
+### Added
+- Add sending Jetpack version to BlazePress Calypso App. [#33823]
+
+## [0.11.0] - 2023-10-23
+### Added
+- DSP media endpoints allowlisting. [#33598]
+
+### Changed
+- Updated package dependencies. [#33646] [#33687]
+
+### Fixed
+- Fix unsetting `sub_path` in `Dashboard_REST_Controller`. [#33668]
+
+## [0.10.4] - 2023-10-16
+### Changed
+- Updated package dependencies. [#33429]
+
+## [0.10.3] - 2023-10-10
+### Changed
+- Updated package dependencies. [#33428]
+
 ## [0.10.2] - 2023-09-19
 ### Changed
 - Updated package dependencies. [#33001]
 
 ## [0.10.1] - 2023-09-04
 ### Changed
-- Updated package dependencies. [#32803]
-- Updated package dependencies. [#32804]
+- Updated package dependencies. [#32803] [#32804]
 
 ### Fixed
 - Fixes missing controller for DSP /subscriptions POST endpoint [#32752]
@@ -207,6 +564,82 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 ### Changed
 - Updated package dependencies. [#27906]
 
+[0.25.18]: https://github.com/automattic/jetpack-blaze/compare/v0.25.17...v0.25.18
+[0.25.17]: https://github.com/automattic/jetpack-blaze/compare/v0.25.16...v0.25.17
+[0.25.16]: https://github.com/automattic/jetpack-blaze/compare/v0.25.15...v0.25.16
+[0.25.15]: https://github.com/automattic/jetpack-blaze/compare/v0.25.14...v0.25.15
+[0.25.14]: https://github.com/automattic/jetpack-blaze/compare/v0.25.13...v0.25.14
+[0.25.13]: https://github.com/automattic/jetpack-blaze/compare/v0.25.12...v0.25.13
+[0.25.12]: https://github.com/automattic/jetpack-blaze/compare/v0.25.11...v0.25.12
+[0.25.11]: https://github.com/automattic/jetpack-blaze/compare/v0.25.10...v0.25.11
+[0.25.10]: https://github.com/automattic/jetpack-blaze/compare/v0.25.9...v0.25.10
+[0.25.9]: https://github.com/automattic/jetpack-blaze/compare/v0.25.8...v0.25.9
+[0.25.8]: https://github.com/automattic/jetpack-blaze/compare/v0.25.7...v0.25.8
+[0.25.7]: https://github.com/automattic/jetpack-blaze/compare/v0.25.6...v0.25.7
+[0.25.6]: https://github.com/automattic/jetpack-blaze/compare/v0.25.5...v0.25.6
+[0.25.5]: https://github.com/automattic/jetpack-blaze/compare/v0.25.4...v0.25.5
+[0.25.4]: https://github.com/automattic/jetpack-blaze/compare/v0.25.3...v0.25.4
+[0.25.3]: https://github.com/automattic/jetpack-blaze/compare/v0.25.2...v0.25.3
+[0.25.2]: https://github.com/automattic/jetpack-blaze/compare/v0.25.1...v0.25.2
+[0.25.1]: https://github.com/automattic/jetpack-blaze/compare/v0.25.0...v0.25.1
+[0.25.0]: https://github.com/automattic/jetpack-blaze/compare/v0.24.0...v0.25.0
+[0.24.0]: https://github.com/automattic/jetpack-blaze/compare/v0.23.3...v0.24.0
+[0.23.3]: https://github.com/automattic/jetpack-blaze/compare/v0.23.2...v0.23.3
+[0.23.2]: https://github.com/automattic/jetpack-blaze/compare/v0.23.1...v0.23.2
+[0.23.1]: https://github.com/automattic/jetpack-blaze/compare/v0.23.0...v0.23.1
+[0.23.0]: https://github.com/automattic/jetpack-blaze/compare/v0.22.12...v0.23.0
+[0.22.12]: https://github.com/automattic/jetpack-blaze/compare/v0.22.11...v0.22.12
+[0.22.11]: https://github.com/automattic/jetpack-blaze/compare/v0.22.10...v0.22.11
+[0.22.10]: https://github.com/automattic/jetpack-blaze/compare/v0.22.9...v0.22.10
+[0.22.9]: https://github.com/automattic/jetpack-blaze/compare/v0.22.8...v0.22.9
+[0.22.8]: https://github.com/automattic/jetpack-blaze/compare/v0.22.7...v0.22.8
+[0.22.7]: https://github.com/automattic/jetpack-blaze/compare/v0.22.6...v0.22.7
+[0.22.6]: https://github.com/automattic/jetpack-blaze/compare/v0.22.5...v0.22.6
+[0.22.5]: https://github.com/automattic/jetpack-blaze/compare/v0.22.4...v0.22.5
+[0.22.4]: https://github.com/automattic/jetpack-blaze/compare/v0.22.3...v0.22.4
+[0.22.3]: https://github.com/automattic/jetpack-blaze/compare/v0.22.2...v0.22.3
+[0.22.2]: https://github.com/automattic/jetpack-blaze/compare/v0.22.1...v0.22.2
+[0.22.1]: https://github.com/automattic/jetpack-blaze/compare/v0.22.0...v0.22.1
+[0.22.0]: https://github.com/automattic/jetpack-blaze/compare/v0.21.10...v0.22.0
+[0.21.10]: https://github.com/automattic/jetpack-blaze/compare/v0.21.9...v0.21.10
+[0.21.9]: https://github.com/automattic/jetpack-blaze/compare/v0.21.8...v0.21.9
+[0.21.8]: https://github.com/automattic/jetpack-blaze/compare/v0.21.7...v0.21.8
+[0.21.7]: https://github.com/automattic/jetpack-blaze/compare/v0.21.6...v0.21.7
+[0.21.6]: https://github.com/automattic/jetpack-blaze/compare/v0.21.5...v0.21.6
+[0.21.5]: https://github.com/automattic/jetpack-blaze/compare/v0.21.4...v0.21.5
+[0.21.4]: https://github.com/automattic/jetpack-blaze/compare/v0.21.3...v0.21.4
+[0.21.3]: https://github.com/automattic/jetpack-blaze/compare/v0.21.2...v0.21.3
+[0.21.2]: https://github.com/automattic/jetpack-blaze/compare/v0.21.1...v0.21.2
+[0.21.1]: https://github.com/automattic/jetpack-blaze/compare/v0.21.0...v0.21.1
+[0.21.0]: https://github.com/automattic/jetpack-blaze/compare/v0.20.3...v0.21.0
+[0.20.3]: https://github.com/automattic/jetpack-blaze/compare/v0.20.2...v0.20.3
+[0.20.2]: https://github.com/automattic/jetpack-blaze/compare/v0.20.1...v0.20.2
+[0.20.1]: https://github.com/automattic/jetpack-blaze/compare/v0.20.0...v0.20.1
+[0.20.0]: https://github.com/automattic/jetpack-blaze/compare/v0.19.3...v0.20.0
+[0.19.3]: https://github.com/automattic/jetpack-blaze/compare/v0.19.2...v0.19.3
+[0.19.2]: https://github.com/automattic/jetpack-blaze/compare/v0.19.1...v0.19.2
+[0.19.1]: https://github.com/automattic/jetpack-blaze/compare/v0.19.0...v0.19.1
+[0.19.0]: https://github.com/automattic/jetpack-blaze/compare/v0.18.1...v0.19.0
+[0.18.1]: https://github.com/automattic/jetpack-blaze/compare/v0.18.0...v0.18.1
+[0.18.0]: https://github.com/automattic/jetpack-blaze/compare/v0.17.0...v0.18.0
+[0.17.0]: https://github.com/automattic/jetpack-blaze/compare/v0.16.0...v0.17.0
+[0.16.0]: https://github.com/automattic/jetpack-blaze/compare/v0.15.3...v0.16.0
+[0.15.3]: https://github.com/automattic/jetpack-blaze/compare/v0.15.2...v0.15.3
+[0.15.2]: https://github.com/automattic/jetpack-blaze/compare/v0.15.1...v0.15.2
+[0.15.1]: https://github.com/automattic/jetpack-blaze/compare/v0.15.0...v0.15.1
+[0.15.0]: https://github.com/automattic/jetpack-blaze/compare/v0.14.3...v0.15.0
+[0.14.3]: https://github.com/automattic/jetpack-blaze/compare/v0.14.2...v0.14.3
+[0.14.2]: https://github.com/automattic/jetpack-blaze/compare/v0.14.1...v0.14.2
+[0.14.1]: https://github.com/automattic/jetpack-blaze/compare/v0.14.0...v0.14.1
+[0.14.0]: https://github.com/automattic/jetpack-blaze/compare/v0.13.0...v0.14.0
+[0.13.0]: https://github.com/automattic/jetpack-blaze/compare/v0.12.3...v0.13.0
+[0.12.3]: https://github.com/automattic/jetpack-blaze/compare/v0.12.2...v0.12.3
+[0.12.2]: https://github.com/automattic/jetpack-blaze/compare/v0.12.1...v0.12.2
+[0.12.1]: https://github.com/automattic/jetpack-blaze/compare/v0.12.0...v0.12.1
+[0.12.0]: https://github.com/automattic/jetpack-blaze/compare/v0.11.0...v0.12.0
+[0.11.0]: https://github.com/automattic/jetpack-blaze/compare/v0.10.4...v0.11.0
+[0.10.4]: https://github.com/automattic/jetpack-blaze/compare/v0.10.3...v0.10.4
+[0.10.3]: https://github.com/automattic/jetpack-blaze/compare/v0.10.2...v0.10.3
 [0.10.2]: https://github.com/automattic/jetpack-blaze/compare/v0.10.1...v0.10.2
 [0.10.1]: https://github.com/automattic/jetpack-blaze/compare/v0.10.0...v0.10.1
 [0.10.0]: https://github.com/automattic/jetpack-blaze/compare/v0.9.3...v0.10.0

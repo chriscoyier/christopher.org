@@ -36,8 +36,13 @@
             "default": "56.2%"
         }
     },
-    "editorScript": "file:../editor.js",
-    "editorStyle": "file:../editor.css",
-    "viewScript": "file:./view.js",
-    "style": "file:./view.css"
+    "example": {
+        "attributes": {
+            "align": "center",
+            "giphyUrl": "https://giphy.com/embed/fxKWgoOG9hzPPkE1oc",
+            "paddingTop": "100%",
+            "searchText": "WordPress"
+        }
+    },
+    "editorScript": "jetpack-blocks-editor"
 }

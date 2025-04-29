@@ -2,7 +2,7 @@
 /**
  *  This file is part of wp-Typography.
  *
- *  Copyright 2017-2023 Peter Putzer.
+ *  Copyright 2017-2024 Peter Putzer.
  *
  *  This program is free software; you can redistribute it and/or
  *  modify it under the terms of the GNU General Public License
@@ -26,7 +26,6 @@
 
 namespace WP_Typography\Settings;
 
-use WP_Typography;
 use WP_Typography\UI\Sections;
 use WP_Typography\UI\Tabs;
 
@@ -132,7 +131,7 @@ abstract class Plugin_Configuration {
 	 *
 	 * @return array<string,Config>
 	 */
-	public static function get_defaults() : array {
+	public static function get_defaults(): array {
 		if ( empty( self::$defaults ) ) {
 			self::$defaults = [ // @codeCoverageIgnore
 				self::IGNORE_TAGS                      => [
@@ -688,7 +687,7 @@ abstract class Plugin_Configuration {
 	 *
 	 * @return array<int,int>
 	 */
-	private static function get_numeric_option_values( array $values ) : array {
+	private static function get_numeric_option_values( array $values ): array {
 		return \array_combine( $values, $values );
 	}
 
@@ -697,7 +696,7 @@ abstract class Plugin_Configuration {
 	 *
 	 * @return array<string,string>
 	 */
-	private static function get_quote_style_option_values() : array {
+	private static function get_quote_style_option_values(): array {
 		return [
 			Quote_Style::DOUBLE_CURLED              => '&ldquo;foo&rdquo;',
 			Quote_Style::DOUBLE_CURLED_REVERSED     => '&rdquo;foo&rdquo;', // @codeCoverageIgnoreStart

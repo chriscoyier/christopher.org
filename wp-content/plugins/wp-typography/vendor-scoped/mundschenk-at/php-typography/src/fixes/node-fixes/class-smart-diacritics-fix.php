@@ -53,7 +53,7 @@ class Smart_Diacritics_Fix extends Abstract_Node_Fix
         if (!empty($settings[Settings::DIACRITIC_REPLACEMENT_DATA]) && !empty($settings[Settings::DIACRITIC_REPLACEMENT_DATA]['patterns']) && !empty($settings[Settings::DIACRITIC_REPLACEMENT_DATA]['replacements'])) {
             // Uses "word" => "replacement" pairs from an array to make fast preg_* replacements.
             $replacements = $settings[Settings::DIACRITIC_REPLACEMENT_DATA]['replacements'];
-            $textnode->data = \preg_replace_callback($settings[Settings::DIACRITIC_REPLACEMENT_DATA]['patterns'], function ($match) use($replacements) {
+            $textnode->data = \preg_replace_callback($settings[Settings::DIACRITIC_REPLACEMENT_DATA]['patterns'], function ($match) use ($replacements) {
                 if (isset($replacements[$match[0]])) {
                     return $replacements[$match[0]];
                 } else {
@@ -70,4 +70,4 @@ class Smart_Diacritics_Fix extends Abstract_Node_Fix
  *
  * @since 5.0.0
  */
-\class_alias('WP_Typography\\Vendor\\PHP_Typography\\Fixes\\Node_Fixes\\Smart_Diacritics_Fix', 'PHP_Typography\\Fixes\\Node_Fixes\\Smart_Diacritics_Fix', \false);
+\class_alias('WP_Typography\Vendor\PHP_Typography\Fixes\Node_Fixes\Smart_Diacritics_Fix', 'PHP_Typography\Fixes\Node_Fixes\Smart_Diacritics_Fix', \false);

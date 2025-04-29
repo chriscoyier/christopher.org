@@ -39,10 +39,10 @@ use WP_Typography\Vendor\PHP_Typography\U;
 class Smart_Maths_Fix extends Abstract_Node_Fix
 {
     // Lookbehind assertion: preceded by beginning of string or space.
-    const INITIAL_LOOKBEHIND = '(?<=\\s|\\A)';
+    const INITIAL_LOOKBEHIND = '(?<=\s|\A)';
     // Needs u modifier.
     // Lookahead assertion: followed by end of string, space, or certain allowed punctuation marks.
-    const FINAL_LOOKAHEAD = '(?=\\s|\\Z|\\)|\\]|\\.|\\,|\\?|\\;|\\:|\'|\\"|\\!)';
+    const FINAL_LOOKAHEAD = '(?=\s|\Z|\)|\]|\.|\,|\?|\;|\:|\'|\"|\!)';
     // Needs u modifier.
     // Common date components.
     const DAY_2_DIGITS = '(?:0[1-9]|[12][0-9]|3[01])';
@@ -53,31 +53,31 @@ class Smart_Maths_Fix extends Abstract_Node_Fix
     const YEAR_4_DIGITS = '[12][0-9]{3}';
     const YEAR_2_OR_4_DIGITS = '(?:' . self::YEAR_2_DIGITS . '|' . self::YEAR_4_DIGITS . ')';
     // Maths components.
-    const DECIMAL_SEPARATOR = '[\\.,]';
+    const DECIMAL_SEPARATOR = '[\.,]';
     const DECIMAL_NUMBER = '[0-9]+(?:' . self::DECIMAL_SEPARATOR . '[0-9]+)?';
     // First, let's find math equations.
     const MATH_EQUATION = '/
 		' . self::INITIAL_LOOKBEHIND . '
-		[\\.,\'\\"\\¿\\¡' . U::ELLIPSIS . U::SINGLE_QUOTE_OPEN . U::DOUBLE_QUOTE_OPEN . U::GUILLEMET_OPEN . U::GUILLEMET_CLOSE . U::SINGLE_LOW_9_QUOTE . U::DOUBLE_LOW_9_QUOTE . ']*
+		[\.,\'\"\¿\¡' . U::ELLIPSIS . U::SINGLE_QUOTE_OPEN . U::DOUBLE_QUOTE_OPEN . U::GUILLEMET_OPEN . U::GUILLEMET_CLOSE . U::SINGLE_LOW_9_QUOTE . U::DOUBLE_LOW_9_QUOTE . ']*
 														# allowed preceding punctuation
-		[\\-\\(' . U::MINUS . ']*                         # optionally preceded by dash, minus sign or open parenthesis
+		[\-\(' . U::MINUS . ']*                         # optionally preceded by dash, minus sign or open parenthesis
 		' . self::DECIMAL_NUMBER . '                    # must begin with a number, optional decimal values after first integer
 		(                                               # followed by a math symbol and a number
-			[\\/\\*x\\-+=\\^' . U::MINUS . U::MULTIPLICATION . U::DIVISION . ']
+			[\/\*x\-+=\^' . U::MINUS . U::MULTIPLICATION . U::DIVISION . ']
 														# allowed math symbols
-			[\\-\\(' . U::MINUS . ']*                     # optionally preceded by dash, minus sign or open parenthesis
+			[\-\(' . U::MINUS . ']*                     # optionally preceded by dash, minus sign or open parenthesis
 			' . self::DECIMAL_NUMBER . '                # must begin with a number, optional decimal values after first integer
-			[\\-\\(\\)' . U::MINUS . ']*                   # optionally followed by dash, minus sign or parenthesis
+			[\-\(\)' . U::MINUS . ']*                   # optionally followed by dash, minus sign or parenthesis
 		)+
-		[\\.,;:\'\\"\\?\\!' . U::ELLIPSIS . U::SINGLE_QUOTE_CLOSE . U::DOUBLE_QUOTE_CLOSE . U::GUILLEMET_OPEN . U::GUILLEMET_CLOSE . ']*
+		[\.,;:\'\"\?\!' . U::ELLIPSIS . U::SINGLE_QUOTE_CLOSE . U::DOUBLE_QUOTE_CLOSE . U::GUILLEMET_OPEN . U::GUILLEMET_CLOSE . ']*
 														# allowed trailing punctuation
-		(?=\\Z|\\s)                                       # lookahead assertion: followed by end of string or space
+		(?=\Z|\s)                                       # lookahead assertion: followed by end of string or space
 	/Sxu';
     // Revert 4-4 to plain minus-hyphen so as to not mess with ranges of numbers (i.e. pp. 46-50).
     const REVERT_RANGE = '/
 		' . self::INITIAL_LOOKBEHIND . '
 
-		(\\d+)' . U::MINUS . '(\\d+)
+		(\d+)' . U::MINUS . '(\d+)
 
 		' . self::FINAL_LOOKAHEAD . '                   # lookahead assertion: most punctuation marks are allowd
 		(?!' . self::DECIMAL_SEPARATOR . '[0-9]+)                                    # negative lookahead assertion: but not decimal numbers
@@ -85,11 +85,11 @@ class Smart_Maths_Fix extends Abstract_Node_Fix
     // Revert fractions to basic slash.
     const REVERT_FRACTION = "/\n\t\t(?<=\\s|\\A|\\'|\"|" . U::NO_BREAK_SPACE . ')
 		(
-			\\d+
+			\d+
 		)
 		' . U::DIVISION . '
 		(
-			\\d+
+			\d+
 			(?:st|nd|rd|th)?
 		)
 		' . self::FINAL_LOOKAHEAD . '
@@ -199,4 +199,4 @@ class Smart_Maths_Fix extends Abstract_Node_Fix
  *
  * @since 5.0.0
  */
-\class_alias('WP_Typography\\Vendor\\PHP_Typography\\Fixes\\Node_Fixes\\Smart_Maths_Fix', 'PHP_Typography\\Fixes\\Node_Fixes\\Smart_Maths_Fix', \false);
+\class_alias('WP_Typography\Vendor\PHP_Typography\Fixes\Node_Fixes\Smart_Maths_Fix', 'PHP_Typography\Fixes\Node_Fixes\Smart_Maths_Fix', \false);

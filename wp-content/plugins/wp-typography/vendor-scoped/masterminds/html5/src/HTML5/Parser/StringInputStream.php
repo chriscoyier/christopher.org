@@ -65,7 +65,7 @@ class StringInputStream implements InputStream
     {
         $data = UTF8Utils::convertToUTF8($data, $encoding);
         if ($debug) {
-            \fprintf(\STDOUT, $debug, $data, \strlen($data));
+            fprintf(\STDOUT, $debug, $data, strlen($data));
         }
         // There is good reason to question whether it makes sense to
         // do this here, since most of these checks are done during
@@ -74,7 +74,7 @@ class StringInputStream implements InputStream
         $data = $this->replaceLinefeeds($data);
         $this->data = $data;
         $this->char = 0;
-        $this->EOF = \strlen($data);
+        $this->EOF = strlen($data);
     }
     public function __toString()
     {
@@ -93,7 +93,7 @@ class StringInputStream implements InputStream
          * stage.
          */
         $crlfTable = array("\x00" => "�", "\r\n" => "\n", "\r" => "\n");
-        return \strtr($data, $crlfTable);
+        return strtr($data, $crlfTable);
     }
     /**
      * Returns the current line that the tokenizer is at.
@@ -105,7 +105,7 @@ class StringInputStream implements InputStream
         }
         // Add one to $this->char because we want the number for the next
         // byte to be processed.
-        return \substr_count($this->data, "\n", 0, \min($this->char, $this->EOF)) + 1;
+        return substr_count($this->data, "\n", 0, min($this->char, $this->EOF)) + 1;
     }
     /**
      * @deprecated
@@ -131,15 +131,15 @@ class StringInputStream implements InputStream
         // one (to make it point to the next character, the one we want the
         // position of) added to it because strrpos's behaviour includes the
         // final offset byte.
-        $backwardFrom = $this->char - 1 - \strlen($this->data);
-        $lastLine = \strrpos($this->data, "\n", $backwardFrom);
+        $backwardFrom = $this->char - 1 - strlen($this->data);
+        $lastLine = strrpos($this->data, "\n", $backwardFrom);
         // However, for here we want the length up until the next byte to be
         // processed, so add one to the current byte ($this->char).
         if (\false !== $lastLine) {
-            $findLengthOf = \substr($this->data, $lastLine + 1, $this->char - 1 - $lastLine);
+            $findLengthOf = substr($this->data, $lastLine + 1, $this->char - 1 - $lastLine);
         } else {
             // After a newline.
-            $findLengthOf = \substr($this->data, 0, $this->char);
+            $findLengthOf = substr($this->data, 0, $this->char);
         }
         return UTF8Utils::countChars($findLengthOf);
     }
@@ -155,6 +155,7 @@ class StringInputStream implements InputStream
      *
      * @return string The current character.
      */
+    #[\ReturnTypeWillChange]
     public function current()
     {
         return $this->data[$this->char];
@@ -163,6 +164,7 @@ class StringInputStream implements InputStream
      * Advance the pointer.
      * This is part of the Iterator interface.
      */
+    #[\ReturnTypeWillChange]
     public function next()
     {
         ++$this->char;
@@ -170,6 +172,7 @@ class StringInputStream implements InputStream
     /**
      * Rewind to the start of the string.
      */
+    #[\ReturnTypeWillChange]
     public function rewind()
     {
         $this->char = 0;
@@ -179,6 +182,7 @@ class StringInputStream implements InputStream
      *
      * @return bool Whether the current pointer location is valid.
      */
+    #[\ReturnTypeWillChange]
     public function valid()
     {
         return $this->char < $this->EOF;
@@ -197,7 +201,7 @@ class StringInputStream implements InputStream
     public function remainingChars()
     {
         if ($this->char < $this->EOF) {
-            $data = \substr($this->data, $this->char);
+            $data = substr($this->data, $this->char);
             $this->char = $this->EOF;
             return $data;
         }
@@ -224,11 +228,11 @@ class StringInputStream implements InputStream
             return \false;
         }
         if (0 === $max || $max) {
-            $len = \strcspn($this->data, $bytes, $this->char, $max);
+            $len = strcspn($this->data, $bytes, $this->char, $max);
         } else {
-            $len = \strcspn($this->data, $bytes, $this->char);
+            $len = strcspn($this->data, $bytes, $this->char);
         }
-        $string = (string) \substr($this->data, $this->char, $len);
+        $string = (string) substr($this->data, $this->char, $len);
         $this->char += $len;
         return $string;
     }
@@ -251,11 +255,11 @@ class StringInputStream implements InputStream
             return \false;
         }
         if (0 === $max || $max) {
-            $len = \strspn($this->data, $bytes, $this->char, $max);
+            $len = strspn($this->data, $bytes, $this->char, $max);
         } else {
-            $len = \strspn($this->data, $bytes, $this->char);
+            $len = strspn($this->data, $bytes, $this->char);
         }
-        $string = (string) \substr($this->data, $this->char, $len);
+        $string = (string) substr($this->data, $this->char, $len);
         $this->char += $len;
         return $string;
     }
@@ -280,6 +284,7 @@ class StringInputStream implements InputStream
         }
         return \false;
     }
+    #[\ReturnTypeWillChange]
     public function key()
     {
         return $this->char;

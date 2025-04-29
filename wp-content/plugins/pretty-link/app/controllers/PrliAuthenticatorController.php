@@ -15,6 +15,22 @@ class PrliAuthenticatorController extends PrliBaseController {
 
     add_action('init', array($this, 'process_connect'));
     add_action('init', array($this, 'process_disconnect'));
+    add_action( 'admin_init', array( $this, 'delete_connection_data' ) );
+  }
+
+  /**
+   * Validates the GET parameter and clears the saved connection data from the Authenticator.
+   *
+   * @access public
+   * @return void
+   */
+  public static function delete_connection_data() {
+    if ( isset( $_GET['prli-clear-connection-data'] ) ) {
+      // Admins only
+      if ( current_user_can( 'manage_options' ) ) {
+        self::clear_connection_data();
+      }
+    }
   }
 
   /**
@@ -83,6 +99,11 @@ class PrliAuthenticatorController extends PrliBaseController {
 
     if($site_uuid) {
       update_option('prli_authenticator_site_uuid', $site_uuid);
+    }
+
+    if ( isset( $_GET['stripe_connect'] ) && 'true' === $_GET['stripe_connect'] && isset( $_GET['method_id'] ) && ! empty( $_GET['method_id'] ) ) {
+      wp_redirect( PrliStripeConnect::get_stripe_connect_url( $_GET['method_id'] ) );
+      exit;
     }
 
     $redirect_url = remove_query_arg(array(
@@ -154,9 +175,10 @@ class PrliAuthenticatorController extends PrliBaseController {
     $body = json_decode(wp_remote_retrieve_body($response), true);
 
     if(isset($body['disconnected']) && $body['disconnected'] === true) {
-      delete_option('prli_authenticator_account_email');
-      delete_option('prli_authenticator_secret_token');
-      delete_option('prli_authenticator_site_uuid', $site_uuid);
+      delete_option( PrliAuthConnectHelper::OPTION_KEY_AUTH_ACCOUNT_EMAIL );
+      delete_option( PrliAuthConnectHelper::OPTION_KEY_AUTH_ACCOUNT_SECRET );
+      delete_option( PrliAuthConnectHelper::OPTION_KEY_AUTH_ACCOUNT_SITE_UUID );
+      delete_option( PrliAuthConnectHelper::OPTION_KEY_AUTH_ACCOUNT_USER_UUID );
     }
 
     wp_redirect(remove_query_arg(array('prli-disconnect', 'nonce')));
@@ -207,7 +229,7 @@ class PrliAuthenticatorController extends PrliBaseController {
    * @return string The Base64 encoded string.
    */
   public static function base64url_encode($value) {
-    return rtrim(strstr(base64_encode($value), '+/', '-_'), '=');
+    return rtrim( strtr( base64_encode( $value ), '+/', '-_' ), '=' );
   }
 
   /**

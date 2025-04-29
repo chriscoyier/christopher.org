@@ -129,4 +129,4 @@ class Style_Initial_Quotes_Fix extends Classes_Dependent_Fix
  *
  * @since 5.0.0
  */
-\class_alias('WP_Typography\\Vendor\\PHP_Typography\\Fixes\\Node_Fixes\\Style_Initial_Quotes_Fix', 'PHP_Typography\\Fixes\\Node_Fixes\\Style_Initial_Quotes_Fix', \false);
+\class_alias('WP_Typography\Vendor\PHP_Typography\Fixes\Node_Fixes\Style_Initial_Quotes_Fix', 'PHP_Typography\Fixes\Node_Fixes\Style_Initial_Quotes_Fix', \false);

@@ -16,7 +16,9 @@ class PrliOptionsController extends PrliBaseController {
       'link_nofollow' => 'prli_link_nofollow',
       'link_sponsored' => 'prli_link_sponsored',
       'link_redirect_type' => 'prli_link_redirect_type',
-      'hidden_field_name' => 'prli_update_options'
+      'hidden_field_name' => 'prli_update_options',
+      'prettypay_thank_you_page_id' => 'prli_prettypay_thank_you_page_id',
+      'prettypay_default_currency' => 'prli_prettypay_default_currency',
     );
   }
 
@@ -35,6 +37,12 @@ class PrliOptionsController extends PrliBaseController {
     // See if the user has posted us some information
     // If they did, this hidden field will be set to 'Y'
     if( isset($_REQUEST[ $hidden_field_name ]) && $_REQUEST[ $hidden_field_name ] == 'Y' ) {
+      // Check the nonce before update options.
+      if ( empty( $_REQUEST['_wpnonce'] ) || ! wp_verify_nonce( $_REQUEST['_wpnonce'], 'update-options' ) ) {
+        status_header( 403, 'Forbidden' );
+        wp_die();
+      }
+
       $update_message = $this->update();
     }
 
@@ -99,6 +107,32 @@ class PrliOptionsController extends PrliBaseController {
     $prli_options->link_nofollow = (int)isset($params[ $link_nofollow ]);
     $prli_options->link_sponsored = (int)isset($params[ $link_sponsored ]);
     $prli_options->link_redirect_type = isset($params[ $link_redirect_type ]) && is_string($params[ $link_redirect_type ]) ? sanitize_key(stripslashes($params[ $link_redirect_type ])) : '307';
+
+    $thank_you_page_id = isset($params[$prettypay_thank_you_page_id]) ? sanitize_text_field(wp_unslash($params[$prettypay_thank_you_page_id])) : '';
+
+    if($thank_you_page_id == 'auto_create_page') {
+      $page_id = PrliUtils::auto_add_page(
+        __('Thank You', 'pretty-link'),
+        __('Thank you for your purchase.', 'pretty-link')
+      );
+
+      if(is_numeric($page_id)) {
+        $page_id = (int) $page_id;
+        $prli_options->prettypay_thank_you_page_id = $page_id;
+        $_POST[$prettypay_thank_you_page_id] = $page_id;
+      }
+      else {
+        $prli_options->prettypay_thank_you_page_id = '';
+      }
+    }
+    elseif(is_numeric($thank_you_page_id)) {
+      $prli_options->prettypay_thank_you_page_id = (int) $thank_you_page_id;
+    }
+    else {
+      $prli_options->prettypay_thank_you_page_id = '';
+    }
+
+    $prli_options->prettypay_default_currency = isset($params[$prettypay_default_currency]) ? sanitize_text_field(wp_unslash($params[$prettypay_default_currency])) : 'USD';
 
     do_action('prli-update-options', $params);
   }

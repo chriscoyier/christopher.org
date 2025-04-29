@@ -41,35 +41,35 @@ use WP_Typography\Vendor\PHP_Typography\U;
 class Smart_Dashes_Fix extends Abstract_Node_Fix
 {
     // Standard dashes.
-    const PARENTHETICAL_DOUBLE_DASH = '/(\\s|' . RE::HTML_SPACES . ')--(\\s|' . RE::HTML_SPACES . ')/Sxui';
+    const PARENTHETICAL_DOUBLE_DASH = '/(\s|' . RE::HTML_SPACES . ')--(\s|' . RE::HTML_SPACES . ')/Sxui';
     // ' -- '.
-    const PARENTHETICAL_SINGLE_DASH = '/(\\s|' . RE::HTML_SPACES . ')-(\\s|' . RE::HTML_SPACES . ')/Sxui';
+    const PARENTHETICAL_SINGLE_DASH = '/(\s|' . RE::HTML_SPACES . ')-(\s|' . RE::HTML_SPACES . ')/Sxui';
     // ' - '.
-    const EN_DASH_WORDS = '/([\\w])\\-(' . U::THIN_SPACE . '|' . U::HAIR_SPACE . '|' . U::NO_BREAK_NARROW_SPACE . '|' . U::NO_BREAK_SPACE . ')/Su';
+    const EN_DASH_WORDS = '/([\w])\-(' . U::THIN_SPACE . '|' . U::HAIR_SPACE . '|' . U::NO_BREAK_NARROW_SPACE . '|' . U::NO_BREAK_SPACE . ')/Su';
     const EN_DASH_NUMBERS = "/(\\b\\d+(\\.?))\\-(\\d+\\2)/S";
     const EN_DASH_PHONE_NUMBERS = "/(\\b\\d{3})" . U::EN_DASH . "(\\d{4}\\b)/S";
     const NO_BREAK_HYPHEN = "/\n\t\t(?|\n\t\t\t# Elision at the beginning of a word\n\t\t\t(\\s)\\-(\\w) |\n\n\t\t\t# Single letter before the hyphen.\n\t\t\t(?<!\\-)\\b(\\w)\\-(\\w) |\n\n\t\t\t# Single letter after the hyphen, or a comma.\n\t\t\t(\\w)\\-(\\w\\b|,)(?!\\-)\n\t\t)\n\t\t/Sux";
     // Date handling.
     const DATE_YYYY_MM_DD = '/
 		(
-			(?<=\\s|\\A|' . U::NO_BREAK_SPACE . ')
+			(?<=\s|\A|' . U::NO_BREAK_SPACE . ')
 			[12][0-9]{3}
 		)
-		[\\-' . U::EN_DASH . ']
+		[\-' . U::EN_DASH . ']
 		(
 			(?:[0][1-9]|[1][0-2])
 		)
-		[\\-' . U::EN_DASH . "]\n\t\t\t(\n\t\t\t\t(?:[0][1-9]|[12][0-9]|[3][0-1])\n\t\t\t\t(?=\\s|\\Z|\\)|\\]|\\.|\\,|\\?|\\;|\\:|\\'|\"|\\!|" . U::NO_BREAK_SPACE . ')
+		[\-' . U::EN_DASH . "]\n\t\t\t(\n\t\t\t\t(?:[0][1-9]|[12][0-9]|[3][0-1])\n\t\t\t\t(?=\\s|\\Z|\\)|\\]|\\.|\\,|\\?|\\;|\\:|\\'|\"|\\!|" . U::NO_BREAK_SPACE . ')
 		)
 	/xu';
     const DATE_MM_DD_YYYY = '/
 		(?:
 			(?:
 				(
-					(?<=\\s|\\A|' . U::NO_BREAK_SPACE . ')
+					(?<=\s|\A|' . U::NO_BREAK_SPACE . ')
 					(?:[0]?[1-9]|[1][0-2])
 				)
-				[\\-' . U::EN_DASH . ']
+				[\-' . U::EN_DASH . ']
 				(
 					(?:[0]?[1-9]|[12][0-9]|[3][0-1])
 				)
@@ -77,24 +77,24 @@ class Smart_Dashes_Fix extends Abstract_Node_Fix
 			|
 			(?:
 				(
-					(?<=\\s|\\A|' . U::NO_BREAK_SPACE . ')
+					(?<=\s|\A|' . U::NO_BREAK_SPACE . ')
 					(?:[0]?[1-9]|[12][0-9]|[3][0-1])
 				)
-				[\\-' . U::EN_DASH . ']
+				[\-' . U::EN_DASH . ']
 				(
 					(?:[0]?[1-9]|[1][0-2])
 				)
 			)
 		)
-		[\\-' . U::EN_DASH . "]\n\t\t(\n\t\t\t[12][0-9]{3}\n\t\t\t(?=\\s|\\Z|\\)|\\]|\\.|\\,|\\?|\\;|\\:|\\'|\"|\\!|" . U::NO_BREAK_SPACE . ')
+		[\-' . U::EN_DASH . "]\n\t\t(\n\t\t\t[12][0-9]{3}\n\t\t\t(?=\\s|\\Z|\\)|\\]|\\.|\\,|\\?|\\;|\\:|\\'|\"|\\!|" . U::NO_BREAK_SPACE . ')
 		)
 	/xu';
     const DATE_YYYY_MM = '/
 		(
-			(?<=\\s|\\A|' . U::NO_BREAK_SPACE . ')
+			(?<=\s|\A|' . U::NO_BREAK_SPACE . ')
 			[12][0-9]{3}
 		)
-		[\\-' . U::EN_DASH . "]\n\t\t(\n\t\t\t(?:\n\t\t\t\t(?:[0][1-9]|[1][0-2])\n\t\t\t\t|\n\t\t\t\t(?:[0][0-9][1-9]|[1-2][0-9]{2}|[3][0-5][0-9]|[3][6][0-6])\n\t\t\t)\n\t\t\t(?=\\s|\\Z|\\)|\\]|\\.|\\,|\\?|\\;|\\:|\\'|\"|\\!|" . U::NO_BREAK_SPACE . ')
+		[\-' . U::EN_DASH . "]\n\t\t(\n\t\t\t(?:\n\t\t\t\t(?:[0][1-9]|[1][0-2])\n\t\t\t\t|\n\t\t\t\t(?:[0][0-9][1-9]|[1-2][0-9]{2}|[3][0-5][0-9]|[3][6][0-6])\n\t\t\t)\n\t\t\t(?=\\s|\\Z|\\)|\\]|\\.|\\,|\\?|\\;|\\:|\\'|\"|\\!|" . U::NO_BREAK_SPACE . ')
 		)
 	/xu';
     /**
@@ -138,4 +138,4 @@ class Smart_Dashes_Fix extends Abstract_Node_Fix
  *
  * @since 5.0.0
  */
-\class_alias('WP_Typography\\Vendor\\PHP_Typography\\Fixes\\Node_Fixes\\Smart_Dashes_Fix', 'PHP_Typography\\Fixes\\Node_Fixes\\Smart_Dashes_Fix', \false);
+\class_alias('WP_Typography\Vendor\PHP_Typography\Fixes\Node_Fixes\Smart_Dashes_Fix', 'PHP_Typography\Fixes\Node_Fixes\Smart_Dashes_Fix', \false);

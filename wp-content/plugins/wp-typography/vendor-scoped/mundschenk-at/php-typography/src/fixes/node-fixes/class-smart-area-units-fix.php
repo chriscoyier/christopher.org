@@ -40,10 +40,10 @@ class Smart_Area_Units_Fix extends Abstract_Node_Fix
 {
     const LENGTH_UNITS = '(?:p|µ|[mcdhkMGT])?m';
     // Just metric for now.
-    const NUMBER = '[0-9]+(?:\\.,)?[0-9]*';
-    const WHITESPACE = '\\s*';
-    const AREA_UNITS = '/\\b(' . self::NUMBER . ')(' . self::WHITESPACE . ')(' . self::LENGTH_UNITS . ')2\\b/Su';
-    const VOLUME_UNITS = '/\\b(' . self::NUMBER . ')(' . self::WHITESPACE . ')(' . self::LENGTH_UNITS . ')3\\b/Su';
+    const NUMBER = '[0-9]+(?:\.,)?[0-9]*';
+    const WHITESPACE = '\s*';
+    const AREA_UNITS = '/\b(' . self::NUMBER . ')(' . self::WHITESPACE . ')(' . self::LENGTH_UNITS . ')2\b/Su';
+    const VOLUME_UNITS = '/\b(' . self::NUMBER . ')(' . self::WHITESPACE . ')(' . self::LENGTH_UNITS . ')3\b/Su';
     /**
      * Apply the fix to a given textnode.
      *
@@ -66,4 +66,4 @@ class Smart_Area_Units_Fix extends Abstract_Node_Fix
  *
  * @since 5.0.0
  */
-\class_alias('WP_Typography\\Vendor\\PHP_Typography\\Fixes\\Node_Fixes\\Smart_Area_Units_Fix', 'PHP_Typography\\Fixes\\Node_Fixes\\Smart_Area_Units_Fix', \false);
+\class_alias('WP_Typography\Vendor\PHP_Typography\Fixes\Node_Fixes\Smart_Area_Units_Fix', 'PHP_Typography\Fixes\Node_Fixes\Smart_Area_Units_Fix', \false);

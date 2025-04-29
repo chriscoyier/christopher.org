@@ -2,7 +2,7 @@
 /**
  *  This file is part of wp-Typography.
  *
- *  Copyright 2014-2022 Peter Putzer.
+ *  Copyright 2014-2024 Peter Putzer.
  *  Copyright 2009-2011 KINGdesk, LLC.
  *
  *  This program is free software; you can redistribute it and/or
@@ -25,15 +25,7 @@
  *  @license http://www.gnu.org/licenses/gpl-2.0.html
  */
 
-use WP_Typography\Data_Storage\Cache;
-use WP_Typography\Data_Storage\Options;
-use WP_Typography\Data_Storage\Transients;
-
-use WP_Typography\Settings\Plugin_Configuration as Config;
-
-use PHP_Typography\PHP_Typography;
 use PHP_Typography\Settings;
-use PHP_Typography\Hyphenator\Cache as Hyphenator_Cache;
 
 /**
  * Main wp-Typography plugin class. All WordPress specific code goes here.
@@ -48,18 +40,18 @@ use PHP_Typography\Hyphenator\Cache as Hyphenator_Cache;
  *
  * @method void clear_cache() Retrieves the plugin's default option values.
  *
- * @method array get_config() Retrieves the plugin configuration.
- * @method array get_default_options() Retrieves the plugin's default option values.
+ * @method array<string,string|int|bool> get_config() Retrieves the plugin configuration.
+ * @method array<string,string|int|bool> get_default_options() Retrieves the plugin's default option values.
  * @method void set_default_options($force_defaults = false) Initializes the options with default values.
  *
  * @method string process(string $text, bool $is_title = false, bool $force_feed = false, Settings $settings = null) Processes a text fragment.
  * @method string process_title($text, Settings $settings = null) Processes a heading text fragment.
  * @method string process_feed_title($text, Settings $settings = null) Processes a heading text fragment as part of an RSS feed.
  * @method string process_feed($text, $is_title = false, Settings $settings = null) Processes a content text fragment as part of an RSS feed.
- * @method array process_title_parts($title_parts, Settings $settings = null) Processes title parts and strips &shy; and zero-width space.
+ * @method string[] process_title_parts($title_parts, Settings $settings = null) Processes title parts and strips &shy; and zero-width space.
  *
- * @method array get_hyphenation_languages() Retrieves and caches the list of valid hyphenation languages.
- * @method array get_diacritic_languages() Retrieves and caches the list of valid diacritic replacement languages.
+ * @method array<string,string> get_hyphenation_languages( $translate = true ) Retrieves and caches the list of valid hyphenation languages.
+ * @method array<string,string> get_diacritic_languages( $translate = true ) Retrieves and caches the list of valid diacritic replacement languages.
  */
 abstract class WP_Typography {
 
@@ -81,7 +73,7 @@ abstract class WP_Typography {
 	 *
 	 * @throws BadMethodCallException Thrown when WP_Typography::set_instance after plugin initialization.
 	 */
-	public static function set_instance( WP_Typography $instance ) : void {
+	public static function set_instance( WP_Typography $instance ): void {
 		if ( null === self::$instance ) {
 			self::$instance = $instance;
 		} else {
@@ -99,7 +91,7 @@ abstract class WP_Typography {
 	 *
 	 * @return WP_Typography
 	 */
-	public static function get_instance() {
+	public static function get_instance(): WP_Typography {
 		if ( null === self::$instance ) {
 			throw new BadMethodCallException( 'WP_Typography::get_instance called without prior plugin intialization.' );
 		}
@@ -118,11 +110,11 @@ abstract class WP_Typography {
 	 *
 	 * @return mixed
 	 */
-	public static function __callStatic( $name, array $arguments ) {
+	public static function __callStatic( string $name, array $arguments ) {
 		if ( \method_exists( self::$instance, $name ) ) {
 			return self::$instance->$name( ...$arguments );
 		} else {
-			throw new BadMethodCallException( "Static method WP_Typography::$name does not exist." );
+			throw new BadMethodCallException( 'Static method WP_Typography::' . \esc_html( $name ) . ' does not exist.' );
 		}
 	}
 
@@ -133,7 +125,7 @@ abstract class WP_Typography {
 	 *
 	 * @return Settings
 	 */
-	public static function get_user_settings() {
+	public static function get_user_settings(): Settings {
 		return clone self::get_instance()->get_settings();
 	}
 
@@ -149,7 +141,7 @@ abstract class WP_Typography {
 	 *
 	 * @return string The processed $text.
 	 */
-	public static function filter( $text, Settings $settings = null ) {
+	public static function filter( string $text, ?Settings $settings = null ): string {
 		return self::get_instance()->process( $text, false, false, $settings );
 	}
 
@@ -165,7 +157,7 @@ abstract class WP_Typography {
 	 *
 	 * @return string The processed $text.
 	 */
-	public static function filter_title( $text, Settings $settings = null ) {
+	public static function filter_title( string $text, ?Settings $settings = null ): string {
 		return self::get_instance()->process_title( $text, $settings );
 	}
 
@@ -181,7 +173,7 @@ abstract class WP_Typography {
 	 *
 	 * @return string[]
 	 */
-	public static function filter_title_parts( array $title_parts, Settings $settings = null ) : array {
+	public static function filter_title_parts( array $title_parts, ?Settings $settings = null ): array {
 		return self::get_instance()->process_title_parts( $title_parts, $settings );
 	}
 
@@ -197,7 +189,7 @@ abstract class WP_Typography {
 	 *
 	 * @return string The processed $text.
 	 */
-	public static function filter_feed( $text, Settings $settings = null ) {
+	public static function filter_feed( string $text, ?Settings $settings = null ): string {
 		return self::get_instance()->process_feed( $text, false, $settings );
 	}
 
@@ -213,7 +205,7 @@ abstract class WP_Typography {
 	 *
 	 * @return string The processed $text.
 	 */
-	public static function filter_feed_title( $text, Settings $settings = null ) {
+	public static function filter_feed_title( string $text, ?Settings $settings = null ): string {
 		return self::get_instance()->process_feed_title( $text, $settings );
 	}
 
@@ -234,7 +226,7 @@ abstract class WP_Typography {
 	 *
 	 * @return string The hashed version (containing as few bytes as possible);
 	 */
-	private static function hash_version_string( $version ) {
+	private static function hash_version_string( $version ): string {
 		$hash = '';
 
 		foreach ( \explode( '.', $version ) as $part ) {
@@ -251,7 +243,7 @@ abstract class WP_Typography {
 	 *
 	 * @return string
 	 */
-	public function get_version_hash() {
+	public function get_version_hash(): string {
 		return self::hash_version_string( self::get_instance()->get_version() );
 	}
 }

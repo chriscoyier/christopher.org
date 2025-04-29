@@ -40,8 +40,6 @@ jQuery(document).ready(function($) {
     }
   };
 
-  prliSetPage();
-
   $('table.prli-settings-table').on( 'click', 'td.prli-settings-table-nav ul li a', function (e) {
     e.preventDefault();
     prliSetPage($(this).attr('href'));
@@ -155,5 +153,7 @@ jQuery(document).ready(function($) {
   $('table.prli-settings-table').on('prli-settings-url', function( e, href, hash, url ) {
     $('form#prli-options').attr('action',href);
   });
+
+  prliSetPage();
 });
 

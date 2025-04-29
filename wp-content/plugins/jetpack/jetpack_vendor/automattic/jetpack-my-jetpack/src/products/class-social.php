@@ -1,6 +1,6 @@
 <?php
 /**
- * Search product
+ * Jetpack Social product
  *
  * @package my-jetpack
  */
@@ -8,7 +8,9 @@
 namespace Automattic\Jetpack\My_Jetpack\Products;
 
 use Automattic\Jetpack\My_Jetpack\Hybrid_Product;
+use Automattic\Jetpack\My_Jetpack\Products;
 use Automattic\Jetpack\My_Jetpack\Wpcom_Products;
+use Automattic\Jetpack\Status\Host;
 
 /**
  * Class responsible for handling the Social product
@@ -37,6 +39,13 @@ class Social extends Hybrid_Product {
 	public static $plugin_slug = 'jetpack-social';
 
 	/**
+	 * The category of the product
+	 *
+	 * @var string
+	 */
+	public static $category = 'growth';
+
+	/**
 	 * Social has a standalone plugin
 	 *
 	 * @var bool
@@ -55,21 +64,35 @@ class Social extends Hybrid_Product {
 	);
 
 	/**
-	 * Get the internationalized product name
+	 * Whether this product has a free offering
+	 *
+	 * @var bool
+	 */
+	public static $has_free_offering = true;
+
+	/**
+	 * The feature slug that identifies the paid plan
+	 *
+	 * @var string
+	 */
+	public static $feature_identifying_paid_plan = 'social-enhanced-publishing';
+
+	/**
+	 * Get the product name
 	 *
 	 * @return string
 	 */
 	public static function get_name() {
-		return __( 'Social', 'jetpack-my-jetpack' );
+		return 'Social';
 	}
 
 	/**
-	 * Get the internationalized product title
+	 * Get the product title
 	 *
 	 * @return string
 	 */
 	public static function get_title() {
-		return __( 'Jetpack Social', 'jetpack-my-jetpack' );
+		return 'Jetpack Social';
 	}
 
 	/**
@@ -78,7 +101,7 @@ class Social extends Hybrid_Product {
 	 * @return string
 	 */
 	public static function get_description() {
-		return __( 'Reach your audience on social media', 'jetpack-my-jetpack' );
+		return __( 'Effortlessly share content across social media. Right from within WordPress', 'jetpack-my-jetpack' );
 	}
 
 	/**
@@ -87,7 +110,7 @@ class Social extends Hybrid_Product {
 	 * @return string
 	 */
 	public static function get_long_description() {
-		return __( 'Promote your content on social media by automatically publishing when you publish on your site.', 'jetpack-my-jetpack' );
+		return __( 'Grow your following by sharing your content across social media automatically.', 'jetpack-my-jetpack' );
 	}
 
 	/**
@@ -119,28 +142,94 @@ class Social extends Hybrid_Product {
 	}
 
 	/**
+	 * Get the URL the user is taken after purchasing the product through the checkout
+	 *
+	 * @return ?string
+	 */
+	public static function get_post_checkout_url() {
+		return self::get_manage_url();
+	}
+
+	/**
 	 * Get the WPCOM product slug used to make the purchase
 	 *
 	 * @return string
 	 */
 	public static function get_wpcom_product_slug() {
-		return 'jetpack_social';
+		return 'jetpack_social_v1_yearly';
+	}
+
+	/**
+	 * Gets the 'status' of the Social product
+	 *
+	 * @return string
+	 */
+	public static function get_status() {
+		$status = parent::get_status();
+		if ( Products::STATUS_NEEDS_PLAN === $status ) {
+			// If the status says that the site needs a plan,
+			// My Jetpack shows "Learn more" CTA,
+			// We want to instead show the "Activate" CTA.
+			$status = Products::STATUS_NEEDS_ACTIVATION;
+		}
+		return $status;
+	}
+
+	/**
+	 * Get the product-slugs of the paid plans for this product (not including bundles)
+	 *
+	 * @return array
+	 */
+	public static function get_paid_plan_product_slugs() {
+		return array(
+			'jetpack_social_v1_yearly',
+			'jetpack_social_v1_monthly',
+			'jetpack_social_v1_bi_yearly',
+			'jetpack_social_basic_yearly',
+			'jetpack_social_monthly',
+			'jetpack_social_basic_monthly',
+			'jetpack_social_basic_bi_yearly',
+			'jetpack_social_advanced_yearly',
+			'jetpack_social_advanced_monthly',
+			'jetpack_social_advanced_bi_yearly',
+		);
+	}
+
+	/**
+	 * Checks whether the current plan (or purchases) of the site already supports the product
+	 *
+	 * @return boolean
+	 */
+	public static function has_paid_plan_for_product() {
+		if ( parent::has_paid_plan_for_product() ) {
+			return true;
+		}
+
+		// For atomic sites, do a feature check to see if the republicize feature is available
+		// This feature is available by default on all Jetpack sites
+		if ( ( new Host() )->is_woa_site() && static::does_site_have_feature( 'republicize' ) ) {
+			return true;
+		}
+
+		return false;
 	}
 
 	/**
 	 * Get the URL where the user manages the product.
 	 *
-	 * If the standalone plugin is active,
-	 * it will redirect to the standalone plugin settings page.
-	 * Otherwise, it will redirect to the Jetpack settings page.
-	 *
 	 * @return string
 	 */
 	public static function get_manage_url() {
-		if ( static::is_standalone_plugin_active() ) {
-			return admin_url( 'admin.php?page=jetpack-social' );
-		}
+		return admin_url( 'admin.php?page=jetpack-social' );
+	}
 
-		return admin_url( 'admin.php?page=jetpack#/settings?term=publicize' );
+	/**
+	 * Return product bundles list
+	 * that supports the product.
+	 *
+	 * @return boolean|array Products bundle list.
+	 */
+	public static function is_upgradable_by_bundle() {
+		return array( 'growth', 'complete' );
 	}
 }

@@ -62,7 +62,7 @@ abstract class Abstract_Node_Fix implements Node_Fix
      *
      * @return void
      */
-    public abstract function apply(\DOMText $textnode, Settings $settings, $is_title = \false);
+    abstract public function apply(\DOMText $textnode, Settings $settings, $is_title = \false);
     /**
      * Determines whether the fix should be applied to (RSS) feeds.
      *
@@ -108,4 +108,4 @@ abstract class Abstract_Node_Fix implements Node_Fix
  *
  * @since 5.0.0
  */
-\class_alias('WP_Typography\\Vendor\\PHP_Typography\\Fixes\\Node_Fixes\\Abstract_Node_Fix', 'PHP_Typography\\Fixes\\Node_Fixes\\Abstract_Node_Fix', \false);
+\class_alias('WP_Typography\Vendor\PHP_Typography\Fixes\Node_Fixes\Abstract_Node_Fix', 'PHP_Typography\Fixes\Node_Fixes\Abstract_Node_Fix', \false);

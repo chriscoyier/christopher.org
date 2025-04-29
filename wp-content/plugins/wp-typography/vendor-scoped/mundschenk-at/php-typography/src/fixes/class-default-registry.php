@@ -65,7 +65,7 @@ class Default_Registry extends Registry
             foreach ($node_fixes as $fix => $params) {
                 $arguments = [];
                 if (!empty($params['classes'])) {
-                    $arguments += \array_map(function ($index) use($css_classes) {
+                    $arguments += \array_map(function ($index) use ($css_classes) {
                         return $css_classes[$index];
                     }, $params['classes']);
                 }
@@ -163,4 +163,4 @@ class Default_Registry extends Registry
  *
  * @since 6.0.0
  */
-\class_alias('WP_Typography\\Vendor\\PHP_Typography\\Fixes\\Default_Registry', 'PHP_Typography\\Fixes\\Default_Registry', \false);
+\class_alias('WP_Typography\Vendor\PHP_Typography\Fixes\Default_Registry', 'PHP_Typography\Fixes\Default_Registry', \false);

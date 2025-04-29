@@ -30,8 +30,7 @@
     },
     "attributes": {
         "url": {
-            "type": "string",
-            "validator": "isUrl"
+            "type": "string"
         },
         "selectedEpisodes": {
             "type": "array",
@@ -112,8 +111,5 @@
             }
         }
     },
-    "editorScript": "file:../editor.js",
-    "editorStyle": "file:../editor.css",
-    "viewScript": "file:./view.js",
-    "style": "file:./view.css"
+    "editorScript": "jetpack-blocks-editor"
 }

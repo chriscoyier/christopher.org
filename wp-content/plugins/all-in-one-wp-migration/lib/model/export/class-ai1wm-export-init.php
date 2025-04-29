@@ -42,7 +42,7 @@ class Ai1wm_Export_Init {
 		}
 
 		// Set progress
-		Ai1wm_Status::info( __( 'Preparing to export...', AI1WM_PLUGIN_NAME ) );
+		Ai1wm_Status::info( __( 'Preparing to export...', 'all-in-one-wp-migration' ) );
 
 		// Set archive
 		if ( empty( $params['archive'] ) ) {

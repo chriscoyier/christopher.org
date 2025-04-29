@@ -15,7 +15,7 @@ use Automattic\Jetpack\Forms\Dashboard\Dashboard_View_Switch;
  */
 class Jetpack_Forms {
 
-	const PACKAGE_VERSION = '0.22.0';
+	const PACKAGE_VERSION = '0.45.0';
 
 	/**
 	 * Load the contact form module.
@@ -30,13 +30,14 @@ class Jetpack_Forms {
 			$dashboard->init();
 		}
 
-		if ( is_admin() && apply_filters( 'tmp_grunion_allow_editor_view', true ) ) {
+		if ( is_admin() && apply_filters_deprecated( 'tmp_grunion_allow_editor_view', array( true ), '0.30.5', '', 'This functionality will be removed in an upcoming version.' ) ) {
 			add_action( 'current_screen', '\Automattic\Jetpack\Forms\ContactForm\Editor_View::add_hooks' );
 		}
 
 		add_action( 'init', '\Automattic\Jetpack\Forms\ContactForm\Util::register_pattern' );
 
-		add_action( 'rest_api_init', array( new WPCOM_REST_API_V2_Endpoint_Forms(), 'register_rest_routes' ) );
+		// Add hook to delete file attachments when a feedback post is deleted
+		add_action( 'before_delete_post', array( '\Automattic\Jetpack\Forms\ContactForm\Contact_Form', 'delete_feedback_files' ) );
 	}
 
 	/**

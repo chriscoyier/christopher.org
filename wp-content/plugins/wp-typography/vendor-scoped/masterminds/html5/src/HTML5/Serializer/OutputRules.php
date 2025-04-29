@@ -65,7 +65,7 @@ class OutputRules implements RulesInterface
         }
         $this->outputMode = static::IM_IN_HTML;
         $this->out = $output;
-        $this->hasHTML5 = \defined('ENT_HTML5');
+        $this->hasHTML5 = defined('ENT_HTML5');
     }
     public function addRule(array $rule)
     {
@@ -177,7 +177,7 @@ class OutputRules implements RulesInterface
             $this->xpath = new \DOMXPath($ele->ownerDocument);
         }
         foreach ($this->xpath->query('namespace::*[not(.=../../namespace::*)]', $ele) as $nsNode) {
-            if (!\in_array($nsNode->nodeValue, $this->implicitNamespaces)) {
+            if (!in_array($nsNode->nodeValue, $this->implicitNamespaces)) {
                 $this->wr(' ')->wr($nsNode->nodeName)->wr('="')->wr($nsNode->nodeValue)->wr('"');
             }
         }
@@ -197,12 +197,10 @@ class OutputRules implements RulesInterface
         $this->namespaceAttrs($ele);
         if ($this->outputMode == static::IM_IN_HTML) {
             $this->wr('>');
+        } else if ($ele->hasChildNodes()) {
+            $this->wr('>');
         } else {
-            if ($ele->hasChildNodes()) {
-                $this->wr('>');
-            } else {
-                $this->wr(' />');
-            }
+            $this->wr(' />');
         }
     }
     protected function attrs($ele)
@@ -246,16 +244,16 @@ class OutputRules implements RulesInterface
             if (isset($rule['attNamespace']) && $rule['attNamespace'] !== $attr->namespaceURI) {
                 continue;
             }
-            if (isset($rule['nodeName']) && !\is_array($rule['nodeName']) && $rule['nodeName'] !== $ele->localName) {
+            if (isset($rule['nodeName']) && !is_array($rule['nodeName']) && $rule['nodeName'] !== $ele->localName) {
                 continue;
             }
-            if (isset($rule['nodeName']) && \is_array($rule['nodeName']) && !\in_array($ele->localName, $rule['nodeName'], \true)) {
+            if (isset($rule['nodeName']) && is_array($rule['nodeName']) && !in_array($ele->localName, $rule['nodeName'], \true)) {
                 continue;
             }
-            if (isset($rule['attrName']) && !\is_array($rule['attrName']) && $rule['attrName'] !== $attr->localName) {
+            if (isset($rule['attrName']) && !is_array($rule['attrName']) && $rule['attrName'] !== $attr->localName) {
                 continue;
             }
-            if (isset($rule['attrName']) && \is_array($rule['attrName']) && !\in_array($attr->localName, $rule['attrName'], \true)) {
+            if (isset($rule['attrName']) && is_array($rule['attrName']) && !in_array($attr->localName, $rule['attrName'], \true)) {
                 continue;
             }
             if (isset($rule['xpath'])) {
@@ -303,7 +301,7 @@ class OutputRules implements RulesInterface
      */
     protected function wr($text)
     {
-        \fwrite($this->out, $text);
+        fwrite($this->out, $text);
         return $this;
     }
     /**
@@ -313,7 +311,7 @@ class OutputRules implements RulesInterface
      */
     protected function nl()
     {
-        \fwrite($this->out, \PHP_EOL);
+        fwrite($this->out, \PHP_EOL);
         return $this;
     }
     /**
@@ -352,9 +350,9 @@ class OutputRules implements RulesInterface
         // If we are in PHP 5.4+ we can use the native html5 entity functionality to
         // convert the named character references.
         if ($this->hasHTML5) {
-            return \htmlentities($text, \ENT_HTML5 | \ENT_SUBSTITUTE | \ENT_QUOTES, 'UTF-8', \false);
+            return htmlentities($text, \ENT_HTML5 | \ENT_SUBSTITUTE | \ENT_QUOTES, 'UTF-8', \false);
         } else {
-            return \strtr($text, HTML5Entities::$map);
+            return strtr($text, HTML5Entities::$map);
         }
     }
     /**
@@ -384,6 +382,6 @@ class OutputRules implements RulesInterface
         } else {
             $replace = array('<' => '&lt;', '>' => '&gt;', '&' => '&amp;', " " => '&nbsp;');
         }
-        return \strtr($text, $replace);
+        return strtr($text, $replace);
     }
 }

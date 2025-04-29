@@ -88,17 +88,3 @@ jQuery(document).ready(function($) {
     }
   });
 });
-
-jQuery(document).ready(function($) {
-  $('body').on('click', '.prli-notice-dismiss-daily button.notice-dismiss', function() {
-    $.ajax({
-      url: PrliAdminShared.ajax_url,
-      method: 'POST',
-      data: {
-        action: 'prli_dismiss_daily_notice',
-        _ajax_nonce: PrliAdminShared.dismiss_notice_nonce,
-        notice: $(this).closest('.notice').data('notice')
-      }
-    });
-  });
-});

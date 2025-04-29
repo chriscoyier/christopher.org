@@ -40,19 +40,21 @@
       <input type="number" name="delay" class="small-text" value="<?php echo esc_attr($values['delay']); ?>" />
     </td>
   </tr>
-  <tr>
-    <th scope="row">
-      <?php esc_html_e("Parameter Forwarding", 'pretty-link') ?>
-      <?php PrliAppHelper::info_tooltip(
-              'prli-link-parameter-forwarding',
-              esc_html__('Parameter Forwarding', 'pretty-link'),
-              esc_html__('Forward parameters passed to this link onto the Target URL', 'pretty-link')
-            ); ?>
-    </th>
-    <td>
-      <input type="checkbox" name="param_forwarding" id="param_forwarding" <?php checked($values['param_forwarding']); ?> />
-    </td>
-  </tr>
+  <?php if(!$values['prettypay_link']) : ?>
+    <tr>
+      <th scope="row">
+        <?php esc_html_e("Parameter Forwarding", 'pretty-link') ?>
+        <?php PrliAppHelper::info_tooltip(
+                'prli-link-parameter-forwarding',
+                esc_html__('Parameter Forwarding', 'pretty-link'),
+                esc_html__('Forward parameters passed to this link onto the Target URL', 'pretty-link')
+              ); ?>
+      </th>
+      <td>
+        <input type="checkbox" name="param_forwarding" id="param_forwarding" <?php checked($values['param_forwarding']); ?> />
+      </td>
+    </tr>
+  <?php endif; ?>
   <tr>
     <th scope="row">
       <?php esc_html_e("Tracking", 'pretty-link') ?>

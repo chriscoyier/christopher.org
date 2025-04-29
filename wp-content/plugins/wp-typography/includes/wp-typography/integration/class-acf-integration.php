@@ -2,7 +2,7 @@
 /**
  *  This file is part of wp-Typography.
  *
- *  Copyright 2017-2023 Peter Putzer.
+ *  Copyright 2017-2024 Peter Putzer.
  *
  *  This program is free software; you can redistribute it and/or
  *  modify it under the terms of the GNU General Public License
@@ -83,14 +83,14 @@ class ACF_Integration implements Plugin_Integration {
 	 *
 	 * @var \WP_Typography
 	 */
-	private $api;
+	private \WP_Typography $api;
 
 	/**
 	 * The ACF API version.
 	 *
 	 * @var int
 	 */
-	private $api_version;
+	private int $api_version;
 
 	/**
 	 * Creates a new integration.
@@ -108,7 +108,7 @@ class ACF_Integration implements Plugin_Integration {
 	 *
 	 * @return bool
 	 */
-	public function check() : bool {
+	public function check(): bool {
 		return \class_exists( 'acf' );
 	}
 
@@ -117,7 +117,7 @@ class ACF_Integration implements Plugin_Integration {
 	 *
 	 * @since 5.7.0 Parameter $plugin removed.
 	 */
-	public function run() : void {
+	public function run(): void {
 		$this->api_version = $this->get_acf_version();
 
 		if ( \is_admin() && $this->api_version >= 5 ) {
@@ -130,14 +130,14 @@ class ACF_Integration implements Plugin_Integration {
 	 *
 	 * @return string
 	 */
-	public function get_filter_tag() : string {
+	public function get_filter_tag(): string {
 		return 'acf';
 	}
 
 	/**
 	 * Initializes the "Typography" field setting for all available field types.
 	 */
-	public function initialize_field_settings() : void {
+	public function initialize_field_settings(): void {
 		/**
 		 * Retrieve the used field types.
 		 *
@@ -155,7 +155,7 @@ class ACF_Integration implements Plugin_Integration {
 	 *
 	 * @param int $priority The filter priority.
 	 */
-	public function enable_content_filters( $priority ) : void {
+	public function enable_content_filters( int $priority ): void {
 		if ( $this->api_version >= 5 ) {
 			// Advanced Custom Fields (version 5 and above).
 			\add_filter( 'acf/format_value', [ $this, 'process_acf5' ], $priority, 3 );
@@ -172,7 +172,7 @@ class ACF_Integration implements Plugin_Integration {
 	 *
 	 * @param mixed[] $field The field settings.
 	 */
-	public function add_field_setting( array $field ) : void {
+	public function add_field_setting( array $field ): void {
 		$default = self::DO_NOT_FILTER;
 
 		// Enable filters by default for some field types.
@@ -219,7 +219,7 @@ class ACF_Integration implements Plugin_Integration {
 	 *
 	 * @return int
 	 */
-	protected function get_acf_version() : int {
+	protected function get_acf_version(): int {
 		// We assume version 4 by default.
 		$acf_version = 4;
 
@@ -248,7 +248,7 @@ class ACF_Integration implements Plugin_Integration {
 		if ( \is_array( $content ) ) {
 			$supported_subfields = self::SUPPORTED_ARRAY_TYPES[ $field['type'] ] ?? [];
 
-			if ( ! \is_array( $supported_subfields ) && '*' === $supported_subfields ) {
+			if ( ! \is_array( $supported_subfields ) && '*' === $supported_subfields ) { // @phpstan-ignore identical.alwaysTrue
 				$supported_subfields = \array_keys( $content );
 			}
 
@@ -276,7 +276,7 @@ class ACF_Integration implements Plugin_Integration {
 	 *
 	 * @return string
 	 */
-	protected function process_acf_content( string $content, array $field ) : string {
+	protected function process_acf_content( string $content, array $field ): string {
 
 		switch ( isset( $field[ self::FILTER_SETTING ] ) ? $field[ self::FILTER_SETTING ] : '' ) {
 			case self::CONTENT_FILTER:

@@ -16,9 +16,6 @@ use Jetpack;
 use Jetpack_Gutenberg;
 use Jetpack_Mapbox_Helper;
 
-const FEATURE_NAME = 'map';
-const BLOCK_NAME   = 'jetpack/' . FEATURE_NAME;
-
 if ( ! class_exists( 'Jetpack_Mapbox_Helper' ) ) {
 	require_once JETPACK__PLUGIN_DIR . '_inc/lib/class-jetpack-mapbox-helper.php';
 }
@@ -30,7 +27,7 @@ if ( ! class_exists( 'Jetpack_Mapbox_Helper' ) ) {
  */
 function register_block() {
 	Blocks::jetpack_register_block(
-		BLOCK_NAME,
+		__DIR__,
 		array(
 			'render_callback' => __NAMESPACE__ . '\load_assets',
 		)
@@ -69,7 +66,7 @@ function get_map_provider( $html ) {
 	$mapbox_styles = array( 'is-style-terrain' );
 	// return mapbox if html contains one of the mapbox styles
 	foreach ( $mapbox_styles as $style ) {
-		if ( strpos( $html, $style ) !== false ) {
+		if ( str_contains( $html, $style ) ) {
 			return 'mapbox';
 		}
 	}
@@ -123,11 +120,11 @@ function load_assets( $attr, $content ) {
 		);
 	}
 
-	Jetpack_Gutenberg::load_assets_as_required( FEATURE_NAME );
+	Jetpack_Gutenberg::load_assets_as_required( __DIR__ );
 
 	$map_provider = get_map_provider( $content );
 	if ( $map_provider === 'mapkit' ) {
-		return preg_replace( '/<div /', '<div data-map-provider="mapkit" data-blog-id="' . \Jetpack_Options::get_option( 'id' ) . '" ', $content, 1 );
+		return preg_replace( '/<div /', '<div data-map-provider="mapkit" data-api-key="' . esc_attr( $access_token['key'] ) . '"  data-blog-id="' . \Jetpack_Options::get_option( 'id' ) . '" ', $content, 1 );
 	}
 
 	return preg_replace( '/<div /', '<div data-map-provider="mapbox" data-api-key="' . esc_attr( $access_token['key'] ) . '" ', $content, 1 );
@@ -157,6 +154,11 @@ function render_single_block_page() {
 	/** This filter is already documented in core/wp-includes/post-template.php */
 	$content = apply_filters( 'the_content', $post->post_content );
 
+	// Return early if empty to prevent DOMDocument::loadHTML fatal.
+	if ( empty( $content ) ) {
+		return;
+	}
+
 	/* Suppress warnings */
 	libxml_use_internal_errors( true );
 	@$post_html->loadHTML( $content ); // phpcs:ignore WordPress.PHP.NoSilencedErrors.Discouraged
@@ -175,7 +177,7 @@ function render_single_block_page() {
 
 	add_filter( 'jetpack_is_amp_request', '__return_false' );
 
-	Jetpack_Gutenberg::load_assets_as_required( FEATURE_NAME );
+	Jetpack_Gutenberg::load_assets_as_required( __DIR__ );
 	wp_scripts()->do_items();
 	wp_styles()->do_items();
 
@@ -192,7 +194,7 @@ function render_single_block_page() {
 		preg_replace( '/(?<=<div\s)/', 'data-api-key="' . esc_attr( $access_token['key'] ) . '" ', $block_markup, 1 )
 	);
 	echo $page_html; // phpcs:ignore WordPress.Security.EscapeOutput.OutputNotEscaped
-	exit;
+	exit( 0 );
 }
 add_action( 'wp', __NAMESPACE__ . '\render_single_block_page' );
 

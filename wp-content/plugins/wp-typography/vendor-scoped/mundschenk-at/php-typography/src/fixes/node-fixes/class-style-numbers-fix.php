@@ -65,4 +65,4 @@ class Style_Numbers_Fix extends Simple_Style_Fix
  *
  * @since 5.0.0
  */
-\class_alias('WP_Typography\\Vendor\\PHP_Typography\\Fixes\\Node_Fixes\\Style_Numbers_Fix', 'PHP_Typography\\Fixes\\Node_Fixes\\Style_Numbers_Fix', \false);
+\class_alias('WP_Typography\Vendor\PHP_Typography\Fixes\Node_Fixes\Style_Numbers_Fix', 'PHP_Typography\Fixes\Node_Fixes\Style_Numbers_Fix', \false);

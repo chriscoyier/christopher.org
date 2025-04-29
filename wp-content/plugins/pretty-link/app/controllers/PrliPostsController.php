@@ -137,7 +137,9 @@ class PrliPostsController extends PrliBaseController {
       'default_nofollow' => $default_nofollow,
       'default_sponsored' => $default_sponsored,
       'default_tracking' => $default_tracking,
-      'ajaxurl' => admin_url('admin-ajax.php')
+      'ajaxurl' => admin_url('admin-ajax.php'),
+      'nonce' => wp_create_nonce('prli_tinymce_nonce'),
+      'prli_create_link_nonce' => wp_create_nonce('prli_create_link_nonce')
     ));
 
     require(PRLI_VIEWS_PATH.'/shared/tinymce_form_popup.php');
@@ -146,6 +148,10 @@ class PrliPostsController extends PrliBaseController {
 
   //AJAX
   public function validate_tinymce_slug() {
+    if( ! check_ajax_referer( 'prli_tinymce_nonce', false, false ) ) {
+      wp_send_json_error( esc_html__('Security check failed.', 'pretty-link'), 403 );
+    }
+
     if(!isset($_POST['slug']) || empty($_POST['slug'])) {
       echo "false";
       die();
@@ -165,6 +171,10 @@ class PrliPostsController extends PrliBaseController {
 
   //AJAX
   public function create_pretty_link() {
+    if( ! check_ajax_referer( 'prli_create_link_nonce', false, false ) ) {
+      wp_send_json_error( esc_html__('Security check failed.', 'pretty-link'), 403 );
+    }
+
     $valid_vars = array('target', 'slug', 'redirect', 'nofollow', 'sponsored', 'tracking');
 
     if(!PrliUtils::is_authorized()) {
@@ -233,7 +243,9 @@ class PrliPostsController extends PrliBaseController {
           'target'     => $result['url'],
           'title'      => $result['name'], //Not used currently, but we may want this at some point
           'nofollow'   => (int)$result['nofollow'],
-          'sponsored'  => (int)$result['sponsored']
+          'sponsored'  => (int)$result['sponsored'],
+          'prettypay_link' => (int) $result['prettypay_link'],
+          'track_me' => (int) $result['track_me']
         );
       }
 

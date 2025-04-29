@@ -5,6 +5,340 @@ All notable changes to this project will be documented in this file.
 The format is based on [Keep a Changelog](https://keepachangelog.com/en/1.0.0/)
 and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0.html).
 
+## [4.0.19] - 2025-03-31
+### Changed
+- Update dependencies. [#42678]
+
+## [4.0.18] - 2025-03-24
+### Changed
+- Update dependencies. [#42565]
+
+## [4.0.17] - 2025-03-18
+### Changed
+- Update package dependencies. [#42511]
+
+### Fixed
+- Admin menu: Prevent PHP warnings by moving backup admin menu addition to a function hooked into `admin_menu`. [#42396]
+
+## [4.0.16] - 2025-03-17
+### Changed
+- Update dependencies. [#42498]
+
+## [4.0.15] - 2025-03-12
+### Added
+- Provide connection data to footer component. [#42000]
+
+### Changed
+- Update package dependencies. [#42384]
+
+## [4.0.14] - 2025-03-10
+### Changed
+- Internal updates.
+
+## [4.0.13] - 2025-03-03
+### Changed
+- Update package dependencies. [#42163]
+
+## [4.0.12] - 2025-02-24
+### Changed
+- Update dependencies. [#39855]
+
+## [4.0.11] - 2025-02-17
+### Changed
+- Update dependencies. [#39855]
+
+## [4.0.10] - 2025-02-11
+### Changed
+- Update dependencies. [#39855]
+
+## [4.0.9] - 2025-02-10
+### Changed
+- Update package dependencies. [#41491] [#41577]
+
+## [4.0.8] - 2025-02-03
+### Changed
+- Update package dependencies. [#41286]
+
+## [4.0.7] - 2025-01-20
+### Changed
+- Code: Use function-style exit() and die() with a default status code of 0. [#41167]
+- Updated package dependencies. [#41099]
+
+## [4.0.6] - 2025-01-06
+### Changed
+- Updated package dependencies. [#40798] [#40812]
+
+## [4.0.5] - 2024-12-16
+### Changed
+- Updated package dependencies. [#40564]
+
+## [4.0.4] - 2024-12-09
+### Changed
+- Updated package dependencies. [#40363] [#40372]
+
+## [4.0.3] - 2024-11-26
+### Changed
+- Update dependencies. [#39855]
+
+## [4.0.2] - 2024-11-25
+### Changed
+- Updated dependencies. [#40286]
+- Updated package dependencies. [#40288]
+
+## [4.0.1] - 2024-11-18
+### Changed
+- Update dependencies. [#39855]
+
+## [4.0.0] - 2024-11-14
+### Added
+- Backup: added next daily backup schedule time on admin page [#39914]
+
+### Removed
+- General: Update minimum PHP version to 7.2. [#40147]
+
+## [3.4.17] - 2024-11-11
+### Changed
+- Updated package dependencies. [#39999] [#40060]
+
+## [3.4.16] - 2024-11-04
+### Added
+- Enable test coverage. [#39961]
+
+## [3.4.15] - 2024-10-21
+### Changed
+- Update dependencies. [#39781]
+
+## [3.4.14] - 2024-10-14
+### Changed
+- Only include `wp-polyfill` as a script dependency when needed. [#39629]
+- Updated package dependencies. [#39707]
+
+## [3.4.13] - 2024-10-07
+### Changed
+- Updated package dependencies. [#39594]
+
+## [3.4.12] - 2024-09-30
+### Changed
+- Update dependencies. [#39528]
+
+## [3.4.11] - 2024-09-23
+### Changed
+- Update dependencies. [#38958]
+
+## [3.4.10] - 2024-09-16
+### Changed
+- Updated package dependencies. [#39332]
+
+### Fixed
+- Remove unnecessary leading space from i18n message. [#39305]
+- Stop considering discarded backups as successful backups on the admin page [#39385]
+
+## [3.4.9] - 2024-09-10
+### Changed
+- Updated package dependencies. [#39302]
+
+## [3.4.8] - 2024-09-09
+### Changed
+- Updated package dependencies. [#39278]
+
+## [3.4.7] - 2024-09-05
+### Changed
+- Updated package dependencies. [#39176]
+
+## [3.4.6] - 2024-09-02
+### Changed
+- Admin menu: change order of Jetpack sub-menu items [#39095]
+- Updated package dependencies. [#39111]
+
+## [3.4.5] - 2024-08-26
+### Changed
+- Updated package dependencies. [#39004]
+
+## [3.4.4] - 2024-08-21
+### Fixed
+- Decoupled backup connection screens from useConnection hook to avoid unnecessary loading and prevent duplicated API calls. [#38948]
+- Revert recent SVG image optimizations. [#38981]
+
+## [3.4.3] - 2024-08-19
+### Changed
+- Update dependencies. [#38861] [#38662]
+
+### Fixed
+- Lossless image optimization for images (should improve performance with no visible changes). [#38750]
+
+## [3.4.2] - 2024-07-22
+### Changed
+- Update dependencies. [#38402]
+
+## [3.4.1] - 2024-07-08
+### Changed
+- Updated package dependencies. [#38132]
+
+## [3.4.0] - 2024-06-27
+### Added
+- Add on-demand backups feature in the backup package [#37998]
+
+## [3.3.17] - 2024-06-24
+### Changed
+- Update backup header cards layout for responsive design [#37944]
+
+## [3.3.16] - 2024-06-17
+### Changed
+- Updated package dependencies. [#37796]
+
+## [3.3.15] - 2024-06-10
+### Changed
+- Updated package dependencies. [#37669]
+
+## [3.3.14] - 2024-06-03
+### Changed
+- Remove the 'jetpack-identity-crisis' dependency. [#36968]
+
+## [3.3.13] - 2024-05-27
+### Changed
+- Update dependencies. [#37323]
+
+## [3.3.12] - 2024-05-20
+### Changed
+- Updated package dependencies. [#37379] [#37380] [#37382]
+
+## [3.3.11] - 2024-05-09
+### Changed
+- Update dependencies. [#37280]
+
+## [3.3.10] - 2024-05-06
+### Added
+- Add missing package dependencies. [#37141]
+
+### Changed
+- Updated package dependencies. [#37147]
+
+## [3.3.9] - 2024-04-25
+### Changed
+- Internal updates.
+
+## [3.3.8] - 2024-04-22
+### Changed
+- Internal updates.
+
+## [3.3.7] - 2024-04-15
+### Changed
+- Internal updates.
+
+## [3.3.6] - 2024-04-08
+### Changed
+- Updated package dependencies. [#36760]
+
+## [3.3.5] - 2024-04-01
+### Changed
+- Update dependencies. [#36655]
+
+## [3.3.4] - 2024-03-27
+### Changed
+- Updated package dependencies. [#36585]
+
+## [3.3.3] - 2024-03-25
+### Fixed
+- Backup: change some error messages to not trigger security scanners [#36496]
+
+## [3.3.2] - 2024-03-18
+### Changed
+- Internal updates.
+
+## [3.3.1] - 2024-03-12
+### Changed
+- Update dependencies. [#36243]
+- Updated package dependencies. [#36325]
+
+## [3.3.0] - 2024-03-04
+### Added
+- Add endpoint to query backup preflight checks [#36032]
+
+### Changed
+- Updated package dependencies.
+
+### Fixed
+- Real time backups: Fix getting more than one row in the related orders table [#36096]
+
+## [3.2.0] - 2024-02-27
+### Added
+- Real time backups: Add endpoints orders to be used in real-time backups jetpack [#35649]
+
+## [3.1.5] - 2024-02-13
+### Changed
+- Updated package dependencies. [#35608]
+
+## [3.1.4] - 2024-02-08
+### Fixed
+- Write helper script to ABSPATH by default, just like we did before [#35508]
+
+## [3.1.3] - 2024-02-07
+### Changed
+- Update dependencies. [#35520]
+
+## [3.1.2] - 2024-02-05
+### Changed
+- Updated package dependencies.
+
+## [3.1.1] - 2024-01-29
+### Changed
+- Update dependencies.
+
+## [3.1.0] - 2024-01-22
+### Changed
+- Use blog ID instead site slug for checkout and WPCOM links. [#35020]
+
+## [3.0.0] - 2024-01-04
+### Fixed
+- Backup: Add namespace versioning to Helper_Script_Manager and other classes [#34739]
+
+## [2.0.5] - 2024-01-04
+### Changed
+- Updated package dependencies. [#34815] [#34816]
+
+## [2.0.4] - 2023-12-20
+### Changed
+- Updated package dependencies. [#34694]
+
+## [2.0.3] - 2023-12-13
+### Fixed
+- Backup: Bug fixes in helper script installation class. [#34297]
+
+## [2.0.2] - 2023-12-11
+### Changed
+- Updated package dependencies. [#34416]
+
+## [2.0.1] - 2023-12-03
+### Changed
+- Updated package dependencies. [#34411] [#34427]
+
+## [2.0.0] - 2023-11-20
+### Changed
+- Updated required PHP version to >= 7.0. [#34192]
+
+## [1.17.12] - 2023-11-14
+### Changed
+- Updated package dependencies. [#34093]
+
+## [1.17.11] - 2023-11-13
+### Changed
+- Updated dependencies.
+
+## [1.17.10] - 2023-11-03
+
+## [1.17.9] - 2023-10-23
+### Changed
+- Replace Calypso progress bar with one from VideoPress. [#33054]
+- Updated package dependencies. [#33646] [#33687]
+
+## [1.17.8] - 2023-10-16
+### Changed
+- Updated package dependencies. [#33429]
+
+## [1.17.7] - 2023-10-10
+### Changed
+- Updated package dependencies. [#33428]
+
 ## [1.17.6] - 2023-09-19
 ### Changed
 - Updated Jetpack submenu sort order so individual features are alpha-sorted. [#32958]
@@ -16,8 +350,7 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 
 ## [1.17.4] - 2023-09-04
 ### Changed
-- Updated package dependencies. [#32803]
-- Updated package dependencies. [#32804]
+- Updated package dependencies. [#32803] [#32804]
 
 ## [1.17.3] - 2023-08-28
 ### Added
@@ -487,6 +820,82 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 
 - Add API endpoints and Jetpack Backup package for managing Help…
 
+[4.0.19]: https://github.com/Automattic/jetpack-backup/compare/v4.0.18...v4.0.19
+[4.0.18]: https://github.com/Automattic/jetpack-backup/compare/v4.0.17...v4.0.18
+[4.0.17]: https://github.com/Automattic/jetpack-backup/compare/v4.0.16...v4.0.17
+[4.0.16]: https://github.com/Automattic/jetpack-backup/compare/v4.0.15...v4.0.16
+[4.0.15]: https://github.com/Automattic/jetpack-backup/compare/v4.0.14...v4.0.15
+[4.0.14]: https://github.com/Automattic/jetpack-backup/compare/v4.0.13...v4.0.14
+[4.0.13]: https://github.com/Automattic/jetpack-backup/compare/v4.0.12...v4.0.13
+[4.0.12]: https://github.com/Automattic/jetpack-backup/compare/v4.0.11...v4.0.12
+[4.0.11]: https://github.com/Automattic/jetpack-backup/compare/v4.0.10...v4.0.11
+[4.0.10]: https://github.com/Automattic/jetpack-backup/compare/v4.0.9...v4.0.10
+[4.0.9]: https://github.com/Automattic/jetpack-backup/compare/v4.0.8...v4.0.9
+[4.0.8]: https://github.com/Automattic/jetpack-backup/compare/v4.0.7...v4.0.8
+[4.0.7]: https://github.com/Automattic/jetpack-backup/compare/v4.0.6...v4.0.7
+[4.0.6]: https://github.com/Automattic/jetpack-backup/compare/v4.0.5...v4.0.6
+[4.0.5]: https://github.com/Automattic/jetpack-backup/compare/v4.0.4...v4.0.5
+[4.0.4]: https://github.com/Automattic/jetpack-backup/compare/v4.0.3...v4.0.4
+[4.0.3]: https://github.com/Automattic/jetpack-backup/compare/v4.0.2...v4.0.3
+[4.0.2]: https://github.com/Automattic/jetpack-backup/compare/v4.0.1...v4.0.2
+[4.0.1]: https://github.com/Automattic/jetpack-backup/compare/v4.0.0...v4.0.1
+[4.0.0]: https://github.com/Automattic/jetpack-backup/compare/v3.4.17...v4.0.0
+[3.4.17]: https://github.com/Automattic/jetpack-backup/compare/v3.4.16...v3.4.17
+[3.4.16]: https://github.com/Automattic/jetpack-backup/compare/v3.4.15...v3.4.16
+[3.4.15]: https://github.com/Automattic/jetpack-backup/compare/v3.4.14...v3.4.15
+[3.4.14]: https://github.com/Automattic/jetpack-backup/compare/v3.4.13...v3.4.14
+[3.4.13]: https://github.com/Automattic/jetpack-backup/compare/v3.4.12...v3.4.13
+[3.4.12]: https://github.com/Automattic/jetpack-backup/compare/v3.4.11...v3.4.12
+[3.4.11]: https://github.com/Automattic/jetpack-backup/compare/v3.4.10...v3.4.11
+[3.4.10]: https://github.com/Automattic/jetpack-backup/compare/v3.4.9...v3.4.10
+[3.4.9]: https://github.com/Automattic/jetpack-backup/compare/v3.4.8...v3.4.9
+[3.4.8]: https://github.com/Automattic/jetpack-backup/compare/v3.4.7...v3.4.8
+[3.4.7]: https://github.com/Automattic/jetpack-backup/compare/v3.4.6...v3.4.7
+[3.4.6]: https://github.com/Automattic/jetpack-backup/compare/v3.4.5...v3.4.6
+[3.4.5]: https://github.com/Automattic/jetpack-backup/compare/v3.4.4...v3.4.5
+[3.4.4]: https://github.com/Automattic/jetpack-backup/compare/v3.4.3...v3.4.4
+[3.4.3]: https://github.com/Automattic/jetpack-backup/compare/v3.4.2...v3.4.3
+[3.4.2]: https://github.com/Automattic/jetpack-backup/compare/v3.4.1...v3.4.2
+[3.4.1]: https://github.com/Automattic/jetpack-backup/compare/v3.4.0...v3.4.1
+[3.4.0]: https://github.com/Automattic/jetpack-backup/compare/v3.3.17...v3.4.0
+[3.3.17]: https://github.com/Automattic/jetpack-backup/compare/v3.3.16...v3.3.17
+[3.3.16]: https://github.com/Automattic/jetpack-backup/compare/v3.3.15...v3.3.16
+[3.3.15]: https://github.com/Automattic/jetpack-backup/compare/v3.3.14...v3.3.15
+[3.3.14]: https://github.com/Automattic/jetpack-backup/compare/v3.3.13...v3.3.14
+[3.3.13]: https://github.com/Automattic/jetpack-backup/compare/v3.3.12...v3.3.13
+[3.3.12]: https://github.com/Automattic/jetpack-backup/compare/v3.3.11...v3.3.12
+[3.3.11]: https://github.com/Automattic/jetpack-backup/compare/v3.3.10...v3.3.11
+[3.3.10]: https://github.com/Automattic/jetpack-backup/compare/v3.3.9...v3.3.10
+[3.3.9]: https://github.com/Automattic/jetpack-backup/compare/v3.3.8...v3.3.9
+[3.3.8]: https://github.com/Automattic/jetpack-backup/compare/v3.3.7...v3.3.8
+[3.3.7]: https://github.com/Automattic/jetpack-backup/compare/v3.3.6...v3.3.7
+[3.3.6]: https://github.com/Automattic/jetpack-backup/compare/v3.3.5...v3.3.6
+[3.3.5]: https://github.com/Automattic/jetpack-backup/compare/v3.3.4...v3.3.5
+[3.3.4]: https://github.com/Automattic/jetpack-backup/compare/v3.3.3...v3.3.4
+[3.3.3]: https://github.com/Automattic/jetpack-backup/compare/v3.3.2...v3.3.3
+[3.3.2]: https://github.com/Automattic/jetpack-backup/compare/v3.3.1...v3.3.2
+[3.3.1]: https://github.com/Automattic/jetpack-backup/compare/v3.3.0...v3.3.1
+[3.3.0]: https://github.com/Automattic/jetpack-backup/compare/v3.2.0...v3.3.0
+[3.2.0]: https://github.com/Automattic/jetpack-backup/compare/v3.1.5...v3.2.0
+[3.1.5]: https://github.com/Automattic/jetpack-backup/compare/v3.1.4...v3.1.5
+[3.1.4]: https://github.com/Automattic/jetpack-backup/compare/v3.1.3...v3.1.4
+[3.1.3]: https://github.com/Automattic/jetpack-backup/compare/v3.1.2...v3.1.3
+[3.1.2]: https://github.com/Automattic/jetpack-backup/compare/v3.1.1...v3.1.2
+[3.1.1]: https://github.com/Automattic/jetpack-backup/compare/v3.1.0...v3.1.1
+[3.1.0]: https://github.com/Automattic/jetpack-backup/compare/v3.0.0...v3.1.0
+[3.0.0]: https://github.com/Automattic/jetpack-backup/compare/v2.0.5...v3.0.0
+[2.0.5]: https://github.com/Automattic/jetpack-backup/compare/v2.0.4...v2.0.5
+[2.0.4]: https://github.com/Automattic/jetpack-backup/compare/v2.0.3...v2.0.4
+[2.0.3]: https://github.com/Automattic/jetpack-backup/compare/v2.0.2...v2.0.3
+[2.0.2]: https://github.com/Automattic/jetpack-backup/compare/v2.0.1...v2.0.2
+[2.0.1]: https://github.com/Automattic/jetpack-backup/compare/v2.0.0...v2.0.1
+[2.0.0]: https://github.com/Automattic/jetpack-backup/compare/v1.17.12...v2.0.0
+[1.17.12]: https://github.com/Automattic/jetpack-backup/compare/v1.17.11...v1.17.12
+[1.17.11]: https://github.com/Automattic/jetpack-backup/compare/v1.17.10...v1.17.11
+[1.17.10]: https://github.com/Automattic/jetpack-backup/compare/v1.17.9...v1.17.10
+[1.17.9]: https://github.com/Automattic/jetpack-backup/compare/v1.17.8...v1.17.9
+[1.17.8]: https://github.com/Automattic/jetpack-backup/compare/v1.17.7...v1.17.8
+[1.17.7]: https://github.com/Automattic/jetpack-backup/compare/v1.17.6...v1.17.7
 [1.17.6]: https://github.com/Automattic/jetpack-backup/compare/v1.17.5...v1.17.6
 [1.17.5]: https://github.com/Automattic/jetpack-backup/compare/v1.17.4...v1.17.5
 [1.17.4]: https://github.com/Automattic/jetpack-backup/compare/v1.17.3...v1.17.4

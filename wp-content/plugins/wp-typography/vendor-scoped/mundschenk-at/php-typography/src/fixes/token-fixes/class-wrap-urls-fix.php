@@ -45,7 +45,7 @@ class Wrap_URLs_Fix extends Hyphenate_Fix
 {
     // Valid URL schemes.
     const URL_SCHEME = '(?:https?|ftps?|file|nfs|feed|itms|itpc)';
-    const WRAP_URLS_DOMAIN_PARTS = '#(\\-|\\.)#';
+    const WRAP_URLS_DOMAIN_PARTS = '#(\-|\.)#';
     /**
      * The URL matching regular expression.
      *
@@ -63,15 +63,15 @@ class Wrap_URLs_Fix extends Hyphenate_Fix
         parent::__construct($cache, Token_Fix::OTHER, $feed_compatible);
         // Combined URL pattern.
         $this->url_pattern = '`(?:
-			\\A
-			(?<scheme>' . self::URL_SCHEME . ':\\/\\/)?	        # Subpattern 1: contains _http://_ if it exists
+			\A
+			(?<scheme>' . self::URL_SCHEME . ':\/\/)?	        # Subpattern 1: contains _http://_ if it exists
 			(?<domain>											# Subpattern 2: contains subdomains.domain.tld
 				(?:
 					[a-z0-9]									# first chr of (sub)domain can not be a hyphen
-					[a-z0-9\\-]{0,61}							# middle chrs of (sub)domain may be a hyphen;
+					[a-z0-9\-]{0,61}							# middle chrs of (sub)domain may be a hyphen;
 																# limit qty of middle chrs so total domain does not exceed 63 chrs
 					[a-z0-9]									# last chr of (sub)domain can not be a hyphen
-					\\.											# dot separator
+					\.											# dot separator
 				)+
 				(?:
 					' . RE::top_level_domains() . '             # validates top level domain
@@ -85,12 +85,12 @@ class Wrap_URLs_Fix extends Hyphenate_Fix
 			)
 			(?<path>											# Subpattern 3: contains path following domain
 				(?:
-					\\/											# marks nested directory
-					[a-z0-9\\"\\$\\-_\\.\\+!\\*\'\\(\\),;\\?:@=&\\#]+		# valid characters within directory structure
+					\/											# marks nested directory
+					[a-z0-9\"\$\-_\.\+!\*\'\(\),;\?:@=&\#]+		# valid characters within directory structure
 				)*
-				[\\/]?											# trailing slash if any
+				[\/]?											# trailing slash if any
 			)
-			\\Z
+			\Z
 		)`xi';
         // required modifiers: x (multiline pattern) i (case insensitive).
     }
@@ -138,7 +138,7 @@ class Wrap_URLs_Fix extends Hyphenate_Fix
      *
      * @return string             The hyphenated domain name.
      */
-    private function split_domain(string $domain, Settings $settings) : string
+    private function split_domain(string $domain, Settings $settings): string
     {
         $domain_parts = \preg_split(self::WRAP_URLS_DOMAIN_PARTS, $domain, -1, \PREG_SPLIT_DELIM_CAPTURE);
         if (\false === $domain_parts) {
@@ -176,7 +176,7 @@ class Wrap_URLs_Fix extends Hyphenate_Fix
      *
      * @return string             The hyphenated domain name.
      */
-    private function split_path(string $path, Settings $settings) : string
+    private function split_path(string $path, Settings $settings): string
     {
         // Break up the URL path to individual characters.
         $path_parts = \str_split($path, 1);
@@ -200,4 +200,4 @@ class Wrap_URLs_Fix extends Hyphenate_Fix
  *
  * @since 5.0.0
  */
-\class_alias('WP_Typography\\Vendor\\PHP_Typography\\Fixes\\Token_Fixes\\Wrap_URLs_Fix', 'PHP_Typography\\Fixes\\Token_Fixes\\Wrap_URLs_Fix', \false);
+\class_alias('WP_Typography\Vendor\PHP_Typography\Fixes\Token_Fixes\Wrap_URLs_Fix', 'PHP_Typography\Fixes\Token_Fixes\Wrap_URLs_Fix', \false);

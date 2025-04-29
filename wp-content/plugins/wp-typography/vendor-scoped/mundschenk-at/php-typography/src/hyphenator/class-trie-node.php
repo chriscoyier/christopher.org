@@ -125,4 +125,4 @@ final class Trie_Node
  *
  * @since 5.0.0
  */
-\class_alias('WP_Typography\\Vendor\\PHP_Typography\\Hyphenator\\Trie_Node', 'PHP_Typography\\Hyphenator\\Trie_Node', \false);
+\class_alias('WP_Typography\Vendor\PHP_Typography\Hyphenator\Trie_Node', 'PHP_Typography\Hyphenator\Trie_Node', \false);

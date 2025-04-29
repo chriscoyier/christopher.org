@@ -1,8 +1,10 @@
 === wp-Typography ===
 Contributors: pputzer, kingjeffrey
-Tags: typography, hyphenation, smart quotes, formatting, widows, orphans, typogrify, quotes, prettify, small caps, diacritics
-Tested up to: 6.1
-Stable tag: 5.9.1
+Tags: typography, hyphenation, smart quotes, widows, typogrify
+Tested up to: 6.7
+Stable tag: 5.11.0
+License: GPLv2 or later
+License URI: https://www.gnu.org/licenses/gpl-2.0.html
 
 Improve your web typography with: hyphenation, space control, intelligent character replacement, and CSS hooks.
 
@@ -77,6 +79,19 @@ Remember, many more FAQs are are addressed the [wp-Typography website](https://c
 
 == Changelog ==
 
+= 5.11.0 - February 23, 2025 =
+* _Bugfix_: Don't crash when a runtime requirement is not met.
+
+= 5.10.1 - December 16, 2024 =
+* _Bugfix_: A debug message intended for local use accidentally got into the build of 5.10.0.
+
+= 5.10.0 - December 15, 2024 =
+* _Bugfix_: Default styles were always loaded, even when `Include styling for CSS hooks` was unchecked.
+* _Bugfix_: No more `Function _load_textdomain_just_in_time was called incorrectly.` (present since WordPress 6.7).
+* _Bugfix_: Block Editor blocks and the sidebar extension have been split into separate assets to prevent issues with the widget editor (and customizer preview).
+* _Bugfix_: Passing a `null` value to `WP_Typography::process` will no longer result in a `TypeError` when processing has been disabled for the post.
+* _Change_: WordPress minimum version increased to 6.6.
+
 = 5.9.1 - January 22, 2023 =
 * _Bugfix_: Only apply filters to ACF fields returning strings to preserve type expectations for downstream code.
 
@@ -90,10 +105,3 @@ Remember, many more FAQs are are addressed the [wp-Typography website](https://c
 
 = 5.8.1 - January 25, 2022 =
 * _Bugfix_: Whitescreen in `Requirements` class due to error in build process fixed.
-
-= 5.8.0 - January 25, 2022 =
-* _Feature_: wp-Typography is now compatible with PHP 8.0.
-* _Change_: WordPress minimum version increased to 5.3.
-* _Change_: PHP minimum version increased to 7.2.
-* _Change_: Support for Internet Explorer 11 has been dropped.
-* _Change_: A fabulous new plugin icon designed by [Johanna Amann](https://www.instagram.com/_jo_am/).

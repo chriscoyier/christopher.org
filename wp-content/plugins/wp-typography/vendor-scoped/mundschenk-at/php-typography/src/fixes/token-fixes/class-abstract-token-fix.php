@@ -71,7 +71,7 @@ abstract class Abstract_Token_Fix implements Token_Fix
      *
      * @return Token[] An array of tokens.
      */
-    public abstract function apply(array $tokens, Settings $settings, $is_title = \false, \DOMText $textnode = null);
+    abstract public function apply(array $tokens, Settings $settings, $is_title = \false, \DOMText $textnode = null);
     /**
      * Determines whether the fix should be applied to (RSS) feeds.
      *
@@ -98,4 +98,4 @@ abstract class Abstract_Token_Fix implements Token_Fix
  *
  * @since 5.0.0
  */
-\class_alias('WP_Typography\\Vendor\\PHP_Typography\\Fixes\\Token_Fixes\\Abstract_Token_Fix', 'PHP_Typography\\Fixes\\Token_Fixes\\Abstract_Token_Fix', \false);
+\class_alias('WP_Typography\Vendor\PHP_Typography\Fixes\Token_Fixes\Abstract_Token_Fix', 'PHP_Typography\Fixes\Token_Fixes\Abstract_Token_Fix', \false);

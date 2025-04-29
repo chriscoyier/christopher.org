@@ -27,7 +27,7 @@ class Post_Connection_JITM extends JITM {
 	/**
 	 * Tracking object.
 	 *
-	 * @var Automattic\Jetpack\Tracking
+	 * @var \Automattic\Jetpack\Tracking
 	 *
 	 * @access private
 	 */
@@ -43,9 +43,9 @@ class Post_Connection_JITM extends JITM {
 	/**
 	 * A special filter for WooCommerce, to set a message based on local state.
 	 *
-	 * @param string $content The current message.
+	 * @param object $content The current message.
 	 *
-	 * @return array The new message.
+	 * @return object The new message.
 	 */
 	public static function jitm_woocommerce_services_msg( $content ) {
 		if ( ! function_exists( 'wc_get_base_location' ) ) {
@@ -225,7 +225,11 @@ class Post_Connection_JITM extends JITM {
 	}
 
 	/**
-	 * Asks the wpcom API for the current message to display keyed on query string and message path
+	 * Asks the wpcom API for the current message to display keyed on query string and message path.
+	 *
+	 * For sites running on the Dotcom Simple codebase, the network request is bypassed
+	 * via Client::wpcom_json_api_request_as_blog allowing for the JITM\Engine to be called
+	 * directly.
 	 *
 	 * @param string $message_path The message path to ask for.
 	 * @param string $query The query string originally from the front end.
@@ -360,7 +364,8 @@ class Post_Connection_JITM extends JITM {
 			$this->tracking->record_user_event(
 				'jitm_view_client',
 				array(
-					'jitm_id' => $envelope->id,
+					'jitm_id'           => $envelope->id,
+					'jitm_message_path' => $message_path,
 				)
 			);
 
@@ -405,6 +410,7 @@ class Post_Connection_JITM extends JITM {
 			}
 
 			$envelope->content->icon = $this->generate_icon( $envelope->content->icon, $full_jp_logo_exists );
+			$envelope->message_path  = esc_attr( $message_path );
 
 			$stats->add( 'jitm', $envelope->id . '-viewed' );
 			$stats->do_server_side_stats();

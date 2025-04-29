@@ -194,7 +194,7 @@ abstract class DOM
             // Determine encoding.
             $func = Strings::functions($textnode->data);
             if (!empty($func)) {
-                return \preg_replace('/\\p{C}/Su', '', $func['substr']($textnode->data, $position, $length));
+                return \preg_replace('/\p{C}/Su', '', $func['substr']($textnode->data, $position, $length));
             }
         }
         return '';
@@ -391,7 +391,7 @@ abstract class DOM
  *
  * @since 4.2.0
  */
-\class_alias('WP_Typography\\Vendor\\PHP_Typography\\DOM', 'PHP_Typography\\DOM', \false);
+\class_alias('WP_Typography\Vendor\PHP_Typography\DOM', 'PHP_Typography\DOM', \false);
 /**
  *  Initialize block tags on load.
  */

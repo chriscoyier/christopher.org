@@ -92,4 +92,4 @@ class Hyphenate_Compounds_Fix extends Hyphenate_Fix
  *
  * @since 5.0.0
  */
-\class_alias('WP_Typography\\Vendor\\PHP_Typography\\Fixes\\Token_Fixes\\Hyphenate_Compounds_Fix', 'PHP_Typography\\Fixes\\Token_Fixes\\Hyphenate_Compounds_Fix', \false);
+\class_alias('WP_Typography\Vendor\PHP_Typography\Fixes\Token_Fixes\Hyphenate_Compounds_Fix', 'PHP_Typography\Fixes\Token_Fixes\Hyphenate_Compounds_Fix', \false);

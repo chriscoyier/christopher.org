@@ -22,6 +22,10 @@ class PrliLinksHelper {
   public static function link_list_icons($link) {
     do_action('prli_list_icon',$link->id);
 
+    if($link->prettypay_link) : ?>
+      <i title="<?php esc_attr_e('PrettyPay™ Link', 'pretty-link'); ?>" class="pl-icon-basket pl-list-icon"></i><?php
+    endif;
+
     switch( $link->redirect_type ):
       case 'prettybar': ?>
         <i title="<?php esc_attr_e('PrettyBar Redirection', 'pretty-link'); ?>" class="pl-icon-star pl-list-icon"></i><?php
@@ -197,5 +201,19 @@ class PrliLinksHelper {
 
     return ob_get_clean();
   }
+  /**
+   * Check if the provided query is a pretty link query.
+   *
+   * @param WP_Query $query The query to check.
+   * @return bool The filtered result indicating if it's a pretty link query.
+   */
+  public static function is_pretty_link_query( $query ) {
+    $is_pl_query = false;
+    if ( $query instanceof WP_Query ) {
+        if ( $query->is_main_query() && ( isset($query->query['post_type']) && PrliLink::$cpt === $query->query['post_type'] ) ) {
+            $is_pl_query = true;
+        }
+    }
+    return apply_filters('prli_is_pretty_link_query', $is_pl_query, $query);
+  }
 }
-

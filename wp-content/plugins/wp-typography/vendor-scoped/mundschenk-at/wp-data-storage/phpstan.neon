@@ -1,0 +1,17 @@
+parameters:
+    level: max
+    inferPrivatePropertyTypeFromConstructor: true
+    treatPhpDocTypesAsCertain: false
+    reportUnmatchedIgnoredErrors: false
+
+    bootstrapFiles:
+        # Missing constants, function and class stubs
+    scanFiles:
+        # Additional files to scan
+    paths:
+        - src/
+
+
+    excludePaths:
+        analyse:
+            - vendor/

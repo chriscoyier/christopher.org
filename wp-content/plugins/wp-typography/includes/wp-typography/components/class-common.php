@@ -2,7 +2,7 @@
 /**
  *  This file is part of wp-Typography.
  *
- *  Copyright 2017-2022 Peter Putzer.
+ *  Copyright 2017-2024 Peter Putzer.
  *
  *  This program is free software; you can redistribute it and/or
  *  modify it under the terms of the GNU General Public License
@@ -29,7 +29,6 @@ namespace WP_Typography\Components;
 use WP_Typography\Data_Storage\Options;
 use WP_Typography\Implementation;
 use WP_Typography\Integration\Container as Integrations;
-use WP_Typography\Settings\Plugin_Configuration as Config;
 
 /**
  * Common functionality necessary for both public and admin interfaces.
@@ -45,24 +44,25 @@ class Common implements Plugin_Component {
 	 * The plugin API.
 	 *
 	 * @since 5.7.0 Renamed to $api.
+	 * @since 5.10.0 Type changed to \WP_Typography like other Plugin_Components.
 	 *
-	 * @var Implementation
+	 * @var \WP_Typography
 	 */
-	private $api;
+	private \WP_Typography $api;
 
 	/**
 	 * An abstraction of the WordPress Options API.
 	 *
 	 * @var Options
 	 */
-	private $options;
+	private Options $options;
 
 	/**
 	 * The plugin integrations.
 
 	 * @var Integrations
 	 */
-	private $integrations;
+	private Integrations $integrations;
 
 	/**
 	 * Create a new instace.
@@ -84,7 +84,7 @@ class Common implements Plugin_Component {
 	 *
 	 * @since 5.7.0 Parameter $plugin removed.
 	 */
-	public function run() : void {
+	public function run(): void {
 		// Load settings.
 		\add_action( 'init', [ $this, 'init' ] );
 
@@ -96,7 +96,7 @@ class Common implements Plugin_Component {
 	/**
 	 * Restore default options or clear cache if requested.
 	 */
-	public function init() : void {
+	public function init(): void {
 
 		// Restore defaults if necessary.
 		if ( $this->options->get( Options::RESTORE_DEFAULTS ) ) {  // any truthy value will do.

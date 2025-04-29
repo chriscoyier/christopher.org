@@ -126,7 +126,7 @@ final class Token
      */
     public function __set($id, $val)
     {
-        throw new \BadMethodCallException('Object of class Text_Parser\\Token is immutable.');
+        throw new \BadMethodCallException('Object of class Text_Parser\Token is immutable.');
     }
     /**
      * Prevent un-setting of properties.
@@ -138,7 +138,7 @@ final class Token
      */
     public function __unset($id)
     {
-        throw new \BadMethodCallException('Object of class Text_Parser\\Token is immutable.');
+        throw new \BadMethodCallException('Object of class Text_Parser\Token is immutable.');
     }
     /**
      * Create a new token with the same type, but a different value.
@@ -175,4 +175,4 @@ final class Token
  * - Token::OTHER
  * @property-read bool   $mutable Wether the properties of the object can be modified.
  */
-\class_alias('WP_Typography\\Vendor\\PHP_Typography\\Text_Parser\\Token', 'PHP_Typography\\Text_Parser\\Token', \false);
+\class_alias('WP_Typography\Vendor\PHP_Typography\Text_Parser\Token', 'PHP_Typography\Text_Parser\Token', \false);

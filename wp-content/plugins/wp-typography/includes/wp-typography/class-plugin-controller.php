@@ -2,7 +2,7 @@
 /**
  *  This file is part of wp-Typography.
  *
- *  Copyright 2018-2022 Peter Putzer.
+ *  Copyright 2018-2023 Peter Putzer.
  *
  *  This program is free software; you can redistribute it and/or
  *  modify it under the terms of the GNU General Public License
@@ -26,7 +26,6 @@
 
 namespace WP_Typography;
 
-use WP_Typography\Implementation;
 use WP_Typography\Components\Plugin_Component;
 
 /**
@@ -40,16 +39,16 @@ class Plugin_Controller {
 	/**
 	 * The plugin API implementation.
 	 *
-	 * @var \WP_Typography\Implementation
+	 * @var \WP_Typography
 	 */
-	private $api;
+	private \WP_Typography $api;
 
 	/**
 	 * The plugin components in order of execution.
 	 *
 	 * @var Plugin_Component[]
 	 */
-	private $plugin_components = [];
+	private array $plugin_components = [];
 
 	/**
 	 * Sets up a new plugin controller instance.
@@ -67,7 +66,7 @@ class Plugin_Controller {
 	/**
 	 * Starts the plugin for real.
 	 */
-	public function run() : void {
+	public function run(): void {
 		// Set plugin singleton.
 		\WP_Typography::set_instance( $this->api );
 

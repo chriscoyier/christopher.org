@@ -64,6 +64,17 @@ class Elements
      */
     const BLOCK_ONLY_INLINE = 128;
     /**
+     * Elements with optional end tags that cause auto-closing of previous and parent tags,
+     * as example most of the table related tags, see https://www.w3.org/TR/html401/struct/tables.html
+     * Structure is as follows:
+     * TAG-NAME => [PARENT-TAG-NAME-TO-CLOSE1, PARENT-TAG-NAME-TO-CLOSE2, ...].
+     *
+     * Order is important, after auto-closing one parent with might have to close also their parent.
+     *
+     * @var array<string, string[]>
+     */
+    public static $optionalEndElementsParentsToClose = array('tr' => array('td', 'tr'), 'td' => array('td', 'th'), 'th' => array('td', 'th'), 'tfoot' => array('td', 'th', 'tr', 'tbody', 'thead'), 'tbody' => array('td', 'th', 'tr', 'thead'));
+    /**
      * The HTML5 elements as defined in http://dev.w3.org/html5/markup/elements.html.
      *
      * @var array
@@ -233,8 +244,7 @@ class Elements
         'ul' => 81,
         // NORMAL | AUTOCLOSE_P | BLOCK_TAG
         'var' => 1,
-        'video' => 65,
-        // NORMAL | BLOCK_TAG
+        'video' => 1,
         'wbr' => 9,
         // NORMAL | VOID_TAG
         // Legacy?
@@ -411,7 +421,7 @@ class Elements
     {
         // html5 element names are case insensitive. Forcing lowercase for the check.
         // Do we need this check or will all data passed here already be lowercase?
-        return isset(static::$html5[\strtolower($name)]);
+        return isset(static::$html5[strtolower($name)]);
     }
     /**
      * Test if an element name is a valid MathML presentation element.
@@ -479,7 +489,7 @@ class Elements
      */
     public static function normalizeSvgElement($name)
     {
-        $name = \strtolower($name);
+        $name = strtolower($name);
         if (isset(static::$svgCaseSensitiveElementMap[$name])) {
             $name = static::$svgCaseSensitiveElementMap[$name];
         }
@@ -494,7 +504,7 @@ class Elements
      */
     public static function normalizeSvgAttribute($name)
     {
-        $name = \strtolower($name);
+        $name = strtolower($name);
         if (isset(static::$svgCaseSensitiveAttributeMap[$name])) {
             $name = static::$svgCaseSensitiveAttributeMap[$name];
         }
@@ -510,7 +520,7 @@ class Elements
      */
     public static function normalizeMathMlAttribute($name)
     {
-        $name = \strtolower($name);
+        $name = strtolower($name);
         // Only one attribute has a mixed case form for MathML.
         if ('definitionurl' === $name) {
             $name = 'definitionURL';

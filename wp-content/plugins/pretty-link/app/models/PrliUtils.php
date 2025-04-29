@@ -198,7 +198,7 @@ class PrliUtils {
     $prli_edition = ucwords(preg_replace('/-/', ' ', PRLI_EDITION));
 
     // Error out when url is blank
-    if($pretty_link->redirect_type != 'pixel' && (!isset($pretty_link_target['url']) || empty($pretty_link_target['url']))) {
+    if(!in_array($pretty_link->redirect_type, array('pixel', 'prettypay_link_stripe'), true) && (!isset($pretty_link_target['url']) || empty($pretty_link_target['url']))) {
       return false;
     }
 
@@ -341,6 +341,9 @@ class PrliUtils {
       case '307':
         wp_redirect("{$pretty_link_url}{$param_string}", 307);
         exit;
+      case 'prettypay_link_stripe':
+        do_action('prli_prettypay_link_stripe_redirect', $pretty_link);
+        break;
       default:
         if($pretty_link->redirect_type == '302' || !$plp_update->is_installed()) {
           wp_redirect("{$pretty_link_url}{$param_string}", 302);
@@ -850,10 +853,12 @@ class PrliUtils {
   /** Attempt to get a page title from the target url */
   public static function get_page_title($url, $slug='') {
     $title = '';
-    $wp_http = new WP_Http;
-    $result = $wp_http->request( $url, array( 'sslverify' => false ) );
+    $result = wp_remote_get($url, array(
+      'sslverify' => false,
+      'user-agent' => sprintf('PrettyLinks/%s; %s', PRLI_VERSION, home_url('/')),
+    ));
 
-    if(!$result or is_a($result, 'WP_Error') or !isset($result['body'])) {
+    if(!$result || is_a($result, 'WP_Error') || !isset($result['body'])) {
       return apply_filters('prli-get-page-title-return-slug', $slug, $url);
     }
 
@@ -864,12 +869,15 @@ class PrliUtils {
       $title = html_entity_decode(trim($matches[1]));
     }
 
-    //Attempt to covert cyrillic and other weird shiz to UTF-8 - if it fails we'll just return the slug next
+    // Attempt to convert cyrillic and other characters to UTF-8 - if it fails we'll just return the slug next
     if(extension_loaded('mbstring') && function_exists('iconv')) {
-      $title = iconv(mb_detect_encoding($title, mb_detect_order(), true), "UTF-8", $title);
+      $current_encoding_order = mb_detect_order();
+      $current_encoding_order[] = 'ISO-8859-1'; // Add the ISO encoding if it's potentially not there already.
+
+      $title = @iconv(mb_detect_encoding($title, array_unique($current_encoding_order), true), "UTF-8", $title);
     }
 
-    if(empty($title) or !$title) {
+    if(empty($title)) {
       return apply_filters('prli-get-page-title-return-slug', $slug, $url);
     }
 
@@ -1139,7 +1147,7 @@ class PrliUtils {
   }
 
   public static function site_domain() {
-    return preg_replace('#^https?://(www\.)?([^\?\/]*)#', '$2', home_url());
+    return preg_replace('#^https?://(www\.)?([^\?\/]*)#', '$2', get_option('home'));
   }
 
   public static function is_prli_admin($user_id=null) {
@@ -1353,5 +1361,95 @@ class PrliUtils {
       'Content-Type'  => 'application/json; charset=UTF-8',
       'Host'          => $domain
     );
+  }
+
+  public static function get_pages() {
+    global $wpdb;
+
+    $orderby_allowed = array('ID', 'post_title', 'post_date');
+    $orderby = apply_filters('preli_page_orderby', 'ID');
+    $orderby = in_array($orderby, $orderby_allowed) ? $orderby : 'ID';
+    $query = "SELECT * FROM {$wpdb->posts} WHERE post_status = %s AND post_type = %s ORDER BY $orderby";
+    $query = $wpdb->prepare($query, "publish", "page");
+    $results = $wpdb->get_results($query);
+
+    if($results) {
+      return $results;
+    }
+    else {
+      return array();
+    }
+  }
+
+  public static function auto_add_page($page_name, $content = '') {
+    return wp_insert_post(array('post_title' => $page_name, 'post_content' => $content, 'post_type' => 'page', 'post_status' => 'publish', 'comment_status' => 'closed'));
+  }
+
+  /**
+   * Get the HTML for the 'NEW' badge
+   *
+   * @return string
+   */
+  public static function new_badge() {
+    return sprintf('<span class="prli-new-badge">%s</span>', esc_html__('NEW', 'pretty-link'));
+  }
+
+  public static function countries() {
+    $countries = require PRLI_I18N_PATH . '/countries.php';
+
+    return apply_filters('prli_countries', $countries);
+  }
+
+  public static function currencies() {
+    $countries = require PRLI_I18N_PATH . '/currencies.php';
+
+    return apply_filters('prli_currencies', $countries);
+  }
+
+  /**
+   * Get a value from an array, allowing dot notation
+   *
+   * @param array $array
+   * @param string $key
+   * @param mixed $default
+   * @return mixed
+   */
+  public static function array_get($array, $key = null, $default = null) {
+    if(is_null($key)) {
+      return $array;
+    }
+
+    if(isset($array[$key])) {
+      return $array[$key];
+    }
+
+    foreach(explode('.', $key) as $segment) {
+      if(!is_array($array) || !array_key_exists($segment, $array)) {
+        return $default;
+      }
+
+      $array = $array[$segment];
+    }
+
+    return $array;
+  }
+
+  public static function decrypt_string($encrypted_string, $encoding = 'base64') {
+    if(version_compare(PHP_VERSION, '7.1.0', '<')) {
+      return false;
+    }
+
+    if($encrypted_string != null) {
+      $encrypted_string = $encoding == "hex" ? hex2bin($encrypted_string) : ($encoding == "base64" ? base64_decode($encrypted_string) : $encrypted_string);
+      $keysalt = substr($encrypted_string, 0, 16);
+      $key = hash_pbkdf2("sha512", 'prettylinks', $keysalt, 20000, 32, true);
+      $ivlength = openssl_cipher_iv_length("aes-256-gcm");
+      $iv = substr($encrypted_string, 16, $ivlength);
+      $tag = substr($encrypted_string, -16);
+
+      return openssl_decrypt(substr($encrypted_string, 16 + $ivlength, -16), "aes-256-gcm", $key, OPENSSL_RAW_DATA, $iv, $tag);
+    }
+
+    return '';
   }
 }

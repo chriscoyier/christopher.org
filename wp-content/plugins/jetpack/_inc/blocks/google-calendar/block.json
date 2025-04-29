@@ -3,7 +3,7 @@
     "apiVersion": 3,
     "name": "jetpack/google-calendar",
     "title": "Google Calendar",
-    "description": "Embed a Google Calendar",
+    "description": "Embed a Google Calendar.",
     "keywords": [
         "events",
         "dates",
@@ -28,8 +28,10 @@
             "default": 600
         }
     },
-    "editorScript": "file:../editor.js",
-    "editorStyle": "file:../editor.css",
-    "viewScript": "file:./view.js",
-    "style": "file:./view.css"
+    "example": {
+        "attributes": {
+            "url": "https://calendar.google.com/calendar/embed?src=jb4bu80jirp0u11a6niie21pp4%40group.calendar.google.com&ctz=America/New_York"
+        }
+    },
+    "editorScript": "jetpack-blocks-editor"
 }

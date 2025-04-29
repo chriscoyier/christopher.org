@@ -35,6 +35,7 @@ const fetchLinkSuggestions = async ( search ) => {
   return map( links, ( link ) => ( {
     url: link.pretty_url,
     title: decodeEntities( link.value ) + ' (' + decodeEntities( link.slug ) + ')' || __( '(no title)' ),
+    prettypay_link: link.prettypay_link === 1
   } ) );
 };
 
@@ -255,7 +256,7 @@ class URLInput extends Component {
           value={ value }
           onChange={ this.onChange }
           onInput={ stopEventPropagation }
-          placeholder={ __( 'Paste or type to search for your Pretty Link' ) }
+          placeholder={ __( 'Search Pretty Links and PrettyPay™ Links' ) }
           onKeyDown={ this.onKeyDown }
           role="combobox"
           aria-expanded={ showSuggestions }
@@ -270,7 +271,7 @@ class URLInput extends Component {
         { showSuggestions && !! suggestions.length &&
           <Popover position="bottom" noArrow focusOnMount={ false }>
             <div
-              className="editor-url-input__suggestions block-editor-url-input__suggestions"
+              className="editor-url-input__suggestions block-editor-url-input__suggestions prli-input__suggestions"
               id={ suggestionsListboxId }
               ref={ this.autocompleteRef }
               role="listbox"
@@ -289,6 +290,7 @@ class URLInput extends Component {
                   aria-selected={ index === selectedSuggestion }
                 >
                   { suggestion.title }
+                  { suggestion.prettypay_link && <span><span>{ __( 'PrettyPay™' ) }</span></span>}
                 </button>
               ) ) }
             </div>

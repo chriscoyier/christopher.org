@@ -57,7 +57,8 @@ var PrliPopUpHandler = {
         redirect: redirect,
         nofollow: nofollow,
         sponsored: sponsored,
-        tracking: tracking
+        tracking: tracking,
+        _ajax_nonce: prliTinymceL10n.prli_create_link_nonce,
       };
 
       jQuery("#insert").hide();
@@ -194,7 +195,8 @@ var PrliPopUpHandler = {
 
       var data = {
         action: 'prli_tinymce_validate_slug',
-        slug: s
+        slug: s,
+        _ajax_nonce: prliTinymceL10n.nonce
       };
 
       $("#prlitinymce-good-slug").hide();

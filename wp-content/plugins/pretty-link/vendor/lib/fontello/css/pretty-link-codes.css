@@ -71,6 +71,9 @@
 .pl-icon-heart-empty:before { content: '\e845'; } /* '' */
 .pl-icon-pl-logo-2:before { content: '\e846'; } /* '' */
 .pl-icon-pl-logo:before { content: '\e847'; } /* '' */
+.pl-icon-basket:before { content: '\e848'; } /* '' */
+.pl-icon-right-open:before { content: '\e849'; } /* '' */
+.pl-icon-down-open:before { content: '\e84a'; } /* '' */
 .pl-icon-docs:before { content: '\f0c5'; } /* '' */
 .pl-icon-paste:before { content: '\f0ea'; } /* '' */
 .pl-icon-download-cloud:before { content: '\f0ed'; } /* '' */

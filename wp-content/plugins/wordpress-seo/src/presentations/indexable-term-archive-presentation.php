@@ -39,10 +39,7 @@ class Indexable_Term_Archive_Presentation extends Indexable_Presentation {
 	 * @param WP_Query_Wrapper $wp_query_wrapper The wp query wrapper.
 	 * @param Taxonomy_Helper  $taxonomy         The Taxonomy helper.
 	 */
-	public function __construct(
-		WP_Query_Wrapper $wp_query_wrapper,
-		Taxonomy_Helper $taxonomy
-	) {
+	public function __construct( WP_Query_Wrapper $wp_query_wrapper, Taxonomy_Helper $taxonomy ) {
 		$this->wp_query_wrapper = $wp_query_wrapper;
 		$this->taxonomy         = $taxonomy;
 	}
@@ -92,7 +89,7 @@ class Indexable_Term_Archive_Presentation extends Indexable_Presentation {
 	 * @return array The source.
 	 */
 	public function generate_source() {
-		if ( ! empty( $this->model->object_id ) ) {
+		if ( ! empty( $this->model->object_id ) || \get_queried_object() === null ) {
 			return \get_term( $this->model->object_id, $this->model->object_sub_type );
 		}
 
@@ -152,7 +149,7 @@ class Indexable_Term_Archive_Presentation extends Indexable_Presentation {
 		 * First we get the no index option for this taxonomy, because it can be overwritten the indexable value for
 		 * this specific term.
 		 */
-		if ( ! $this->taxonomy->is_indexable( $this->source->taxonomy ) ) {
+		if ( \is_wp_error( $this->source ) || ! $this->taxonomy->is_indexable( $this->source->taxonomy ) ) {
 			$robots['index'] = 'noindex';
 		}
 
@@ -173,6 +170,10 @@ class Indexable_Term_Archive_Presentation extends Indexable_Presentation {
 	 */
 	public function generate_title() {
 		if ( $this->model->title ) {
+			return $this->model->title;
+		}
+
+		if ( \is_wp_error( $this->source ) ) {
 			return $this->model->title;
 		}
 
@@ -206,6 +207,10 @@ class Indexable_Term_Archive_Presentation extends Indexable_Presentation {
 		$query = $this->wp_query_wrapper->get_query();
 
 		if ( ! isset( $query->tax_query ) ) {
+			return false;
+		}
+
+		if ( \is_wp_error( $this->source ) ) {
 			return false;
 		}
 

@@ -38,7 +38,7 @@ class Scanner
     public function __construct($data, $encoding = 'UTF-8')
     {
         if ($data instanceof InputStream) {
-            @\trigger_error('InputStream objects are deprecated since version 2.4 and will be removed in 3.0. Use strings instead.', \E_USER_DEPRECATED);
+            @trigger_error('InputStream objects are deprecated since version 2.4 and will be removed in 3.0. Use strings instead.', \E_USER_DEPRECATED);
             $data = (string) $data;
         }
         $data = UTF8Utils::convertToUTF8($data, $encoding);
@@ -49,7 +49,7 @@ class Scanner
         $data = $this->replaceLinefeeds($data);
         $this->data = $data;
         $this->char = 0;
-        $this->EOF = \strlen($data);
+        $this->EOF = strlen($data);
     }
     /**
      * Check if upcomming chars match the given sequence.
@@ -71,8 +71,8 @@ class Scanner
      */
     public function sequenceMatches($sequence, $caseSensitive = \true)
     {
-        $portion = \substr($this->data, $this->char, \strlen($sequence));
-        return $caseSensitive ? $portion === $sequence : 0 === \strcasecmp($portion, $sequence);
+        $portion = substr($this->data, $this->char, strlen($sequence));
+        return $caseSensitive ? $portion === $sequence : 0 === strcasecmp($portion, $sequence);
     }
     /**
      * Get the current position.
@@ -198,7 +198,7 @@ class Scanner
         if ($this->char >= $this->EOF) {
             return \false;
         }
-        $len = \strspn($this->data, "\n\t\f ", $this->char);
+        $len = strspn($this->data, "\n\t\f ", $this->char);
         $this->char += $len;
         return $len;
     }
@@ -214,7 +214,7 @@ class Scanner
         }
         // Add one to $this->char because we want the number for the next
         // byte to be processed.
-        return \substr_count($this->data, "\n", 0, \min($this->char, $this->EOF)) + 1;
+        return substr_count($this->data, "\n", 0, min($this->char, $this->EOF)) + 1;
     }
     /**
      * Read chars until something in the mask is encountered.
@@ -256,15 +256,15 @@ class Scanner
         // one (to make it point to the next character, the one we want the
         // position of) added to it because strrpos's behaviour includes the
         // final offset byte.
-        $backwardFrom = $this->char - 1 - \strlen($this->data);
-        $lastLine = \strrpos($this->data, "\n", $backwardFrom);
+        $backwardFrom = $this->char - 1 - strlen($this->data);
+        $lastLine = strrpos($this->data, "\n", $backwardFrom);
         // However, for here we want the length up until the next byte to be
         // processed, so add one to the current byte ($this->char).
         if (\false !== $lastLine) {
-            $findLengthOf = \substr($this->data, $lastLine + 1, $this->char - 1 - $lastLine);
+            $findLengthOf = substr($this->data, $lastLine + 1, $this->char - 1 - $lastLine);
         } else {
             // After a newline.
-            $findLengthOf = \substr($this->data, 0, $this->char);
+            $findLengthOf = substr($this->data, 0, $this->char);
         }
         return UTF8Utils::countChars($findLengthOf);
     }
@@ -278,7 +278,7 @@ class Scanner
     public function remainingChars()
     {
         if ($this->char < $this->EOF) {
-            $data = \substr($this->data, $this->char);
+            $data = substr($this->data, $this->char);
             $this->char = $this->EOF;
             return $data;
         }
@@ -302,7 +302,7 @@ class Scanner
          * stage.
          */
         $crlfTable = array("\x00" => "�", "\r\n" => "\n", "\r" => "\n");
-        return \strtr($data, $crlfTable);
+        return strtr($data, $crlfTable);
     }
     /**
      * Read to a particular match (or until $max bytes are consumed).
@@ -324,11 +324,11 @@ class Scanner
             return \false;
         }
         if (0 === $max || $max) {
-            $len = \strcspn($this->data, $bytes, $this->char, $max);
+            $len = strcspn($this->data, $bytes, $this->char, $max);
         } else {
-            $len = \strcspn($this->data, $bytes, $this->char);
+            $len = strcspn($this->data, $bytes, $this->char);
         }
-        $string = (string) \substr($this->data, $this->char, $len);
+        $string = (string) substr($this->data, $this->char, $len);
         $this->char += $len;
         return $string;
     }
@@ -351,11 +351,11 @@ class Scanner
             return \false;
         }
         if (0 === $max || $max) {
-            $len = \strspn($this->data, $bytes, $this->char, $max);
+            $len = strspn($this->data, $bytes, $this->char, $max);
         } else {
-            $len = \strspn($this->data, $bytes, $this->char);
+            $len = strspn($this->data, $bytes, $this->char);
         }
-        $string = (string) \substr($this->data, $this->char, $len);
+        $string = (string) substr($this->data, $this->char, $len);
         $this->char += $len;
         return $string;
     }

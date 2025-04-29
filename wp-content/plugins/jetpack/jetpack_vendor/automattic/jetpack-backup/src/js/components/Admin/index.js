@@ -8,14 +8,18 @@ import {
 	LoadingPlaceholder,
 } from '@automattic/jetpack-components';
 import { useConnectionErrorNotice, ConnectionError } from '@automattic/jetpack-connection';
+import { shouldUseInternalLinks } from '@automattic/jetpack-shared-extension-utils';
 import apiFetch from '@wordpress/api-fetch';
 import { ExternalLink } from '@wordpress/components';
 import { createInterpolateElement, useState, useEffect, useCallback } from '@wordpress/element';
 import { __ } from '@wordpress/i18n';
 import useAnalytics from '../../hooks/useAnalytics';
+import useBackupsState from '../../hooks/useBackupsState';
 import useCapabilities from '../../hooks/useCapabilities';
 import useConnection from '../../hooks/useConnection';
 import { Backups, Loading as BackupsLoadingPlaceholder } from '../Backups';
+import { BackupConnectionScreen } from '../backup-connection-screen';
+import { BackupSecondaryAdminConnectionScreen } from '../backup-connection-screen/secondary-admin';
 import BackupStorageSpace from '../backup-storage-space';
 import ReviewRequest from '../review-request';
 import Header from './header';
@@ -30,7 +34,7 @@ import '../masthead/masthead-style.scss';
 
 /* eslint react/react-in-jsx-scope: 0 */
 const Admin = () => {
-	const [ connectionStatus, , BackupSecondaryAdminConnectionScreen ] = useConnection();
+	const connectionStatus = useConnection();
 	const { tracks } = useAnalytics();
 	const { hasConnectionError } = useConnectionErrorNotice();
 	const connectionLoaded = 0 < Object.keys( connectionStatus ).length;
@@ -77,6 +81,7 @@ const Admin = () => {
 			showFooter
 			moduleName={ __( 'VaultPress Backup', 'jetpack-backup-pkg' ) }
 			header={ <Header /> }
+			useInternalLinks={ shouldUseInternalLinks() }
 		>
 			<div id="jetpack-backup-admin-container" className="jp-content">
 				<div className="content">
@@ -118,7 +123,7 @@ const Admin = () => {
 // Render additional segments for the backup admin page under the jp-hero section.
 // If the user has a backup plan and is connected, we render the storage space segment.
 const BackupSegments = ( { hasBackupPlan, connectionLoaded } ) => {
-	const [ connectionStatus ] = useConnection();
+	const connectionStatus = useConnection();
 	const { tracks } = useAnalytics();
 
 	const trackLearnMoreClick = useCallback( () => {
@@ -180,7 +185,7 @@ const BackupSegments = ( { hasBackupPlan, connectionLoaded } ) => {
 
 const ReviewMessage = connectionLoaded => {
 	const [ restores ] = useRestores( connectionLoaded );
-	const [ backups ] = useBackups( connectionLoaded );
+	const { backups } = useBackupsState();
 	const { tracks } = useAnalytics();
 	let requestReason = '';
 	let reviewText = '';
@@ -256,13 +261,11 @@ const ReviewMessage = connectionLoaded => {
 						strong: <strong></strong>,
 					}
 				) }
-				// eslint-disable-next-line react/jsx-no-bind
 				href={ getRedirectUrl( 'jetpack-backup-new-review' ) }
 				onClick={ trackSendToReview }
 				requestReason={ requestReason }
 				reviewText={ reviewText }
 				dismissedReview={ dismissedReview }
-				// eslint-disable-next-line react/jsx-no-bind
 				dismissMessage={ dismissMessage }
 			/>
 		</Col>
@@ -288,27 +291,6 @@ const useRestores = connectionLoaded => {
 	}, [ setRestores, connectionLoaded ] );
 
 	return [ restores, setRestores ];
-};
-
-const useBackups = connectionLoaded => {
-	const [ backups, setBackups ] = useState( [] );
-
-	useEffect( () => {
-		if ( ! connectionLoaded ) {
-			setBackups( [] );
-			return;
-		}
-		apiFetch( { path: '/jetpack/v4/backups' } ).then(
-			res => {
-				setBackups( res );
-			},
-			() => {
-				setBackups( [] );
-			}
-		);
-	}, [ setBackups, connectionLoaded ] );
-
-	return [ backups, setBackups ];
 };
 
 const useDismissedReviewRequest = ( connectionLoaded, requestReason, tracksDismissReview ) => {
@@ -357,8 +339,6 @@ const LoadedState = ( {
 	capabilities,
 	isFullyConnected,
 } ) => {
-	const [ , BackupConnectionScreen ] = useConnection();
-
 	if ( ! isFullyConnected ) {
 		return (
 			<Container horizontalSpacing={ 3 } horizontalGap={ 3 }>

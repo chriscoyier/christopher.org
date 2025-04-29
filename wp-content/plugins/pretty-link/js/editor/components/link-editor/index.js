@@ -165,7 +165,8 @@ const createNewPrettyLink = (target, slug) => {
         redirect: '',
         nofollow: 1,
         tracking: 1,
-        sponsored: 0
+        sponsored: 0,
+        _ajax_nonce: plEditor.prli_create_link_nonce,
       },
       (data, textStatus, xhr) => {
         'true' === data ? resolve(data) : reject(data);
@@ -431,6 +432,7 @@ class InlineLinkUI extends Component {
                         onChange={ ( newLinkUrl ) => {
                           this.setState( { newLinkUrl } );
                         } }
+                        required={true}
                     />
                 </p>
                   <p>
@@ -441,6 +443,7 @@ class InlineLinkUI extends Component {
                           onChange={ ( newLinkSlug ) => {
                             this.setState( { newLinkSlug } );
                           } }
+                          required={true}
                       />
                   </p>
                   <p>

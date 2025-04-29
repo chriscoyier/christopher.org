@@ -1,7 +1,7 @@
-<div class="pretty-link-upgrade">
-  <div class="pretty-link-upgrade-wrap">
-    <div class="pretty-link-upgrade-content">
-      <div class="pretty-link-upgrade-logo">
+<div class="pretty-link-popup">
+  <div class="pretty-link-popup-wrap">
+    <div class="pretty-link-popup-content">
+      <div class="pretty-link-popup-logo">
         <img src="<?php echo PRLI_IMAGES_URL . '/plp-dialog-logo.svg'; ?>" alt="">
       </div>
       <h2>Make Money from Content You Already Have</h2>
@@ -22,7 +22,7 @@
         <li>Product Displays</li>
       </ul>
     </div>
-    <div class="pretty-link-upgrade-cta">
+    <div class="pretty-link-popup-cta">
       <a href="<?php echo $upgrade_link; ?>" id="pretty_link_cta_upgrade_link" class="pretty-link-cta-button">Upgrade to Pretty Links Pro Now</a>
     </div>
   </div>

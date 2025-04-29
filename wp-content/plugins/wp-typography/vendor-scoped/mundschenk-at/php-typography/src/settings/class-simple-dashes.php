@@ -118,4 +118,4 @@ final class Simple_Dashes implements Dashes
  *
  * @since 5.0.0
  */
-\class_alias('WP_Typography\\Vendor\\PHP_Typography\\Settings\\Simple_Dashes', 'PHP_Typography\\Settings\\Simple_Dashes', \false);
+\class_alias('WP_Typography\Vendor\PHP_Typography\Settings\Simple_Dashes', 'PHP_Typography\Settings\Simple_Dashes', \false);

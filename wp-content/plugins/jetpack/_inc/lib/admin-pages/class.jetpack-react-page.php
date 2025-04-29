@@ -1,8 +1,10 @@
 <?php // phpcs:ignore WordPress.Files.FileName.InvalidClassFileName
 
+use Automattic\Jetpack\Admin_UI\Admin_Menu;
 use Automattic\Jetpack\Assets\Logo;
 use Automattic\Jetpack\Connection\Initial_State as Connection_Initial_State;
 use Automattic\Jetpack\Connection\Manager as Connection_Manager;
+use Automattic\Jetpack\Publicize\Publicize_Script_Data;
 use Automattic\Jetpack\Status;
 
 require_once __DIR__ . '/class.jetpack-admin-page.php';
@@ -46,7 +48,16 @@ class Jetpack_React_Page extends Jetpack_Admin_Page {
 		/** This action is documented in class.jetpack-admin.php */
 		do_action( 'jetpack_admin_menu', $hook );
 
-		if ( ! isset( $_GET['page'] ) || 'jetpack' !== $_GET['page'] ) { // phpcs:ignore WordPress.Security.NonceVerification.Recommended -- This is view logic.
+		if ( ! isset( $_GET['page'] ) ) { // phpcs:ignore WordPress.Security.NonceVerification.Recommended
+			return;
+		}
+		$page = sanitize_text_field( wp_unslash( $_GET['page'] ) ); // phpcs:ignore WordPress.Security.NonceVerification.Recommended
+		if ( 'jetpack' !== $page ) {
+			if ( strpos( $page, 'jetpack/' ) === 0 ) {
+				$section = substr( $page, 8 );
+				wp_safe_redirect( admin_url( 'admin.php?page=jetpack#/' . $section ) );
+				exit( 0 );
+			}
 			return; // No need to handle the fallback redirection if we are not on the Jetpack page.
 		}
 
@@ -69,6 +80,21 @@ class Jetpack_React_Page extends Jetpack_Admin_Page {
 	}
 
 	/**
+	 * Remove the main Jetpack submenu if a site is in offline mode or connected.
+	 * At that point, admins can access the Jetpack Dashboard instead.
+	 *
+	 * @since 13.8
+	 */
+	public function remove_jetpack_menu() {
+		if (
+			( new Status() )->is_offline_mode()
+			|| Jetpack::is_connection_ready()
+		) {
+			remove_submenu_page( 'jetpack', 'jetpack' );
+		}
+	}
+
+	/**
 	 * Add Jetpack Dashboard sub-link and point it to AAG if the user can view stats, manage modules or if Protect is active.
 	 *
 	 * Works in Dev Mode or when user is connected.
@@ -77,8 +103,14 @@ class Jetpack_React_Page extends Jetpack_Admin_Page {
 	 */
 	public function jetpack_add_dashboard_sub_nav_item() {
 		if ( ( new Status() )->is_offline_mode() || Jetpack::is_connection_ready() ) {
-			add_submenu_page( 'jetpack', __( 'Dashboard', 'jetpack' ), __( 'Dashboard', 'jetpack' ), 'jetpack_admin_page', 'jetpack#/dashboard', '__return_null', 1 );
-			remove_submenu_page( 'jetpack', 'jetpack' );
+			Admin_Menu::add_menu(
+				__( 'Dashboard', 'jetpack' ),
+				__( 'Dashboard', 'jetpack' ),
+				'jetpack_admin_page',
+				Jetpack::admin_url( array( 'page' => 'jetpack#/dashboard' ) ),
+				null, // @phan-suppress-current-line PhanTypeMismatchArgumentProbablyReal -- See https://core.trac.wordpress.org/ticket/52539.
+				14
+			);
 		}
 	}
 
@@ -138,7 +170,11 @@ class Jetpack_React_Page extends Jetpack_Admin_Page {
 			 */
 			if (
 				! Jetpack::is_module_active( 'post-by-email' )
-				&& ! Jetpack::is_module_active( 'publicize' )
+					&& (
+						Publicize_Script_Data::has_feature_flag( 'admin-page' ) ||
+						! Jetpack::is_module_active( 'publicize' ) ||
+						! current_user_can( 'publish_posts' )
+					)
 			) {
 				return false;
 			}
@@ -156,7 +192,14 @@ class Jetpack_React_Page extends Jetpack_Admin_Page {
 	 */
 	public function jetpack_add_settings_sub_nav_item() {
 		if ( $this->can_access_settings() ) {
-			add_submenu_page( 'jetpack', __( 'Settings', 'jetpack' ), __( 'Settings', 'jetpack' ), 'jetpack_admin_page', 'jetpack#/settings', '__return_null' );
+			Admin_Menu::add_menu(
+				__( 'Settings', 'jetpack' ),
+				__( 'Settings', 'jetpack' ),
+				'jetpack_admin_page',
+				Jetpack::admin_url( array( 'page' => 'jetpack#/settings' ) ),
+				null, // @phan-suppress-current-line PhanTypeMismatchArgumentProbablyReal -- See https://core.trac.wordpress.org/ticket/52539.
+				13
+			);
 		}
 	}
 
@@ -178,19 +221,6 @@ class Jetpack_React_Page extends Jetpack_Admin_Page {
 		echo '<noscript>';
 		$this->add_fallback_head_meta();
 		echo '</noscript>';
-	}
-
-	/**
-	 * Custom menu order.
-	 *
-	 * @deprecated since 9.2.0
-	 * @param array $menu_order Menu order.
-	 * @return array
-	 */
-	public function jetpack_menu_order( $menu_order ) {
-		_deprecated_function( __METHOD__, 'jetpack-9.2' );
-
-		return $menu_order;
 	}
 
 	/**
@@ -242,7 +272,7 @@ class Jetpack_React_Page extends Jetpack_Admin_Page {
 		$target = sanitize_text_field( wp_unslash( $_GET['jp-react-redirect'] ) );
 		if ( isset( $allowed_paths[ $target ] ) ) {
 			wp_safe_redirect( $allowed_paths[ $target ] );
-			exit;
+			exit( 0 );
 		}
 	}
 
@@ -273,6 +303,14 @@ class Jetpack_React_Page extends Jetpack_Admin_Page {
 			$version             = $asset_manifest['version'];
 		}
 
+		$blog_id_prop = '';
+		if ( ! defined( 'IS_WPCOM' ) || ! IS_WPCOM ) {
+			$blog_id = Connection_Manager::get_site_id( true );
+			if ( $blog_id ) {
+				$blog_id_prop = ', currentBlogID: "' . (int) $blog_id . '"';
+			}
+		}
+
 		wp_enqueue_script(
 			'react-plugin',
 			plugins_url( '_inc/build/admin.js', JETPACK__PLUGIN_FILE ),
@@ -293,7 +331,7 @@ class Jetpack_React_Page extends Jetpack_Admin_Page {
 		wp_add_inline_script( 'react-plugin', 'var Initial_State=JSON.parse(decodeURIComponent("' . rawurlencode( wp_json_encode( Jetpack_Redux_State_Helper::get_initial_state() ) ) . '"));', 'before' );
 
 		// This will set the default URL of the jp_redirects lib.
-		wp_add_inline_script( 'react-plugin', 'var jetpack_redirects = { currentSiteRawUrl: "' . $site_suffix . '" };', 'before' );
+		wp_add_inline_script( 'react-plugin', 'var jetpack_redirects = { currentSiteRawUrl: "' . $site_suffix . '"' . $blog_id_prop . ' };', 'before' );
 
 		// Adds Connection package initial state.
 		Connection_Initial_State::render_script( 'react-plugin' );

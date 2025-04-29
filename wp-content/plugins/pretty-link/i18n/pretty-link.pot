@@ -1,27 +1,21 @@
-# Copyright (C) 2023 Pretty Links
-# This file is distributed under the same license as the Pretty Links plugin.
+# Copyright (C) 2024 Pretty Links
+# This file is distributed under the same license as the PrettyLinks plugin.
 msgid ""
 msgstr ""
-"Project-Id-Version: Pretty Links 3.5.3\n"
+"Project-Id-Version: PrettyLinks 3.6.15\n"
 "Report-Msgid-Bugs-To: https://wordpress.org/support/plugin/pretty-link\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
-"POT-Creation-Date: 2023-09-18T12:12:00-05:00\n"
+"POT-Creation-Date: 2024-12-16T18:59:55+00:00\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
-"X-Generator: WP-CLI 2.5.0\n"
+"X-Generator: WP-CLI 2.9.0\n"
 "X-Domain: pretty-link\n"
 
 #. Plugin Name of the plugin
-#. Author of the plugin
-#: app/controllers/PrliLinksController.php:58
-#: app/controllers/PrliLinksController.php:508
-#: app/controllers/PrliPostsController.php:59
-#: app/helpers/PrliOnboardingHelper.php:169
-#: pro/app/views/links/prettybar.php:68
-msgid "Pretty Links"
+msgid "PrettyLinks"
 msgstr ""
 
 #. Plugin URI of the plugin
@@ -30,6 +24,18 @@ msgstr ""
 
 #. Description of the plugin
 msgid "Shrink, track and share any URL using your website and brand!"
+msgstr ""
+
+#. Author of the plugin
+#: app/controllers/PrliAppController.php:363
+#: app/controllers/PrliLinksController.php:67
+#: app/controllers/PrliLinksController.php:544
+#: app/controllers/PrliPostsController.php:59
+#: app/helpers/PrliOnboardingHelper.php:169
+#: app/views/admin/popups/prettypay.php:81
+#: app/views/admin/popups/prettypay.php:387
+#: pro/app/views/links/prettybar.php:68
+msgid "Pretty Links"
 msgstr ""
 
 #. Author URI of the plugin
@@ -48,11 +54,11 @@ msgid "Inactive"
 msgstr ""
 
 #: app/controllers/PrliAddonsController.php:30
-#: app/controllers/PrliAppController.php:198
-#: app/controllers/PrliAppController.php:201
+#: app/controllers/PrliAppController.php:239
+#: app/controllers/PrliAppController.php:242
 #: app/views/admin/addons/addon-page-lite.php:32
 #: app/views/admin/addons/addon-page-pro.php:90
-#: app/views/admin/onboarding/license.php:16
+#: app/views/admin/onboarding/license.php:17
 msgid "Activate"
 msgstr ""
 
@@ -72,7 +78,7 @@ msgid "Could not install plugin."
 msgstr ""
 
 #: app/controllers/PrliAddonsController.php:49
-#: app/controllers/PrliAppController.php:211
+#: app/controllers/PrliAppController.php:252
 msgid "Add-ons"
 msgstr ""
 
@@ -102,6 +108,9 @@ msgstr ""
 #: app/controllers/PrliOnboardingController.php:732
 #: app/controllers/PrliOnboardingController.php:776
 #: app/controllers/PrliOnboardingController.php:834
+#: app/controllers/PrliStripeConnectController.php:115
+#: app/controllers/PrliStripeConnectController.php:179
+#: app/controllers/PrliStripeConnectController.php:234
 #: app/controllers/PrliUpdateController.php:70
 #: app/controllers/PrliUpdateController.php:165
 #: app/controllers/PrliUpdateController.php:204
@@ -111,7 +120,10 @@ msgstr ""
 #: app/controllers/PrliAddonsController.php:66
 #: app/controllers/PrliAddonsController.php:109
 #: app/controllers/PrliAddonsController.php:132
+#: app/controllers/PrliLinksController.php:711
 #: app/controllers/PrliOnboardingController.php:204
+#: app/controllers/PrliPostsController.php:152
+#: app/controllers/PrliPostsController.php:175
 #: app/controllers/PrliUpdateController.php:74
 #: app/controllers/PrliUpdateController.php:169
 #: app/controllers/PrliUpdateController.php:208
@@ -162,67 +174,86 @@ msgstr ""
 msgid "You're using Pretty Links Lite. To unlock more features, consider <a href=\"https://prettylinks.com/pl/main-menu/upgrade?plugin-upgrade-header\">upgrading to Pro.</a>"
 msgstr ""
 
-#: app/controllers/PrliAppController.php:145
-#: app/controllers/PrliLinksController.php:166
-#: app/controllers/PrliUpdateController.php:738
+#: app/controllers/PrliAppController.php:168
+#: app/controllers/PrliAppController.php:169
+#: app/controllers/PrliLinksController.php:1234
+msgid "PrettyPay™ Links"
+msgstr ""
+
+#: app/controllers/PrliAppController.php:178
+#: app/controllers/PrliLinksController.php:176
+#: app/controllers/PrliUpdateController.php:739
 msgid "Link Categories"
 msgstr ""
 
-#: app/controllers/PrliAppController.php:146
-#: app/controllers/PrliLinksController.php:467
+#: app/controllers/PrliAppController.php:179
+#: app/controllers/PrliLinksController.php:503
+#: app/views/admin/popups/prettypay.php:56
+#: app/views/admin/popups/prettypay.php:382
 #: pro/app/controllers/PlpLinkCategoriesController.php:25
 msgid "Categories"
 msgstr ""
 
-#: app/controllers/PrliAppController.php:153
-#: app/controllers/PrliLinksController.php:167
-#: app/controllers/PrliUpdateController.php:744
+#: app/controllers/PrliAppController.php:186
+#: app/controllers/PrliLinksController.php:177
+#: app/controllers/PrliUpdateController.php:745
 msgid "Link Tags"
 msgstr ""
 
-#: app/controllers/PrliAppController.php:154
-#: app/controllers/PrliLinksController.php:468
+#: app/controllers/PrliAppController.php:187
+#: app/controllers/PrliLinksController.php:504
+#: app/views/admin/popups/prettypay.php:61
+#: app/views/admin/popups/prettypay.php:383
 #: pro/app/controllers/PlpLinkTagsController.php:29
 msgid "Tags"
 msgstr ""
 
-#: app/controllers/PrliAppController.php:161
-#: app/controllers/PrliUpdateController.php:750
+#: app/controllers/PrliAppController.php:194
+#: app/controllers/PrliUpdateController.php:751
 #: pro/app/views/reports/list.php:4
 #: pro/app/views/reports/reports.php:7
 msgid "Link Reports"
 msgstr ""
 
-#: app/controllers/PrliAppController.php:162
+#: app/controllers/PrliAppController.php:195
 #: pro/app/controllers/PlpReportsController.php:15
 #: pro/app/views/reports/reports.php:4
 msgid "Reports"
 msgstr ""
 
-#: app/controllers/PrliAppController.php:169
-#: app/controllers/PrliAppController.php:170
-#: app/controllers/PrliUpdateController.php:756
+#: app/controllers/PrliAppController.php:202
+#: app/controllers/PrliAppController.php:203
+#: app/controllers/PrliUpdateController.php:757
 msgid "Display Groups"
 msgstr ""
 
-#: app/controllers/PrliAppController.php:177
-#: app/controllers/PrliAppController.php:178
-#: app/controllers/PrliUpdateController.php:762
+#: app/controllers/PrliAppController.php:210
+#: app/controllers/PrliAppController.php:211
+#: app/views/admin/addons/addon-page-lite.php:22
+#: app/views/admin/onboarding/features.php:89
+msgid "Product Displays"
+msgstr ""
+
+#: app/controllers/PrliAppController.php:218
+#: app/controllers/PrliAppController.php:219
+#: app/controllers/PrliUpdateController.php:763
 #: pro/app/controllers/PlpImportExportController.php:15
 msgid "Import / Export"
 msgstr ""
 
-#: app/controllers/PrliAppController.php:187
+#: app/controllers/PrliAppController.php:228
 msgid "Pretty Links | Clicks"
 msgstr ""
 
-#: app/controllers/PrliAppController.php:187
-#: app/controllers/PrliLinksController.php:506
-#: app/models/PrliClick.php:256
+#: app/controllers/PrliAppController.php:228
+#: app/controllers/PrliLinksController.php:542
+#: app/models/PrliClick.php:258
+#: app/views/admin/popups/prettypay.php:71
+#: app/views/admin/popups/prettypay.php:385
 #: app/views/clicks/list.php:4
 #: app/views/groups/list.php:81
-#: pro/app/views/links/form.php:39
-#: pro/app/views/links/form.php:49
+#: pro/app/views/links/form.php:40
+#: pro/app/views/links/form.php:50
 #: pro/app/views/metaboxes/post-sidebar.php:33
 #: pro/app/views/reports/custom-report.php:31
 #: pro/app/views/reports/custom-report.php:64
@@ -231,417 +262,512 @@ msgstr ""
 msgid "Clicks"
 msgstr ""
 
-#: app/controllers/PrliAppController.php:191
+#: app/controllers/PrliAppController.php:232
 msgid "Pretty Links | Tools"
 msgstr ""
 
-#: app/controllers/PrliAppController.php:191
+#: app/controllers/PrliAppController.php:232
 #: app/views/tools/form.php:3
 msgid "Tools"
 msgstr ""
 
-#: app/controllers/PrliAppController.php:194
+#: app/controllers/PrliAppController.php:235
 msgid "Pretty Links | Options"
 msgstr ""
 
-#: app/controllers/PrliAppController.php:194
+#: app/controllers/PrliAppController.php:235
+#: app/views/links/prettypay_link_stripe.php:107
 #: app/views/options/form.php:3
 msgid "Options"
 msgstr ""
 
-#: app/controllers/PrliAppController.php:204
+#: app/controllers/PrliAppController.php:245
+#: app/views/prettypay/fee_notice.php:7
 msgid "Upgrade"
 msgstr ""
 
-#: app/controllers/PrliAppController.php:208
+#: app/controllers/PrliAppController.php:249
 msgid "Welcome"
 msgstr ""
 
-#: app/controllers/PrliAppController.php:342
-#: app/controllers/PrliAppController.php:348
-#: app/controllers/PrliAppController.php:353
-#: app/controllers/PrliAppController.php:845
+#: app/controllers/PrliAppController.php:390
+#: app/controllers/PrliAppController.php:396
+#: app/controllers/PrliAppController.php:401
+#: app/controllers/PrliAppController.php:906
 msgid "Docs"
 msgstr ""
 
-#: app/controllers/PrliAppController.php:343
+#: app/controllers/PrliAppController.php:391
 #: app/views/admin/update/ui.php:3
 msgid "Manage License"
 msgstr ""
 
-#: app/controllers/PrliAppController.php:346
-#: app/controllers/PrliAppController.php:352
+#: app/controllers/PrliAppController.php:394
+#: app/controllers/PrliAppController.php:400
 msgid "Activate Pro License"
 msgstr ""
 
-#: app/controllers/PrliAppController.php:347
+#: app/controllers/PrliAppController.php:395
 msgid "Buy"
 msgstr ""
 
-#: app/controllers/PrliAppController.php:351
+#: app/controllers/PrliAppController.php:399
 #: app/helpers/PrliOnboardingHelper.php:243
 #: app/views/admin/update/inactive_license.php:28
 #: app/views/shared/nav.php:9
 msgid "Upgrade to Pro"
 msgstr ""
 
-#: app/controllers/PrliAppController.php:472
+#: app/controllers/PrliAppController.php:497
 #: app/views/groups/edit.php:72
-#: app/views/options/form.php:1218
+#: app/views/options/form.php:1221
 #: pro/app/views/reports/edit.php:66
 msgid "Update"
 msgstr ""
 
-#: app/controllers/PrliAppController.php:474
+#: app/controllers/PrliAppController.php:499
 msgid "Copy to Clipboard"
 msgstr ""
 
-#: app/controllers/PrliAppController.php:475
+#: app/controllers/PrliAppController.php:500
 msgid "Copied!"
 msgstr ""
 
-#: app/controllers/PrliAppController.php:476
+#: app/controllers/PrliAppController.php:501
 msgid "Oops, Copy Failed!"
 msgstr ""
 
-#: app/controllers/PrliAppController.php:500
+#: app/controllers/PrliAppController.php:525
 msgid "Are you sure you want to reset your Pretty Link? This will delete all of the statistical data about this Pretty Link in your database."
 msgstr ""
 
-#: app/controllers/PrliAppController.php:503
+#: app/controllers/PrliAppController.php:528
 msgid "To access Link Health, upgrade to <a href=\"%s\" class=\"prli-link-health-upgrade\">Pretty Links Pro.</a>"
 msgstr ""
 
+#: app/controllers/PrliAppController.php:544
+msgid "Find or add a product..."
+msgstr ""
+
+#: app/controllers/PrliAppController.php:546
+msgid "Select shipping countries"
+msgstr ""
+
+#: app/controllers/PrliAppController.php:548
+msgid "This field is required"
+msgstr ""
+
 #. translators: %1$s: br tag, %2$s: open link tag, %3$s: close link tag
-#: app/controllers/PrliAppController.php:611
+#: app/controllers/PrliAppController.php:672
 msgid "You're almost done!%1$s%2$sFinish your Re-Install of Pretty Links Pro%3$s"
 msgstr ""
 
-#: app/controllers/PrliAppController.php:626
+#: app/controllers/PrliAppController.php:687
 msgid "Pretty Links Pro Successfully Uninstalled."
 msgstr ""
 
-#: app/controllers/PrliAppController.php:680
+#: app/controllers/PrliAppController.php:741
 msgid "Invalid server response"
 msgstr ""
 
-#: app/controllers/PrliAppController.php:681
+#: app/controllers/PrliAppController.php:742
 msgid "Ajax error"
 msgstr ""
 
-#: app/controllers/PrliAppController.php:698
+#: app/controllers/PrliAppController.php:759
 msgid "Pretty Link Quick Add"
 msgstr ""
 
-#: app/controllers/PrliAppController.php:737
+#: app/controllers/PrliAppController.php:798
 msgid "Your Pretty Links Pro installation isn't quite complete yet. %1$sAutomatically Upgrade to Enable Pretty Links Pro%2$s"
 msgstr ""
 
-#: app/controllers/PrliAppController.php:758
+#: app/controllers/PrliAppController.php:819
 msgid "Your Pretty Links Pro installation isn't quite complete yet.<br/>%1$sAutomatically Upgrade to Enable Pretty Links Pro%2$s"
 msgstr ""
 
 #. translators: $1$s - Pretty Links plugin name; $2$s - WP.org review link; $3$s - WP.org review link.
-#: app/controllers/PrliAppController.php:806
+#: app/controllers/PrliAppController.php:867
 msgid "Enjoying %1$s? Please rate <a href=\"%2$s\" target=\"_blank\" rel=\"noopener noreferrer\">&#9733;&#9733;&#9733;&#9733;&#9733;</a> on <a href=\"%3$s\" target=\"_blank\" rel=\"noopener\">WordPress.org</a> to help us spread the word. Thanks from the Pretty Links team!"
 msgstr ""
 
-#: app/controllers/PrliAppController.php:840
+#: app/controllers/PrliAppController.php:901
 msgid "Support"
 msgstr ""
 
-#: app/controllers/PrliAppController.php:850
+#: app/controllers/PrliAppController.php:911
 msgid "Made with ♥ by the Pretty Links Team"
 msgstr ""
 
-#: app/controllers/PrliClicksController.php:90
+#: app/controllers/PrliAppController.php:959
+#: app/views/admin/payments/options.php:111
+#: app/views/admin/payments/options.php:113
+msgid "PrettyPay™ Thank You Page"
+msgstr ""
+
+#: app/controllers/PrliClicksController.php:94
 msgid "IP Address: "
 msgstr ""
 
-#: app/controllers/PrliClicksController.php:95
+#: app/controllers/PrliClicksController.php:99
 msgid "Visitor: "
 msgstr ""
 
-#: app/controllers/PrliClicksController.php:100
+#: app/controllers/PrliClicksController.php:104
 msgid "All Links"
 msgstr ""
 
-#: app/controllers/PrliFlyoutMenuController.php:38
+#: app/controllers/PrliFlyoutMenuController.php:34
 msgid "See Quick Links"
 msgstr ""
 
-#: app/controllers/PrliFlyoutMenuController.php:89
+#: app/controllers/PrliFlyoutMenuController.php:79
 #: app/views/admin/popups/upgrade.php:23
 msgid "Upgrade to Pretty Links Pro"
 msgstr ""
 
-#: app/controllers/PrliFlyoutMenuController.php:96
+#: app/controllers/PrliFlyoutMenuController.php:86
 msgid "Support & Docs"
 msgstr ""
 
-#: app/controllers/PrliFlyoutMenuController.php:101
+#: app/controllers/PrliFlyoutMenuController.php:91
 msgid "Suggest a Feature"
 msgstr ""
 
-#: app/controllers/PrliFlyoutMenuController.php:107
-msgid "Notifications "
-msgstr ""
-
-#: app/controllers/PrliLinksController.php:59
+#: app/controllers/PrliLinksController.php:68
 #: app/controllers/PrliOnboardingController.php:432
-#: app/helpers/PrliLinksHelper.php:171
+#: app/helpers/PrliLinksHelper.php:175
 #: app/helpers/PrliOnboardingHelper.php:162
 #: app/views/admin/onboarding/parts/link_popup.php:10
-#: app/views/links/form_basic.php:49
+#: app/views/links/form_basic.php:51
 #: app/views/shared/tinymce_form_popup.php:86
 #: app/views/widgets/widget.php:15
 msgid "Pretty Link"
 msgstr ""
 
-#: app/controllers/PrliLinksController.php:60
+#: app/controllers/PrliLinksController.php:69
+msgid "Add New"
+msgstr ""
+
+#: app/controllers/PrliLinksController.php:70
 msgid "Add New Pretty Link"
 msgstr ""
 
-#: app/controllers/PrliLinksController.php:61
+#: app/controllers/PrliLinksController.php:71
 msgid "Edit Pretty Link"
 msgstr ""
 
 #. translators: accessibility label for external links, where the argument is the link text
-#: app/controllers/PrliLinksController.php:62
+#: app/controllers/PrliLinksController.php:72
 #: js/build/editor.js:3
-#: js/editor/components/link-editor/index.js:400
+#: js/editor/components/link-editor/index.js:401
 msgid "New Pretty Link"
 msgstr ""
 
-#: app/controllers/PrliLinksController.php:63
+#: app/controllers/PrliLinksController.php:73
 msgid "View Pretty Link"
 msgstr ""
 
-#: app/controllers/PrliLinksController.php:64
+#: app/controllers/PrliLinksController.php:74
 msgid "Search Pretty Links"
 msgstr ""
 
-#: app/controllers/PrliLinksController.php:65
+#: app/controllers/PrliLinksController.php:75
 msgid "No Pretty Links found"
 msgstr ""
 
-#: app/controllers/PrliLinksController.php:66
+#: app/controllers/PrliLinksController.php:76
 msgid "No Pretty Links found in Trash"
 msgstr ""
 
-#: app/controllers/PrliLinksController.php:67
+#: app/controllers/PrliLinksController.php:77
 msgid "Parent Pretty Link:"
 msgstr ""
 
-#: app/controllers/PrliLinksController.php:128
+#: app/controllers/PrliLinksController.php:138
 msgid "Pretty Link Settings"
 msgstr ""
 
-#: app/controllers/PrliLinksController.php:136
+#: app/controllers/PrliLinksController.php:146
 msgid "Advanced Features"
 msgstr ""
 
-#: app/controllers/PrliLinksController.php:162
-#: app/views/admin/onboarding/welcome.php:90
+#: app/controllers/PrliLinksController.php:172
+#: app/views/admin/onboarding/welcome.php:101
 msgid "Advanced Redirect Types"
 msgstr ""
 
-#: app/controllers/PrliLinksController.php:163
+#: app/controllers/PrliLinksController.php:173
 msgid "Auto Create Pretty Links"
 msgstr ""
 
-#: app/controllers/PrliLinksController.php:164
+#: app/controllers/PrliLinksController.php:174
 msgid "Auto-Link Keywords"
 msgstr ""
 
-#: app/controllers/PrliLinksController.php:165
+#: app/controllers/PrliLinksController.php:175
 msgid "Support & Updates"
 msgstr ""
 
-#: app/controllers/PrliLinksController.php:168
+#: app/controllers/PrliLinksController.php:178
 msgid "Plus Much More!"
 msgstr ""
 
-#: app/controllers/PrliLinksController.php:170
+#: app/controllers/PrliLinksController.php:180
 msgid "Tell Me More"
 msgstr ""
 
-#: app/controllers/PrliLinksController.php:352
+#: app/controllers/PrliLinksController.php:370
+msgid "PrettyPay™ Link updated."
+msgstr ""
+
+#: app/controllers/PrliLinksController.php:370
 msgid "Pretty Link updated."
 msgstr ""
 
-#: app/controllers/PrliLinksController.php:354
+#: app/controllers/PrliLinksController.php:374
+msgid "PrettyPay™ Link created."
+msgstr ""
+
+#: app/controllers/PrliLinksController.php:374
 msgid "Pretty Link created."
 msgstr ""
 
-#: app/controllers/PrliLinksController.php:422
+#: app/controllers/PrliLinksController.php:458
 msgid "Pretty Link Cleanup Visitor Locks"
 msgstr ""
 
-#: app/controllers/PrliLinksController.php:434
-#: app/controllers/PrliLinksController.php:783
+#: app/controllers/PrliLinksController.php:470
+#: app/controllers/PrliLinksController.php:841
 #: app/controllers/PrliPopupController.php:95
 msgid "Forbidden"
 msgstr ""
 
-#: app/controllers/PrliLinksController.php:443
+#: app/controllers/PrliLinksController.php:479
 msgid "Success!"
 msgstr ""
 
-#: app/controllers/PrliLinksController.php:445
+#: app/controllers/PrliLinksController.php:481
 msgid "Fix the following errors:"
 msgstr ""
 
-#: app/controllers/PrliLinksController.php:469
+#: app/controllers/PrliLinksController.php:505
+#: app/views/admin/popups/prettypay.php:66
+#: app/views/admin/popups/prettypay.php:384
 #: app/views/links/form_pro.php:32
 #: pro/app/helpers/PlpOptionsHelper.php:51
-#: pro/app/views/links/form.php:134
+#: pro/app/views/links/form.php:136
 msgid "Keywords"
 msgstr ""
 
-#: app/controllers/PrliLinksController.php:479
+#: app/controllers/PrliLinksController.php:515
 msgid "Upgrade to a Pretty Links premium plan to get Link Categories"
 msgstr ""
 
-#: app/controllers/PrliLinksController.php:481
-#: app/controllers/PrliLinksController.php:487
-#: app/controllers/PrliLinksController.php:493
-#: app/helpers/PrliAppHelper.php:20
+#: app/controllers/PrliLinksController.php:517
+#: app/controllers/PrliLinksController.php:523
+#: app/controllers/PrliLinksController.php:529
+#: app/helpers/PrliAppHelper.php:19
 #: app/helpers/PrliOnboardingHelper.php:241
-#: app/views/links/form.php:32
+#: app/views/links/form.php:37
 msgid "Pro"
 msgstr ""
 
-#: app/controllers/PrliLinksController.php:485
+#: app/controllers/PrliLinksController.php:521
 msgid "Upgrade to a Pretty Links premium plan to get Link Tags"
 msgstr ""
 
-#: app/controllers/PrliLinksController.php:491
+#: app/controllers/PrliLinksController.php:527
 msgid "Upgrade to a Pretty Links premium plan to get Keyword Replacements"
 msgstr ""
 
-#: app/controllers/PrliLinksController.php:499
+#: app/controllers/PrliLinksController.php:535
+#: app/views/admin/popups/prettypay.php:46
+#: app/views/admin/popups/prettypay.php:380
+#: app/views/links/prettypay_link_stripe.php:251
 msgid "Settings"
 msgstr ""
 
-#: app/controllers/PrliLinksController.php:500
+#: app/controllers/PrliLinksController.php:536
+#: app/views/admin/popups/prettypay.php:51
+#: app/views/admin/popups/prettypay.php:381
 msgid "Link Title"
 msgstr ""
 
-#: app/controllers/PrliLinksController.php:502
+#: app/controllers/PrliLinksController.php:538
 msgid "Target"
 msgstr ""
 
-#: app/controllers/PrliLinksController.php:507
-#: app/models/PrliClick.php:256
+#: app/controllers/PrliLinksController.php:543
+#: app/models/PrliClick.php:258
+#: app/views/admin/popups/prettypay.php:76
+#: app/views/admin/popups/prettypay.php:386
 #: app/views/admin/upgrade/groups.php:13
 #: app/views/admin/upgrade/groups.php:35
-#: pro/app/views/links/form.php:38
-#: pro/app/views/links/form.php:73
+#: app/views/admin/upgrade/products.php:13
+#: app/views/admin/upgrade/products.php:32
+#: pro/app/views/links/form.php:39
+#: pro/app/views/links/form.php:74
 msgid "Date"
 msgstr ""
 
-#: app/controllers/PrliLinksController.php:611
+#: app/controllers/PrliLinksController.php:647
 #: app/views/admin/onboarding/features.php:23
 #: app/views/links/form_advanced.php:6
 msgid "No Follow"
 msgstr ""
 
-#: app/controllers/PrliLinksController.php:613
-#: app/controllers/PrliLinksController.php:620
-#: app/controllers/PrliLinksController.php:627
+#: app/controllers/PrliLinksController.php:649
+#: app/controllers/PrliLinksController.php:656
+#: app/controllers/PrliLinksController.php:663
 msgid "No Change"
 msgstr ""
 
-#: app/controllers/PrliLinksController.php:614
-#: app/controllers/PrliLinksController.php:621
-#: app/controllers/PrliLinksController.php:628
+#: app/controllers/PrliLinksController.php:650
+#: app/controllers/PrliLinksController.php:657
+#: app/controllers/PrliLinksController.php:664
 #: app/views/shared/tinymce_form_popup.php:49
 #: app/views/shared/tinymce_form_popup.php:57
 #: app/views/shared/tinymce_form_popup.php:65
 msgid "Enabled"
 msgstr ""
 
-#: app/controllers/PrliLinksController.php:615
-#: app/controllers/PrliLinksController.php:622
-#: app/controllers/PrliLinksController.php:629
+#: app/controllers/PrliLinksController.php:651
+#: app/controllers/PrliLinksController.php:658
+#: app/controllers/PrliLinksController.php:665
 #: app/views/shared/tinymce_form_popup.php:50
 #: app/views/shared/tinymce_form_popup.php:58
 #: app/views/shared/tinymce_form_popup.php:66
 msgid "Disabled"
 msgstr ""
 
-#: app/controllers/PrliLinksController.php:618
+#: app/controllers/PrliLinksController.php:654
 #: app/views/admin/onboarding/features.php:34
 #: app/views/links/form_advanced.php:19
 #: app/views/shared/tinymce_form_popup.php:54
 msgid "Sponsored"
 msgstr ""
 
-#: app/controllers/PrliLinksController.php:625
-#: app/views/links/form_advanced.php:58
-#: app/views/links/form_advanced.php:61
+#: app/controllers/PrliLinksController.php:661
+#: app/views/links/form_advanced.php:60
+#: app/views/links/form_advanced.php:63
 #: app/views/shared/tinymce_form_popup.php:62
 msgid "Tracking"
 msgstr ""
 
-#: app/controllers/PrliLinksController.php:731
+#: app/controllers/PrliLinksController.php:771
 #: app/views/clicks/list.php:64
 #: app/views/groups/list.php:24
 #: pro/app/views/reports/list.php:20
 msgid "Reset"
 msgstr ""
 
-#: app/controllers/PrliLinksController.php:734
+#: app/controllers/PrliLinksController.php:774
 msgid "Tweet"
 msgstr ""
 
-#: app/controllers/PrliLinksController.php:735
-#: pro/app/models/PlpOptions.php:165
+#: app/controllers/PrliLinksController.php:775
+#: pro/app/models/PlpOptions.php:185
 msgid "Email"
 msgstr ""
 
-#: app/controllers/PrliLinksController.php:736
+#: app/controllers/PrliLinksController.php:778
 msgid "Target &raquo;"
 msgstr ""
 
-#: app/controllers/PrliLinksController.php:737
+#: app/controllers/PrliLinksController.php:781
+msgid "PrettyPay™ Link &raquo;"
+msgstr ""
+
+#: app/controllers/PrliLinksController.php:781
 msgid "Pretty Link &raquo;"
 msgstr ""
 
-#: app/controllers/PrliLinksController.php:760
-#: app/controllers/PrliLinksController.php:761
+#: app/controllers/PrliLinksController.php:804
+#: app/controllers/PrliLinksController.php:805
 msgid "View Split Test Report"
 msgstr ""
 
-#: app/controllers/PrliLinksController.php:789
+#: app/controllers/PrliLinksController.php:847
 msgid "Your Pretty Link was Successfully Reset"
 msgstr ""
 
-#: app/controllers/PrliLinksController.php:797
+#: app/controllers/PrliLinksController.php:855
+#: app/controllers/PrliStripeController.php:604
+#: app/controllers/PrliStripeController.php:741
+#: app/controllers/PrliStripeController.php:747
+#: app/controllers/PrliStripeController.php:1141
 #: app/controllers/PrliUpdateController.php:200
 msgid "Bad request"
 msgstr ""
 
-#: app/controllers/PrliLinksController.php:801
+#: app/controllers/PrliLinksController.php:859
 msgid "Insufficient permissions"
 msgstr ""
 
-#: app/controllers/PrliLinksController.php:805
+#: app/controllers/PrliLinksController.php:863
 #: pro/app/controllers/PlpPublicLinksController.php:37
 msgid "Security check failed"
 msgstr ""
 
-#: app/controllers/PrliLinksController.php:834
+#: app/controllers/PrliLinksController.php:892
 msgid "An error occurred creating the link"
 msgstr ""
 
-#: app/controllers/PrliLinksController.php:871
+#: app/controllers/PrliLinksController.php:929
 msgid "All Groups (Legacy)"
 msgstr ""
 
-#: app/controllers/PrliLinksController.php:977
-msgid "<a href=\"#\" id=\"prli-broken-links\"><span class=\"tooltip\">Broken</span> Links</a>"
+#. translators: %s: number of links
+#: app/controllers/PrliLinksController.php:1080
+msgid "All %s"
+msgstr ""
+
+#. translators: %s: number of links in the trash
+#: app/controllers/PrliLinksController.php:1089
+msgid "Trash %s"
+msgstr ""
+
+#: app/controllers/PrliLinksController.php:1129
+#: pro/app/controllers/PlpLinksController.php:1094
+msgid "Find Broken Links"
+msgstr ""
+
+#: app/controllers/PrliLinksController.php:1235
+#: app/helpers/PrliLinksHelper.php:26
+msgid "PrettyPay™ Link"
+msgstr ""
+
+#: app/controllers/PrliLinksController.php:1236
+msgid "Add New PrettyPay™ Link"
+msgstr ""
+
+#: app/controllers/PrliLinksController.php:1237
+msgid "Edit PrettyPay™ Link"
+msgstr ""
+
+#: app/controllers/PrliLinksController.php:1238
+msgid "New PrettyPay™ Link"
+msgstr ""
+
+#: app/controllers/PrliLinksController.php:1239
+msgid "View PrettyPay™ Link"
+msgstr ""
+
+#: app/controllers/PrliLinksController.php:1240
+msgid "Search PrettyPay™ Links"
+msgstr ""
+
+#: app/controllers/PrliLinksController.php:1241
+msgid "No PrettyPay™ Links found"
+msgstr ""
+
+#: app/controllers/PrliLinksController.php:1242
+msgid "No PrettyPay™ Links found in Trash"
+msgstr ""
+
+#: app/controllers/PrliLinksController.php:1243
+msgid "Parent PrettyPay™ Link:"
 msgstr ""
 
 #: app/controllers/PrliLocalApiController.php:103
@@ -769,16 +895,24 @@ msgstr ""
 msgid "Welcome back! It seems the excitement of setting up Pretty Links got the best of you. No worries! %1$sClick here%2$s and we'll whisk you back to where you left off."
 msgstr ""
 
-#: app/controllers/PrliOptionsController.php:62
+#: app/controllers/PrliOptionsController.php:70
 msgid "Options saved."
 msgstr ""
 
-#: app/controllers/PrliOptionsController.php:76
+#: app/controllers/PrliOptionsController.php:84
 msgid "Excluded IP Addresses must be a comma separated list of IPv4 or IPv6 addresses or ranges."
 msgstr ""
 
-#: app/controllers/PrliOptionsController.php:80
+#: app/controllers/PrliOptionsController.php:88
 msgid "Whitelist IP Addresses must be a comma separated list of IPv4 or IPv6 addresses or ranges."
+msgstr ""
+
+#: app/controllers/PrliOptionsController.php:115
+msgid "Thank You"
+msgstr ""
+
+#: app/controllers/PrliOptionsController.php:116
+msgid "Thank you for your purchase."
 msgstr ""
 
 #: app/controllers/PrliPopupController.php:63
@@ -839,7 +973,130 @@ msgid "Give Feedback"
 msgstr ""
 
 #: app/controllers/PrliReviewNoticeController.php:90
+#: app/views/admin/payments/customer_portal_notice.php:16
 msgid "No thanks"
+msgstr ""
+
+#: app/controllers/PrliStripeConnectController.php:100
+msgid "Sorry, updating your credentials failed. (security)"
+msgstr ""
+
+#: app/controllers/PrliStripeConnectController.php:110
+msgid "Sorry, updating your credentials failed. (pmt)"
+msgstr ""
+
+#: app/controllers/PrliStripeConnectController.php:169
+#: app/controllers/PrliStripeConnectController.php:174
+#: app/controllers/PrliStripeConnectController.php:199
+msgid "Sorry, the refresh failed."
+msgstr ""
+
+#: app/controllers/PrliStripeConnectController.php:229
+#: app/controllers/PrliStripeConnectController.php:240
+msgid "Sorry, the disconnect failed."
+msgstr ""
+
+#: app/controllers/PrliStripeConnectController.php:307
+msgid "Get Paid the Pretty Links Way!"
+msgstr ""
+
+#: app/controllers/PrliStripeConnectController.php:311
+msgid "Introducing %1$sNEW PrettyPay™ Links!%2$s Effortlessly accept payments right on your site with %1$sbrandable checkout links%2$s and watch your income soar. No detours, no distractions – just straightforward, secure transactions that make life easier for you and your customers."
+msgstr ""
+
+#: app/controllers/PrliStripeConnectController.php:317
+msgid "Learn More"
+msgstr ""
+
+#: app/controllers/PrliStripeController.php:280
+msgid "This link is not configured correctly."
+msgstr ""
+
+#: app/controllers/PrliStripeController.php:390
+msgid "Try again"
+msgstr ""
+
+#: app/controllers/PrliStripeController.php:584
+msgid "HTTP error"
+msgstr ""
+
+#: app/controllers/PrliStripeController.php:596
+msgid "Invalid response from the remote server"
+msgstr ""
+
+#: app/controllers/PrliStripeController.php:612
+msgid "+ Add a product"
+msgstr ""
+
+#: app/controllers/PrliStripeController.php:722
+msgid "Select a Stripe product to use with this PrettyPay™ Link"
+msgstr ""
+
+#: app/controllers/PrliStripeController.php:730
+msgid "At least one shipping country must be selected"
+msgstr ""
+
+#: app/controllers/PrliStripeController.php:804
+msgid "A product name is required"
+msgstr ""
+
+#: app/controllers/PrliStripeController.php:808
+msgid "A product price is required"
+msgstr ""
+
+#: app/controllers/PrliStripeController.php:811
+msgid "The product price must be numeric and greater than zero"
+msgstr ""
+
+#: app/controllers/PrliStripeController.php:815
+msgid "A product currency is required"
+msgstr ""
+
+#: app/controllers/PrliStripeController.php:821
+msgid "The given currency is not supported"
+msgstr ""
+
+#: app/controllers/PrliStripeController.php:826
+msgid "The given product type is not supported"
+msgstr ""
+
+#: app/controllers/PrliStripeController.php:830
+msgid "The given billing period is not supported"
+msgstr ""
+
+#: app/controllers/PrliStripeController.php:834
+msgid "The given custom billing interval count must be numeric and greater than zero"
+msgstr ""
+
+#: app/controllers/PrliStripeController.php:838
+msgid "The given custom billing interval is not supported"
+msgstr ""
+
+#: app/controllers/PrliStripeController.php:843
+msgid "The given tax behavior is not supported"
+msgstr ""
+
+#: app/controllers/PrliStripeController.php:936
+msgid "Payment Pending"
+msgstr ""
+
+#: app/controllers/PrliStripeController.php:936
+msgid "Payment Successful"
+msgstr ""
+
+#: app/controllers/PrliStripeController.php:1003
+#: app/views/admin/payments/customer_portal_notice.php:17
+#: app/views/admin/payments/options.php:168
+msgid "Configure Customer Portal"
+msgstr ""
+
+#: app/controllers/PrliStripeController.php:1007
+msgid "The Customer Portal is not yet configured."
+msgstr ""
+
+#. translators: %1$s: open strong tag, %2$s: close strong tag, %3$s: the error message
+#: app/controllers/PrliStripeController.php:1128
+msgid "%1$sError saving Customer Portal:%2$s %3$s"
 msgstr ""
 
 #: app/controllers/PrliToolsController.php:95
@@ -867,61 +1124,65 @@ msgstr ""
 msgid "License key deactivated"
 msgstr ""
 
-#: app/controllers/PrliUpdateController.php:546
+#: app/controllers/PrliUpdateController.php:547
 msgid "Check for Update"
 msgstr ""
 
-#: app/controllers/PrliUpdateController.php:615
+#: app/controllers/PrliUpdateController.php:616
 msgid "You had an HTTP error connecting to Caseproof's Mothership API"
 msgstr ""
 
-#: app/controllers/PrliUpdateController.php:627
+#: app/controllers/PrliUpdateController.php:628
 msgid "Your License Key was invalid"
 msgstr ""
 
-#: app/controllers/PrliUpdateController.php:644
+#: app/controllers/PrliUpdateController.php:645
 #: app/views/admin/update/active_license.php:19
 #: app/views/admin/update/edge_updates.php:4
 #: app/views/widgets/widget.php:22
 msgid "Loading..."
 msgstr ""
 
-#: app/controllers/PrliUpdateController.php:645
+#: app/controllers/PrliUpdateController.php:646
 msgid "An error occurred during activation: %s"
 msgstr ""
 
-#: app/controllers/PrliUpdateController.php:646
+#: app/controllers/PrliUpdateController.php:647
 msgid "Invalid response."
 msgstr ""
 
-#: app/controllers/PrliUpdateController.php:647
+#: app/controllers/PrliUpdateController.php:648
 msgid "Ajax error."
 msgstr ""
 
-#: app/controllers/PrliUpdateController.php:648
+#: app/controllers/PrliUpdateController.php:649
 msgid "Are you sure? Pretty Links will not be functional on %s if this License Key is deactivated."
 msgstr ""
 
-#: app/controllers/PrliUpdateController.php:650
+#: app/controllers/PrliUpdateController.php:651
 msgid "An error occurred during deactivation: %s"
 msgstr ""
 
-#: app/controllers/PrliUpdateController.php:652
+#: app/controllers/PrliUpdateController.php:653
 msgid "An error occurred while installing the correct edition."
 msgstr ""
 
-#: app/controllers/PrliUpdateController.php:666
+#: app/controllers/PrliUpdateController.php:667
 msgid "You do not have access."
 msgstr ""
 
-#: app/controllers/PrliUpdateController.php:670
+#: app/controllers/PrliUpdateController.php:671
 msgid "Edge updates couldn't be updated."
 msgstr ""
 
 #. translators: %1$s: open link tag, %2$s: close link tag
-#: app/controllers/PrliUpdateController.php:771
+#: app/controllers/PrliUpdateController.php:772
 #: app/lib/PrliAddonUpdates.php:216
 msgid "To restore automatic updates, %1$sinstall the correct edition%2$s of Pretty Links."
+msgstr ""
+
+#: app/controllers/PrliUpdateController.php:805
+msgid "Products Display"
 msgstr ""
 
 #: app/controllers/PrliXmlRpcController.php:36
@@ -996,75 +1257,90 @@ msgstr ""
 msgid "There was an error fetching your Pretty Link URL"
 msgstr ""
 
-#: app/helpers/PrliAppHelper.php:21
+#: app/helpers/PrliAppHelper.php:20
 msgid "Upgrade to Pro to unlock this feature"
 msgstr ""
 
+#: app/helpers/PrliAppHelper.php:39
+msgid "- Auto Create New Page -"
+msgstr ""
+
+#: app/helpers/PrliAppHelper.php:48
+#: app/views/groups/list.php:78
+#: pro/app/views/reports/list.php:71
+msgid "Edit"
+msgstr ""
+
+#: app/helpers/PrliAppHelper.php:49
+#: pro/app/views/reports/list.php:73
+msgid "View"
+msgstr ""
+
 #: app/helpers/PrliLinksHelper.php:14
-#: app/views/links/form_basic.php:15
+#: app/views/links/form_basic.php:16
 #: app/views/shared/tinymce_form_popup.php:32
 msgid "307 (Temporary)"
 msgstr ""
 
 #: app/helpers/PrliLinksHelper.php:15
 #: app/views/admin/onboarding/parts/link_popup.php:17
-#: app/views/links/form_basic.php:16
+#: app/views/links/form_basic.php:17
 #: app/views/shared/tinymce_form_popup.php:33
 msgid "302 (Temporary)"
 msgstr ""
 
 #: app/helpers/PrliLinksHelper.php:16
 #: app/views/admin/onboarding/parts/link_popup.php:18
-#: app/views/links/form_basic.php:17
+#: app/views/links/form_basic.php:18
 #: app/views/shared/tinymce_form_popup.php:34
 msgid "301 (Permanent)"
 msgstr ""
 
-#: app/helpers/PrliLinksHelper.php:27
+#: app/helpers/PrliLinksHelper.php:31
 msgid "PrettyBar Redirection"
 msgstr ""
 
-#: app/helpers/PrliLinksHelper.php:30
+#: app/helpers/PrliLinksHelper.php:34
 msgid "Cloaked Redirection"
 msgstr ""
 
-#: app/helpers/PrliLinksHelper.php:33
+#: app/helpers/PrliLinksHelper.php:37
 msgid "Pixel Tracking Redirection"
 msgstr ""
 
-#: app/helpers/PrliLinksHelper.php:36
+#: app/helpers/PrliLinksHelper.php:40
 msgid "Meta Refresh Redirection"
 msgstr ""
 
-#: app/helpers/PrliLinksHelper.php:39
+#: app/helpers/PrliLinksHelper.php:43
 msgid "Javascript Redirection"
 msgstr ""
 
-#: app/helpers/PrliLinksHelper.php:42
+#: app/helpers/PrliLinksHelper.php:46
 msgid "Temporary (307) Redirection"
 msgstr ""
 
-#: app/helpers/PrliLinksHelper.php:45
+#: app/helpers/PrliLinksHelper.php:49
 msgid "Temporary (302) Redirection"
 msgstr ""
 
-#: app/helpers/PrliLinksHelper.php:48
+#: app/helpers/PrliLinksHelper.php:52
 msgid "Permanent (301) Redirection"
 msgstr ""
 
-#: app/helpers/PrliLinksHelper.php:52
+#: app/helpers/PrliLinksHelper.php:56
 msgid "Nofollow Enabled"
 msgstr ""
 
-#: app/helpers/PrliLinksHelper.php:56
+#: app/helpers/PrliLinksHelper.php:60
 msgid "Sponsored Enabled"
 msgstr ""
 
-#: app/helpers/PrliLinksHelper.php:60
+#: app/helpers/PrliLinksHelper.php:64
 msgid "Parameter Forwarding Enabled"
 msgstr ""
 
-#: app/helpers/PrliLinksHelper.php:71
+#: app/helpers/PrliLinksHelper.php:75
 #: app/views/groups/list.php:75
 #: app/views/groups/list.php:78
 #: pro/app/views/reports/list.php:68
@@ -1072,59 +1348,59 @@ msgstr ""
 msgid "Edit %s"
 msgstr ""
 
-#: app/helpers/PrliLinksHelper.php:72
+#: app/helpers/PrliLinksHelper.php:76
 msgid "Are you sure you want to delete your %s Pretty Link? This will delete the Pretty Link and all of the statistical data about it in your database."
 msgstr ""
 
-#: app/helpers/PrliLinksHelper.php:72
+#: app/helpers/PrliLinksHelper.php:76
 #: app/views/groups/list.php:79
 #: pro/app/views/reports/list.php:72
 msgid "Delete %s"
 msgstr ""
 
-#: app/helpers/PrliLinksHelper.php:73
+#: app/helpers/PrliLinksHelper.php:77
 msgid "Are you sure you want to reset your %s Pretty Link? This will delete all of the statistical data about this Pretty Link in your database."
 msgstr ""
 
-#: app/helpers/PrliLinksHelper.php:73
-#: app/helpers/PrliLinksHelper.php:151
+#: app/helpers/PrliLinksHelper.php:77
+#: app/helpers/PrliLinksHelper.php:155
 msgid "Reset %s"
 msgstr ""
 
-#: app/helpers/PrliLinksHelper.php:76
+#: app/helpers/PrliLinksHelper.php:80
 #: app/views/clicks/list.php:161
 msgid "View clicks for %s"
 msgstr ""
 
-#: app/helpers/PrliLinksHelper.php:81
-#: app/helpers/PrliLinksHelper.php:162
+#: app/helpers/PrliLinksHelper.php:85
+#: app/helpers/PrliLinksHelper.php:166
 msgid "Post %s to Twitter"
 msgstr ""
 
-#: app/helpers/PrliLinksHelper.php:82
-#: app/helpers/PrliLinksHelper.php:173
+#: app/helpers/PrliLinksHelper.php:86
+#: app/helpers/PrliLinksHelper.php:177
 msgid "Send %s in an Email"
 msgstr ""
 
-#: app/helpers/PrliLinksHelper.php:87
-#: app/helpers/PrliLinksHelper.php:184
+#: app/helpers/PrliLinksHelper.php:91
+#: app/helpers/PrliLinksHelper.php:188
 msgid "Visit Target URL: %s in a New Window"
 msgstr ""
 
-#: app/helpers/PrliLinksHelper.php:88
-#: app/helpers/PrliLinksHelper.php:195
+#: app/helpers/PrliLinksHelper.php:92
+#: app/helpers/PrliLinksHelper.php:199
 msgid "Visit Short URL: %s in a New Window"
 msgstr ""
 
-#: app/helpers/PrliLinksHelper.php:106
+#: app/helpers/PrliLinksHelper.php:110
 msgid "%d Clicks / %d Uniques"
 msgstr ""
 
-#: app/helpers/PrliLinksHelper.php:115
+#: app/helpers/PrliLinksHelper.php:119
 msgid "This link isn't being tracked"
 msgstr ""
 
-#: app/helpers/PrliLinksHelper.php:139
+#: app/helpers/PrliLinksHelper.php:143
 msgid "Target URL:"
 msgstr ""
 
@@ -1135,7 +1411,7 @@ msgstr ""
 
 #: app/helpers/PrliOnboardingHelper.php:124
 #: app/views/admin/onboarding/features.php:56
-#: pro/app/controllers/PlpLinksController.php:398
+#: pro/app/controllers/PlpLinksController.php:405
 msgid "Link Health"
 msgstr ""
 
@@ -1188,88 +1464,41 @@ msgstr ""
 msgid "Looks like you selected the Product Display feature – you've got great instincts! Supercharge your blog revenue from the start by upgrading your plan now."
 msgstr ""
 
+#: app/helpers/PrliStripeHelper.php:103
+msgid "Manage your Payments"
+msgstr ""
+
 #: app/lib/PrliAddonUpdates.php:206
 msgid "You can access in-depth information about Pretty Links at %1$sthe Pretty Links User Manual%2$s."
 msgstr ""
 
-#. Translators: Readable time to display
-#: app/lib/PrliNotifications.php:315
-msgid "%1$s ago"
-msgstr ""
-
-#: app/lib/PrliNotifications.php:449
-msgid "%s unread message"
-msgid_plural "%s unread messages"
-msgstr[0] ""
-msgstr[1] ""
-
-#: app/lib/PrliNotifications.php:497
-#: app/lib/PrliNotifications.php:568
-msgid "Dismiss"
-msgstr ""
-
-#: app/lib/PrliNotifications.php:510
-#: app/lib/PrliNotifications.php:575
-msgid "%s second ago"
-msgid_plural "%s seconds ago"
-msgstr[0] ""
-msgstr[1] ""
-
-#: app/lib/PrliNotifications.php:546
-msgid "You're all caught up!"
-msgstr ""
-
-#: app/lib/PrliNotifications.php:621
-msgid "Inbox"
-msgstr ""
-
-#: app/lib/PrliNotifications.php:624
-msgid "View Dismissed"
-msgstr ""
-
-#: app/lib/PrliNotifications.php:625
-msgid "View Active"
-msgstr ""
-
-#: app/lib/PrliNotifications.php:626
-msgid "Close"
-msgstr ""
-
-#: app/lib/PrliNotifications.php:639
-msgid "Notifications"
-msgstr ""
-
-#: app/lib/PrliNotifications.php:642
-msgid "Dismiss All"
-msgstr ""
-
-#: app/models/PrliClick.php:237
+#: app/models/PrliClick.php:239
 msgid "all links"
 msgstr ""
 
-#: app/models/PrliClick.php:244
+#: app/models/PrliClick.php:246
 msgid "All clicks"
 msgstr ""
 
-#: app/models/PrliClick.php:247
+#: app/models/PrliClick.php:249
 msgid "Unique hits"
 msgstr ""
 
-#: app/models/PrliClick.php:251
+#: app/models/PrliClick.php:253
 #: pro/app/views/metaboxes/post-sidebar.php:38
 msgid "Pretty Link:"
 msgstr ""
 
-#: app/models/PrliClick.php:251
+#: app/models/PrliClick.php:253
 msgid "on"
 msgstr ""
 
-#: app/models/PrliClick.php:251
+#: app/models/PrliClick.php:253
 #: pro/app/models/PlpReport.php:400
 msgid "between"
 msgstr ""
 
-#: app/models/PrliClick.php:251
+#: app/models/PrliClick.php:253
 #: pro/app/models/PlpReport.php:259
 #: pro/app/models/PlpReport.php:400
 msgid "and"
@@ -1312,8 +1541,12 @@ msgid "This Pretty Link Slug is already taken. There's already another pretty li
 msgstr ""
 
 #. translators: %1$s: open link tag, %2$s: close link tag, %3$s: br tag
-#: app/models/PrliUtils.php:1083
+#: app/models/PrliUtils.php:1091
 msgid "Get started by %1$sadding a URL%2$s that you want to turn into a pretty link.%3$sCome back to see how many times it was clicked."
+msgstr ""
+
+#: app/models/PrliUtils.php:1394
+msgid "NEW"
 msgstr ""
 
 #: app/views/admin/addons/addon-page-lite.php:5
@@ -1338,11 +1571,6 @@ msgstr ""
 #: app/views/admin/addons/addon-page-lite.php:15
 #: app/views/admin/addons/addon-page-pro.php:18
 msgid "Available Add-ons"
-msgstr ""
-
-#: app/views/admin/addons/addon-page-lite.php:22
-#: app/views/admin/onboarding/features.php:89
-msgid "Product Displays"
 msgstr ""
 
 #: app/views/admin/addons/addon-page-lite.php:23
@@ -1422,7 +1650,7 @@ msgid "That’s It! You're Ready to Roll"
 msgstr ""
 
 #: app/views/admin/onboarding/complete.php:6
-msgid "Your next step..."
+msgid "Your next steps..."
 msgstr ""
 
 #: app/views/admin/onboarding/complete.php:12
@@ -1434,16 +1662,25 @@ msgstr ""
 msgid "Now that you've configured Pretty Links, it's time to learn the basics of the plugin so you can start monetizing your content!"
 msgstr ""
 
-#: app/views/admin/onboarding/complete.php:24
-msgid "Make the most of your Pretty Links site..."
+#: app/views/admin/onboarding/complete.php:28
+#: app/views/admin/onboarding/complete.php:32
+msgid "Start Selling with PrettyPay™"
 msgstr ""
 
-#: app/views/admin/onboarding/complete.php:29
 #: app/views/admin/onboarding/complete.php:33
+msgid "Experience the simplicity of selling YOUR creations with customized payment links, designed to make every transaction smooth and personal."
+msgstr ""
+
+#: app/views/admin/onboarding/complete.php:40
+msgid "Stay in the loop an all things Pretty Links..."
+msgstr ""
+
+#: app/views/admin/onboarding/complete.php:45
+#: app/views/admin/onboarding/complete.php:49
 msgid "Pretty Links Blog"
 msgstr ""
 
-#: app/views/admin/onboarding/complete.php:34
+#: app/views/admin/onboarding/complete.php:50
 msgid "Sign up for tips, tricks, and industry updates from top affiliate marketers and influencers."
 msgstr ""
 
@@ -1511,9 +1748,9 @@ msgstr ""
 msgid "Let's kick things off by activating your license."
 msgstr ""
 
+#: app/views/admin/onboarding/license.php:18
 #: app/views/admin/onboarding/nav/category.php:10
 #: app/views/admin/onboarding/nav/finish.php:3
-#: app/views/admin/onboarding/nav/license.php:7
 #: app/views/admin/onboarding/nav/pretty-link.php:10
 msgid "Skip"
 msgstr ""
@@ -1521,7 +1758,7 @@ msgstr ""
 #: app/views/admin/onboarding/nav/category.php:13
 #: app/views/admin/onboarding/nav/features.php:3
 #: app/views/admin/onboarding/nav/finish.php:6
-#: app/views/admin/onboarding/nav/license.php:11
+#: app/views/admin/onboarding/nav/license.php:7
 #: app/views/admin/onboarding/nav/pretty-link.php:13
 msgid "Continue"
 msgstr ""
@@ -1631,7 +1868,7 @@ msgid "Create Pretty Link"
 msgstr ""
 
 #: app/views/admin/onboarding/parts/link_popup.php:5
-#: app/views/links/form_basic.php:35
+#: app/views/links/form_basic.php:36
 #: app/views/shared/tinymce_form_popup.php:13
 #: app/views/shared/tinymce_form_popup.php:82
 #: app/views/widgets/widget.php:11
@@ -1647,13 +1884,13 @@ msgid "Enter the slug for your pretty link."
 msgstr ""
 
 #: app/views/admin/onboarding/parts/link_popup.php:15
-#: app/views/options/form.php:80
+#: app/views/options/form.php:81
 msgid "Redirection"
 msgstr ""
 
 #: app/views/admin/onboarding/parts/link_popup.php:20
 #: app/views/shared/tinymce_form_popup.php:38
-#: pro/app/controllers/PlpLinksController.php:744
+#: pro/app/controllers/PlpLinksController.php:751
 msgid "Cloaked"
 msgstr ""
 
@@ -1829,75 +2066,288 @@ msgid "Here's how it works: You create a pretty link and let us know which keywo
 msgstr ""
 
 #: app/views/admin/onboarding/welcome.php:79
-msgid "Streamlined Categories & Tags"
+msgid "Customized Checkout Links"
 msgstr ""
 
 #: app/views/admin/onboarding/welcome.php:81
-msgid "As a content creator constantly on the move, juggling links across multiple platforms can be a chaotic experience. But fear not, because Pretty Links is here to bring order to the madness"
+msgid "PrettyPay™ is here for when you're ready to start making money from your own creative projects. From doubling up on your content's profits to marketing those quirky crafts you love making, PrettyPay™ is ready to take your side hussle’s side hussle to the marketplace."
 msgstr ""
 
 #: app/views/admin/onboarding/welcome.php:82
-msgid "Take link organization to the next level with custom link categories. Effortlessly sort and group your links based on affiliate programs, platforms, campaigns, or any criteria that help you stay in control and on top of your marketing game."
+msgid "Create personalized payment links powered by Stripe's reliable payment processing platform. Share them with your network, and watch as followers become your paying customers."
 msgstr ""
 
 #: app/views/admin/onboarding/welcome.php:83
-msgid "No more scrambling to find the right link. Everything is at your fingertips, neatly organized in one convenient location."
+msgid "*Upgrade to a Pretty Links Pro plan to avoid the 3% transaction fee on all sales."
+msgstr ""
+
+#: app/views/admin/onboarding/welcome.php:90
+msgid "Streamlined Categories & Tags"
 msgstr ""
 
 #: app/views/admin/onboarding/welcome.php:92
-msgid "When it comes to boosting your SEO, enhancing user experience, or streamlining your website, the right redirect type can be a game-changer."
+msgid "As a content creator constantly on the move, juggling links across multiple platforms can be a chaotic experience. But fear not, because Pretty Links is here to bring order to the madness."
 msgstr ""
 
 #: app/views/admin/onboarding/welcome.php:93
-msgid "Start with the traditional server-side URL redirects, such as 301 redirects for permanent redirection and 302/307 redirects for temporary redirection."
+msgid "Take link organization to the next level with custom link categories. Effortlessly sort and group your links based on affiliate programs, platforms, campaigns, or any criteria that help you stay in control and on top of your marketing game."
 msgstr ""
 
 #: app/views/admin/onboarding/welcome.php:94
-msgid "Then, Pretty Links takes it a step further by offering advanced forms of redirection. Explore JavaScript-based redirects, Meta-Refresh redirection, Framed Cloak Redirection, and even Pixel Tracking to optimize every aspect of your website."
-msgstr ""
-
-#: app/views/admin/onboarding/welcome.php:101
-msgid "Dynamic Redirect Types"
+msgid "No more scrambling to find the right link. Everything is at your fingertips, neatly organized in one convenient location."
 msgstr ""
 
 #: app/views/admin/onboarding/welcome.php:103
-msgid "In addition to traditional redirects that send users to a single destination, dynamic redirects offer an exceptional advantage by allowing you to determine the user's destination based on specific conditions."
+msgid "When it comes to boosting your SEO, enhancing user experience, or streamlining your website, the right redirect type can be a game-changer."
 msgstr ""
 
 #: app/views/admin/onboarding/welcome.php:104
-msgid "With dynamic redirects, you have the power to create rules that consider a wide range of factors, including user location, device type, and even the time of day."
+msgid "Start with the traditional server-side URL redirects, such as 301 redirects for permanent redirection and 302/307 redirects for temporary redirection."
 msgstr ""
 
 #: app/views/admin/onboarding/welcome.php:105
-msgid "This opens up a world of possibilities to deliver a personalized experience for each user, directing them to the most relevant content."
+msgid "Then, Pretty Links takes it a step further by offering advanced forms of redirection. Explore JavaScript-based redirects, Meta-Refresh redirection, Framed Cloak Redirection, and even Pixel Tracking to optimize every aspect of your website."
 msgstr ""
 
 #: app/views/admin/onboarding/welcome.php:112
-msgid "Effortlessly Import & Export Links"
+msgid "Dynamic Redirect Types"
 msgstr ""
 
 #: app/views/admin/onboarding/welcome.php:114
-msgid "Easily migrate links between platforms, back up your valuable link data, or collaborate with others by sharing links effortlessly with our 1-click import and export feature."
+msgid "In addition to traditional redirects that send users to a single destination, dynamic redirects offer an exceptional advantage by allowing you to determine the user's destination based on specific conditions."
 msgstr ""
 
 #: app/views/admin/onboarding/welcome.php:115
-msgid "Whether you're transitioning to a new website or making the smart move of switching from a different plugin, our intuitive import and export functionality ensures a smooth, secure, and stress-free process."
+msgid "With dynamic redirects, you have the power to create rules that consider a wide range of factors, including user location, device type, and even the time of day."
+msgstr ""
+
+#: app/views/admin/onboarding/welcome.php:116
+msgid "This opens up a world of possibilities to deliver a personalized experience for each user, directing them to the most relevant content."
 msgstr ""
 
 #: app/views/admin/onboarding/welcome.php:123
-msgid "Scroll-Stopping Product Displays"
+msgid "Effortlessly Import & Export Links"
 msgstr ""
 
 #: app/views/admin/onboarding/welcome.php:125
-msgid "Add a touch of pizzazz to your blog posts with product displays that demand attention and drive commissions."
+msgid "Easily migrate links between platforms, back up your valuable link data, or collaborate with others by sharing links effortlessly with our 1-click import and export feature."
 msgstr ""
 
 #: app/views/admin/onboarding/welcome.php:126
+msgid "Whether you're transitioning to a new website or making the smart move of switching from a different plugin, our intuitive import and export functionality ensures a smooth, secure, and stress-free process."
+msgstr ""
+
+#: app/views/admin/onboarding/welcome.php:134
+msgid "Scroll-Stopping Product Displays"
+msgstr ""
+
+#: app/views/admin/onboarding/welcome.php:136
+msgid "Add a touch of pizzazz to your blog posts with product displays that demand attention and drive commissions."
+msgstr ""
+
+#: app/views/admin/onboarding/welcome.php:137
 msgid "Transform ordinary text links into captivating showcases featuring vibrant images, enticing descriptions, and irresistible CTAs."
 msgstr ""
 
-#: app/views/admin/onboarding/welcome.php:127
+#: app/views/admin/onboarding/welcome.php:138
 msgid "Leverage the persuasive power of visually appealing content to captivate your audience at the precise moment they’re ready to buy."
+msgstr ""
+
+#: app/views/admin/payments/customer_portal_notice.php:3
+#: app/views/admin/payments/options.php:152
+#: app/views/admin/payments/options.php:154
+msgid "Customer Portal"
+msgstr ""
+
+#. translators: %1$s: open strong tag, %2$s: close strong tag
+#: app/views/admin/payments/customer_portal_notice.php:8
+msgid "Now that you have a recurring PrettyPay™ Link, did you know that you can let your customers manage their own subscriptions using the %1$sCustomer Portal%2$s?"
+msgstr ""
+
+#: app/views/admin/payments/options.php:32
+#: app/views/options/form.php:63
+msgid "Payments"
+msgstr ""
+
+#: app/views/admin/payments/options.php:43
+msgid "Accept all Major Credit Cards"
+msgstr ""
+
+#: app/views/admin/payments/options.php:44
+msgid "Flexible subscriptions and billing terms"
+msgstr ""
+
+#: app/views/admin/payments/options.php:45
+msgid "25+ ways to pay"
+msgstr ""
+
+#: app/views/admin/payments/options.php:50
+msgid "Accept Apple Pay"
+msgstr ""
+
+#: app/views/admin/payments/options.php:51
+msgid "Accept Google Wallet"
+msgstr ""
+
+#: app/views/admin/payments/options.php:52
+msgid "Fraud prevention tools"
+msgstr ""
+
+#: app/views/admin/payments/options.php:62
+msgid "Disconnecting from this Stripe Account will prevent PrettyPay™ links from working."
+msgstr ""
+
+#: app/views/admin/payments/options.php:68
+msgid "Connected to Stripe"
+msgstr ""
+
+#: app/views/admin/payments/options.php:70
+msgid "Connected to: %1$s %2$s %3$s"
+msgstr ""
+
+#: app/views/admin/payments/options.php:75
+msgid "Refresh Stripe Credentials"
+msgstr ""
+
+#: app/views/admin/payments/options.php:79
+msgid "Disconnect"
+msgstr ""
+
+#: app/views/admin/payments/options.php:86
+msgid "Re-Connect to Stripe"
+msgstr ""
+
+#: app/views/admin/payments/options.php:87
+msgid "Stripe has been disconnected so it may stop working PrettyPay™ links at any time. To prevent this, re-connect your Stripe account by clicking the \"Connect with Stripe\" button below."
+msgstr ""
+
+#: app/views/admin/payments/options.php:92
+#: app/views/admin/payments/options.php:98
+msgid "\"Connect with Stripe\" button"
+msgstr ""
+
+#: app/views/admin/payments/options.php:114
+msgid "The page that customers will be redirected to after making a payment using a PrettyPay™ Link, this can be overridden on individual PrettyPay™ Links."
+msgstr ""
+
+#: app/views/admin/payments/options.php:123
+msgid "Homepage"
+msgstr ""
+
+#: app/views/admin/payments/options.php:131
+#: app/views/admin/payments/options.php:133
+msgid "Default Currency"
+msgstr ""
+
+#: app/views/admin/payments/options.php:134
+msgid "Set the currency that is selected by default when creating products."
+msgstr ""
+
+#: app/views/admin/payments/options.php:140
+#: app/views/links/prettypay_link_stripe.php:44
+msgid "Currency"
+msgstr ""
+
+#: app/views/admin/payments/options.php:155
+msgid "Configure the customer portal where customers can manage their recurring PrettyPay™ Link subscriptions."
+msgstr ""
+
+#: app/views/admin/payments/options.php:182
+#: app/views/admin/payments/options.php:184
+msgid "Portal Header"
+msgstr ""
+
+#: app/views/admin/payments/options.php:185
+msgid "The messaging shown to customers in the portal."
+msgstr ""
+
+#: app/views/admin/payments/options.php:196
+#: app/views/admin/payments/options.php:198
+msgid "Privacy Policy URL"
+msgstr ""
+
+#: app/views/admin/payments/options.php:199
+msgid "A link to the business's publicly available privacy policy."
+msgstr ""
+
+#: app/views/admin/payments/options.php:210
+#: app/views/admin/payments/options.php:212
+msgid "Terms of Service URL"
+msgstr ""
+
+#: app/views/admin/payments/options.php:213
+msgid "A link to the business's publicly available terms of service."
+msgstr ""
+
+#: app/views/admin/payments/options.php:223
+msgid "Customer Update"
+msgstr ""
+
+#: app/views/admin/payments/options.php:226
+msgid "Allow customers to update their data"
+msgstr ""
+
+#: app/views/admin/payments/options.php:226
+#: app/views/admin/payments/options.php:251
+#: app/views/admin/payments/options.php:259
+#: app/views/admin/payments/options.php:275
+msgid "Recommended"
+msgstr ""
+
+#: app/views/admin/payments/options.php:230
+msgid "Allow updating names"
+msgstr ""
+
+#: app/views/admin/payments/options.php:231
+msgid "Allow updating email addresses"
+msgstr ""
+
+#: app/views/admin/payments/options.php:232
+msgid "Allow updating billing addresses"
+msgstr ""
+
+#: app/views/admin/payments/options.php:233
+msgid "Allow updating shipping addresses"
+msgstr ""
+
+#: app/views/admin/payments/options.php:234
+msgid "Allow updating phone numbers"
+msgstr ""
+
+#: app/views/admin/payments/options.php:235
+msgid "Allow updating tax IDs"
+msgstr ""
+
+#: app/views/admin/payments/options.php:248
+msgid "Payment Method Update"
+msgstr ""
+
+#: app/views/admin/payments/options.php:251
+msgid "Allow customers to update their payment method"
+msgstr ""
+
+#: app/views/admin/payments/options.php:256
+msgid "Subscription Cancel"
+msgstr ""
+
+#: app/views/admin/payments/options.php:259
+msgid "Allow subscriptions to be cancelled"
+msgstr ""
+
+#: app/views/admin/payments/options.php:263
+msgid "Cancel at end of billing period (customer can renew until then)"
+msgstr ""
+
+#: app/views/admin/payments/options.php:264
+msgid "Cancel subscriptions immediately"
+msgstr ""
+
+#: app/views/admin/payments/options.php:272
+msgid "Invoice History"
+msgstr ""
+
+#: app/views/admin/payments/options.php:275
+msgid "Show a history of paid invoices"
 msgstr ""
 
 #: app/views/admin/popups/rating.php:12
@@ -2133,11 +2583,17 @@ msgstr ""
 
 #: app/views/admin/upgrade/groups.php:8
 #: app/views/admin/upgrade/groups.php:30
+#: app/views/admin/upgrade/products.php:8
+#: app/views/admin/upgrade/products.php:27
 msgid "Title"
 msgstr ""
 
 #: app/views/admin/upgrade/groups.php:23
 msgid "No Display Groups found"
+msgstr ""
+
+#: app/views/admin/upgrade/products.php:20
+msgid "No Product Display found"
 msgstr ""
 
 #: app/views/admin/upgrade/reports.php:8
@@ -2146,6 +2602,7 @@ msgstr ""
 #: app/views/groups/list.php:41
 #: app/views/groups/list.php:93
 #: app/views/groups/new.php:37
+#: app/views/links/prettypay_link_stripe.php:34
 #: pro/app/views/reports/edit.php:44
 #: pro/app/views/reports/list.php:32
 #: pro/app/views/reports/list.php:86
@@ -2155,7 +2612,7 @@ msgstr ""
 
 #: app/views/admin/upgrade/reports.php:13
 #: app/views/admin/upgrade/reports.php:36
-#: pro/app/views/links/form.php:264
+#: pro/app/views/links/form.php:267
 #: pro/app/views/reports/list.php:37
 #: pro/app/views/reports/list.php:87
 msgid "Goal Link"
@@ -2250,6 +2707,7 @@ msgstr ""
 #: app/views/clicks/list.php:43
 #: app/views/groups/edit.php:72
 #: app/views/groups/new.php:71
+#: app/views/links/prettypay_link_stripe.php:98
 #: pro/app/views/reports/custom-report.php:22
 #: pro/app/views/reports/edit.php:66
 #: pro/app/views/reports/new.php:66
@@ -2381,11 +2839,6 @@ msgstr ""
 msgid "No Pretty Link Groups were found"
 msgstr ""
 
-#: app/views/groups/list.php:78
-#: pro/app/views/reports/list.php:71
-msgid "Edit"
-msgstr ""
-
 #: app/views/groups/list.php:79
 msgid "Are you sure you want to delete your %s Pretty Link Group?"
 msgstr ""
@@ -2419,16 +2872,16 @@ msgstr ""
 msgid "Create"
 msgstr ""
 
-#: app/views/links/form.php:30
+#: app/views/links/form.php:35
 #: app/views/links/form_product_display.php:33
 msgid "Basic"
 msgstr ""
 
-#: app/views/links/form.php:31
+#: app/views/links/form.php:36
 msgid "Advanced"
 msgstr ""
 
-#: app/views/links/form.php:34
+#: app/views/links/form.php:39
 #: app/views/links/form_product_display.php:17
 #: app/views/options/form.php:61
 msgid "Product Display"
@@ -2459,79 +2912,79 @@ msgstr ""
 msgid "Time in seconds to wait before redirecting"
 msgstr ""
 
-#: app/views/links/form_advanced.php:45
-#: app/views/links/form_advanced.php:48
+#: app/views/links/form_advanced.php:46
+#: app/views/links/form_advanced.php:49
 msgid "Parameter Forwarding"
 msgstr ""
 
-#: app/views/links/form_advanced.php:49
+#: app/views/links/form_advanced.php:50
 msgid "Forward parameters passed to this link onto the Target URL"
 msgstr ""
 
-#: app/views/links/form_advanced.php:62
+#: app/views/links/form_advanced.php:64
 msgid "Enable Pretty Link's built-in hit (click) tracking"
 msgstr ""
 
-#: app/views/links/form_basic.php:6
+#: app/views/links/form_basic.php:7
 msgid "Redirection*"
 msgstr ""
 
-#: app/views/links/form_basic.php:9
-#: app/views/options/form.php:82
+#: app/views/links/form_basic.php:10
+#: app/views/options/form.php:83
 msgid "Redirection Type"
 msgstr ""
 
-#: app/views/links/form_basic.php:10
+#: app/views/links/form_basic.php:11
 msgid "This is the method of redirection for your link."
 msgstr ""
 
-#: app/views/links/form_basic.php:24
-#: app/views/options/form.php:92
+#: app/views/links/form_basic.php:25
+#: app/views/options/form.php:93
 msgid "Get cloaked redirects, Javascript redirects and more when you %1$sUpgrade to PRO%2$s"
 msgstr ""
 
-#: app/views/links/form_basic.php:32
+#: app/views/links/form_basic.php:33
 msgid "Target URL*"
 msgstr ""
 
-#: app/views/links/form_basic.php:36
+#: app/views/links/form_basic.php:37
 msgid "This is the URL that your Pretty Link will redirect to."
 msgstr ""
 
-#: app/views/links/form_basic.php:46
+#: app/views/links/form_basic.php:48
 msgid "Pretty Link*"
 msgstr ""
 
-#: app/views/links/form_basic.php:50
+#: app/views/links/form_basic.php:52
 msgid "This is how your pretty link will appear. You can edit the Pretty Link slug here."
 msgstr ""
 
-#: app/views/links/form_basic.php:62
 #: app/views/links/form_basic.php:65
+#: app/views/links/form_basic.php:68
 msgid "Notes"
 msgstr ""
 
-#: app/views/links/form_basic.php:66
+#: app/views/links/form_basic.php:69
 msgid "This is a field where you can enter notes about a particular link. This notes field is mainly for your own link management needs. It isn't currently used anywhere on the front end."
 msgstr ""
 
 #: app/views/links/form_pro.php:17
-#: pro/app/views/links/form.php:6
+#: pro/app/views/links/form.php:7
 msgid "Expire"
 msgstr ""
 
 #: app/views/links/form_pro.php:20
-#: pro/app/views/links/form.php:9
+#: pro/app/views/links/form.php:10
 msgid "Expire Link"
 msgstr ""
 
 #: app/views/links/form_pro.php:21
-#: pro/app/views/links/form.php:10
+#: pro/app/views/links/form.php:11
 msgid "Set this link to expire after a specific date or number of clicks."
 msgstr ""
 
 #: app/views/links/form_pro.php:35
-#: pro/app/views/links/form.php:137
+#: pro/app/views/links/form.php:139
 msgid "Auto-Replace Keywords"
 msgstr ""
 
@@ -2540,12 +2993,12 @@ msgid "Enter a comma separated list of keywords / keyword phrases that you'd lik
 msgstr ""
 
 #: app/views/links/form_pro.php:46
-#: pro/app/views/links/form.php:148
+#: pro/app/views/links/form.php:150
 msgid "URL Replacements"
 msgstr ""
 
 #: app/views/links/form_pro.php:49
-#: pro/app/views/links/form.php:151
+#: pro/app/views/links/form.php:153
 msgid "Auto-Replace URLs"
 msgstr ""
 
@@ -2556,40 +3009,40 @@ msgstr ""
 
 #: app/views/links/form_pro.php:66
 #: app/views/links/form_pro.php:69
-#: pro/app/views/links/form.php:171
 #: pro/app/views/links/form.php:174
+#: pro/app/views/links/form.php:177
 msgid "Head Scripts"
 msgstr ""
 
 #. translators: %1$s: br tag, %2$s: open b tag, %3$s close b tag
 #: app/views/links/form_pro.php:72
-#: pro/app/views/links/form.php:177
+#: pro/app/views/links/form.php:180
 msgid "Useful for adding Google Analytics tracking, Facebook retargeting pixels, or any other kind of tracking script to the HTML head for this pretty link.%1$s%1$sThese scripts will be in addition to any global one's you've defined in the options.%1$s%1$s%2$sNOTE:%3$s This does NOT work with 301, 302 and 307 type redirects."
 msgstr ""
 
 #: app/views/links/form_pro.php:86
-#: pro/app/views/links/form.php:193
+#: pro/app/views/links/form.php:196
 msgid "Dynamic Redirection"
 msgstr ""
 
 #: app/views/links/form_pro.php:89
-#: pro/app/views/links/form.php:196
+#: pro/app/views/links/form.php:199
 msgid "Dynamic Redirection Options"
 msgstr ""
 
 #: app/views/links/form_pro.php:90
-#: pro/app/views/links/form.php:197
+#: pro/app/views/links/form.php:200
 msgid "These powerful options are available to give you dynamic control over redirection for this pretty link."
 msgstr ""
 
 #: app/views/links/form_pro.php:96
-#: app/views/options/form.php:573
-#: app/views/options/form.php:596
-#: app/views/options/form.php:1064
+#: app/views/options/form.php:574
+#: app/views/options/form.php:597
+#: app/views/options/form.php:1065
 #: app/views/shared/tinymce_form_popup.php:83
 #: app/views/shared/tinymce_form_popup.php:87
 #: pro/app/helpers/PlpOptionsHelper.php:50
-#: pro/app/views/links/form.php:202
+#: pro/app/views/links/form.php:205
 #: pro/app/views/options/autocreate.php:44
 #: pro/app/views/options/form.php:858
 #: pro/app/views/tools/generator.php:37
@@ -2600,22 +3053,22 @@ msgstr ""
 #: app/views/links/form_pro.php:97
 #: pro/app/models/PlpReport.php:412
 #: pro/app/models/PlpReport.php:419
-#: pro/app/views/links/form.php:203
+#: pro/app/views/links/form.php:206
 msgid "Rotation"
 msgstr ""
 
 #: app/views/links/form_pro.php:98
-#: pro/app/views/links/form.php:204
+#: pro/app/views/links/form.php:207
 msgid "Geographic"
 msgstr ""
 
 #: app/views/links/form_pro.php:99
-#: pro/app/views/links/form.php:205
+#: pro/app/views/links/form.php:208
 msgid "Technology"
 msgstr ""
 
 #: app/views/links/form_pro.php:100
-#: pro/app/views/links/form.php:206
+#: pro/app/views/links/form.php:209
 msgid "Time"
 msgstr ""
 
@@ -2664,6 +3117,7 @@ msgstr ""
 
 #: app/views/links/form_product_display.php:77
 #: app/views/links/form_product_display.php:80
+#: app/views/links/prettypay_link_stripe.php:40
 msgid "Price"
 msgstr ""
 
@@ -2707,6 +3161,186 @@ msgstr ""
 msgid "Used to change the button text displayed for the review URL."
 msgstr ""
 
+#: app/views/links/prettypay_link_stripe.php:5
+msgid "Product*"
+msgstr ""
+
+#: app/views/links/prettypay_link_stripe.php:31
+msgid "Add a new product"
+msgstr ""
+
+#: app/views/links/prettypay_link_stripe.php:36
+msgid "Premium Plan, sunglasses, etc."
+msgstr ""
+
+#: app/views/links/prettypay_link_stripe.php:55
+msgid "Recurring"
+msgstr ""
+
+#: app/views/links/prettypay_link_stripe.php:59
+msgid "One time"
+msgstr ""
+
+#: app/views/links/prettypay_link_stripe.php:63
+msgid "Billing period"
+msgstr ""
+
+#: app/views/links/prettypay_link_stripe.php:66
+msgid "Daily"
+msgstr ""
+
+#: app/views/links/prettypay_link_stripe.php:67
+#: pro/app/controllers/PlpLinksController.php:1267
+msgid "Weekly"
+msgstr ""
+
+#: app/views/links/prettypay_link_stripe.php:68
+msgid "Monthly"
+msgstr ""
+
+#: app/views/links/prettypay_link_stripe.php:69
+msgid "Every 3 months"
+msgstr ""
+
+#: app/views/links/prettypay_link_stripe.php:70
+msgid "Every 6 months"
+msgstr ""
+
+#: app/views/links/prettypay_link_stripe.php:71
+msgid "Yearly"
+msgstr ""
+
+#: app/views/links/prettypay_link_stripe.php:72
+msgid "Custom"
+msgstr ""
+
+#: app/views/links/prettypay_link_stripe.php:77
+msgid "every"
+msgstr ""
+
+#: app/views/links/prettypay_link_stripe.php:78
+msgid "Interval count"
+msgstr ""
+
+#: app/views/links/prettypay_link_stripe.php:79
+msgid "Interval"
+msgstr ""
+
+#: app/views/links/prettypay_link_stripe.php:80
+#: app/views/links/prettypay_link_stripe.php:199
+msgid "days"
+msgstr ""
+
+#: app/views/links/prettypay_link_stripe.php:81
+msgid "weeks"
+msgstr ""
+
+#: app/views/links/prettypay_link_stripe.php:82
+msgid "months"
+msgstr ""
+
+#: app/views/links/prettypay_link_stripe.php:88
+msgid "Include tax in price"
+msgstr ""
+
+#: app/views/links/prettypay_link_stripe.php:91
+#: app/views/shared/tinymce_form_popup.php:31
+#: app/views/shared/tinymce_form_popup.php:48
+#: app/views/shared/tinymce_form_popup.php:56
+#: app/views/shared/tinymce_form_popup.php:64
+#: pro/app/views/tools/generator.php:21
+#: pro/app/views/tools/generator.php:26
+#: pro/app/widgets/PlpPublicLinksWidget.php:70
+#: pro/app/widgets/PlpPublicLinksWidget.php:82
+msgid "Default"
+msgstr ""
+
+#: app/views/links/prettypay_link_stripe.php:92
+msgid "Price is inclusive of tax"
+msgstr ""
+
+#: app/views/links/prettypay_link_stripe.php:93
+msgid "Price is exclusive of tax"
+msgstr ""
+
+#: app/views/links/prettypay_link_stripe.php:99
+msgid "Add product"
+msgstr ""
+
+#: app/views/links/prettypay_link_stripe.php:114
+#: app/views/links/prettypay_link_stripe.php:119
+msgid "Collect tax automatically"
+msgstr ""
+
+#. translators: %s: link to Stripe Tax setup docs
+#: app/views/links/prettypay_link_stripe.php:122
+msgid "Tax will be calculated automatically based on the address provided by the customer. Stripe Tax must be enabled on the connected Stripe account. Additional charges may apply. Please visit %s to get started."
+msgstr ""
+
+#: app/views/links/prettypay_link_stripe.php:131
+msgid "Collect customers' addresses"
+msgstr ""
+
+#: app/views/links/prettypay_link_stripe.php:137
+msgid "Billing addresses only"
+msgstr ""
+
+#: app/views/links/prettypay_link_stripe.php:143
+msgid "Billing and shipping addresses"
+msgstr ""
+
+#: app/views/links/prettypay_link_stripe.php:158
+msgid "Require customers to provide a phone number"
+msgstr ""
+
+#: app/views/links/prettypay_link_stripe.php:164
+msgid "Allow promotion codes"
+msgstr ""
+
+#: app/views/links/prettypay_link_stripe.php:170
+#: app/views/links/prettypay_link_stripe.php:175
+msgid "Allow business customers to provide tax IDs"
+msgstr ""
+
+#. translators: %s: link to Stripe Tax ID docs
+#: app/views/links/prettypay_link_stripe.php:178
+msgid "This displays an additional field for businesses to provide their VAT or other tax ID. Stripe only displays this field to customers in certain countries. %s"
+msgstr ""
+
+#: app/views/links/prettypay_link_stripe.php:179
+msgid "View docs"
+msgstr ""
+
+#: app/views/links/prettypay_link_stripe.php:187
+msgid "Save payment details for future use"
+msgstr ""
+
+#: app/views/links/prettypay_link_stripe.php:193
+msgid "Include a free trial"
+msgstr ""
+
+#: app/views/links/prettypay_link_stripe.php:209
+#: app/views/links/prettypay_link_stripe.php:213
+msgid "Checkout Message"
+msgstr ""
+
+#: app/views/links/prettypay_link_stripe.php:214
+msgid "Custom text that should be displayed alongside the payment confirmation button (up to 1000 characters)."
+msgstr ""
+
+#: app/views/links/prettypay_link_stripe.php:224
+msgid "Thank You Page"
+msgstr ""
+
+#: app/views/links/prettypay_link_stripe.php:229
+msgid "Default (Homepage)"
+msgstr ""
+
+#. translators: %s: thank you page title
+#: app/views/links/prettypay_link_stripe.php:235
+msgid "Default (%s)"
+msgstr ""
+
 #: app/views/options/form.php:4
 msgid "User Manual"
 msgstr ""
@@ -2734,8 +3368,8 @@ msgstr ""
 
 #: app/views/options/form.php:56
 #: app/views/shared/tinymce_form_popup.php:37
-#: pro/app/controllers/PlpLinksController.php:742
-#: pro/app/controllers/PlpLinksController.php:793
+#: pro/app/controllers/PlpLinksController.php:749
+#: pro/app/controllers/PlpLinksController.php:800
 msgid "Pretty Bar"
 msgstr ""
 
@@ -2747,590 +3381,622 @@ msgstr ""
 msgid "Public"
 msgstr ""
 
-#: app/views/options/form.php:69
+#: app/views/options/form.php:70
 msgid "General Options"
 msgstr ""
 
-#: app/views/options/form.php:75
+#: app/views/options/form.php:76
 msgid "Default Link Options"
 msgstr ""
 
-#: app/views/options/form.php:83
+#: app/views/options/form.php:84
 msgid "Select the type of redirection you want your newly created links to have."
 msgstr ""
 
-#: app/views/options/form.php:100
-#: app/views/options/form.php:102
+#: app/views/options/form.php:101
+#: app/views/options/form.php:103
 msgid "Enable Tracking"
 msgstr ""
 
-#: app/views/options/form.php:103
+#: app/views/options/form.php:104
 msgid "Default all new links to be tracked."
 msgstr ""
 
-#: app/views/options/form.php:112
+#: app/views/options/form.php:113
 msgid "Enable No Follow"
 msgstr ""
 
-#: app/views/options/form.php:114
+#: app/views/options/form.php:115
 msgid "Add No Follow"
 msgstr ""
 
-#: app/views/options/form.php:115
+#: app/views/options/form.php:116
 msgid "Defaults 'No Follow' to be enabled on new links. This will add the nofollow and noindex in the HTTP Reponse headers when enabled on the link."
 msgstr ""
 
-#: app/views/options/form.php:124
+#: app/views/options/form.php:125
 msgid "Enable Sponsored"
 msgstr ""
 
-#: app/views/options/form.php:126
-#: app/views/options/form.php:452
+#: app/views/options/form.php:127
+#: app/views/options/form.php:453
 #: pro/app/views/options/form.php:167
 msgid "Add Sponsored"
 msgstr ""
 
-#: app/views/options/form.php:127
+#: app/views/options/form.php:128
 msgid "Add the 'sponsored' attribute by default to new links. This will add sponsored in the HTTP Response headers when enabled."
 msgstr ""
 
-#: app/views/options/form.php:136
+#: app/views/options/form.php:137
 msgid "Enable Permalink Fix"
 msgstr ""
 
-#: app/views/options/form.php:138
+#: app/views/options/form.php:139
 msgid "Use fix for index.php Permalink Structure"
 msgstr ""
 
-#: app/views/options/form.php:139
+#: app/views/options/form.php:140
 msgid "This option should ONLY be checked if you have elements in your permalink structure that must be present in any link on your site. For example, some WordPress installs don't have the benefit of full rewrite capabilities and in this case you'd need an index.php included in each link (http://example.com/index.php/mycoolslug instead of http://example.com/mycoolslug). If this is the case for you then check this option but the vast majority of users will want to keep this unchecked."
 msgstr ""
 
-#: app/views/options/form.php:152
-#: app/views/options/form.php:154
+#: app/views/options/form.php:153
+#: app/views/options/form.php:155
 #: pro/app/views/links/link-options.php:3
 #: pro/app/views/links/link-options.php:5
 msgid "Base Slug Prefix"
 msgstr ""
 
 #. translators: %1$s: open b tag, %2$s close b tag
-#: app/views/options/form.php:157
+#: app/views/options/form.php:158
 #: pro/app/views/links/link-options.php:8
 msgid "Use this to prefix all newly generated pretty links with a directory of your choice. For example set to %1$sout%2$s to make your pretty links look like http://site.com/%1$sout%2$s/xyz. Changing this option will NOT affect existing pretty links. If you do not wish to use a directory prefix, leave this text field blank. Whatever you type here will be sanitized and modified to ensure it is URL-safe. So %1$sHello World%2$s might get changed to something like %1$shello-world%2$s instead. Lowercase letters, numbers, dashes, and underscores are allowed."
 msgstr ""
 
-#: app/views/options/form.php:171
-#: app/views/options/form.php:173
+#: app/views/options/form.php:172
+#: app/views/options/form.php:174
 #: pro/app/views/links/link-options.php:21
 #: pro/app/views/links/link-options.php:23
 msgid "Slug Character Count"
 msgstr ""
 
-#: app/views/options/form.php:174
+#: app/views/options/form.php:175
 #: pro/app/views/links/link-options.php:24
 msgid "The number of characters to use when auto-generating a random slug for pretty links. The default is 4. You cannot use less than 2."
 msgstr ""
 
-#: app/views/options/form.php:198
+#: app/views/options/form.php:199
 msgid "Enable %sQR Codes%s"
 msgstr ""
 
-#: app/views/options/form.php:200
+#: app/views/options/form.php:201
 #: pro/app/views/links/link-options.php:57
 msgid "Generate QR Codes"
 msgstr ""
 
-#: app/views/options/form.php:201
+#: app/views/options/form.php:202
 #: pro/app/views/links/link-options.php:58
 msgid "This will enable a link in your pretty link admin that will allow you to automatically download a QR Code for each individual Pretty Link."
 msgstr ""
 
-#: app/views/options/form.php:213
-#: app/views/options/form.php:216
+#: app/views/options/form.php:214
+#: app/views/options/form.php:217
 #: pro/app/views/links/link-options.php:68
 #: pro/app/views/links/link-options.php:70
 msgid "Enable Link Health"
 msgstr ""
 
-#: app/views/options/form.php:217
+#: app/views/options/form.php:218
 #: pro/app/views/links/link-options.php:71
 msgid "Enable this option to be notified when your links are broken."
 msgstr ""
 
-#: app/views/options/form.php:229
-#: app/views/options/form.php:231
+#: app/views/options/form.php:230
+#: app/views/options/form.php:232
 #: pro/app/views/links/link-options.php:123
 #: pro/app/views/links/link-options.php:125
 msgid "Global Head Scripts"
 msgstr ""
 
 #. translators: %1$s: br tag, %2$s: open b tag, %3$s close b tag
-#: app/views/options/form.php:234
+#: app/views/options/form.php:235
 #: pro/app/views/links/link-options.php:128
 msgid "Useful for adding Google Analytics tracking, Facebook retargeting pixels, or any other kind of tracking script to the HTML head.%1$s%1$sWhat you enter in this box will be applied to all supported pretty links.%1$s%1$s%2$sNOTE:%3$s This does NOT work with 301, 302 and 307 type redirects."
 msgstr ""
 
-#: app/views/options/form.php:261
+#: app/views/options/form.php:262
 msgid "Reporting Options"
 msgstr ""
 
-#: app/views/options/form.php:266
-#: app/views/options/form.php:268
+#: app/views/options/form.php:267
+#: app/views/options/form.php:269
 msgid "Tracking Style"
 msgstr ""
 
-#: app/views/options/form.php:269
+#: app/views/options/form.php:270
 msgid "Changing your tracking style can affect the accuracy of your existing statistics. Extended mode must be used for Conversion reporting."
 msgstr ""
 
-#: app/views/options/form.php:273
+#: app/views/options/form.php:274
 msgid "Normal Tracking"
 msgstr ""
 
-#: app/views/options/form.php:274
+#: app/views/options/form.php:275
 msgid "Extended Tracking (more stats / slower performance)"
 msgstr ""
 
-#: app/views/options/form.php:275
+#: app/views/options/form.php:276
 msgid "Simple Click Count Tracking (less stats / faster performance)"
 msgstr ""
 
-#: app/views/options/form.php:281
+#: app/views/options/form.php:282
 msgid "Excluded IP Addresses:"
 msgstr ""
 
-#: app/views/options/form.php:283
+#: app/views/options/form.php:284
 msgid "Excluded IP Addresses"
 msgstr ""
 
-#: app/views/options/form.php:284
+#: app/views/options/form.php:285
 msgid "Enter IP Addresses or IP Ranges you want to exclude from your Click data and Stats. Each IP Address should be separated by commas. Example: 192.168.0.1, 192.168.2.1, 192.168.3.4 or 192.168.*.*"
 msgstr ""
 
-#: app/views/options/form.php:287
+#: app/views/options/form.php:288
 msgid "FYI, your current IP address is %s."
 msgstr ""
 
-#: app/views/options/form.php:298
+#: app/views/options/form.php:299
 msgid "Auto-Trim Clicks"
 msgstr ""
 
-#: app/views/options/form.php:300
+#: app/views/options/form.php:301
 msgid "Automatically Trim Clicks"
 msgstr ""
 
-#: app/views/options/form.php:301
+#: app/views/options/form.php:302
 msgid "Will automatically delete all hits older than 90 days. We strongly recommend doing this to keep your database performance up. This will permanently delete this click data, and is not undo-able. "
 msgstr ""
 
-#: app/views/options/form.php:310
-#: app/views/options/form.php:312
+#: app/views/options/form.php:311
+#: app/views/options/form.php:313
 msgid "Filter Robots"
 msgstr ""
 
-#: app/views/options/form.php:313
+#: app/views/options/form.php:314
 msgid "Filter known Robots and unidentifiable browser clients from your click data, stats and reports. Works best if Tracking Style above is set to 'Extended Tracking'."
 msgstr ""
 
-#: app/views/options/form.php:329
-#: app/views/options/form.php:331
+#: app/views/options/form.php:330
+#: app/views/options/form.php:332
 msgid "Whitelist IP Addresses"
 msgstr ""
 
-#: app/views/options/form.php:332
+#: app/views/options/form.php:333
 msgid "Enter IP Addresses or IP Ranges you want to always include in your Click data and Stats even if they are flagged as robots. Each IP Address should be separated by commas. Example: 192.168.0.1, 192.168.2.1, 192.168.3.4 or 192.168.*.*"
 msgstr ""
 
-#: app/views/options/form.php:346
+#: app/views/options/form.php:347
 #: pro/app/views/options/form.php:4
 msgid "Keyword &amp; URL Auto Replacements Options"
 msgstr ""
 
-#: app/views/options/form.php:354
+#: app/views/options/form.php:355
 #: pro/app/views/options/form.php:13
 msgid "Enable Keyword Replacements"
 msgstr ""
 
-#: app/views/options/form.php:356
+#: app/views/options/form.php:357
 #: pro/app/views/options/form.php:15
 msgid "Enable Keyword Auto Replacement"
 msgstr ""
 
-#: app/views/options/form.php:357
+#: app/views/options/form.php:358
 #: pro/app/views/options/form.php:16
 msgid "If checked, this will enable you to automatically replace keywords on your blog with pretty links. You will specify the specific keywords from your Pretty Link edit page."
 msgstr ""
 
-#: app/views/options/form.php:376
+#: app/views/options/form.php:377
 #: pro/app/views/options/form.php:34
 msgid "Enable Thresholds"
 msgstr ""
 
-#: app/views/options/form.php:378
+#: app/views/options/form.php:379
 #: pro/app/views/options/form.php:36
 msgid "Set Keyword Replacement Thresholds"
 msgstr ""
 
-#: app/views/options/form.php:379
+#: app/views/options/form.php:380
 #: pro/app/views/options/form.php:37
 msgid "Don't want to have too many keyword replacements per page? Select to set some reasonable keyword replacement thresholds."
 msgstr ""
 
-#: app/views/options/form.php:395
+#: app/views/options/form.php:396
 #: pro/app/views/options/form.php:87
 msgid "Keyword Disclosure"
 msgstr ""
 
-#: app/views/options/form.php:398
+#: app/views/options/form.php:399
 #: pro/app/views/options/form.php:90
 msgid "Automatically Add Affiliate Link Disclosures to Keyword Replacements"
 msgstr ""
 
 #. translators: %1$s: open b tag, %2$s close b tag
-#: app/views/options/form.php:401
+#: app/views/options/form.php:402
 #: pro/app/views/options/form.php:93
 msgid "When enabled, this will add an affiliate link disclosure next to each one of your keyword replacements. %1$sNote:%2$s This does not apply to url replacements--only keyword replacements."
 msgstr ""
 
-#: app/views/options/form.php:417
+#: app/views/options/form.php:418
 #: pro/app/views/options/form.php:134
 #: pro/app/views/options/form.php:245
 msgid "Open in New Window"
 msgstr ""
 
-#: app/views/options/form.php:419
+#: app/views/options/form.php:420
 #: pro/app/views/options/form.php:136
 msgid "Open Keyword Replacement Links in New Window"
 msgstr ""
 
-#: app/views/options/form.php:420
+#: app/views/options/form.php:421
 #: pro/app/views/options/form.php:137
 msgid "Ensure that these keyword replacement links are opened in a separate window."
 msgstr ""
 
-#: app/views/options/form.php:432
+#: app/views/options/form.php:433
 #: pro/app/views/options/form.php:148
 msgid "Add Nofollow"
 msgstr ""
 
-#: app/views/options/form.php:434
+#: app/views/options/form.php:435
 #: pro/app/views/options/form.php:150
 msgid "Add 'nofollow' attribute to all Keyword Replacement Pretty Links"
 msgstr ""
 
 #. translators: %1$s: open code tag, %2$s: close code tag
-#: app/views/options/form.php:437
+#: app/views/options/form.php:438
 #: pro/app/views/options/form.php:153
 msgid "This adds the html %1$sNOFOLLOW%2$s attribute to all keyword replacement links."
 msgstr ""
 
-#: app/views/options/form.php:454
+#: app/views/options/form.php:455
 #: pro/app/views/options/form.php:169
 msgid "Add 'sponsored' attribute to all Keyword Replacement Pretty Links"
 msgstr ""
 
 #. translators: %1$s: open code tag, %2$s: close code tag
-#: app/views/options/form.php:457
+#: app/views/options/form.php:458
 #: pro/app/views/options/form.php:172
 msgid "This adds the html %1$sSPONSORED%2$s attribute to all keyword replacement links."
 msgstr ""
 
-#: app/views/options/form.php:472
-#: app/views/options/form.php:475
+#: app/views/options/form.php:473
+#: app/views/options/form.php:476
 #: pro/app/views/options/form.php:186
 #: pro/app/views/options/form.php:189
 msgid "Keyword Post Types"
 msgstr ""
 
-#: app/views/options/form.php:476
+#: app/views/options/form.php:477
 #: pro/app/views/options/form.php:190
 msgid "Select the post types you'd like keywords to be replaced in."
 msgstr ""
 
-#: app/views/options/form.php:483
-#: app/views/options/form.php:546
+#: app/views/options/form.php:484
+#: app/views/options/form.php:547
 msgid "Posts"
 msgstr ""
 
-#: app/views/options/form.php:487
-#: app/views/options/form.php:550
+#: app/views/options/form.php:488
+#: app/views/options/form.php:551
 msgid "Pages"
 msgstr ""
 
-#: app/views/options/form.php:500
+#: app/views/options/form.php:501
 #: pro/app/views/options/form.php:206
 msgid "Enable URL Replacements"
 msgstr ""
 
-#: app/views/options/form.php:502
+#: app/views/options/form.php:503
 #: pro/app/views/options/form.php:208
 msgid "Enable URL Auto Replacement"
 msgstr ""
 
-#: app/views/options/form.php:503
+#: app/views/options/form.php:504
 #: pro/app/views/options/form.php:209
 msgid "If checked, this will enable you to automatically replace URLs on your blog with pretty links. You will specify the specific URLs from your Pretty Link edit page."
 msgstr ""
 
-#: app/views/options/form.php:522
+#: app/views/options/form.php:523
 #: pro/app/views/options/form.php:225
 msgid "Replace All URLs"
 msgstr ""
 
-#: app/views/options/form.php:524
+#: app/views/options/form.php:525
 #: pro/app/views/options/form.php:227
 msgid "Replace All non-Pretty Link URLs With Pretty Link URLs"
 msgstr ""
 
-#: app/views/options/form.php:525
+#: app/views/options/form.php:526
 #: pro/app/views/options/form.php:228
 msgid "This feature will take each url it finds and create or use an existing pretty link pointing to the url and replace it with the pretty link."
 msgstr ""
 
-#: app/views/options/form.php:536
-#: app/views/options/form.php:538
+#: app/views/options/form.php:537
+#: app/views/options/form.php:539
 #: pro/app/views/options/form.php:283
 #: pro/app/views/options/form.php:286
 msgid "URL Post Types"
 msgstr ""
 
-#: app/views/options/form.php:539
+#: app/views/options/form.php:540
 #: pro/app/views/options/form.php:287
 msgid "Select the post types you'd like URLs to be replaced in."
 msgstr ""
 
-#: app/views/options/form.php:563
+#: app/views/options/form.php:564
 #: pro/app/views/options/form.php:303
 msgid "Replace in Comments"
 msgstr ""
 
-#: app/views/options/form.php:565
+#: app/views/options/form.php:566
 #: pro/app/views/options/form.php:305
 msgid "Replace Keywords and URLs in Comments"
 msgstr ""
 
-#: app/views/options/form.php:566
+#: app/views/options/form.php:567
 #: pro/app/views/options/form.php:306
 msgid "This option will enable the keyword / URL replacement routine to run in Comments."
 msgstr ""
 
-#: app/views/options/form.php:580
+#: app/views/options/form.php:581
 #: pro/app/views/options/form.php:317
 msgid "Replace in Feeds"
 msgstr ""
 
-#: app/views/options/form.php:582
+#: app/views/options/form.php:583
 #: pro/app/views/options/form.php:319
 msgid "Replace Keywords and URLs in Feeds"
 msgstr ""
 
 #. translators: %1$s: br tag, %2$s open strong tag, %3$s: close strong tag
-#: app/views/options/form.php:585
+#: app/views/options/form.php:586
 #: pro/app/views/options/form.php:322
 msgid "This option will enable the keyword / URL replacement routine to run in RSS Feeds.%1$s%2$sNote:%3$s This option can slow the load speed of your RSS feed -- unless used in conjunction with a caching plugin like W3 Total Cache or WP Super Cache.%1$s%2$sNote #2%3$s This option will only work if you have \"Full Text\" selected in your General WordPress Reading settings.%1$s%2$sNote #3:%3$s If this option is used along with \"Replace Keywords and URLs in Comments\" then your post comment feeds will have keywords replaced in them as well."
 msgstr ""
 
-#: app/views/options/form.php:603
+#: app/views/options/form.php:604
 #: pro/app/views/options/form.php:337
 msgid "Disclosure Notice"
 msgstr ""
 
-#: app/views/options/form.php:605
+#: app/views/options/form.php:606
 #: pro/app/views/options/form.php:340
 msgid "Automatically Add a Link to Disclosures"
 msgstr ""
 
-#: app/views/options/form.php:606
+#: app/views/options/form.php:607
 #: pro/app/views/options/form.php:341
 msgid "When enabled, this will add a link to your official affiliate link disclosure page to any page, post or custom post type that have any keyword or URL replacements. You'll also be able to customize the URL and position of the disclosure link."
 msgstr ""
 
-#: app/views/options/form.php:617
-#: app/views/options/form.php:619
+#: app/views/options/form.php:618
+#: app/views/options/form.php:620
 #: pro/app/views/options/form.php:412
 #: pro/app/views/options/form.php:414
 msgid "Enable Replacement Indexing"
 msgstr ""
 
 #. translators: %1$s: br tag, %2$s open strong tag, %3$s: close strong tag
-#: app/views/options/form.php:622
+#: app/views/options/form.php:623
 #: pro/app/views/options/form.php:417
 msgid "This feature will index all of your keyword & URL replacements to dramatically improve performance.%1$s%1$sIf your site has a large number of replacements and/or posts then this feature may increase the load on your server temporarily and your replacements may not show up on your posts for a day or two initially (until all posts are indexed).%1$s%1$s%2$sNote:%3$s this feature requires the use of wp-cron."
 msgstr ""
 
-#: app/views/options/form.php:640
+#: app/views/options/form.php:641
 msgid "Keyword &amp; URL Options"
 msgstr ""
 
-#: app/views/options/form.php:647
-#: app/views/options/form.php:691
+#: app/views/options/form.php:648
+#: app/views/options/form.php:692
 #: pro/app/views/options/form.php:491
 msgid "Auto-Create Shortlink Options"
 msgstr ""
 
-#: app/views/options/form.php:655
+#: app/views/options/form.php:656
 msgid "Post Shortlinks"
 msgstr ""
 
-#: app/views/options/form.php:658
+#: app/views/options/form.php:659
 msgid "Create Pretty Links for Posts"
 msgstr ""
 
-#: app/views/options/form.php:659
+#: app/views/options/form.php:660
 msgid "Automatically Create a Pretty Link for each of your published Posts"
 msgstr ""
 
-#: app/views/options/form.php:672
+#: app/views/options/form.php:673
 msgid "Page Shortlinks"
 msgstr ""
 
-#: app/views/options/form.php:675
+#: app/views/options/form.php:676
 msgid "Create Pretty Links for Pages"
 msgstr ""
 
-#: app/views/options/form.php:676
+#: app/views/options/form.php:677
 msgid "Automatically Create a Pretty Link for each of your published Pages"
 msgstr ""
 
-#: app/views/options/form.php:1015
-#: app/views/options/form.php:1081
+#: app/views/options/form.php:1016
+#: app/views/options/form.php:1082
 #: pro/app/views/options/form.php:806
 msgid "Social Buttons Options"
 msgstr ""
 
-#: app/views/options/form.php:1019
+#: app/views/options/form.php:1020
 #: pro/app/views/options/form.php:809
 msgid "Buttons"
 msgstr ""
 
-#: app/views/options/form.php:1021
+#: app/views/options/form.php:1022
 #: pro/app/views/options/form.php:811
 msgid "Social Buttons"
 msgstr ""
 
 #. translators: %1$s: br tag, %2$s open code tag, %3$s close code tag
-#: app/views/options/form.php:1024
+#: app/views/options/form.php:1025
 #: pro/app/views/options/form.php:814
 msgid "Select which buttons you want to be visible on the Social Buttons Bar.%1$s%1$s%2$sNote:%3$s In order for the Social Buttons Bar to be visible on Pages and or Posts, you must first enable it in the \"Page &amp; Post Options\" section above."
 msgstr ""
 
-#: app/views/options/form.php:1046
+#: app/views/options/form.php:1047
 #: pro/app/views/options/form.php:841
 msgid "Buttons Placement"
 msgstr ""
 
-#: app/views/options/form.php:1048
+#: app/views/options/form.php:1049
 #: pro/app/views/options/form.php:843
 msgid "Social Buttons Placement"
 msgstr ""
 
 #. translators: %1$s: br tag, %2$s open code tag, %3$s close code tag
-#: app/views/options/form.php:1051
+#: app/views/options/form.php:1052
 #: pro/app/views/options/form.php:846
 msgid "This determines where your Social Buttons Placement should appear in relation to content on Pages and/or Posts.%1$s%1$s%2$sNote:%3$s If you want this bar to appear then you must enable it in the \"Auto-Create Links\" section above."
 msgstr ""
 
-#: app/views/options/form.php:1061
+#: app/views/options/form.php:1062
 #: pro/app/views/options/form.php:399
 #: pro/app/views/options/form.php:855
 msgid "Top"
 msgstr ""
 
-#: app/views/options/form.php:1062
+#: app/views/options/form.php:1063
 #: pro/app/views/options/form.php:398
 #: pro/app/views/options/form.php:856
 msgid "Bottom"
 msgstr ""
 
-#: app/views/options/form.php:1063
+#: app/views/options/form.php:1064
 #: pro/app/views/options/form.php:400
 #: pro/app/views/options/form.php:857
 msgid "Top and Bottom"
 msgstr ""
 
-#: app/views/options/form.php:1066
+#: app/views/options/form.php:1067
 #: pro/app/views/options/form.php:860
 msgid "Social Buttons Manual Placement"
 msgstr ""
 
 #. translators: %1$s: example shortcode, %2$s: example template tag
-#: app/views/options/form.php:1069
+#: app/views/options/form.php:1070
 #: pro/app/views/options/form.php:863
 msgid "If you select none, you can still show your Social Buttons by manually adding the %1$s shortcode to your blog posts or %2$s template tag to your WordPress Theme."
 msgstr ""
 
-#: app/views/options/form.php:1089
+#: app/views/options/form.php:1090
 #: pro/app/views/options/form.php:891
 msgid "Public Links Creation Options"
 msgstr ""
 
-#: app/views/options/form.php:1097
+#: app/views/options/form.php:1098
 #: pro/app/views/options/form.php:897
 msgid "Enable Public Links"
 msgstr ""
 
-#: app/views/options/form.php:1099
+#: app/views/options/form.php:1100
 #: pro/app/views/options/form.php:899
 msgid "Enable Public Link Creation on this Site"
 msgstr ""
 
-#: app/views/options/form.php:1101
+#: app/views/options/form.php:1102
 #: pro/app/views/options/form.php:901
 msgid "This option will give you the ability to turn your website into a link shortening service for your users. Once selected, you can enable the Pretty Links Pro Sidebar Widget or just display the link creation form with the %s shortcode in any post or page on your website."
 msgstr ""
 
-#: app/views/options/form.php:1117
+#: app/views/options/form.php:1118
 msgid "Public Link Options"
 msgstr ""
 
-#: app/views/options/form.php:1124
-#: app/views/options/form.php:1204
+#: app/views/options/form.php:1125
+#: app/views/options/form.php:1205
 msgid "Product Display Options"
 msgstr ""
 
-#: app/views/options/form.php:1132
-#: app/views/options/form.php:1134
+#: app/views/options/form.php:1133
+#: app/views/options/form.php:1135
 msgid "Button Background Color"
 msgstr ""
 
-#: app/views/options/form.php:1135
+#: app/views/options/form.php:1136
 msgid "Background color for the two buttons used in the displays."
 msgstr ""
 
-#: app/views/options/form.php:1146
-#: app/views/options/form.php:1148
+#: app/views/options/form.php:1147
+#: app/views/options/form.php:1149
 msgid "Button Text Color"
 msgstr ""
 
-#: app/views/options/form.php:1149
+#: app/views/options/form.php:1150
 msgid "Text color for the two buttons used in the displays."
 msgstr ""
 
-#: app/views/options/form.php:1160
-#: app/views/options/form.php:1162
+#: app/views/options/form.php:1161
+#: app/views/options/form.php:1163
 msgid "Button Hover Background Color"
 msgstr ""
 
-#: app/views/options/form.php:1163
+#: app/views/options/form.php:1164
 msgid "Background color for the two buttons used in the displays when hovered over."
 msgstr ""
 
-#: app/views/options/form.php:1174
-#: app/views/options/form.php:1176
+#: app/views/options/form.php:1175
+#: app/views/options/form.php:1177
 msgid "Button Hover Text Color"
 msgstr ""
 
-#: app/views/options/form.php:1177
+#: app/views/options/form.php:1178
 msgid "Text color for the two buttons used in the displays when hovered over."
 msgstr ""
 
-#: app/views/options/form.php:1188
-#: app/views/options/form.php:1190
+#: app/views/options/form.php:1189
+#: app/views/options/form.php:1191
 msgid "Affiliate Disclosure"
 msgstr ""
 
-#: app/views/options/form.php:1191
+#: app/views/options/form.php:1192
 msgid "Disclosure to show for the display."
+msgstr ""
+
+#: app/views/prettypay/fee_notice.php:4
+msgid "Pocket All Your Profits!"
+msgstr ""
+
+#: app/views/prettypay/fee_notice.php:5
+msgid "<i>Psst!</i> Without a licensed plan, PrettyPay™ links come with a 3% transaction fee. Switch to a premium plan today for total earnings every time!"
+msgstr ""
+
+#: app/views/prettypay/invoice.php:12
+msgid "Order: %s"
+msgstr ""
+
+#: app/views/prettypay/invoice.php:35
+msgid "Subtotal"
+msgstr ""
+
+#: app/views/prettypay/invoice.php:41
+msgid "Discount"
+msgstr ""
+
+#: app/views/prettypay/invoice.php:48
+msgid "Tax"
+msgstr ""
+
+#: app/views/prettypay/invoice.php:54
+msgid "Total"
+msgstr ""
+
+#: app/views/prettypay/invoice.php:61
+msgid "Manage Subscription"
 msgstr ""
 
 #: app/views/shared/link-table-nav.php:16
@@ -3377,7 +4043,7 @@ msgstr ""
 
 #: app/views/shared/tinymce_form_popup.php:10
 #: js/build/editor.js:3
-#: js/editor/components/link-editor/index.js:453
+#: js/editor/components/link-editor/index.js:456
 msgid "Create New Pretty Link"
 msgstr ""
 
@@ -3402,32 +4068,21 @@ msgstr ""
 msgid "Redirect Type"
 msgstr ""
 
-#: app/views/shared/tinymce_form_popup.php:31
-#: app/views/shared/tinymce_form_popup.php:48
-#: app/views/shared/tinymce_form_popup.php:56
-#: app/views/shared/tinymce_form_popup.php:64
-#: pro/app/views/tools/generator.php:21
-#: pro/app/views/tools/generator.php:26
-#: pro/app/widgets/PlpPublicLinksWidget.php:70
-#: pro/app/widgets/PlpPublicLinksWidget.php:82
-msgid "Default"
-msgstr ""
-
 #: app/views/shared/tinymce_form_popup.php:39
-#: pro/app/controllers/PlpLinksController.php:745
-#: pro/app/controllers/PlpLinksController.php:795
+#: pro/app/controllers/PlpLinksController.php:752
+#: pro/app/controllers/PlpLinksController.php:802
 msgid "Pixel"
 msgstr ""
 
 #: app/views/shared/tinymce_form_popup.php:40
-#: pro/app/controllers/PlpLinksController.php:746
-#: pro/app/controllers/PlpLinksController.php:796
+#: pro/app/controllers/PlpLinksController.php:753
+#: pro/app/controllers/PlpLinksController.php:803
 msgid "Meta Refresh"
 msgstr ""
 
 #: app/views/shared/tinymce_form_popup.php:41
-#: pro/app/controllers/PlpLinksController.php:747
-#: pro/app/controllers/PlpLinksController.php:797
+#: pro/app/controllers/PlpLinksController.php:754
+#: pro/app/controllers/PlpLinksController.php:804
 msgid "Javascript"
 msgstr ""
 
@@ -3575,6 +4230,986 @@ msgstr ""
 msgid "Seriously, only click this link if you want to delete all the Click data in your database."
 msgstr ""
 
+#: i18n/countries.php:5
+msgid "Afghanistan"
+msgstr ""
+
+#: i18n/countries.php:6
+msgid "&#197;land Islands"
+msgstr ""
+
+#: i18n/countries.php:7
+msgid "Albania"
+msgstr ""
+
+#: i18n/countries.php:8
+msgid "Algeria"
+msgstr ""
+
+#: i18n/countries.php:9
+msgid "Andorra"
+msgstr ""
+
+#: i18n/countries.php:10
+msgid "Angola"
+msgstr ""
+
+#: i18n/countries.php:11
+msgid "Anguilla"
+msgstr ""
+
+#: i18n/countries.php:12
+msgid "Antarctica"
+msgstr ""
+
+#: i18n/countries.php:13
+msgid "Antigua and Barbuda"
+msgstr ""
+
+#: i18n/countries.php:14
+msgid "Argentina"
+msgstr ""
+
+#: i18n/countries.php:15
+msgid "Armenia"
+msgstr ""
+
+#: i18n/countries.php:16
+msgid "Aruba"
+msgstr ""
+
+#: i18n/countries.php:17
+msgid "Australia"
+msgstr ""
+
+#: i18n/countries.php:18
+msgid "Austria"
+msgstr ""
+
+#: i18n/countries.php:19
+msgid "Azerbaijan"
+msgstr ""
+
+#: i18n/countries.php:20
+msgid "Bahamas"
+msgstr ""
+
+#: i18n/countries.php:21
+msgid "Bahrain"
+msgstr ""
+
+#: i18n/countries.php:22
+msgid "Bangladesh"
+msgstr ""
+
+#: i18n/countries.php:23
+msgid "Barbados"
+msgstr ""
+
+#: i18n/countries.php:24
+msgid "Belarus"
+msgstr ""
+
+#: i18n/countries.php:25
+msgid "Belgium"
+msgstr ""
+
+#: i18n/countries.php:26
+msgid "Belau"
+msgstr ""
+
+#: i18n/countries.php:27
+msgid "Belize"
+msgstr ""
+
+#: i18n/countries.php:28
+msgid "Benin"
+msgstr ""
+
+#: i18n/countries.php:29
+msgid "Bermuda"
+msgstr ""
+
+#: i18n/countries.php:30
+msgid "Bhutan"
+msgstr ""
+
+#: i18n/countries.php:31
+msgid "Bolivia"
+msgstr ""
+
+#: i18n/countries.php:32
+msgid "Bonaire, Saint Eustatius and Saba"
+msgstr ""
+
+#: i18n/countries.php:33
+msgid "Bosnia and Herzegovina"
+msgstr ""
+
+#: i18n/countries.php:34
+msgid "Botswana"
+msgstr ""
+
+#: i18n/countries.php:35
+msgid "Bouvet Island"
+msgstr ""
+
+#: i18n/countries.php:36
+msgid "Brazil"
+msgstr ""
+
+#: i18n/countries.php:37
+msgid "British Indian Ocean Territory"
+msgstr ""
+
+#: i18n/countries.php:38
+msgid "British Virgin Islands"
+msgstr ""
+
+#: i18n/countries.php:39
+msgid "Brunei"
+msgstr ""
+
+#: i18n/countries.php:40
+msgid "Bulgaria"
+msgstr ""
+
+#: i18n/countries.php:41
+msgid "Burkina Faso"
+msgstr ""
+
+#: i18n/countries.php:42
+msgid "Burundi"
+msgstr ""
+
+#: i18n/countries.php:43
+msgid "Cambodia"
+msgstr ""
+
+#: i18n/countries.php:44
+msgid "Cameroon"
+msgstr ""
+
+#: i18n/countries.php:45
+msgid "Canada"
+msgstr ""
+
+#: i18n/countries.php:46
+msgid "Cape Verde"
+msgstr ""
+
+#: i18n/countries.php:47
+msgid "Cayman Islands"
+msgstr ""
+
+#: i18n/countries.php:48
+msgid "Central African Republic"
+msgstr ""
+
+#: i18n/countries.php:49
+msgid "Chad"
+msgstr ""
+
+#: i18n/countries.php:50
+msgid "Chile"
+msgstr ""
+
+#: i18n/countries.php:51
+msgid "China"
+msgstr ""
+
+#: i18n/countries.php:52
+msgid "Christmas Island"
+msgstr ""
+
+#: i18n/countries.php:53
+msgid "Cocos (Keeling) Islands"
+msgstr ""
+
+#: i18n/countries.php:54
+msgid "Colombia"
+msgstr ""
+
+#: i18n/countries.php:55
+msgid "Comoros"
+msgstr ""
+
+#: i18n/countries.php:56
+msgid "Congo (Brazzaville)"
+msgstr ""
+
+#: i18n/countries.php:57
+msgid "Congo (Kinshasa)"
+msgstr ""
+
+#: i18n/countries.php:58
+msgid "Cook Islands"
+msgstr ""
+
+#: i18n/countries.php:59
+msgid "Costa Rica"
+msgstr ""
+
+#: i18n/countries.php:60
+msgid "Croatia"
+msgstr ""
+
+#: i18n/countries.php:61
+msgid "Cuba"
+msgstr ""
+
+#: i18n/countries.php:62
+msgid "Cura&Ccedil;ao"
+msgstr ""
+
+#: i18n/countries.php:63
+msgid "Cyprus"
+msgstr ""
+
+#: i18n/countries.php:64
+msgid "Czech Republic"
+msgstr ""
+
+#: i18n/countries.php:65
+msgid "Denmark"
+msgstr ""
+
+#: i18n/countries.php:66
+msgid "Djibouti"
+msgstr ""
+
+#: i18n/countries.php:67
+msgid "Dominica"
+msgstr ""
+
+#: i18n/countries.php:68
+msgid "Dominican Republic"
+msgstr ""
+
+#: i18n/countries.php:69
+msgid "Ecuador"
+msgstr ""
+
+#: i18n/countries.php:70
+msgid "Egypt"
+msgstr ""
+
+#: i18n/countries.php:71
+msgid "El Salvador"
+msgstr ""
+
+#: i18n/countries.php:72
+msgid "Equatorial Guinea"
+msgstr ""
+
+#: i18n/countries.php:73
+msgid "Eritrea"
+msgstr ""
+
+#: i18n/countries.php:74
+msgid "Estonia"
+msgstr ""
+
+#: i18n/countries.php:75
+msgid "Ethiopia"
+msgstr ""
+
+#: i18n/countries.php:76
+msgid "Falkland Islands"
+msgstr ""
+
+#: i18n/countries.php:77
+msgid "Faroe Islands"
+msgstr ""
+
+#: i18n/countries.php:78
+msgid "Fiji"
+msgstr ""
+
+#: i18n/countries.php:79
+msgid "Finland"
+msgstr ""
+
+#: i18n/countries.php:80
+msgid "France"
+msgstr ""
+
+#: i18n/countries.php:81
+msgid "French Guiana"
+msgstr ""
+
+#: i18n/countries.php:82
+msgid "French Polynesia"
+msgstr ""
+
+#: i18n/countries.php:83
+msgid "French Southern Territories"
+msgstr ""
+
+#: i18n/countries.php:84
+msgid "Gabon"
+msgstr ""
+
+#: i18n/countries.php:85
+msgid "Gambia"
+msgstr ""
+
+#: i18n/countries.php:86
+msgid "Georgia"
+msgstr ""
+
+#: i18n/countries.php:87
+msgid "Germany"
+msgstr ""
+
+#: i18n/countries.php:88
+msgid "Ghana"
+msgstr ""
+
+#: i18n/countries.php:89
+msgid "Gibraltar"
+msgstr ""
+
+#: i18n/countries.php:90
+msgid "Greece"
+msgstr ""
+
+#: i18n/countries.php:91
+msgid "Greenland"
+msgstr ""
+
+#: i18n/countries.php:92
+msgid "Grenada"
+msgstr ""
+
+#: i18n/countries.php:93
+msgid "Guadeloupe"
+msgstr ""
+
+#: i18n/countries.php:94
+msgid "Guatemala"
+msgstr ""
+
+#: i18n/countries.php:95
+msgid "Guernsey"
+msgstr ""
+
+#: i18n/countries.php:96
+msgid "Guinea"
+msgstr ""
+
+#: i18n/countries.php:97
+msgid "Guinea-Bissau"
+msgstr ""
+
+#: i18n/countries.php:98
+msgid "Guyana"
+msgstr ""
+
+#: i18n/countries.php:99
+msgid "Haiti"
+msgstr ""
+
+#: i18n/countries.php:100
+msgid "Heard Island and McDonald Islands"
+msgstr ""
+
+#: i18n/countries.php:101
+msgid "Honduras"
+msgstr ""
+
+#: i18n/countries.php:102
+msgid "Hong Kong"
+msgstr ""
+
+#: i18n/countries.php:103
+msgid "Hungary"
+msgstr ""
+
+#: i18n/countries.php:104
+msgid "Iceland"
+msgstr ""
+
+#: i18n/countries.php:105
+msgid "India"
+msgstr ""
+
+#: i18n/countries.php:106
+msgid "Indonesia"
+msgstr ""
+
+#: i18n/countries.php:107
+msgid "Iran"
+msgstr ""
+
+#: i18n/countries.php:108
+msgid "Iraq"
+msgstr ""
+
+#: i18n/countries.php:109
+msgid "Republic of Ireland"
+msgstr ""
+
+#: i18n/countries.php:110
+msgid "Isle of Man"
+msgstr ""
+
+#: i18n/countries.php:111
+msgid "Israel"
+msgstr ""
+
+#: i18n/countries.php:112
+msgid "Italy"
+msgstr ""
+
+#: i18n/countries.php:113
+msgid "Ivory Coast"
+msgstr ""
+
+#: i18n/countries.php:114
+msgid "Jamaica"
+msgstr ""
+
+#: i18n/countries.php:115
+msgid "Japan"
+msgstr ""
+
+#: i18n/countries.php:116
+msgid "Jersey"
+msgstr ""
+
+#: i18n/countries.php:117
+msgid "Jordan"
+msgstr ""
+
+#: i18n/countries.php:118
+msgid "Kazakhstan"
+msgstr ""
+
+#: i18n/countries.php:119
+msgid "Kenya"
+msgstr ""
+
+#: i18n/countries.php:120
+msgid "Kiribati"
+msgstr ""
+
+#: i18n/countries.php:121
+msgid "Kuwait"
+msgstr ""
+
+#: i18n/countries.php:122
+msgid "Kyrgyzstan"
+msgstr ""
+
+#: i18n/countries.php:123
+msgid "Laos"
+msgstr ""
+
+#: i18n/countries.php:124
+msgid "Latvia"
+msgstr ""
+
+#: i18n/countries.php:125
+msgid "Lebanon"
+msgstr ""
+
+#: i18n/countries.php:126
+msgid "Lesotho"
+msgstr ""
+
+#: i18n/countries.php:127
+msgid "Liberia"
+msgstr ""
+
+#: i18n/countries.php:128
+msgid "Libya"
+msgstr ""
+
+#: i18n/countries.php:129
+msgid "Liechtenstein"
+msgstr ""
+
+#: i18n/countries.php:130
+msgid "Lithuania"
+msgstr ""
+
+#: i18n/countries.php:131
+msgid "Luxembourg"
+msgstr ""
+
+#: i18n/countries.php:132
+msgid "Macao S.A.R., China"
+msgstr ""
+
+#: i18n/countries.php:133
+msgid "Macedonia"
+msgstr ""
+
+#: i18n/countries.php:134
+msgid "Madagascar"
+msgstr ""
+
+#: i18n/countries.php:135
+msgid "Malawi"
+msgstr ""
+
+#: i18n/countries.php:136
+msgid "Malaysia"
+msgstr ""
+
+#: i18n/countries.php:137
+msgid "Maldives"
+msgstr ""
+
+#: i18n/countries.php:138
+msgid "Mali"
+msgstr ""
+
+#: i18n/countries.php:139
+msgid "Malta"
+msgstr ""
+
+#: i18n/countries.php:140
+msgid "Marshall Islands"
+msgstr ""
+
+#: i18n/countries.php:141
+msgid "Martinique"
+msgstr ""
+
+#: i18n/countries.php:142
+msgid "Mauritania"
+msgstr ""
+
+#: i18n/countries.php:143
+msgid "Mauritius"
+msgstr ""
+
+#: i18n/countries.php:144
+msgid "Mayotte"
+msgstr ""
+
+#: i18n/countries.php:145
+msgid "Mexico"
+msgstr ""
+
+#: i18n/countries.php:146
+msgid "Micronesia"
+msgstr ""
+
+#: i18n/countries.php:147
+msgid "Moldova"
+msgstr ""
+
+#: i18n/countries.php:148
+msgid "Monaco"
+msgstr ""
+
+#: i18n/countries.php:149
+msgid "Mongolia"
+msgstr ""
+
+#: i18n/countries.php:150
+msgid "Montenegro"
+msgstr ""
+
+#: i18n/countries.php:151
+msgid "Montserrat"
+msgstr ""
+
+#: i18n/countries.php:152
+msgid "Morocco"
+msgstr ""
+
+#: i18n/countries.php:153
+msgid "Mozambique"
+msgstr ""
+
+#: i18n/countries.php:154
+msgid "Myanmar"
+msgstr ""
+
+#: i18n/countries.php:155
+msgid "Namibia"
+msgstr ""
+
+#: i18n/countries.php:156
+msgid "Nauru"
+msgstr ""
+
+#: i18n/countries.php:157
+msgid "Nepal"
+msgstr ""
+
+#: i18n/countries.php:158
+msgid "Netherlands"
+msgstr ""
+
+#: i18n/countries.php:159
+msgid "Netherlands Antilles"
+msgstr ""
+
+#: i18n/countries.php:160
+msgid "New Caledonia"
+msgstr ""
+
+#: i18n/countries.php:161
+msgid "New Zealand"
+msgstr ""
+
+#: i18n/countries.php:162
+msgid "Nicaragua"
+msgstr ""
+
+#: i18n/countries.php:163
+msgid "Niger"
+msgstr ""
+
+#: i18n/countries.php:164
+msgid "Nigeria"
+msgstr ""
+
+#: i18n/countries.php:165
+msgid "Niue"
+msgstr ""
+
+#: i18n/countries.php:166
+msgid "Norfolk Island"
+msgstr ""
+
+#: i18n/countries.php:167
+msgid "North Korea"
+msgstr ""
+
+#: i18n/countries.php:168
+msgid "Norway"
+msgstr ""
+
+#: i18n/countries.php:169
+msgid "Oman"
+msgstr ""
+
+#: i18n/countries.php:170
+msgid "Pakistan"
+msgstr ""
+
+#: i18n/countries.php:171
+msgid "Palestinian Territory"
+msgstr ""
+
+#: i18n/countries.php:172
+msgid "Panama"
+msgstr ""
+
+#: i18n/countries.php:173
+msgid "Papua New Guinea"
+msgstr ""
+
+#: i18n/countries.php:174
+msgid "Paraguay"
+msgstr ""
+
+#: i18n/countries.php:175
+msgid "Peru"
+msgstr ""
+
+#: i18n/countries.php:176
+msgid "Philippines"
+msgstr ""
+
+#: i18n/countries.php:177
+msgid "Pitcairn"
+msgstr ""
+
+#: i18n/countries.php:178
+msgid "Poland"
+msgstr ""
+
+#: i18n/countries.php:179
+msgid "Portugal"
+msgstr ""
+
+#: i18n/countries.php:180
+msgid "Puerto Rico"
+msgstr ""
+
+#: i18n/countries.php:181
+msgid "Qatar"
+msgstr ""
+
+#: i18n/countries.php:182
+msgid "Reunion"
+msgstr ""
+
+#: i18n/countries.php:183
+msgid "Romania"
+msgstr ""
+
+#: i18n/countries.php:184
+msgid "Russia"
+msgstr ""
+
+#: i18n/countries.php:185
+msgid "Rwanda"
+msgstr ""
+
+#: i18n/countries.php:186
+msgid "Saint Barth&eacute;lemy"
+msgstr ""
+
+#: i18n/countries.php:187
+msgid "Saint Helena"
+msgstr ""
+
+#: i18n/countries.php:188
+msgid "Saint Kitts and Nevis"
+msgstr ""
+
+#: i18n/countries.php:189
+msgid "Saint Lucia"
+msgstr ""
+
+#: i18n/countries.php:190
+msgid "Saint Martin (French part)"
+msgstr ""
+
+#: i18n/countries.php:191
+msgid "Saint Martin (Dutch part)"
+msgstr ""
+
+#: i18n/countries.php:192
+msgid "Saint Pierre and Miquelon"
+msgstr ""
+
+#: i18n/countries.php:193
+msgid "Saint Vincent and the Grenadines"
+msgstr ""
+
+#: i18n/countries.php:194
+msgid "San Marino"
+msgstr ""
+
+#: i18n/countries.php:195
+msgid "S&atilde;o Tom&eacute; and Pr&iacute;ncipe"
+msgstr ""
+
+#: i18n/countries.php:196
+msgid "Saudi Arabia"
+msgstr ""
+
+#: i18n/countries.php:197
+msgid "Senegal"
+msgstr ""
+
+#: i18n/countries.php:198
+msgid "Serbia"
+msgstr ""
+
+#: i18n/countries.php:199
+msgid "Seychelles"
+msgstr ""
+
+#: i18n/countries.php:200
+msgid "Sierra Leone"
+msgstr ""
+
+#: i18n/countries.php:201
+msgid "Singapore"
+msgstr ""
+
+#: i18n/countries.php:202
+msgid "Slovakia"
+msgstr ""
+
+#: i18n/countries.php:203
+msgid "Slovenia"
+msgstr ""
+
+#: i18n/countries.php:204
+msgid "Solomon Islands"
+msgstr ""
+
+#: i18n/countries.php:205
+msgid "Somalia"
+msgstr ""
+
+#: i18n/countries.php:206
+msgid "South Africa"
+msgstr ""
+
+#: i18n/countries.php:207
+msgid "South Georgia/Sandwich Islands"
+msgstr ""
+
+#: i18n/countries.php:208
+msgid "South Korea"
+msgstr ""
+
+#: i18n/countries.php:209
+msgid "South Sudan"
+msgstr ""
+
+#: i18n/countries.php:210
+msgid "Spain"
+msgstr ""
+
+#: i18n/countries.php:211
+msgid "Sri Lanka"
+msgstr ""
+
+#: i18n/countries.php:212
+msgid "Sudan"
+msgstr ""
+
+#: i18n/countries.php:213
+msgid "Suriname"
+msgstr ""
+
+#: i18n/countries.php:214
+msgid "Svalbard and Jan Mayen"
+msgstr ""
+
+#: i18n/countries.php:215
+msgid "Swaziland"
+msgstr ""
+
+#: i18n/countries.php:216
+msgid "Sweden"
+msgstr ""
+
+#: i18n/countries.php:217
+msgid "Switzerland"
+msgstr ""
+
+#: i18n/countries.php:218
+msgid "Syria"
+msgstr ""
+
+#: i18n/countries.php:219
+msgid "Taiwan"
+msgstr ""
+
+#: i18n/countries.php:220
+msgid "Tajikistan"
+msgstr ""
+
+#: i18n/countries.php:221
+msgid "Tanzania"
+msgstr ""
+
+#: i18n/countries.php:222
+msgid "Thailand"
+msgstr ""
+
+#: i18n/countries.php:223
+msgid "Timor-Leste"
+msgstr ""
+
+#: i18n/countries.php:224
+msgid "Togo"
+msgstr ""
+
+#: i18n/countries.php:225
+msgid "Tokelau"
+msgstr ""
+
+#: i18n/countries.php:226
+msgid "Tonga"
+msgstr ""
+
+#: i18n/countries.php:227
+msgid "Trinidad and Tobago"
+msgstr ""
+
+#: i18n/countries.php:228
+msgid "Tunisia"
+msgstr ""
+
+#: i18n/countries.php:229
+msgid "Turkey"
+msgstr ""
+
+#: i18n/countries.php:230
+msgid "Turkmenistan"
+msgstr ""
+
+#: i18n/countries.php:231
+msgid "Turks and Caicos Islands"
+msgstr ""
+
+#: i18n/countries.php:232
+msgid "Tuvalu"
+msgstr ""
+
+#: i18n/countries.php:233
+msgid "Uganda"
+msgstr ""
+
+#: i18n/countries.php:234
+msgid "Ukraine"
+msgstr ""
+
+#: i18n/countries.php:235
+msgid "United Arab Emirates"
+msgstr ""
+
+#: i18n/countries.php:236
+msgid "United Kingdom (UK)"
+msgstr ""
+
+#: i18n/countries.php:237
+msgid "United States"
+msgstr ""
+
+#: i18n/countries.php:238
+msgid "Uruguay"
+msgstr ""
+
+#: i18n/countries.php:239
+msgid "Uzbekistan"
+msgstr ""
+
+#: i18n/countries.php:240
+msgid "Vanuatu"
+msgstr ""
+
+#: i18n/countries.php:241
+msgid "Vatican"
+msgstr ""
+
+#: i18n/countries.php:242
+msgid "Venezuela"
+msgstr ""
+
+#: i18n/countries.php:243
+msgid "Vietnam"
+msgstr ""
+
+#: i18n/countries.php:244
+msgid "Wallis and Futuna"
+msgstr ""
+
+#: i18n/countries.php:245
+msgid "Western Sahara"
+msgstr ""
+
+#: i18n/countries.php:246
+msgid "Western Samoa"
+msgstr ""
+
+#: i18n/countries.php:247
+msgid "Yemen"
+msgstr ""
+
+#: i18n/countries.php:248
+msgid "Zambia"
+msgstr ""
+
+#: i18n/countries.php:249
+msgid "Zimbabwe"
+msgstr ""
+
 #: pro/app/controllers/PlpAppController.php:183
 msgid "ERROR: Your Pretty Link was unable to be created"
 msgstr ""
@@ -3641,209 +5276,196 @@ msgstr ""
 msgid "New Link Category Name"
 msgstr ""
 
-#: pro/app/controllers/PlpLinksController.php:214
+#: pro/app/controllers/PlpLinksController.php:221
 msgid "Your URL Replacements must be formatted as a comma separated list of properly formatted URLs (http[s]://example.com/whatever)"
 msgstr ""
 
-#: pro/app/controllers/PlpLinksController.php:225
+#: pro/app/controllers/PlpLinksController.php:232
 msgid "Date must be valid and formatted YYYY-MM-DD."
 msgstr ""
 
-#: pro/app/controllers/PlpLinksController.php:237
+#: pro/app/controllers/PlpLinksController.php:244
 msgid "Expire Clicks must be a number greater than zero."
 msgstr ""
 
-#: pro/app/controllers/PlpLinksController.php:244
+#: pro/app/controllers/PlpLinksController.php:251
 msgid "Expired URL must be a valid URL."
 msgstr ""
 
-#: pro/app/controllers/PlpLinksController.php:256
+#: pro/app/controllers/PlpLinksController.php:263
 msgid "Your URL Rotations must all be properly formatted URLs."
 msgstr ""
 
-#: pro/app/controllers/PlpLinksController.php:265
+#: pro/app/controllers/PlpLinksController.php:272
 msgid "Your Link Rotation Weights must add up to 100%."
 msgstr ""
 
-#: pro/app/controllers/PlpLinksController.php:275
+#: pro/app/controllers/PlpLinksController.php:282
 msgid "Your Geographic Redirect URLs must all be properly formatted."
 msgstr ""
 
-#: pro/app/controllers/PlpLinksController.php:279
+#: pro/app/controllers/PlpLinksController.php:286
 msgid "Your Geographic Redirects URLs must not be empty."
 msgstr ""
 
-#: pro/app/controllers/PlpLinksController.php:283
+#: pro/app/controllers/PlpLinksController.php:290
 msgid "Your Geographic Redirect Countries must not be empty."
 msgstr ""
 
-#: pro/app/controllers/PlpLinksController.php:294
+#: pro/app/controllers/PlpLinksController.php:301
 msgid "Your Technology Redirect URLs must all be properly formatted."
 msgstr ""
 
-#: pro/app/controllers/PlpLinksController.php:298
+#: pro/app/controllers/PlpLinksController.php:305
 msgid "Your Technology Redirects URLs must not be empty."
 msgstr ""
 
-#: pro/app/controllers/PlpLinksController.php:309
+#: pro/app/controllers/PlpLinksController.php:316
 msgid "Your Time Period Redirect URLs must all be properly formatted."
 msgstr ""
 
-#: pro/app/controllers/PlpLinksController.php:313
+#: pro/app/controllers/PlpLinksController.php:320
 msgid "Your Time Period Redirects URLs must not be empty."
 msgstr ""
 
-#: pro/app/controllers/PlpLinksController.php:318
+#: pro/app/controllers/PlpLinksController.php:325
 msgid "Your Time Period Redirect start time must not be empty."
 msgstr ""
 
-#: pro/app/controllers/PlpLinksController.php:321
+#: pro/app/controllers/PlpLinksController.php:328
 msgid "Your Time Period Redirect start time must be a properly formatted date."
 msgstr ""
 
-#: pro/app/controllers/PlpLinksController.php:327
+#: pro/app/controllers/PlpLinksController.php:334
 msgid "Your Time Period Redirect end time must not be empty."
 msgstr ""
 
-#: pro/app/controllers/PlpLinksController.php:330
+#: pro/app/controllers/PlpLinksController.php:337
 msgid "Your Time Period Redirect end time must be a properly formatted date."
 msgstr ""
 
-#: pro/app/controllers/PlpLinksController.php:338
+#: pro/app/controllers/PlpLinksController.php:345
 msgid "Your Time Period Redirect start time must come before the end time."
 msgstr ""
 
-#: pro/app/controllers/PlpLinksController.php:346
+#: pro/app/controllers/PlpLinksController.php:353
 msgid "Delay Redirect must be a number"
 msgstr ""
 
-#: pro/app/controllers/PlpLinksController.php:429
+#: pro/app/controllers/PlpLinksController.php:436
 msgid "You are not allowed to do this."
 msgstr ""
 
-#: pro/app/controllers/PlpLinksController.php:794
+#: pro/app/controllers/PlpLinksController.php:801
 #: pro/app/widgets/PlpPublicLinksWidget.php:75
 msgid "Cloak"
 msgstr ""
 
-#: pro/app/controllers/PlpLinksController.php:840
+#: pro/app/controllers/PlpLinksController.php:847
 msgid "The Link Health Email Addresses field must contain 1 or more valid email addresses."
 msgstr ""
 
-#: pro/app/controllers/PlpLinksController.php:878
-msgid "View QR Code for this link: %s"
-msgstr ""
-
-#: pro/app/controllers/PlpLinksController.php:878
-#: pro/app/controllers/PlpLinksController.php:882
-msgid "QR Code"
-msgstr ""
-
-#: pro/app/controllers/PlpLinksController.php:882
+#: pro/app/controllers/PlpLinksController.php:891
 msgid "Download QR Code for this link: %s"
 msgstr ""
 
-#: pro/app/controllers/PlpLinksController.php:901
+#: pro/app/controllers/PlpLinksController.php:891
+msgid "QR Code"
+msgstr ""
+
+#: pro/app/controllers/PlpLinksController.php:910
 msgid "Check health status for this link: %s"
 msgstr ""
 
-#: pro/app/controllers/PlpLinksController.php:902
-#: pro/app/controllers/PlpLinksController.php:907
+#: pro/app/controllers/PlpLinksController.php:911
+#: pro/app/controllers/PlpLinksController.php:916
 #: pro/app/views/metaboxes/link-health.php:13
 #: pro/app/views/metaboxes/link-health.php:18
 msgid "Check Health"
 msgstr ""
 
-#: pro/app/controllers/PlpLinksController.php:903
+#: pro/app/controllers/PlpLinksController.php:912
 #: pro/app/views/metaboxes/link-health.php:14
 msgid "Checking..."
 msgstr ""
 
-#: pro/app/controllers/PlpLinksController.php:981
+#: pro/app/controllers/PlpLinksController.php:996
 msgid "This link expired on %1$s and will now cause a 404 error when visited"
 msgstr ""
 
-#: pro/app/controllers/PlpLinksController.php:984
+#: pro/app/controllers/PlpLinksController.php:999
 msgid "This link expired on %1$s and now redirects to %2$s"
 msgstr ""
 
-#: pro/app/controllers/PlpLinksController.php:988
+#: pro/app/controllers/PlpLinksController.php:1003
 msgid "This link is set to expire after the date %s"
 msgstr ""
 
-#: pro/app/controllers/PlpLinksController.php:999
+#: pro/app/controllers/PlpLinksController.php:1014
 msgid "This link expired after %d clicks and will now cause a 404 error when visited"
 msgstr ""
 
-#: pro/app/controllers/PlpLinksController.php:1002
+#: pro/app/controllers/PlpLinksController.php:1017
 msgid "This link expired after %1$d clicks and now redirects to %2$s"
 msgstr ""
 
-#: pro/app/controllers/PlpLinksController.php:1006
+#: pro/app/controllers/PlpLinksController.php:1021
 msgid "This link is set to expire after %d clicks"
 msgstr ""
 
-#: pro/app/controllers/PlpLinksController.php:1014
+#: pro/app/controllers/PlpLinksController.php:1029
 msgid "This link has additional Target URL rotations"
 msgstr ""
 
-#: pro/app/controllers/PlpLinksController.php:1017
+#: pro/app/controllers/PlpLinksController.php:1032
 msgid "This link has additional Geographic Target URLs"
 msgstr ""
 
-#: pro/app/controllers/PlpLinksController.php:1020
+#: pro/app/controllers/PlpLinksController.php:1035
 msgid "This link has additional Technology Dependent Conditional Target URLs"
 msgstr ""
 
-#: pro/app/controllers/PlpLinksController.php:1025
+#: pro/app/controllers/PlpLinksController.php:1040
 msgid "A Time Period Redirect is currently active for this link. When visited it will currently redirect to %s rather than the Target URL unless the link is expired."
 msgstr ""
 
-#: pro/app/controllers/PlpLinksController.php:1029
+#: pro/app/controllers/PlpLinksController.php:1044
 msgid "Time Period Redirects have been setup for this link but the current time is not within any of them currently."
 msgstr ""
 
-#: pro/app/controllers/PlpLinksController.php:1072
-msgid "<a href=\"%1$s\" class=\"%2$s\">Broken Links <span class=\"count\">(%3$d)</span></a>"
-msgstr ""
-
-#: pro/app/controllers/PlpLinksController.php:1183
+#: pro/app/controllers/PlpLinksController.php:1206
 msgid "[Pretty Links] Broken Links Weekly Report"
 msgstr ""
 
-#: pro/app/controllers/PlpLinksController.php:1238
+#: pro/app/controllers/PlpLinksController.php:1261
 msgid "Every 15 Minutes"
 msgstr ""
 
-#: pro/app/controllers/PlpLinksController.php:1244
-msgid "Weekly"
-msgstr ""
-
-#: pro/app/controllers/PlpLinksController.php:1263
+#: pro/app/controllers/PlpLinksController.php:1286
 msgid "Status"
 msgstr ""
 
-#: pro/app/controllers/PlpLinksController.php:1351
+#: pro/app/controllers/PlpLinksController.php:1374
 msgid "Not yet checked."
 msgstr ""
 
-#: pro/app/controllers/PlpLinksController.php:1354
+#: pro/app/controllers/PlpLinksController.php:1377
 msgid "Last checked on %s."
 msgstr ""
 
-#: pro/app/controllers/PlpLinksController.php:1358
+#: pro/app/controllers/PlpLinksController.php:1381
 msgid "Last checked unknown."
 msgstr ""
 
-#: pro/app/controllers/PlpLinksController.php:1362
+#: pro/app/controllers/PlpLinksController.php:1385
 msgid "Waiting"
 msgstr ""
 
-#: pro/app/controllers/PlpLinksController.php:1363
+#: pro/app/controllers/PlpLinksController.php:1386
 msgid "Okay"
 msgstr ""
 
-#: pro/app/controllers/PlpLinksController.php:1364
+#: pro/app/controllers/PlpLinksController.php:1387
 msgid "Broken"
 msgstr ""
 
@@ -4008,7 +5630,7 @@ msgid "Pretty Link Post Build URL Index"
 msgstr ""
 
 #: pro/app/helpers/PlpLinksHelper.php:18
-#: pro/app/views/links/form.php:230
+#: pro/app/views/links/form.php:233
 msgid "weight:"
 msgstr ""
 
@@ -4020,43 +5642,43 @@ msgstr ""
 msgid "Both"
 msgstr ""
 
-#: pro/app/models/PlpOptions.php:109
+#: pro/app/models/PlpOptions.php:129
 msgid "Facebook"
 msgstr ""
 
-#: pro/app/models/PlpOptions.php:116
+#: pro/app/models/PlpOptions.php:136
 msgid "Twitter"
 msgstr ""
 
-#: pro/app/models/PlpOptions.php:123
+#: pro/app/models/PlpOptions.php:143
 msgid "Google+"
 msgstr ""
 
-#: pro/app/models/PlpOptions.php:130
+#: pro/app/models/PlpOptions.php:150
 msgid "Pinterest"
 msgstr ""
 
-#: pro/app/models/PlpOptions.php:137
+#: pro/app/models/PlpOptions.php:157
 msgid "LinkedIn"
 msgstr ""
 
-#: pro/app/models/PlpOptions.php:144
+#: pro/app/models/PlpOptions.php:164
 msgid "Reddit"
 msgstr ""
 
-#: pro/app/models/PlpOptions.php:151
+#: pro/app/models/PlpOptions.php:171
 msgid "StumbleUpon"
 msgstr ""
 
-#: pro/app/models/PlpOptions.php:158
+#: pro/app/models/PlpOptions.php:178
 msgid "Digg"
 msgstr ""
 
-#: pro/app/models/PlpOptions.php:251
+#: pro/app/models/PlpOptions.php:271
 msgid "Affiliate Link Disclosures"
 msgstr ""
 
-#: pro/app/models/PlpOptions.php:260
+#: pro/app/models/PlpOptions.php:280
 msgid "(aff)"
 msgstr ""
 
@@ -4199,144 +5821,144 @@ msgstr ""
 msgid "Your browser does not support frames."
 msgstr ""
 
-#: pro/app/views/links/form.php:23
+#: pro/app/views/links/form.php:24
 msgid "Expire After"
 msgstr ""
 
-#: pro/app/views/links/form.php:26
+#: pro/app/views/links/form.php:27
 msgid "Expiration Type"
 msgstr ""
 
 #. translators: %1$s: br tag, %2$s: open b tag, %3$s close b tag
-#: pro/app/views/links/form.php:29
+#: pro/app/views/links/form.php:30
 msgid "Select the type of expiration you want for this link.%1$s%1$s%2$sDate%3$s Select this option if you'd like to expire your link after a certain date.%1%s%1$s%2$sClicks%3$s: Select this option to expire this link after it has been clicked a specific number of times."
 msgstr ""
 
-#: pro/app/views/links/form.php:52
+#: pro/app/views/links/form.php:53
 msgid "Number of Clicks"
 msgstr ""
 
 #. translators: %1$s: br tag, %2$s: open b tag, %3$s close b tag
-#: pro/app/views/links/form.php:55
+#: pro/app/views/links/form.php:56
 msgid "Enter the number of times this link can be clicked before it expires.%1$s%1$s%2$sNote: Expirations based on clicks wouldn't work properly if you had tracking turned off for this link so as long as this is set to Clicks, Pretty Link will ensure tracking is turned on for this link as well.%3$s"
 msgstr ""
 
-#: pro/app/views/links/form.php:76
+#: pro/app/views/links/form.php:77
 msgid "Expiration Date"
 msgstr ""
 
-#: pro/app/views/links/form.php:77
+#: pro/app/views/links/form.php:78
 msgid "Enter a date here in the format YYYY-MM-DD to set when this link should expire."
 msgstr ""
 
-#: pro/app/views/links/form.php:91
+#: pro/app/views/links/form.php:92
 msgid "Expired Redirect"
 msgstr ""
 
-#: pro/app/views/links/form.php:94
+#: pro/app/views/links/form.php:95
 msgid "Redirect to URL when Expired"
 msgstr ""
 
 #. translators: %1$s: br tag, %2$s: open b tag, %3$s close b tag
-#: pro/app/views/links/form.php:97
+#: pro/app/views/links/form.php:98
 msgid "When this link expires, do you want to redirect to a specific URL. You can use this to redirect to a page you've setup to indicate that the link is expired.%1$s%1$s%2$sNote: If this is not set the link will throw a 404 error when expired%3$s."
 msgstr ""
 
-#: pro/app/views/links/form.php:114
+#: pro/app/views/links/form.php:115
 #: pro/app/views/options/form.php:358
 msgid "URL"
 msgstr ""
 
-#: pro/app/views/links/form.php:117
+#: pro/app/views/links/form.php:118
 msgid "Expired URL"
 msgstr ""
 
-#: pro/app/views/links/form.php:118
+#: pro/app/views/links/form.php:119
 msgid "This is the URL that this link will redirect to after the expiration date above."
 msgstr ""
 
-#: pro/app/views/links/form.php:138
+#: pro/app/views/links/form.php:140
 msgid "Enter a comma separated list of keywords / keyword phrases that you'd like to replace with this link in your Posts &amp; Pages."
 msgstr ""
 
 #. translators: %1$s: open code tag, %2$s: close code tag
-#: pro/app/views/links/form.php:154
+#: pro/app/views/links/form.php:156
 msgid "Enter a comma separated list of the URLs that you'd like to replace with this Pretty Link in your Posts &amp; Pages. These must be formatted as URLs for example: %1$shttp://example.com%2$s or %1$shttp://example.com?product_id=53%2$s"
 msgstr ""
 
-#: pro/app/views/links/form.php:215
 #: pro/app/views/links/form.php:218
+#: pro/app/views/links/form.php:221
 msgid "Target URL Rotations"
 msgstr ""
 
 #. translators: %1$s: open code tag, %2$s: close code tag
-#: pro/app/views/links/form.php:221
+#: pro/app/views/links/form.php:224
 msgid "Enter the Target URLs that you'd like to rotate through when this Pretty Link is Clicked. These must be formatted as URLs example: %1$shttp://example.com%2$s or %1$shttp://example.com?product_id=53%2$s"
 msgstr ""
 
-#: pro/app/views/links/form.php:229
+#: pro/app/views/links/form.php:232
 msgid "Target URL (above)"
 msgstr ""
 
-#: pro/app/views/links/form.php:241
+#: pro/app/views/links/form.php:244
 msgid "Add Link Rotation"
 msgstr ""
 
-#: pro/app/views/links/form.php:246
+#: pro/app/views/links/form.php:249
 msgid "Split Test"
 msgstr ""
 
-#: pro/app/views/links/form.php:249
+#: pro/app/views/links/form.php:252
 msgid "Split Test This Link"
 msgstr ""
 
-#: pro/app/views/links/form.php:250
+#: pro/app/views/links/form.php:253
 msgid "Split testing will enable you to track the effectiveness of several links against each other. This works best when you have multiple link rotation URLs entered."
 msgstr ""
 
-#: pro/app/views/links/form.php:267
+#: pro/app/views/links/form.php:270
 msgid "Goal Link for Split Test"
 msgstr ""
 
-#: pro/app/views/links/form.php:268
+#: pro/app/views/links/form.php:271
 msgid "This is the goal link for your split test."
 msgstr ""
 
-#: pro/app/views/links/form.php:279
+#: pro/app/views/links/form.php:282
 msgid "id: %1$s | slug: %3$s | name: %2$s"
 msgstr ""
 
-#: pro/app/views/links/form.php:297
 #: pro/app/views/links/form.php:300
+#: pro/app/views/links/form.php:303
 msgid "Geographic Redirects"
 msgstr ""
 
-#: pro/app/views/links/form.php:301
+#: pro/app/views/links/form.php:304
 msgid "This will enable you to setup specific target urls that this pretty link will redirect to based on the country of the person visiting the url."
 msgstr ""
 
-#: pro/app/views/links/form.php:306
-#: pro/app/views/links/form.php:320
-#: pro/app/views/links/form.php:340
+#: pro/app/views/links/form.php:309
+#: pro/app/views/links/form.php:323
+#: pro/app/views/links/form.php:343
 msgid "Add"
 msgstr ""
 
-#: pro/app/views/links/form.php:311
 #: pro/app/views/links/form.php:314
+#: pro/app/views/links/form.php:317
 msgid "Technology Redirects"
 msgstr ""
 
-#: pro/app/views/links/form.php:315
+#: pro/app/views/links/form.php:318
 msgid "This will allow you to redirect based on your visitor's device, operating system and/or browser"
 msgstr ""
 
-#: pro/app/views/links/form.php:325
 #: pro/app/views/links/form.php:328
+#: pro/app/views/links/form.php:331
 msgid "Time Period Redirects"
 msgstr ""
 
 #. translators: %1$s: br tag, %2$s: open b tag, %3$s close b tag
-#: pro/app/views/links/form.php:331
+#: pro/app/views/links/form.php:334
 msgid "This will allow you to redirect based on the time period in which your visitor visits this link.%1$s%1$s%2$sNote: If your visitor doesn't visit the link during any of the specified time periods set here, they'll simply be redirected to the main target url.%3$s"
 msgstr ""
 
@@ -5081,10 +6703,6 @@ msgstr ""
 msgid "Contributor"
 msgstr ""
 
-#: pro/app/views/options/general.php:60
-msgid "Subscriber"
-msgstr ""
-
 #: pro/app/views/public/form.php:28
 msgid "ERROR:"
 msgstr ""
@@ -5147,10 +6765,6 @@ msgstr ""
 
 #: pro/app/views/reports/list.php:73
 msgid "View report for %s"
-msgstr ""
-
-#: pro/app/views/reports/list.php:73
-msgid "View"
 msgstr ""
 
 #: pro/app/views/reports/new.php:7
@@ -5258,980 +6872,4 @@ msgstr ""
 
 #: pro/app/widgets/PlpPublicLinksWidget.php:80
 msgid "Tracking Enabled:"
-msgstr ""
-
-#: pro/i18n/countries.php:5
-msgid "Afghanistan"
-msgstr ""
-
-#: pro/i18n/countries.php:6
-msgid "&#197;land Islands"
-msgstr ""
-
-#: pro/i18n/countries.php:7
-msgid "Albania"
-msgstr ""
-
-#: pro/i18n/countries.php:8
-msgid "Algeria"
-msgstr ""
-
-#: pro/i18n/countries.php:9
-msgid "Andorra"
-msgstr ""
-
-#: pro/i18n/countries.php:10
-msgid "Angola"
-msgstr ""
-
-#: pro/i18n/countries.php:11
-msgid "Anguilla"
-msgstr ""
-
-#: pro/i18n/countries.php:12
-msgid "Antarctica"
-msgstr ""
-
-#: pro/i18n/countries.php:13
-msgid "Antigua and Barbuda"
-msgstr ""
-
-#: pro/i18n/countries.php:14
-msgid "Argentina"
-msgstr ""
-
-#: pro/i18n/countries.php:15
-msgid "Armenia"
-msgstr ""
-
-#: pro/i18n/countries.php:16
-msgid "Aruba"
-msgstr ""
-
-#: pro/i18n/countries.php:17
-msgid "Australia"
-msgstr ""
-
-#: pro/i18n/countries.php:18
-msgid "Austria"
-msgstr ""
-
-#: pro/i18n/countries.php:19
-msgid "Azerbaijan"
-msgstr ""
-
-#: pro/i18n/countries.php:20
-msgid "Bahamas"
-msgstr ""
-
-#: pro/i18n/countries.php:21
-msgid "Bahrain"
-msgstr ""
-
-#: pro/i18n/countries.php:22
-msgid "Bangladesh"
-msgstr ""
-
-#: pro/i18n/countries.php:23
-msgid "Barbados"
-msgstr ""
-
-#: pro/i18n/countries.php:24
-msgid "Belarus"
-msgstr ""
-
-#: pro/i18n/countries.php:25
-msgid "Belgium"
-msgstr ""
-
-#: pro/i18n/countries.php:26
-msgid "Belau"
-msgstr ""
-
-#: pro/i18n/countries.php:27
-msgid "Belize"
-msgstr ""
-
-#: pro/i18n/countries.php:28
-msgid "Benin"
-msgstr ""
-
-#: pro/i18n/countries.php:29
-msgid "Bermuda"
-msgstr ""
-
-#: pro/i18n/countries.php:30
-msgid "Bhutan"
-msgstr ""
-
-#: pro/i18n/countries.php:31
-msgid "Bolivia"
-msgstr ""
-
-#: pro/i18n/countries.php:32
-msgid "Bonaire, Saint Eustatius and Saba"
-msgstr ""
-
-#: pro/i18n/countries.php:33
-msgid "Bosnia and Herzegovina"
-msgstr ""
-
-#: pro/i18n/countries.php:34
-msgid "Botswana"
-msgstr ""
-
-#: pro/i18n/countries.php:35
-msgid "Bouvet Island"
-msgstr ""
-
-#: pro/i18n/countries.php:36
-msgid "Brazil"
-msgstr ""
-
-#: pro/i18n/countries.php:37
-msgid "British Indian Ocean Territory"
-msgstr ""
-
-#: pro/i18n/countries.php:38
-msgid "British Virgin Islands"
-msgstr ""
-
-#: pro/i18n/countries.php:39
-msgid "Brunei"
-msgstr ""
-
-#: pro/i18n/countries.php:40
-msgid "Bulgaria"
-msgstr ""
-
-#: pro/i18n/countries.php:41
-msgid "Burkina Faso"
-msgstr ""
-
-#: pro/i18n/countries.php:42
-msgid "Burundi"
-msgstr ""
-
-#: pro/i18n/countries.php:43
-msgid "Cambodia"
-msgstr ""
-
-#: pro/i18n/countries.php:44
-msgid "Cameroon"
-msgstr ""
-
-#: pro/i18n/countries.php:45
-msgid "Canada"
-msgstr ""
-
-#: pro/i18n/countries.php:46
-msgid "Cape Verde"
-msgstr ""
-
-#: pro/i18n/countries.php:47
-msgid "Cayman Islands"
-msgstr ""
-
-#: pro/i18n/countries.php:48
-msgid "Central African Republic"
-msgstr ""
-
-#: pro/i18n/countries.php:49
-msgid "Chad"
-msgstr ""
-
-#: pro/i18n/countries.php:50
-msgid "Chile"
-msgstr ""
-
-#: pro/i18n/countries.php:51
-msgid "China"
-msgstr ""
-
-#: pro/i18n/countries.php:52
-msgid "Christmas Island"
-msgstr ""
-
-#: pro/i18n/countries.php:53
-msgid "Cocos/Keeling Islands"
-msgstr ""
-
-#: pro/i18n/countries.php:54
-msgid "Colombia"
-msgstr ""
-
-#: pro/i18n/countries.php:55
-msgid "Comoros"
-msgstr ""
-
-#: pro/i18n/countries.php:56
-msgid "Congo (Brazzaville)"
-msgstr ""
-
-#: pro/i18n/countries.php:57
-msgid "Congo (Kinshasa)"
-msgstr ""
-
-#: pro/i18n/countries.php:58
-msgid "Cook Islands"
-msgstr ""
-
-#: pro/i18n/countries.php:59
-msgid "Costa Rica"
-msgstr ""
-
-#: pro/i18n/countries.php:60
-msgid "Croatia"
-msgstr ""
-
-#: pro/i18n/countries.php:61
-msgid "Cuba"
-msgstr ""
-
-#: pro/i18n/countries.php:62
-msgid "Cura&Ccedil;ao"
-msgstr ""
-
-#: pro/i18n/countries.php:63
-msgid "Cyprus"
-msgstr ""
-
-#: pro/i18n/countries.php:64
-msgid "Czech Republic"
-msgstr ""
-
-#: pro/i18n/countries.php:65
-msgid "Denmark"
-msgstr ""
-
-#: pro/i18n/countries.php:66
-msgid "Djibouti"
-msgstr ""
-
-#: pro/i18n/countries.php:67
-msgid "Dominica"
-msgstr ""
-
-#: pro/i18n/countries.php:68
-msgid "Dominican Republic"
-msgstr ""
-
-#: pro/i18n/countries.php:69
-msgid "Ecuador"
-msgstr ""
-
-#: pro/i18n/countries.php:70
-msgid "Egypt"
-msgstr ""
-
-#: pro/i18n/countries.php:71
-msgid "El Salvador"
-msgstr ""
-
-#: pro/i18n/countries.php:72
-msgid "Equatorial Guinea"
-msgstr ""
-
-#: pro/i18n/countries.php:73
-msgid "Eritrea"
-msgstr ""
-
-#: pro/i18n/countries.php:74
-msgid "Estonia"
-msgstr ""
-
-#: pro/i18n/countries.php:75
-msgid "Ethiopia"
-msgstr ""
-
-#: pro/i18n/countries.php:76
-msgid "Falkland Islands"
-msgstr ""
-
-#: pro/i18n/countries.php:77
-msgid "Faroe Islands"
-msgstr ""
-
-#: pro/i18n/countries.php:78
-msgid "Fiji"
-msgstr ""
-
-#: pro/i18n/countries.php:79
-msgid "Finland"
-msgstr ""
-
-#: pro/i18n/countries.php:80
-msgid "France"
-msgstr ""
-
-#: pro/i18n/countries.php:81
-msgid "French Guiana"
-msgstr ""
-
-#: pro/i18n/countries.php:82
-msgid "French Polynesia"
-msgstr ""
-
-#: pro/i18n/countries.php:83
-msgid "French Southern Territories"
-msgstr ""
-
-#: pro/i18n/countries.php:84
-msgid "Gabon"
-msgstr ""
-
-#: pro/i18n/countries.php:85
-msgid "Gambia"
-msgstr ""
-
-#: pro/i18n/countries.php:86
-msgid "Georgia"
-msgstr ""
-
-#: pro/i18n/countries.php:87
-msgid "Germany"
-msgstr ""
-
-#: pro/i18n/countries.php:88
-msgid "Ghana"
-msgstr ""
-
-#: pro/i18n/countries.php:89
-msgid "Gibraltar"
-msgstr ""
-
-#: pro/i18n/countries.php:90
-msgid "Greece"
-msgstr ""
-
-#: pro/i18n/countries.php:91
-msgid "Greenland"
-msgstr ""
-
-#: pro/i18n/countries.php:92
-msgid "Grenada"
-msgstr ""
-
-#: pro/i18n/countries.php:93
-msgid "Guadeloupe"
-msgstr ""
-
-#: pro/i18n/countries.php:94
-msgid "Guatemala"
-msgstr ""
-
-#: pro/i18n/countries.php:95
-msgid "Guernsey"
-msgstr ""
-
-#: pro/i18n/countries.php:96
-msgid "Guinea"
-msgstr ""
-
-#: pro/i18n/countries.php:97
-msgid "Guinea-Bissau"
-msgstr ""
-
-#: pro/i18n/countries.php:98
-msgid "Guyana"
-msgstr ""
-
-#: pro/i18n/countries.php:99
-msgid "Haiti"
-msgstr ""
-
-#: pro/i18n/countries.php:100
-msgid "Heard Island and McDonald Islands"
-msgstr ""
-
-#: pro/i18n/countries.php:101
-msgid "Honduras"
-msgstr ""
-
-#: pro/i18n/countries.php:102
-msgid "Hong Kong"
-msgstr ""
-
-#: pro/i18n/countries.php:103
-msgid "Hungary"
-msgstr ""
-
-#: pro/i18n/countries.php:104
-msgid "Iceland"
-msgstr ""
-
-#: pro/i18n/countries.php:105
-msgid "India"
-msgstr ""
-
-#: pro/i18n/countries.php:106
-msgid "Indonesia"
-msgstr ""
-
-#: pro/i18n/countries.php:107
-msgid "Iran"
-msgstr ""
-
-#: pro/i18n/countries.php:108
-msgid "Iraq"
-msgstr ""
-
-#: pro/i18n/countries.php:109
-msgid "Republic of Ireland"
-msgstr ""
-
-#: pro/i18n/countries.php:110
-msgid "Isle of Man"
-msgstr ""
-
-#: pro/i18n/countries.php:111
-msgid "Israel"
-msgstr ""
-
-#: pro/i18n/countries.php:112
-msgid "Italy"
-msgstr ""
-
-#: pro/i18n/countries.php:113
-msgid "Ivory Coast"
-msgstr ""
-
-#: pro/i18n/countries.php:114
-msgid "Jamaica"
-msgstr ""
-
-#: pro/i18n/countries.php:115
-msgid "Japan"
-msgstr ""
-
-#: pro/i18n/countries.php:116
-msgid "Jersey"
-msgstr ""
-
-#: pro/i18n/countries.php:117
-msgid "Jordan"
-msgstr ""
-
-#: pro/i18n/countries.php:118
-msgid "Kazakhstan"
-msgstr ""
-
-#: pro/i18n/countries.php:119
-msgid "Kenya"
-msgstr ""
-
-#: pro/i18n/countries.php:120
-msgid "Kiribati"
-msgstr ""
-
-#: pro/i18n/countries.php:121
-msgid "Kuwait"
-msgstr ""
-
-#: pro/i18n/countries.php:122
-msgid "Kyrgyzstan"
-msgstr ""
-
-#: pro/i18n/countries.php:123
-msgid "Laos"
-msgstr ""
-
-#: pro/i18n/countries.php:124
-msgid "Latvia"
-msgstr ""
-
-#: pro/i18n/countries.php:125
-msgid "Lebanon"
-msgstr ""
-
-#: pro/i18n/countries.php:126
-msgid "Lesotho"
-msgstr ""
-
-#: pro/i18n/countries.php:127
-msgid "Liberia"
-msgstr ""
-
-#: pro/i18n/countries.php:128
-msgid "Libya"
-msgstr ""
-
-#: pro/i18n/countries.php:129
-msgid "Liechtenstein"
-msgstr ""
-
-#: pro/i18n/countries.php:130
-msgid "Lithuania"
-msgstr ""
-
-#: pro/i18n/countries.php:131
-msgid "Luxembourg"
-msgstr ""
-
-#: pro/i18n/countries.php:132
-msgid "Macao S.A.R., China"
-msgstr ""
-
-#: pro/i18n/countries.php:133
-msgid "Macedonia"
-msgstr ""
-
-#: pro/i18n/countries.php:134
-msgid "Madagascar"
-msgstr ""
-
-#: pro/i18n/countries.php:135
-msgid "Malawi"
-msgstr ""
-
-#: pro/i18n/countries.php:136
-msgid "Malaysia"
-msgstr ""
-
-#: pro/i18n/countries.php:137
-msgid "Maldives"
-msgstr ""
-
-#: pro/i18n/countries.php:138
-msgid "Mali"
-msgstr ""
-
-#: pro/i18n/countries.php:139
-msgid "Malta"
-msgstr ""
-
-#: pro/i18n/countries.php:140
-msgid "Marshall Islands"
-msgstr ""
-
-#: pro/i18n/countries.php:141
-msgid "Martinique"
-msgstr ""
-
-#: pro/i18n/countries.php:142
-msgid "Mauritania"
-msgstr ""
-
-#: pro/i18n/countries.php:143
-msgid "Mauritius"
-msgstr ""
-
-#: pro/i18n/countries.php:144
-msgid "Mayotte"
-msgstr ""
-
-#: pro/i18n/countries.php:145
-msgid "Mexico"
-msgstr ""
-
-#: pro/i18n/countries.php:146
-msgid "Micronesia"
-msgstr ""
-
-#: pro/i18n/countries.php:147
-msgid "Moldova"
-msgstr ""
-
-#: pro/i18n/countries.php:148
-msgid "Monaco"
-msgstr ""
-
-#: pro/i18n/countries.php:149
-msgid "Mongolia"
-msgstr ""
-
-#: pro/i18n/countries.php:150
-msgid "Montenegro"
-msgstr ""
-
-#: pro/i18n/countries.php:151
-msgid "Montserrat"
-msgstr ""
-
-#: pro/i18n/countries.php:152
-msgid "Morocco"
-msgstr ""
-
-#: pro/i18n/countries.php:153
-msgid "Mozambique"
-msgstr ""
-
-#: pro/i18n/countries.php:154
-msgid "Myanmar"
-msgstr ""
-
-#: pro/i18n/countries.php:155
-msgid "Namibia"
-msgstr ""
-
-#: pro/i18n/countries.php:156
-msgid "Nauru"
-msgstr ""
-
-#: pro/i18n/countries.php:157
-msgid "Nepal"
-msgstr ""
-
-#: pro/i18n/countries.php:158
-msgid "Netherlands"
-msgstr ""
-
-#: pro/i18n/countries.php:159
-msgid "Netherlands Antilles"
-msgstr ""
-
-#: pro/i18n/countries.php:160
-msgid "New Caledonia"
-msgstr ""
-
-#: pro/i18n/countries.php:161
-msgid "New Zealand"
-msgstr ""
-
-#: pro/i18n/countries.php:162
-msgid "Nicaragua"
-msgstr ""
-
-#: pro/i18n/countries.php:163
-msgid "Niger"
-msgstr ""
-
-#: pro/i18n/countries.php:164
-msgid "Nigeria"
-msgstr ""
-
-#: pro/i18n/countries.php:165
-msgid "Niue"
-msgstr ""
-
-#: pro/i18n/countries.php:166
-msgid "Norfolk Island"
-msgstr ""
-
-#: pro/i18n/countries.php:167
-msgid "North Korea"
-msgstr ""
-
-#: pro/i18n/countries.php:168
-msgid "Norway"
-msgstr ""
-
-#: pro/i18n/countries.php:169
-msgid "Oman"
-msgstr ""
-
-#: pro/i18n/countries.php:170
-msgid "Pakistan"
-msgstr ""
-
-#: pro/i18n/countries.php:171
-msgid "Palestinian Territory"
-msgstr ""
-
-#: pro/i18n/countries.php:172
-msgid "Panama"
-msgstr ""
-
-#: pro/i18n/countries.php:173
-msgid "Papua New Guinea"
-msgstr ""
-
-#: pro/i18n/countries.php:174
-msgid "Paraguay"
-msgstr ""
-
-#: pro/i18n/countries.php:175
-msgid "Peru"
-msgstr ""
-
-#: pro/i18n/countries.php:176
-msgid "Philippines"
-msgstr ""
-
-#: pro/i18n/countries.php:177
-msgid "Pitcairn"
-msgstr ""
-
-#: pro/i18n/countries.php:178
-msgid "Poland"
-msgstr ""
-
-#: pro/i18n/countries.php:179
-msgid "Portugal"
-msgstr ""
-
-#: pro/i18n/countries.php:180
-msgid "Qatar"
-msgstr ""
-
-#: pro/i18n/countries.php:181
-msgid "Reunion"
-msgstr ""
-
-#: pro/i18n/countries.php:182
-msgid "Romania"
-msgstr ""
-
-#: pro/i18n/countries.php:183
-msgid "Russia"
-msgstr ""
-
-#: pro/i18n/countries.php:184
-msgid "Rwanda"
-msgstr ""
-
-#: pro/i18n/countries.php:185
-msgid "Saint Barth&eacute;lemy"
-msgstr ""
-
-#: pro/i18n/countries.php:186
-msgid "Saint Helena"
-msgstr ""
-
-#: pro/i18n/countries.php:187
-msgid "Saint Kitts and Nevis"
-msgstr ""
-
-#: pro/i18n/countries.php:188
-msgid "Saint Lucia"
-msgstr ""
-
-#: pro/i18n/countries.php:189
-msgid "Saint Martin (French part)"
-msgstr ""
-
-#: pro/i18n/countries.php:190
-msgid "Saint Martin (Dutch part)"
-msgstr ""
-
-#: pro/i18n/countries.php:191
-msgid "Saint Pierre and Miquelon"
-msgstr ""
-
-#: pro/i18n/countries.php:192
-msgid "Saint Vincent and the Grenadines"
-msgstr ""
-
-#: pro/i18n/countries.php:193
-msgid "San Marino"
-msgstr ""
-
-#: pro/i18n/countries.php:194
-msgid "S&atilde;o Tom&eacute; and Pr&iacute;ncipe"
-msgstr ""
-
-#: pro/i18n/countries.php:195
-msgid "Saudi Arabia"
-msgstr ""
-
-#: pro/i18n/countries.php:196
-msgid "Senegal"
-msgstr ""
-
-#: pro/i18n/countries.php:197
-msgid "Serbia"
-msgstr ""
-
-#: pro/i18n/countries.php:198
-msgid "Seychelles"
-msgstr ""
-
-#: pro/i18n/countries.php:199
-msgid "Sierra Leone"
-msgstr ""
-
-#: pro/i18n/countries.php:200
-msgid "Singapore"
-msgstr ""
-
-#: pro/i18n/countries.php:201
-msgid "Slovakia"
-msgstr ""
-
-#: pro/i18n/countries.php:202
-msgid "Slovenia"
-msgstr ""
-
-#: pro/i18n/countries.php:203
-msgid "Solomon Islands"
-msgstr ""
-
-#: pro/i18n/countries.php:204
-msgid "Somalia"
-msgstr ""
-
-#: pro/i18n/countries.php:205
-msgid "South Africa"
-msgstr ""
-
-#: pro/i18n/countries.php:206
-msgid "South Georgia/Sandwich Islands"
-msgstr ""
-
-#: pro/i18n/countries.php:207
-msgid "South Korea"
-msgstr ""
-
-#: pro/i18n/countries.php:208
-msgid "South Sudan"
-msgstr ""
-
-#: pro/i18n/countries.php:209
-msgid "Spain"
-msgstr ""
-
-#: pro/i18n/countries.php:210
-msgid "Sri Lanka"
-msgstr ""
-
-#: pro/i18n/countries.php:211
-msgid "Sudan"
-msgstr ""
-
-#: pro/i18n/countries.php:212
-msgid "Suriname"
-msgstr ""
-
-#: pro/i18n/countries.php:213
-msgid "Svalbard and Jan Mayen"
-msgstr ""
-
-#: pro/i18n/countries.php:214
-msgid "Swaziland"
-msgstr ""
-
-#: pro/i18n/countries.php:215
-msgid "Sweden"
-msgstr ""
-
-#: pro/i18n/countries.php:216
-msgid "Switzerland"
-msgstr ""
-
-#: pro/i18n/countries.php:217
-msgid "Syria"
-msgstr ""
-
-#: pro/i18n/countries.php:218
-msgid "Taiwan"
-msgstr ""
-
-#: pro/i18n/countries.php:219
-msgid "Tajikistan"
-msgstr ""
-
-#: pro/i18n/countries.php:220
-msgid "Tanzania"
-msgstr ""
-
-#: pro/i18n/countries.php:221
-msgid "Thailand"
-msgstr ""
-
-#: pro/i18n/countries.php:222
-msgid "Timor-Leste"
-msgstr ""
-
-#: pro/i18n/countries.php:223
-msgid "Togo"
-msgstr ""
-
-#: pro/i18n/countries.php:224
-msgid "Tokelau"
-msgstr ""
-
-#: pro/i18n/countries.php:225
-msgid "Tonga"
-msgstr ""
-
-#: pro/i18n/countries.php:226
-msgid "Trinidad and Tobago"
-msgstr ""
-
-#: pro/i18n/countries.php:227
-msgid "Tunisia"
-msgstr ""
-
-#: pro/i18n/countries.php:228
-msgid "Turkey"
-msgstr ""
-
-#: pro/i18n/countries.php:229
-msgid "Turkmenistan"
-msgstr ""
-
-#: pro/i18n/countries.php:230
-msgid "Turks and Caicos Islands"
-msgstr ""
-
-#: pro/i18n/countries.php:231
-msgid "Tuvalu"
-msgstr ""
-
-#: pro/i18n/countries.php:232
-msgid "Uganda"
-msgstr ""
-
-#: pro/i18n/countries.php:233
-msgid "Ukraine"
-msgstr ""
-
-#: pro/i18n/countries.php:234
-msgid "United Arab Emirates"
-msgstr ""
-
-#: pro/i18n/countries.php:235
-msgid "United Kingdom (UK)"
-msgstr ""
-
-#: pro/i18n/countries.php:236
-msgid "United States"
-msgstr ""
-
-#: pro/i18n/countries.php:237
-msgid "Uruguay"
-msgstr ""
-
-#: pro/i18n/countries.php:238
-msgid "Uzbekistan"
-msgstr ""
-
-#: pro/i18n/countries.php:239
-msgid "Vanuatu"
-msgstr ""
-
-#: pro/i18n/countries.php:240
-msgid "Vatican"
-msgstr ""
-
-#: pro/i18n/countries.php:241
-msgid "Venezuela"
-msgstr ""
-
-#: pro/i18n/countries.php:242
-msgid "Vietnam"
-msgstr ""
-
-#: pro/i18n/countries.php:243
-msgid "Wallis and Futuna"
-msgstr ""
-
-#: pro/i18n/countries.php:244
-msgid "Western Sahara"
-msgstr ""
-
-#: pro/i18n/countries.php:245
-msgid "Western Samoa"
-msgstr ""
-
-#: pro/i18n/countries.php:246
-msgid "Yemen"
-msgstr ""
-
-#: pro/i18n/countries.php:247
-msgid "Zambia"
-msgstr ""
-
-#: pro/i18n/countries.php:248
-msgid "Zimbabwe"
 msgstr ""

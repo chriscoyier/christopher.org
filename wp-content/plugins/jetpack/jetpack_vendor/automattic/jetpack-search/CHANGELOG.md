@@ -5,6 +5,385 @@ All notable changes to this project will be documented in this file.
 The format is based on [Keep a Changelog](https://keepachangelog.com/en/1.0.0/)
 and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0.html).
 
+## [0.47.19] - 2025-03-31
+### Changed
+- Update dependencies. [#42678]
+
+### Fixed
+- Admin Menu: Ensure Akismet menu item shows alongside standalone plugin menus. [#42776]
+- Components: Prevent deprecation notices by adding `__next40pxDefaultSize` to controls. [#42677]
+
+## [0.47.18] - 2025-03-24
+### Changed
+- Update dependencies. [#42564]
+
+### Fixed
+- Search: Ensure the count of returned results is shown after searching. [#42570]
+
+## [0.47.17] - 2025-03-18
+### Changed
+- Update package dependencies. [#42511]
+
+## [0.47.16] - 2025-03-17
+### Changed
+- Update dependencies. [#42498]
+
+## [0.47.15] - 2025-03-12
+### Added
+- Provide connection data to footer component. [#42000]
+
+### Changed
+- Update package dependencies. [#42384]
+
+## [0.47.14] - 2025-03-10
+### Changed
+- Internal updates.
+
+## [0.47.13] - 2025-03-03
+### Changed
+- Update package dependencies. [#42163]
+
+## [0.47.12] - 2025-02-24
+### Fixed
+- Code: Prevent dynamic class properties. [#41857]
+
+## [0.47.11] - 2025-02-17
+### Changed
+- Update dependencies. [#39855]
+
+## [0.47.10] - 2025-02-11
+### Changed
+- Update dependencies. [#39855]
+
+## [0.47.9] - 2025-02-10
+### Changed
+- Updated package dependencies. [#41491] [#41577]
+
+## [0.47.8] - 2025-02-03
+### Changed
+- Updated package dependencies. [#41286]
+
+## [0.47.7] - 2025-01-27
+### Changed
+- Internal updates.
+
+## [0.47.6] - 2025-01-20
+### Changed
+- Code: Use function-style exit() and die() with a default status code of 0. [#41167]
+- Updated package dependencies. [#41099]
+
+## [0.47.5] - 2025-01-06
+### Changed
+- Updated package dependencies. [#40784] [#40792] [#40797] [#40813] [#40843]
+
+## [0.47.4] - 2024-12-16
+### Changed
+- Updated package dependencies. [#40564]
+
+### Fixed
+- Fix missing instant search dialog for themes like Rebalance. [#40472]
+
+## [0.47.3] - 2024-12-09
+### Changed
+- Updated package dependencies. [#40363]
+
+## [0.47.2] - 2024-11-26
+### Changed
+- Update dependencies. [#39855]
+
+## [0.47.1] - 2024-11-25
+### Changed
+- Updated dependencies. [#40286]
+- Updated package dependencies. [#40288]
+
+## [0.47.0] - 2024-11-18
+### Removed
+- General: Update minimum PHP version to 7.2. [#40147]
+
+## [0.46.0] - 2024-11-11
+### Added
+- Search: Add ability to customize results [#36378]
+
+### Changed
+- Classic Widget: update asset enqueuing strategy to ensure compatibility with the Elementor plugin. [#39820]
+- Exclude corejs `exnext.iterator.` polyfills to avoid bloating the bundle. [#40060]
+- Updated package dependencies. [#39999] [#40060]
+
+## [0.45.12] - 2024-11-04
+### Added
+- Enable test coverage. [#39961]
+
+## [0.45.11] - 2024-10-29
+### Changed
+- Components: Add __nextHasNoMarginBottom to BaseControl-based components, preventing deprecation notices. [#39877]
+
+## [0.45.10] - 2024-10-28
+### Changed
+- Updated package dependencies. [#39910]
+
+## [0.45.9] - 2024-10-21
+### Changed
+- Update dependencies. [#39781]
+
+## [0.45.8] - 2024-10-14
+### Changed
+- Updated package dependencies. [#39707]
+
+### Fixed
+- Add `key` to tag and cat lists in `SearchResultMinimal` to improve behavior if lists change at runtime. [#39709]
+
+## [0.45.7] - 2024-10-07
+### Changed
+- Updated package dependencies. [#39592] [#39594] [#39595] [#39639]
+
+## [0.45.6] - 2024-09-30
+### Changed
+- Update dependencies. [#39528]
+
+## [0.45.5] - 2024-09-23
+### Changed
+- Instant search: Use triggering element's document instead of the global `document`. [#39364]
+- Search: reduce database calls by ensuring plan support before checking options [#39384]
+
+### Fixed
+- Use React properties rather than pass-throughs (e.g. `className` rather than `class`). [#39414]
+
+## [0.45.4] - 2024-09-16
+### Changed
+- Updated package dependencies. [#39332]
+
+### Fixed
+- Move trailing spaces out of i18n messages. [#39305]
+
+## [0.45.3] - 2024-09-10
+### Changed
+- Updated package dependencies. [#39302]
+
+## [0.45.2] - 2024-09-09
+### Changed
+- Updated package dependencies. [#39278]
+
+## [0.45.1] - 2024-09-05
+### Changed
+- Updated package dependencies. [#39176]
+
+## [0.45.0] - 2024-09-02
+### Added
+- Search: allow customizing highlighted fields [#39053]
+
+### Changed
+- Admin menu: change order of Jetpack sub-menu items [#39095]
+- Updated package dependencies. [#39111]
+
+### Fixed
+- Search: Use the user's locale when formatting request limits. [#38946]
+
+## [0.44.17] - 2024-08-26
+### Changed
+- Updated package dependencies. [#39004]
+
+## [0.44.16] - 2024-08-21
+### Changed
+- Internal updates.
+
+## [0.44.15] - 2024-08-19
+### Changed
+- Update dependencies. [#38861] [#38662]
+
+### Fixed
+- Fix incorrect next-version tokens in php `@since` and/or `@deprecated` docs. [#38869]
+
+## [0.44.14] - 2024-08-05
+### Changed
+- React compatibility: Changing ReactDOM.render usage to be via ReactDOM.createRoot. [#38649]
+
+## [0.44.13] - 2024-07-22
+### Changed
+- Update dependencies. [#38402]
+
+## [0.44.12] - 2024-07-08
+### Changed
+- Updated package dependencies. [#38132] [#38133]
+
+## [0.44.11] - 2024-06-24
+### Changed
+- Update dependencies. [#37979]
+
+## [0.44.10] - 2024-06-17
+### Changed
+- Updated package dependencies. [#37796] [#37860]
+
+## [0.44.9] - 2024-06-10
+### Changed
+- Change codebase to use clsx instead of classnames. [#37708]
+- Updated package dependencies. [#37669]
+
+## [0.44.8] - 2024-05-27
+### Changed
+- Update dependencies. [#37356]
+
+## [0.44.7] - 2024-05-20
+### Changed
+- Updated package dependencies. [#37379] [#37380] [#37382]
+
+## [0.44.6] - 2024-05-13
+### Changed
+- Update dependencies. [#37280]
+
+## [0.44.5] - 2024-05-06
+### Added
+- Add missing package dependencies. [#37141]
+
+### Changed
+- Updated package dependencies. [#37147]
+
+### Deprecated
+- Deprecate `jetpack_search` property on `Search_Widget`. It has never been set to a non-null value since the package was created. [#37201]
+
+## [0.44.4] - 2024-04-29
+### Fixed
+- Fix connection flow for new sites. [#37085]
+
+## [0.44.3] - 2024-04-25
+### Changed
+- Internal updates.
+
+## [0.44.2] - 2024-04-22
+### Changed
+- Internal updates.
+
+## [0.44.1] - 2024-04-15
+### Changed
+- Update dependencies. [#36848]
+
+## [0.44.0] - 2024-04-08
+### Changed
+- Updated package dependencies. [#36760]
+- Update to the most recent version of Color Studio, 2.6.0. [#36751]
+
+### Removed
+- Removed add Search license link for simple sites due to My Jetpack inavailability. [#36667]
+
+## [0.43.8] - 2024-03-27
+### Changed
+- Updated package dependencies. [#36585]
+
+## [0.43.7] - 2024-03-25
+### Changed
+- Internal updates.
+
+## [0.43.6] - 2024-03-18
+### Changed
+- Internal updates.
+
+## [0.43.5] - 2024-03-12
+### Changed
+- Updated package dependencies. [#36325]
+- Update to the most recent version of the @automattic/calypso-color-schemes package. [#36187]
+- Update to the most recent version of the @automattic/calypso-color-schemes package. [#36227]
+
+## [0.43.4] - 2024-03-04
+### Changed
+- Update dependencies. [#36113]
+- Updated package dependencies.
+
+## [0.43.3] - 2024-02-27
+### Changed
+- Update dependencies. [#35170]
+
+## [0.43.2] - 2024-02-19
+### Changed
+- Internal updates.
+
+## [0.43.1] - 2024-02-13
+### Changed
+- Updated package dependencies. [#35608]
+
+## [0.43.0] - 2024-02-05
+### Changed
+- Updated package dependencies. [#35384] [#35385]
+- Use blog ID instead of site slug in checkout links. [#35000]
+
+## [0.42.1] - 2024-01-29
+### Changed
+- Update dependencies. [#35170]
+
+## [0.42.0] - 2024-01-25
+### Added
+- Add price and rating to default sort options. [#35167]
+
+## [0.41.1] - 2024-01-22
+### Changed
+- Update dependencies. [#35117]
+
+## [0.41.0] - 2024-01-04
+### Added
+- Search: Add a filter to prevent tracking cookie reset. [#34803]
+
+### Changed
+- Updated package dependencies. [#34815]
+
+## [0.40.4] - 2023-12-20
+### Changed
+- Updated package dependencies. [#34694]
+
+## [0.40.3] - 2023-12-11
+### Changed
+- Updated package dependencies. [#34416]
+
+## [0.40.2] - 2023-12-03
+### Changed
+- Updated package dependencies. [#34411] [#34427]
+
+### Fixed
+- Instant Search: Fixed the title layout for product layout. [#34263]
+
+## [0.40.1] - 2023-11-24
+### Changed
+- Replaced usage of strpos() with str_contains(). [#34137]
+- Replaced usage of substr() with str_starts_with() and str_ends_with(). [#34207]
+
+## [0.40.0] - 2023-11-20
+### Changed
+- Replaced usage of strpos() with str_starts_with(). [#34135]
+- Updated required PHP version to >= 7.0. [#34192]
+
+## [0.39.7] - 2023-11-14
+### Changed
+- Updated package dependencies. [#34093]
+
+## [0.39.6] - 2023-11-13
+### Fixed
+- Switched to classic search for iOS 15 or lower. [#33929]
+
+## [0.39.5] - 2023-11-03
+
+## [0.39.4] - 2023-10-30
+### Changed
+- Instant Search: rely on browsers' native lazy loading functionality when we want to lazy load images. [#33817]
+
+## [0.39.3] - 2023-10-23
+### Changed
+- Updated package dependencies. [#33646] [#33687]
+
+## [0.39.2] - 2023-10-16
+### Added
+- Added HEIC (`*.heic`) to list of images types allowed to be passed through Photon during instant search. [#33494]
+
+### Changed
+- Updated package dependencies. [#33429, #33569]
+
+### Fixed
+- Search: Fixed excluded types option is not available under certain circumstances. [#33548]
+
+## [0.39.1] - 2023-10-10
+### Changed
+- Updated package dependencies. [#33428]
+
+## [0.39.0] - 2023-10-03
+### Added
+- Add a setting for Jetpack AI Search [#33432]
+
 ## [0.38.8] - 2023-09-19
 ### Changed
 - Updated Jetpack submenu sort order so individual features are alpha-sorted. [#32958]
@@ -16,8 +395,7 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 
 ## [0.38.6] - 2023-09-04
 ### Changed
-- Updated package dependencies. [#32803]
-- Updated package dependencies. [#32804]
+- Updated package dependencies. [#32803] [#32804]
 
 ## [0.38.5] - 2023-08-28
 ### Changed
@@ -33,8 +411,7 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 
 ## [0.38.2] - 2023-07-25
 ### Changed
-- Updated package dependencies. [#31923]
-- Updated package dependencies. [#32040]
+- Updated package dependencies. [#31923] [#32040]
 - Update props passed to JetpackFooter [#31627]
 
 ## [0.38.1] - 2023-07-17
@@ -424,9 +801,7 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 
 ### Changed
 - Instant search: updates overlay focus elements for design consistency [#25260]
-- Updated package dependencies. [#25144]
-- Updated package dependencies. [#25147]
-- Updated package dependencies. [#25158]
+- Updated package dependencies. [#25144] [#25147] [#25158]
 
 ### Fixed
 - Instant Search: Fix keyboard handling of sort options. [#25163]
@@ -539,12 +914,7 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 
 ### Changed
 - Search: refactored Settings to expose the settings array for sync [#24167]
-- Updated package dependencies. [#24189]
-- Updated package dependencies. [#24204]
-- Updated package dependencies. [#24302]
-- Updated package dependencies [#24276]
-- Updated package dependencies [#24296]
-- Updated package dependencies [#24301]
+- Updated package dependencies. [#24189] [#24204] [#24302] [#24276] [#24296] [#24301]
 
 ### Fixed
 - Search: Fix left padding for upsell page [#24285]
@@ -804,6 +1174,84 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 - Updated package dependencies.
 - Update PHPUnit configs to include just what needs coverage rather than include everything then try to exclude stuff that doesn't.
 
+[0.47.19]: https://github.com/Automattic/jetpack-search/compare/v0.47.18...v0.47.19
+[0.47.18]: https://github.com/Automattic/jetpack-search/compare/v0.47.17...v0.47.18
+[0.47.17]: https://github.com/Automattic/jetpack-search/compare/v0.47.16...v0.47.17
+[0.47.16]: https://github.com/Automattic/jetpack-search/compare/v0.47.15...v0.47.16
+[0.47.15]: https://github.com/Automattic/jetpack-search/compare/v0.47.14...v0.47.15
+[0.47.14]: https://github.com/Automattic/jetpack-search/compare/v0.47.13...v0.47.14
+[0.47.13]: https://github.com/Automattic/jetpack-search/compare/v0.47.12...v0.47.13
+[0.47.12]: https://github.com/Automattic/jetpack-search/compare/v0.47.11...v0.47.12
+[0.47.11]: https://github.com/Automattic/jetpack-search/compare/v0.47.10...v0.47.11
+[0.47.10]: https://github.com/Automattic/jetpack-search/compare/v0.47.9...v0.47.10
+[0.47.9]: https://github.com/Automattic/jetpack-search/compare/v0.47.8...v0.47.9
+[0.47.8]: https://github.com/Automattic/jetpack-search/compare/v0.47.7...v0.47.8
+[0.47.7]: https://github.com/Automattic/jetpack-search/compare/v0.47.6...v0.47.7
+[0.47.6]: https://github.com/Automattic/jetpack-search/compare/v0.47.5...v0.47.6
+[0.47.5]: https://github.com/Automattic/jetpack-search/compare/v0.47.4...v0.47.5
+[0.47.4]: https://github.com/Automattic/jetpack-search/compare/v0.47.3...v0.47.4
+[0.47.3]: https://github.com/Automattic/jetpack-search/compare/v0.47.2...v0.47.3
+[0.47.2]: https://github.com/Automattic/jetpack-search/compare/v0.47.1...v0.47.2
+[0.47.1]: https://github.com/Automattic/jetpack-search/compare/v0.47.0...v0.47.1
+[0.47.0]: https://github.com/Automattic/jetpack-search/compare/v0.46.0...v0.47.0
+[0.46.0]: https://github.com/Automattic/jetpack-search/compare/v0.45.12...v0.46.0
+[0.45.12]: https://github.com/Automattic/jetpack-search/compare/v0.45.11...v0.45.12
+[0.45.11]: https://github.com/Automattic/jetpack-search/compare/v0.45.10...v0.45.11
+[0.45.10]: https://github.com/Automattic/jetpack-search/compare/v0.45.9...v0.45.10
+[0.45.9]: https://github.com/Automattic/jetpack-search/compare/v0.45.8...v0.45.9
+[0.45.8]: https://github.com/Automattic/jetpack-search/compare/v0.45.7...v0.45.8
+[0.45.7]: https://github.com/Automattic/jetpack-search/compare/v0.45.6...v0.45.7
+[0.45.6]: https://github.com/Automattic/jetpack-search/compare/v0.45.5...v0.45.6
+[0.45.5]: https://github.com/Automattic/jetpack-search/compare/v0.45.4...v0.45.5
+[0.45.4]: https://github.com/Automattic/jetpack-search/compare/v0.45.3...v0.45.4
+[0.45.3]: https://github.com/Automattic/jetpack-search/compare/v0.45.2...v0.45.3
+[0.45.2]: https://github.com/Automattic/jetpack-search/compare/v0.45.1...v0.45.2
+[0.45.1]: https://github.com/Automattic/jetpack-search/compare/v0.45.0...v0.45.1
+[0.45.0]: https://github.com/Automattic/jetpack-search/compare/v0.44.17...v0.45.0
+[0.44.17]: https://github.com/Automattic/jetpack-search/compare/v0.44.16...v0.44.17
+[0.44.16]: https://github.com/Automattic/jetpack-search/compare/v0.44.15...v0.44.16
+[0.44.15]: https://github.com/Automattic/jetpack-search/compare/v0.44.14...v0.44.15
+[0.44.14]: https://github.com/Automattic/jetpack-search/compare/v0.44.13...v0.44.14
+[0.44.13]: https://github.com/Automattic/jetpack-search/compare/v0.44.12...v0.44.13
+[0.44.12]: https://github.com/Automattic/jetpack-search/compare/v0.44.11...v0.44.12
+[0.44.11]: https://github.com/Automattic/jetpack-search/compare/v0.44.10...v0.44.11
+[0.44.10]: https://github.com/Automattic/jetpack-search/compare/v0.44.9...v0.44.10
+[0.44.9]: https://github.com/Automattic/jetpack-search/compare/v0.44.8...v0.44.9
+[0.44.8]: https://github.com/Automattic/jetpack-search/compare/v0.44.7...v0.44.8
+[0.44.7]: https://github.com/Automattic/jetpack-search/compare/v0.44.6...v0.44.7
+[0.44.6]: https://github.com/Automattic/jetpack-search/compare/v0.44.5...v0.44.6
+[0.44.5]: https://github.com/Automattic/jetpack-search/compare/v0.44.4...v0.44.5
+[0.44.4]: https://github.com/Automattic/jetpack-search/compare/v0.44.3...v0.44.4
+[0.44.3]: https://github.com/Automattic/jetpack-search/compare/v0.44.2...v0.44.3
+[0.44.2]: https://github.com/Automattic/jetpack-search/compare/v0.44.1...v0.44.2
+[0.44.1]: https://github.com/Automattic/jetpack-search/compare/v0.44.0...v0.44.1
+[0.44.0]: https://github.com/Automattic/jetpack-search/compare/v0.43.8...v0.44.0
+[0.43.8]: https://github.com/Automattic/jetpack-search/compare/v0.43.7...v0.43.8
+[0.43.7]: https://github.com/Automattic/jetpack-search/compare/v0.43.6...v0.43.7
+[0.43.6]: https://github.com/Automattic/jetpack-search/compare/v0.43.5...v0.43.6
+[0.43.5]: https://github.com/Automattic/jetpack-search/compare/v0.43.4...v0.43.5
+[0.43.4]: https://github.com/Automattic/jetpack-search/compare/v0.43.3...v0.43.4
+[0.43.3]: https://github.com/Automattic/jetpack-search/compare/v0.43.2...v0.43.3
+[0.43.2]: https://github.com/Automattic/jetpack-search/compare/v0.43.1...v0.43.2
+[0.43.1]: https://github.com/Automattic/jetpack-search/compare/v0.43.0...v0.43.1
+[0.43.0]: https://github.com/Automattic/jetpack-search/compare/v0.42.1...v0.43.0
+[0.42.1]: https://github.com/Automattic/jetpack-search/compare/v0.42.0...v0.42.1
+[0.42.0]: https://github.com/Automattic/jetpack-search/compare/v0.41.1...v0.42.0
+[0.41.1]: https://github.com/Automattic/jetpack-search/compare/v0.41.0...v0.41.1
+[0.41.0]: https://github.com/Automattic/jetpack-search/compare/v0.40.4...v0.41.0
+[0.40.4]: https://github.com/Automattic/jetpack-search/compare/v0.40.3...v0.40.4
+[0.40.3]: https://github.com/Automattic/jetpack-search/compare/v0.40.2...v0.40.3
+[0.40.2]: https://github.com/Automattic/jetpack-search/compare/v0.40.1...v0.40.2
+[0.40.1]: https://github.com/Automattic/jetpack-search/compare/v0.40.0...v0.40.1
+[0.40.0]: https://github.com/Automattic/jetpack-search/compare/v0.39.7...v0.40.0
+[0.39.7]: https://github.com/Automattic/jetpack-search/compare/v0.39.6...v0.39.7
+[0.39.6]: https://github.com/Automattic/jetpack-search/compare/v0.39.5...v0.39.6
+[0.39.5]: https://github.com/Automattic/jetpack-search/compare/v0.39.4...v0.39.5
+[0.39.4]: https://github.com/Automattic/jetpack-search/compare/v0.39.3...v0.39.4
+[0.39.3]: https://github.com/Automattic/jetpack-search/compare/v0.39.2...v0.39.3
+[0.39.2]: https://github.com/Automattic/jetpack-search/compare/v0.39.1...v0.39.2
+[0.39.1]: https://github.com/Automattic/jetpack-search/compare/v0.39.0...v0.39.1
+[0.39.0]: https://github.com/Automattic/jetpack-search/compare/v0.38.8...v0.39.0
 [0.38.8]: https://github.com/Automattic/jetpack-search/compare/v0.38.7...v0.38.8
 [0.38.7]: https://github.com/Automattic/jetpack-search/compare/v0.38.6...v0.38.7
 [0.38.6]: https://github.com/Automattic/jetpack-search/compare/v0.38.5...v0.38.6

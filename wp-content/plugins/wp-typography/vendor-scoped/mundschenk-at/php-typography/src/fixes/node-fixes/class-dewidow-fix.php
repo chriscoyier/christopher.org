@@ -41,21 +41,21 @@ use WP_Typography\Vendor\PHP_Typography\U;
  */
 class Dewidow_Fix extends Abstract_Node_Fix
 {
-    const SPACE_BETWEEN = '[\\s]+';
+    const SPACE_BETWEEN = '[\s]+';
     // \s includes all special spaces (but not ZWSP) with the u flag.
-    const WIDOW = '[\\w\\p{M}\\-' . U::HYPHEN . U::ZERO_WIDTH_SPACE . U::SOFT_HYPHEN . ']+?';
+    const WIDOW = '[\w\p{M}\-' . U::HYPHEN . U::ZERO_WIDTH_SPACE . U::SOFT_HYPHEN . ']+?';
     // \w includes all alphanumeric Unicode characters but not composed characters.
     // Mandatory UTF-8 modifer.
     const REGEX_START = '/
 		(?:
-			\\A
+			\A
 			|
 			(?:
 				(?<space_before>            # subpattern 1: space before (note: ZWSP is not a space)
-					[\\s' . U::ZERO_WIDTH_SPACE . U::SOFT_HYPHEN . ']+
+					[\s' . U::ZERO_WIDTH_SPACE . U::SOFT_HYPHEN . ']+
 				)
 				(?<neighbor>                # subpattern 2: neighbors widow (short as possible)
-					[^\\s' . U::ZERO_WIDTH_SPACE . U::SOFT_HYPHEN . ']+?
+					[^\s' . U::ZERO_WIDTH_SPACE . U::SOFT_HYPHEN . ']+?
 				)
 			)
 		)
@@ -70,9 +70,9 @@ class Dewidow_Fix extends Abstract_Node_Fix
     // The maximum number of repetitions is missing.
     const REGEX_END = '})
 		(?<trailing>                       # subpattern 5: any trailing punctuation or spaces
-			[^\\w\\p{M}]*
+			[^\w\p{M}]*
 		)
-		\\Z
+		\Z
 	/Sxu';
     const MASKED_NARROW_SPACE = '__NO_BREAK_NARROW_SPACE__';
     /**
@@ -115,7 +115,7 @@ class Dewidow_Fix extends Abstract_Node_Fix
             // We are done.
         }
         // Do what we have to do.
-        return \preg_replace_callback(self::REGEX_START . ($word_number - 1) . self::REGEX_END, function (array $widow) use($func, $max_pull, $max_length, $word_number) {
+        return \preg_replace_callback(self::REGEX_START . ($word_number - 1) . self::REGEX_END, function (array $widow) use ($func, $max_pull, $max_length, $word_number) {
             // If we are here, we know that widows are being protected in some fashion
             // with that, we will assert that widows should never be hyphenated or wrapped
             // as such, we will strip soft hyphens and zero-width-spaces.
@@ -165,7 +165,7 @@ class Dewidow_Fix extends Abstract_Node_Fix
      */
     protected static function make_space_nonbreaking($string, $deprecated, $u)
     {
-        return \preg_replace(['/\\s*(?:' . U::THIN_SPACE . '|' . U::NO_BREAK_NARROW_SPACE . ')\\s*/Su', "/\\s+/S{$u}", '/' . self::MASKED_NARROW_SPACE . "/S{$u}"], [self::MASKED_NARROW_SPACE, U::NO_BREAK_SPACE, U::NO_BREAK_NARROW_SPACE], $string);
+        return \preg_replace(['/\s*(?:' . U::THIN_SPACE . '|' . U::NO_BREAK_NARROW_SPACE . ')\s*/Su', "/\\s+/S{$u}", '/' . self::MASKED_NARROW_SPACE . "/S{$u}"], [self::MASKED_NARROW_SPACE, U::NO_BREAK_SPACE, U::NO_BREAK_NARROW_SPACE], $string);
     }
 }
 /**
@@ -175,4 +175,4 @@ class Dewidow_Fix extends Abstract_Node_Fix
  *
  * @since 5.0.0
  */
-\class_alias('WP_Typography\\Vendor\\PHP_Typography\\Fixes\\Node_Fixes\\Dewidow_Fix', 'PHP_Typography\\Fixes\\Node_Fixes\\Dewidow_Fix', \false);
+\class_alias('WP_Typography\Vendor\PHP_Typography\Fixes\Node_Fixes\Dewidow_Fix', 'PHP_Typography\Fixes\Node_Fixes\Dewidow_Fix', \false);

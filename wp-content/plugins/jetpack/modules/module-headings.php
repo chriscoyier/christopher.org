@@ -16,14 +16,19 @@ function jetpack_get_module_i18n( $key ) {
 	static $modules;
 	if ( ! isset( $modules ) ) {
 		$modules = array(
-			'action-bar' => array(
-				'name' => _x( 'Action Bar (Experimental)', 'Module Name', 'jetpack' ),
-				'description' => _x( 'An easy to use way for visitors to follow, like, and comment on your site.', 'Module Description', 'jetpack' ),
+			'account-protection' => array(
+				'name' => _x( 'Account protection', 'Module Name', 'jetpack' ),
+				'description' => _x( 'When enabled, users can only set passwords that meet strong security standards, helping protect their accounts and your site.', 'Module Description', 'jetpack' ),
 			),
 
 			'blaze' => array(
 				'name' => _x( 'Blaze', 'Module Name', 'jetpack' ),
 				'description' => _x( 'Grow your audience by promoting your content across Tumblr and WordPress.com.', 'Module Description', 'jetpack' ),
+			),
+
+			'blocks' => array(
+				'name' => _x( 'Blocks', 'Module Name', 'jetpack' ),
+				'description' => _x( 'Add additional blocks to your site and post editors.', 'Module Description', 'jetpack' ),
 			),
 
 			'carousel' => array(
@@ -42,8 +47,8 @@ function jetpack_get_module_i18n( $key ) {
 			),
 
 			'contact-form' => array(
-				'name' => _x( 'Contact Form', 'Module Name', 'jetpack' ),
-				'description' => _x( 'Add a customizable contact form to any post or page using the Jetpack Form Block.', 'Module Description', 'jetpack' ),
+				'name' => _x( 'Forms', 'Module Name', 'jetpack' ),
+				'description' => _x( 'Add a customizable form to any post or page using the Jetpack Form block.', 'Module Description', 'jetpack' ),
 			),
 
 			'copy-post' => array(
@@ -56,19 +61,9 @@ function jetpack_get_module_i18n( $key ) {
 				'description' => _x( 'Display different types of content on your site with custom content types.', 'Module Description', 'jetpack' ),
 			),
 
-			'custom-css' => array(
-				'name' => _x( 'Custom CSS', 'Module Name', 'jetpack' ),
-				'description' => _x( 'Adds options for CSS preprocessor use, disabling the theme\'s CSS, or custom image width.', 'Module Description', 'jetpack' ),
-			),
-
-			'enhanced-distribution' => array(
-				'name' => _x( 'Enhanced Distribution', 'Module Name', 'jetpack' ),
-				'description' => _x( 'Increase reach and traffic.', 'Module Description', 'jetpack' ),
-			),
-
-			'google-analytics' => array(
-				'name' => _x( 'Google Analytics', 'Module Name', 'jetpack' ),
-				'description' => _x( 'Set up Google Analytics without touching a line of code.', 'Module Description', 'jetpack' ),
+			'geo-location' => array(
+				'name' => _x( 'Geo Location', 'Module Name', 'jetpack' ),
+				'description' => _x( 'Add location data to your posts.', 'Module Description', 'jetpack' ),
 			),
 
 			'google-fonts' => array(
@@ -96,11 +91,6 @@ function jetpack_get_module_i18n( $key ) {
 				'description' => _x( 'Use the LaTeX markup language to write mathematical equations and formulas', 'Module Description', 'jetpack' ),
 			),
 
-			'lazy-images' => array(
-				'name' => _x( 'Lazy Images', 'Module Name', 'jetpack' ),
-				'description' => _x( 'Most modern browsers already support lazy loading. With over 90% of current browsers offering native support, enabling this feature may be unnecessary.', 'Module Description', 'jetpack' ),
-			),
-
 			'likes' => array(
 				'name' => _x( 'Likes', 'Module Name', 'jetpack' ),
 				'description' => _x( 'Give visitors an easy way to show they appreciate your content.', 'Module Description', 'jetpack' ),
@@ -109,11 +99,6 @@ function jetpack_get_module_i18n( $key ) {
 			'markdown' => array(
 				'name' => _x( 'Markdown', 'Module Name', 'jetpack' ),
 				'description' => _x( 'Write posts or pages in plain-text Markdown syntax', 'Module Description', 'jetpack' ),
-			),
-
-			'masterbar' => array(
-				'name' => _x( 'WordPress.com Toolbar and Dashboard customizations', 'Module Name', 'jetpack' ),
-				'description' => _x( 'Replaces the admin bar with a useful toolbar to quickly manage your site via WordPress.com. Also adds additional customizations to the WPAdmin dashboard experience for better compatibility with WP.com.', 'Module Description', 'jetpack' ),
 			),
 
 			'monitor' => array(
@@ -148,7 +133,7 @@ function jetpack_get_module_i18n( $key ) {
 
 			'protect' => array(
 				'name' => _x( 'Brute force protection', 'Module Name', 'jetpack' ),
-				'description' => _x( 'Enabling brute force protection will prevent bots and hackers from attempting to log in to your website with common username and password combinations.', 'Module Description', 'jetpack' ),
+				'description' => _x( 'Prevent bots and hackers from attempting to log in to your website with common username and password combinations.', 'Module Description', 'jetpack' ),
 			),
 
 			'publicize' => array(
@@ -173,7 +158,7 @@ function jetpack_get_module_i18n( $key ) {
 
 			'sharedaddy' => array(
 				'name' => _x( 'Sharing', 'Module Name', 'jetpack' ),
-				'description' => _x( 'Add Twitter and Facebook buttons at the bottom of each post, making it easy for visitors to share your content.', 'Module Description', 'jetpack' ),
+				'description' => _x( 'Add sharing buttons at the bottom of each post, making it easy for visitors to share your content.', 'Module Description', 'jetpack' ),
 			),
 
 			'shortcodes' => array(
@@ -228,7 +213,7 @@ function jetpack_get_module_i18n( $key ) {
 
 			'waf' => array(
 				'name' => _x( 'Firewall', 'Module Name', 'jetpack' ),
-				'description' => _x( 'Protect your site with Jetpack\'s Web Application Firewall', 'Module Description', 'jetpack' ),
+				'description' => _x( 'Protect your site with Jetpack\'s Web Application Firewall.', 'Module Description', 'jetpack' ),
 			),
 
 			'widget-visibility' => array(
@@ -272,8 +257,17 @@ function jetpack_get_module_i18n_tag( $key ) {
 			// - modules/woocommerce-analytics.php
 			'Other' => _x( 'Other', 'Module Tag', 'jetpack' ),
 
+			// Modules with `Account Protection` tag:
+			// - modules/account-protection.php
+			'Account Protection' => _x( 'Account Protection', 'Module Tag', 'jetpack' ),
+
+			// Modules with `Traffic` tag:
+			// - modules/blaze.php
+			// - modules/sitemaps.php
+			// - modules/wordads.php
+			'Traffic' => _x( 'Traffic', 'Module Tag', 'jetpack' ),
+
 			// Modules with `Social` tag:
-			// - modules/action-bar.php
 			// - modules/blaze.php
 			// - modules/comment-likes.php
 			// - modules/comments.php
@@ -288,11 +282,9 @@ function jetpack_get_module_i18n_tag( $key ) {
 			// - modules/widgets.php
 			'Social' => _x( 'Social', 'Module Tag', 'jetpack' ),
 
-			// Modules with `Traffic` tag:
-			// - modules/blaze.php
-			// - modules/sitemaps.php
-			// - modules/wordads.php
-			'Traffic' => _x( 'Traffic', 'Module Tag', 'jetpack' ),
+			// Modules with `blocks` tag:
+			// - modules/blocks.php
+			'blocks' => _x( 'blocks', 'Module Tag', 'jetpack' ),
 
 			// Modules with `Photos and Videos` tag:
 			// - modules/carousel.php
@@ -306,7 +298,6 @@ function jetpack_get_module_i18n_tag( $key ) {
 			// Modules with `Writing` tag:
 			// - modules/copy-post.php
 			// - modules/custom-content-types.php
-			// - modules/enhanced-distribution.php
 			// - modules/json-api.php
 			// - modules/latex.php
 			// - modules/markdown.php
@@ -314,27 +305,12 @@ function jetpack_get_module_i18n_tag( $key ) {
 			// - modules/shortcodes.php
 			'Writing' => _x( 'Writing', 'Module Tag', 'jetpack' ),
 
-			// Modules with `Appearance` tag:
-			// - modules/custom-css.php
-			// - modules/gravatar-hovercards.php
-			// - modules/infinite-scroll.php
-			// - modules/lazy-images.php
-			// - modules/photon-cdn.php
-			// - modules/photon.php
-			// - modules/seo-tools.php
-			// - modules/shortcodes.php
-			// - modules/widget-visibility.php
-			// - modules/widgets.php
-			// - modules/wordads.php
-			'Appearance' => _x( 'Appearance', 'Module Tag', 'jetpack' ),
-
 			// Modules with `Fonts` tag:
 			// - modules/google-fonts.php
 			'Fonts' => _x( 'Fonts', 'Module Tag', 'jetpack' ),
 
 			// Modules with `Recommended` tag:
 			// - modules/google-fonts.php
-			// - modules/lazy-images.php
 			// - modules/monitor.php
 			// - modules/photon-cdn.php
 			// - modules/photon.php
@@ -347,14 +323,22 @@ function jetpack_get_module_i18n_tag( $key ) {
 			// - modules/woocommerce-analytics.php
 			'Recommended' => _x( 'Recommended', 'Module Tag', 'jetpack' ),
 
+			// Modules with `Appearance` tag:
+			// - modules/gravatar-hovercards.php
+			// - modules/infinite-scroll.php
+			// - modules/photon-cdn.php
+			// - modules/photon.php
+			// - modules/seo-tools.php
+			// - modules/shortcodes.php
+			// - modules/widget-visibility.php
+			// - modules/widgets.php
+			// - modules/wordads.php
+			'Appearance' => _x( 'Appearance', 'Module Tag', 'jetpack' ),
+
 			// Modules with `Developers` tag:
 			// - modules/json-api.php
 			// - modules/sso.php
 			'Developers' => _x( 'Developers', 'Module Tag', 'jetpack' ),
-
-			// Modules with `General` tag:
-			// - modules/masterbar.php
-			'General' => _x( 'General', 'Module Tag', 'jetpack' ),
 
 			// Modules with `Admin` tag:
 			// - modules/post-list.php
@@ -389,22 +373,22 @@ function jetpack_get_module_i18n_tag( $key ) {
  */
 function jetpack_get_module_info( $key ) {
 	static $module_info = array (
-	  'action-bar' => 
+	  'account-protection' => 
 	  array (
-	    'name' => 'Action Bar (Experimental)',
-	    'description' => 'An easy to use way for visitors to follow, like, and comment on your site.',
-	    'sort' => '40',
-	    'recommendation_order' => '18',
-	    'introduced' => '11.4',
+	    'name' => 'Account protection',
+	    'description' => 'When enabled, users can only set passwords that meet strong security standards, helping protect their accounts and your site.',
+	    'sort' => '4',
+	    'recommendation_order' => '',
+	    'introduced' => '14.5',
 	    'changed' => '',
 	    'deactivate' => '',
 	    'free' => '',
 	    'requires_connection' => 'Yes',
-	    'requires_user_connection' => '',
-	    'auto_activate' => 'No',
-	    'module_tags' => 'Social',
-	    'feature' => 'Engagement',
-	    'additional_search_queries' => 'adminbar, actionbar, comments, likes, follow, sharing',
+	    'requires_user_connection' => 'No',
+	    'auto_activate' => 'Yes',
+	    'module_tags' => 'Account Protection',
+	    'feature' => 'Security',
+	    'additional_search_queries' => '',
 	    'plan_classes' => '',
 	  ),
 	  'blaze' => 
@@ -425,6 +409,24 @@ function jetpack_get_module_info( $key ) {
 	    'additional_search_queries' => 'advertising, ads',
 	    'plan_classes' => '',
 	  ),
+	  'blocks' => 
+	  array (
+	    'name' => 'Blocks',
+	    'description' => 'Add additional blocks to your site and post editors.',
+	    'sort' => '5',
+	    'recommendation_order' => '',
+	    'introduced' => '13.9-a.8',
+	    'changed' => '',
+	    'deactivate' => '',
+	    'free' => '',
+	    'requires_connection' => 'No',
+	    'requires_user_connection' => '',
+	    'auto_activate' => 'Yes',
+	    'module_tags' => 'blocks',
+	    'feature' => 'Writing',
+	    'additional_search_queries' => '',
+	    'plan_classes' => '',
+	  ),
 	  'carousel' => 
 	  array (
 	    'name' => 'Carousel',
@@ -440,7 +442,7 @@ function jetpack_get_module_info( $key ) {
 	    'auto_activate' => 'No',
 	    'module_tags' => 'Photos and Videos',
 	    'feature' => 'Appearance',
-	    'additional_search_queries' => 'gallery, carousel, diaporama, slideshow, images, lightbox, exif, metadata, image',
+	    'additional_search_queries' => 'gallery, carousel, diaporama, slideshow, images, lightbox, exif, metadata, image, creator',
 	    'plan_classes' => '',
 	  ),
 	  'comment-likes' => 
@@ -481,8 +483,8 @@ function jetpack_get_module_info( $key ) {
 	  ),
 	  'contact-form' => 
 	  array (
-	    'name' => 'Contact Form',
-	    'description' => 'Add a customizable contact form to any post or page using the Jetpack Form Block.',
+	    'name' => 'Forms',
+	    'description' => 'Add a customizable form to any post or page using the Jetpack Form block.',
 	    'sort' => '15',
 	    'recommendation_order' => '14',
 	    'introduced' => '1.3',
@@ -494,7 +496,7 @@ function jetpack_get_module_info( $key ) {
 	    'auto_activate' => 'Yes',
 	    'module_tags' => 'Other',
 	    'feature' => 'Writing',
-	    'additional_search_queries' => 'contact, form, grunion, feedback, submission, contact form, email, feedback, contact form plugin, custom form, custom form plugin, form builder, forms, form maker, survey, contact by jetpack, contact us, forms free',
+	    'additional_search_queries' => 'contact, form, grunion, feedback, submission, contact form, email, feedback, contact form plugin, custom form, custom form plugin, form builder, forms, form maker, survey, contact by jetpack, contact us, forms free, creator',
 	    'plan_classes' => '',
 	  ),
 	  'copy-post' => 
@@ -533,59 +535,23 @@ function jetpack_get_module_info( $key ) {
 	    'additional_search_queries' => 'cpt, custom post types, portfolio, portfolios, testimonial, testimonials',
 	    'plan_classes' => '',
 	  ),
-	  'custom-css' => 
+	  'geo-location' => 
 	  array (
-	    'name' => 'Custom CSS',
-	    'description' => 'Adds options for CSS preprocessor use, disabling the theme\'s CSS, or custom image width.',
-	    'sort' => '2',
+	    'name' => 'Geo Location',
+	    'description' => 'Add location data to your posts.',
+	    'sort' => '',
 	    'recommendation_order' => '',
-	    'introduced' => '1.7',
+	    'introduced' => '',
 	    'changed' => '',
 	    'deactivate' => '',
 	    'free' => '',
-	    'requires_connection' => 'No',
+	    'requires_connection' => '',
 	    'requires_user_connection' => '',
-	    'auto_activate' => 'No',
-	    'module_tags' => 'Appearance',
-	    'feature' => 'Appearance',
-	    'additional_search_queries' => 'css, customize, custom, style, editor, less, sass, preprocessor, font, mobile, appearance, theme, stylesheet',
-	    'plan_classes' => '',
-	  ),
-	  'enhanced-distribution' => 
-	  array (
-	    'name' => 'Enhanced Distribution',
-	    'description' => 'Increase reach and traffic.',
-	    'sort' => '5',
-	    'recommendation_order' => '',
-	    'introduced' => '1.2',
-	    'changed' => '',
-	    'deactivate' => '',
-	    'free' => '',
-	    'requires_connection' => 'Yes',
-	    'requires_user_connection' => '',
-	    'auto_activate' => 'Public',
-	    'module_tags' => 'Writing',
-	    'feature' => 'Engagement',
-	    'additional_search_queries' => 'google, seo, firehose, search, broadcast, broadcasting',
-	    'plan_classes' => '',
-	  ),
-	  'google-analytics' => 
-	  array (
-	    'name' => 'Google Analytics',
-	    'description' => 'Set up Google Analytics without touching a line of code.',
-	    'sort' => '37',
-	    'recommendation_order' => '',
-	    'introduced' => '4.5',
-	    'changed' => '',
-	    'deactivate' => '',
-	    'free' => '',
-	    'requires_connection' => 'Yes',
-	    'requires_user_connection' => '',
-	    'auto_activate' => 'No',
+	    'auto_activate' => '',
 	    'module_tags' => '',
-	    'feature' => 'Engagement',
-	    'additional_search_queries' => 'webmaster, google, analytics, console',
-	    'plan_classes' => 'business, premium, security, complete',
+	    'feature' => '',
+	    'additional_search_queries' => '',
+	    'plan_classes' => '',
 	  ),
 	  'google-fonts' => 
 	  array (
@@ -602,7 +568,7 @@ function jetpack_get_module_info( $key ) {
 	    'auto_activate' => 'No',
 	    'module_tags' => 'Fonts, Recommended',
 	    'feature' => 'Writing',
-	    'additional_search_queries' => 'fonts, webfonts, typography',
+	    'additional_search_queries' => 'fonts, webfonts, typography, creator',
 	    'plan_classes' => '',
 	  ),
 	  'gravatar-hovercards' => 
@@ -677,24 +643,6 @@ function jetpack_get_module_info( $key ) {
 	    'additional_search_queries' => 'latex, math, equation, equations, formula, code',
 	    'plan_classes' => '',
 	  ),
-	  'lazy-images' => 
-	  array (
-	    'name' => 'Lazy Images',
-	    'description' => 'Most modern browsers already support lazy loading. With over 90% of current browsers offering native support, enabling this feature may be unnecessary.',
-	    'sort' => '24',
-	    'recommendation_order' => '14',
-	    'introduced' => '5.6.0',
-	    'changed' => '',
-	    'deactivate' => '',
-	    'free' => '',
-	    'requires_connection' => 'No',
-	    'requires_user_connection' => '',
-	    'auto_activate' => 'No',
-	    'module_tags' => 'Appearance, Recommended',
-	    'feature' => 'Appearance',
-	    'additional_search_queries' => 'mobile, theme, fast images, fast image, image, lazy, lazy load, lazyload, images, lazy images, thumbnail, image lazy load, lazy loading, load, loading',
-	    'plan_classes' => '',
-	  ),
 	  'likes' => 
 	  array (
 	    'name' => 'Likes',
@@ -729,24 +677,6 @@ function jetpack_get_module_info( $key ) {
 	    'module_tags' => 'Writing',
 	    'feature' => 'Writing',
 	    'additional_search_queries' => 'md, markdown',
-	    'plan_classes' => '',
-	  ),
-	  'masterbar' => 
-	  array (
-	    'name' => 'WordPress.com Toolbar and Dashboard customizations',
-	    'description' => 'Replaces the admin bar with a useful toolbar to quickly manage your site via WordPress.com. Also adds additional customizations to the WPAdmin dashboard experience for better compatibility with WP.com.',
-	    'sort' => '38',
-	    'recommendation_order' => '16',
-	    'introduced' => '4.8',
-	    'changed' => '',
-	    'deactivate' => '',
-	    'free' => '',
-	    'requires_connection' => 'Yes',
-	    'requires_user_connection' => 'Yes',
-	    'auto_activate' => 'No',
-	    'module_tags' => 'General',
-	    'feature' => '',
-	    'additional_search_queries' => 'adminbar, masterbar, colorschemes, profile-edit',
 	    'plan_classes' => '',
 	  ),
 	  'monitor' => 
@@ -860,7 +790,7 @@ function jetpack_get_module_info( $key ) {
 	  'protect' => 
 	  array (
 	    'name' => 'Brute force protection',
-	    'description' => 'Enabling brute force protection will prevent bots and hackers from attempting to log in to your website with common username and password combinations.',
+	    'description' => 'Prevent bots and hackers from attempting to log in to your website with common username and password combinations.',
 	    'sort' => '1',
 	    'recommendation_order' => '4',
 	    'introduced' => '3.4',
@@ -890,7 +820,7 @@ function jetpack_get_module_info( $key ) {
 	    'auto_activate' => 'No',
 	    'module_tags' => 'Social, Recommended',
 	    'feature' => 'Engagement',
-	    'additional_search_queries' => 'facebook, jetpack publicize, tumblr, linkedin, social, tweet, connections, sharing, social media, automated, automated sharing, auto publish, auto tweet and like, auto tweet, facebook auto post, facebook posting',
+	    'additional_search_queries' => 'facebook, bluesky, threads, mastodon, instagram, jetpack publicize, tumblr, linkedin, social, tweet, connections, sharing, social media, automated, automated sharing, auto publish, auto tweet and like, auto tweet, facebook auto post, facebook posting',
 	    'plan_classes' => '',
 	  ),
 	  'related-posts' => 
@@ -908,7 +838,7 @@ function jetpack_get_module_info( $key ) {
 	    'auto_activate' => 'No',
 	    'module_tags' => 'Recommended',
 	    'feature' => 'Engagement',
-	    'additional_search_queries' => 'related, jetpack related posts, related posts for wordpress, related posts, popular posts, popular, related content, related post, contextual, context, contextual related posts, related articles, similar posts, easy related posts, related page, simple related posts, free related posts, related thumbnails, similar, engagement, yet another related posts plugin',
+	    'additional_search_queries' => 'related, jetpack related posts, related posts for wordpress, related posts, popular posts, popular, related content, related post, contextual, context, contextual related posts, related articles, similar posts, easy related posts, related page, simple related posts, free related posts, related thumbnails, similar, engagement, yet another related posts plugin, creator',
 	    'plan_classes' => '',
 	  ),
 	  'search' => 
@@ -939,7 +869,7 @@ function jetpack_get_module_info( $key ) {
 	    'changed' => '',
 	    'deactivate' => '',
 	    'free' => '',
-	    'requires_connection' => 'Yes',
+	    'requires_connection' => 'No',
 	    'requires_user_connection' => 'No',
 	    'auto_activate' => 'No',
 	    'module_tags' => 'Social, Appearance',
@@ -950,7 +880,7 @@ function jetpack_get_module_info( $key ) {
 	  'sharedaddy' => 
 	  array (
 	    'name' => 'Sharing',
-	    'description' => 'Add Twitter and Facebook buttons at the bottom of each post, making it easy for visitors to share your content.',
+	    'description' => 'Add sharing buttons at the bottom of each post, making it easy for visitors to share your content.',
 	    'sort' => '7',
 	    'recommendation_order' => '6',
 	    'introduced' => '1.1',
@@ -1070,7 +1000,7 @@ function jetpack_get_module_info( $key ) {
 	    'auto_activate' => 'No',
 	    'module_tags' => 'Social',
 	    'feature' => 'Engagement',
-	    'additional_search_queries' => 'subscriptions, subscription, email, follow, followers, subscribers, signup, newsletter',
+	    'additional_search_queries' => 'subscriptions, subscription, email, follow, followers, subscribers, signup, newsletter, creator',
 	    'plan_classes' => '',
 	  ),
 	  'tiled-gallery' => 
@@ -1148,7 +1078,7 @@ function jetpack_get_module_info( $key ) {
 	  'waf' => 
 	  array (
 	    'name' => 'Firewall',
-	    'description' => 'Protect your site with Jetpack\'s Web Application Firewall',
+	    'description' => 'Protect your site with Jetpack\'s Web Application Firewall.',
 	    'sort' => '5',
 	    'recommendation_order' => '',
 	    'introduced' => '10.9',
@@ -1232,7 +1162,7 @@ function jetpack_get_module_info( $key ) {
 	    'auto_activate' => 'No',
 	    'module_tags' => 'Traffic, Appearance',
 	    'feature' => '',
-	    'additional_search_queries' => 'advertising, ad codes, ads',
+	    'additional_search_queries' => 'advertising, ad codes, ads, creator',
 	    'plan_classes' => 'premium, business, security, complete',
 	  ),
 	);
@@ -1273,7 +1203,7 @@ function jetpack_get_all_module_header_names() {
  */
 function jetpack_has_no_module_info( $slug ) {
 	$no_info_slugs = array (
-	  0 => 'geo-location',
+	  0 => 'masterbar',
 	  1 => 'module-extras',
 	  2 => 'module-info',
 	  3 => 'plugin-search',

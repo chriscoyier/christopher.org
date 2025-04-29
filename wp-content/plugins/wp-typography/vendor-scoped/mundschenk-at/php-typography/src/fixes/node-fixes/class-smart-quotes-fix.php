@@ -41,21 +41,21 @@ use WP_Typography\Vendor\PHP_Typography\U;
  */
 class Smart_Quotes_Fix extends Abstract_Node_Fix
 {
-    const NUMBERS_BEFORE_PRIME = '\\b(?:\\d+\\/)?\\d{1,3}';
+    const NUMBERS_BEFORE_PRIME = '\b(?:\d+\/)?\d{1,3}';
     const DOUBLE_PRIME = '/(' . self::NUMBERS_BEFORE_PRIME . ")(?:''|\")(?=\\W|\\Z|-\\w)/S";
     const SINGLE_PRIME = '/(' . self::NUMBERS_BEFORE_PRIME . ")'(?=\\W|\\Z|-\\w)/S";
     const SINGLE_DOUBLE_PRIME = '/(' . self::NUMBERS_BEFORE_PRIME . ")'(\\s*)(\\b(?:\\d+\\/)?\\d+)(?:''|\")(?=\\W|\\Z)/S";
     const SINGLE_QUOTED_NUMBERS = "/(?<=\\W|\\A)'([^\"]*\\d+)'(?=\\W|\\Z)/S";
-    const DOUBLE_QUOTED_NUMBERS = '/(?<=\\W|\\A)"([^"]*\\d+)"(?=\\W|\\Z)/S';
-    const COMMA_QUOTE = '/(?<=\\s|\\A),(?=\\S)/S';
+    const DOUBLE_QUOTED_NUMBERS = '/(?<=\W|\A)"([^"]*\d+)"(?=\W|\Z)/S';
+    const COMMA_QUOTE = '/(?<=\s|\A),(?=\S)/S';
     const APOSTROPHE_WORDS = "/(?<=\\w)'(?=\\w)/S";
     const APOSTROPHE_DECADES = "/'(\\d\\d(s|er)?\\b)/S";
     // Allow both English '80s and German '80er.
     const SINGLE_QUOTE_OPEN = "/(?: '(?=\\w) )  | (?: (?<=\\s|\\A)'(?=\\S) )/Sx";
     // Alternative is for expressions like _'¿hola?'_.
     const SINGLE_QUOTE_CLOSE = "/(?: (?<=\\w)' ) | (?: (?<=\\S)'(?=\\s|\\Z) )/Sx";
-    const DOUBLE_QUOTE_OPEN = '/(?: "(?=\\w) )  | (?: (?<=\\s|\\A)"(?=\\S) )/Sx';
-    const DOUBLE_QUOTE_CLOSE = '/(?: (?<=\\w)" ) | (?: (?<=\\S)"(?=\\s|\\Z) )/Sx';
+    const DOUBLE_QUOTE_OPEN = '/(?: "(?=\w) )  | (?: (?<=\s|\A)"(?=\S) )/Sx';
+    const DOUBLE_QUOTE_CLOSE = '/(?: (?<=\w)" ) | (?: (?<=\S)"(?=\s|\Z) )/Sx';
     /**
      * Cached primary quote style.
      *
@@ -204,7 +204,7 @@ class Smart_Quotes_Fix extends Abstract_Node_Fix
      * @param  string $secondary_open  Secondary quote style open.
      * @param  string $secondary_close Secondary quote style close.
      */
-    private function update_smart_quotes_brackets($primary_open, $primary_close, $secondary_open, $secondary_close) : void
+    private function update_smart_quotes_brackets($primary_open, $primary_close, $secondary_open, $secondary_close): void
     {
         $brackets = [
             // Single quotes.
@@ -236,4 +236,4 @@ class Smart_Quotes_Fix extends Abstract_Node_Fix
  *
  * @since 5.0.0
  */
-\class_alias('WP_Typography\\Vendor\\PHP_Typography\\Fixes\\Node_Fixes\\Smart_Quotes_Fix', 'PHP_Typography\\Fixes\\Node_Fixes\\Smart_Quotes_Fix', \false);
+\class_alias('WP_Typography\Vendor\PHP_Typography\Fixes\Node_Fixes\Smart_Quotes_Fix', 'PHP_Typography\Fixes\Node_Fixes\Smart_Quotes_Fix', \false);

@@ -84,10 +84,10 @@ class Style_Hanging_Punctuation_Fix extends Classes_Dependent_Fix
     private const SINGLE_HANGING_PUNCTUATION = "'" . U::SINGLE_QUOTE_OPEN . U::SINGLE_QUOTE_CLOSE . U::SINGLE_LOW_9_QUOTE . U::SINGLE_PRIME . U::APOSTROPHE;
     // requires modifiers: x (multiline pattern) u (utf8).
     // Style hanging punctuation.
-    const STYLE_DOUBLE = '/(\\s)([' . self::DOUBLE_HANGING_PUNCTUATION . '])(\\w+)/S';
-    const STYLE_SINGLE = '/(\\s)([' . self::SINGLE_HANGING_PUNCTUATION . '])(\\w+)/S';
-    const STYLE_INITIAL_DOUBLE = '/(?:\\A)([' . self::DOUBLE_HANGING_PUNCTUATION . '])(\\w+)/S';
-    const STYLE_INITIAL_SINGLE = '/(?:\\A)([' . self::SINGLE_HANGING_PUNCTUATION . '])(\\w+)/S';
+    const STYLE_DOUBLE = '/(\s)([' . self::DOUBLE_HANGING_PUNCTUATION . '])(\w+)/S';
+    const STYLE_SINGLE = '/(\s)([' . self::SINGLE_HANGING_PUNCTUATION . '])(\w+)/S';
+    const STYLE_INITIAL_DOUBLE = '/(?:\A)([' . self::DOUBLE_HANGING_PUNCTUATION . '])(\w+)/S';
+    const STYLE_INITIAL_SINGLE = '/(?:\A)([' . self::SINGLE_HANGING_PUNCTUATION . '])(\w+)/S';
     /**
      * Creates a new classes dependent fix.
      *
@@ -164,4 +164,4 @@ class Style_Hanging_Punctuation_Fix extends Classes_Dependent_Fix
  *
  * @since 5.0.0
  */
-\class_alias('WP_Typography\\Vendor\\PHP_Typography\\Fixes\\Node_Fixes\\Style_Hanging_Punctuation_Fix', 'PHP_Typography\\Fixes\\Node_Fixes\\Style_Hanging_Punctuation_Fix', \false);
+\class_alias('WP_Typography\Vendor\PHP_Typography\Fixes\Node_Fixes\Style_Hanging_Punctuation_Fix', 'PHP_Typography\Fixes\Node_Fixes\Style_Hanging_Punctuation_Fix', \false);

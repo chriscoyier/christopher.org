@@ -111,8 +111,11 @@ class Jetpack_Subscriptions_Widget extends WP_Widget {
 	 * @param array $instance The settings for the particular instance of the widget.
 	 */
 	public function widget( $args, $instance ) {
+		if ( self::is_wpcom() && ! self::wpcom_has_status_message() && self::is_current_user_subscribed() ) {
+			return null;
+		}
 		if ( self::is_jetpack() &&
-			/** This filter is documented in modules/contact-form/grunion-contact-form.php */
+			/** This filter is documented in \Automattic\Jetpack\Forms\ContactForm\Contact_Form */
 			false === apply_filters( 'jetpack_auto_fill_logged_in_user', false )
 		) {
 			$subscribe_email = '';
@@ -159,15 +162,35 @@ class Jetpack_Subscriptions_Widget extends WP_Widget {
 		if ( self::is_wpcom() && ! $show_only_email_and_button ) {
 			if ( self::is_current_user_subscribed() ) {
 				if ( ! empty( $instance['title_following'] ) ) {
-					echo $before_title . '<label for="subscribe-field' . ( self::$instance_count > 1 ? '-' . self::$instance_count : '' ) . '">' . esc_attr( $instance['title_following'] ) . '</label>' . $after_title . "\n"; // phpcs:ignore WordPress.Security.EscapeOutput.OutputNotEscaped
+					printf(
+						'%1$s<label for="subscribe-field%2$s">%3$s</label>%4$s%5$s',
+						$before_title, // phpcs:ignore WordPress.Security.EscapeOutput.OutputNotEscaped
+						( self::$instance_count > 1 ? '-' . (int) self::$instance_count : '' ),
+						esc_html( $instance['title_following'] ),
+						$after_title, // phpcs:ignore WordPress.Security.EscapeOutput.OutputNotEscaped
+						"\n"
+					);
 				}
 			} elseif ( ! empty( $instance['title'] ) ) {
-				echo $before_title . '<label for="subscribe-field' . ( self::$instance_count > 1 ? '-' . self::$instance_count : '' ) . '">' . $instance['title'] . '</label>' . $after_title . "\n"; // phpcs:ignore WordPress.Security.EscapeOutput.OutputNotEscaped
+				printf(
+					'%1$s<label for="subscribe-field%2$s">%3$s</label>%4$s%5$s',
+					$before_title, // phpcs:ignore WordPress.Security.EscapeOutput.OutputNotEscaped
+					( self::$instance_count > 1 ? '-' . (int) self::$instance_count : '' ),
+					esc_html( $instance['title'] ),
+					$after_title, // phpcs:ignore WordPress.Security.EscapeOutput.OutputNotEscaped
+					"\n"
+				);
 			}
 		}
 
 		if ( self::is_jetpack() && empty( $instance['show_only_email_and_button'] ) ) {
-			echo $args['before_title'] . $instance['title'] . $args['after_title'] . "\n"; // phpcs:ignore WordPress.Security.EscapeOutput.OutputNotEscaped
+			printf(
+				'%1$s%2$s%3$s%4$s',
+				$before_title, // phpcs:ignore WordPress.Security.EscapeOutput.OutputNotEscaped
+				esc_html( $instance['title'] ),
+				$after_title, // phpcs:ignore WordPress.Security.EscapeOutput.OutputNotEscaped
+				"\n"
+			);
 		}
 	}
 
@@ -335,7 +358,7 @@ class Jetpack_Subscriptions_Widget extends WP_Widget {
 		$show_subscribers_total       = (bool) $instance['show_subscribers_total'];
 		$subscribers_total            = self::fetch_subscriber_count();
 		$subscribe_text               = empty( $instance['show_only_email_and_button'] ) ?
-			stripslashes( $instance['subscribe_text'] ) :
+			wp_kses_post( stripslashes( $instance['subscribe_text'] ) ) :
 			false;
 		$referer                      = esc_url_raw( ( is_ssl() ? 'https' : 'http' ) . '://' . ( isset( $_SERVER['HTTP_HOST'] ) ? wp_unslash( $_SERVER['HTTP_HOST'] ) : '' ) . ( isset( $_SERVER['REQUEST_URI'] ) ? wp_unslash( $_SERVER['REQUEST_URI'] ) : '' ) );
 		$source                       = 'widget';
@@ -510,11 +533,7 @@ class Jetpack_Subscriptions_Widget extends WP_Widget {
 						<input type="hidden" name="source" value="<?php echo esc_url( $referer ); ?>"/>
 						<input type="hidden" name="sub-type" value="<?php echo esc_attr( $source ); ?>"/>
 						<input type="hidden" name="redirect_fragment" value="<?php echo esc_attr( $form_id ); ?>"/>
-						<?php
-						if ( is_user_logged_in() ) {
-							wp_nonce_field( 'blogsub_subscribe_' . get_current_blog_id(), '_wpnonce', false );
-						}
-						?>
+						<?php wp_nonce_field( 'blogsub_subscribe_' . \Jetpack_Options::get_option( 'id' ) ); ?>
 						<button type="submit"
 							<?php if ( ! empty( $submit_button_classes ) ) { ?>
 								class="<?php echo esc_attr( $submit_button_classes ); ?>"
@@ -688,7 +707,7 @@ class Jetpack_Subscriptions_Widget extends WP_Widget {
 		$defaults['subscribe_text']        = esc_html__( 'Enter your email address to subscribe to this blog and receive notifications of new posts by email.', 'jetpack' );
 		$defaults['subscribe_placeholder'] = esc_html__( 'Email Address', 'jetpack' );
 		$defaults['subscribe_button']      = esc_html__( 'Subscribe', 'jetpack' );
-		$defaults['success_message']       = esc_html__( "Success! An email was just sent to confirm your subscription. Please find the email now and click 'Confirm Follow' to start subscribing.", 'jetpack' );
+		$defaults['success_message']       = esc_html__( "Success! An email was just sent to confirm your subscription. Please find the email now and click 'Confirm' to start subscribing.", 'jetpack' );
 
 		return $defaults;
 	}
@@ -703,20 +722,20 @@ class Jetpack_Subscriptions_Widget extends WP_Widget {
 		$show_subscribers_total = checked( $instance['show_subscribers_total'], true, false );
 
 		if ( self::is_wpcom() ) {
-			$title               = esc_attr( stripslashes( $instance['title'] ) );
-			$title_following     = esc_attr( stripslashes( $instance['title_following'] ) );
-			$subscribe_text      = esc_attr( stripslashes( $instance['subscribe_text'] ) );
-			$subscribe_logged_in = esc_attr( stripslashes( $instance['subscribe_logged_in'] ) );
-			$subscribe_button    = esc_attr( stripslashes( $instance['subscribe_button'] ) );
+			$title               = ! empty( $instance['title'] ) ? esc_attr( stripslashes( $instance['title'] ) ) : '';
+			$title_following     = ! empty( $instance['title_following'] ) ? esc_attr( stripslashes( $instance['title_following'] ) ) : '';
+			$subscribe_text      = ! empty( $instance['subscribe_text'] ) ? esc_attr( stripslashes( $instance['subscribe_text'] ) ) : '';
+			$subscribe_logged_in = ! empty( $instance['subscribe_logged_in'] ) ? esc_attr( stripslashes( $instance['subscribe_logged_in'] ) ) : '';
+			$subscribe_button    = ! empty( $instance['subscribe_button'] ) ? esc_attr( stripslashes( $instance['subscribe_button'] ) ) : '';
 			$subscribers_total   = self::fetch_subscriber_count();
 		}
 
 		if ( self::is_jetpack() ) {
-			$title                 = stripslashes( $instance['title'] );
-			$subscribe_text        = stripslashes( $instance['subscribe_text'] );
-			$subscribe_placeholder = stripslashes( $instance['subscribe_placeholder'] );
-			$subscribe_button      = stripslashes( $instance['subscribe_button'] );
-			$success_message       = stripslashes( $instance['success_message'] );
+			$title                 = ! empty( $instance['title'] ) ? stripslashes( $instance['title'] ) : '';
+			$subscribe_text        = ! empty( $instance['subscribe_text'] ) ? stripslashes( $instance['subscribe_text'] ) : '';
+			$subscribe_placeholder = ! empty( $instance['subscribe_placeholder'] ) ? stripslashes( $instance['subscribe_placeholder'] ) : '';
+			$subscribe_button      = ! empty( $instance['subscribe_button'] ) ? stripslashes( $instance['subscribe_button'] ) : '';
+			$success_message       = ! empty( $instance['success_message'] ) ? stripslashes( $instance['success_message'] ) : '';
 			$subscribers_total     = self::fetch_subscriber_count();
 		}
 
@@ -834,7 +853,7 @@ class Jetpack_Subscriptions_Widget extends WP_Widget {
 	}
 }
 
-if ( defined( 'IS_WPCOM' ) && IS_WPCOM && function_exists( 'class_alias' ) ) {
+if ( defined( 'IS_WPCOM' ) && IS_WPCOM ) {
 	class_alias( 'Jetpack_Subscriptions_Widget', 'Blog_Subscription_Widget' );
 }
 
@@ -915,9 +934,9 @@ function jetpack_do_subscription_form( $instance ) {
 	if ( isset( $instance['custom_padding'] ) && 'undefined' !== $instance['custom_padding'] ) {
 		$style = 'padding: ' .
 			$instance['custom_padding'] . 'px ' .
-			round( $instance['custom_padding'] * 1.5 ) . 'px ' .
+			round( floatval( $instance['custom_padding'] ) * 1.5 ) . 'px ' .
 			$instance['custom_padding'] . 'px ' .
-			round( $instance['custom_padding'] * 1.5 ) . 'px; ';
+			round( floatval( $instance['custom_padding'] ) * 1.5 ) . 'px; ';
 
 		$submit_button_styles .= $style;
 		$email_field_styles   .= $style;
@@ -1031,6 +1050,8 @@ function subscription_options_fallback( $default, $option, $passed_default ) {
 		/* translators: Both %1$s and %2$s is site address */
 		'invitation'     => sprintf( __( "Howdy,\nYou recently subscribed to <a href='%1\$s'>%2\$s</a> and we need to verify the email you provided. Once you confirm below, you'll be able to receive and read new posts.\n\nIf you believe this is an error, ignore this message and nothing more will happen.", 'jetpack' ), $site_url, $display_url ),
 		'comment_follow' => __( "Howdy.\n\nYou recently followed one of my posts. This means you will receive an email when new comments are posted.\n\nTo activate, click confirm below. If you believe this is an error, ignore this message and we'll never bother you again.", 'jetpack' ),
+		/* translators: %1$s is the site address */
+		'welcome'        => sprintf( __( 'Cool, you are now subscribed to %1$s and will receive an email notification when a new post is published.', 'jetpack' ), $display_url ),
 	);
 }
 

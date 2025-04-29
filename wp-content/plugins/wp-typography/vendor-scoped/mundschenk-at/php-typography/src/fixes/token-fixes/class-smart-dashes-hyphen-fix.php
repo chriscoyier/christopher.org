@@ -76,4 +76,4 @@ class Smart_Dashes_Hyphen_Fix extends Abstract_Token_Fix
  *
  * @since 6.3.0
  */
-\class_alias('WP_Typography\\Vendor\\PHP_Typography\\Fixes\\Token_Fixes\\Smart_Dashes_Hyphen_Fix', 'PHP_Typography\\Fixes\\Token_Fixes\\Smart_Dashes_Hyphen_Fix', \false);
+\class_alias('WP_Typography\Vendor\PHP_Typography\Fixes\Token_Fixes\Smart_Dashes_Hyphen_Fix', 'PHP_Typography\Fixes\Token_Fixes\Smart_Dashes_Hyphen_Fix', \false);

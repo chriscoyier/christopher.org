@@ -84,7 +84,6 @@
   -webkit-background-clip: border-box !important;
   background-clip: border-box !important;
   background-size: auto !important;
-  -o-border-image: none !important;
   border-image: none !important;
   border-radius: 0 !important;
   box-shadow: none !important;
@@ -97,7 +96,6 @@
   font-feature-settings: normal !important;
   overflow-x: visible !important;
   overflow-y: visible !important;
-  -webkit-hyphens: manual !important;
   hyphens: manual !important;
   -ms-perspective: none !important;
   -o-perspective: none !important;

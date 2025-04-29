@@ -43,10 +43,10 @@ class Single_Character_Word_Spacing_Fix extends Abstract_Node_Fix
 {
     const REGEX = '/
 		(?:
-			(\\s)
-			(\\w|&)
+			(\s)
+			(\w|&)
 			[' . RE::NORMAL_SPACES . ']
-			(?=\\w)
+			(?=\w)
 		)
 	/x';
     /**
@@ -84,4 +84,4 @@ class Single_Character_Word_Spacing_Fix extends Abstract_Node_Fix
  * @since 5.0.0
  * @since 6.0.0 The replacement now assumes decoded ampersands (i.e. plain "&" instead of "&amp;").
  */
-\class_alias('WP_Typography\\Vendor\\PHP_Typography\\Fixes\\Node_Fixes\\Single_Character_Word_Spacing_Fix', 'PHP_Typography\\Fixes\\Node_Fixes\\Single_Character_Word_Spacing_Fix', \false);
+\class_alias('WP_Typography\Vendor\PHP_Typography\Fixes\Node_Fixes\Single_Character_Word_Spacing_Fix', 'PHP_Typography\Fixes\Node_Fixes\Single_Character_Word_Spacing_Fix', \false);

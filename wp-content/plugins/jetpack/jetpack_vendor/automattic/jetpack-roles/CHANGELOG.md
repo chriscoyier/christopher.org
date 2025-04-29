@@ -5,7 +5,56 @@ All notable changes to this project will be documented in this file.
 The format is based on [Keep a Changelog](https://keepachangelog.com/en/1.0.0/)
 and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0.html).
 
+## [3.0.6] - 2025-03-31
+### Changed
+- Internal updates.
+
+## [3.0.5] - 2025-03-21
+### Changed
+- Internal updates.
+
+## [3.0.4] - 2025-03-12
+### Changed
+- Internal updates.
+
+## [3.0.3] - 2025-03-05
+### Changed
+- Internal updates.
+
+## [3.0.2] - 2025-02-24
+### Changed
+- Update dependencies.
+
+## [3.0.1] - 2024-11-25
+### Changed
+- Updated package dependencies. [#40258]
+
+## [3.0.0] - 2024-11-14
+### Removed
+- General: Update minimum PHP version to 7.2. [#40147]
+
+## [2.0.4] - 2024-11-04
+### Added
+- Enable test coverage. [#39961]
+
+## [2.0.3] - 2024-08-23
+### Changed
+- Updated package dependencies. [#39004]
+
+## [2.0.2] - 2024-04-22
+### Changed
+- Internal updates.
+
+## [2.0.1] - 2024-03-12
+### Changed
+- Internal updates.
+
+## [2.0.0] - 2023-11-20
+### Changed
+- Updated required PHP version to >= 7.0. [#34192]
+
 ## [1.4.25] - 2023-09-19
+
 - Minor internal updates.
 
 ## [1.4.24] - 2023-08-23
@@ -154,6 +203,18 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 
 - Jetpack DNA: Introduce a Roles package
 
+[3.0.6]: https://github.com/Automattic/jetpack-roles/compare/v3.0.5...v3.0.6
+[3.0.5]: https://github.com/Automattic/jetpack-roles/compare/v3.0.4...v3.0.5
+[3.0.4]: https://github.com/Automattic/jetpack-roles/compare/v3.0.3...v3.0.4
+[3.0.3]: https://github.com/Automattic/jetpack-roles/compare/v3.0.2...v3.0.3
+[3.0.2]: https://github.com/Automattic/jetpack-roles/compare/v3.0.1...v3.0.2
+[3.0.1]: https://github.com/Automattic/jetpack-roles/compare/v3.0.0...v3.0.1
+[3.0.0]: https://github.com/Automattic/jetpack-roles/compare/v2.0.4...v3.0.0
+[2.0.4]: https://github.com/Automattic/jetpack-roles/compare/v2.0.3...v2.0.4
+[2.0.3]: https://github.com/Automattic/jetpack-roles/compare/v2.0.2...v2.0.3
+[2.0.2]: https://github.com/Automattic/jetpack-roles/compare/v2.0.1...v2.0.2
+[2.0.1]: https://github.com/Automattic/jetpack-roles/compare/v2.0.0...v2.0.1
+[2.0.0]: https://github.com/Automattic/jetpack-roles/compare/v1.4.25...v2.0.0
 [1.4.25]: https://github.com/Automattic/jetpack-roles/compare/v1.4.24...v1.4.25
 [1.4.24]: https://github.com/Automattic/jetpack-roles/compare/v1.4.23...v1.4.24
 [1.4.23]: https://github.com/Automattic/jetpack-roles/compare/v1.4.22...v1.4.23

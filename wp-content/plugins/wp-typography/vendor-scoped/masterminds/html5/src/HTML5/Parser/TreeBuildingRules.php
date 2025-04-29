@@ -73,7 +73,7 @@ class TreeBuildingRules
     }
     protected function closeIfCurrentMatches($ele, $current, $match)
     {
-        if (\in_array($current->tagName, $match, \true)) {
+        if (in_array($current->tagName, $match, \true)) {
             $current->parentNode->appendChild($ele);
         } else {
             $current->appendChild($ele);

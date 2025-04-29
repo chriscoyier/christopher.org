@@ -63,4 +63,4 @@ class Style_Ampersands_Fix extends Simple_Style_Fix
  * @since 5.0.0
  * @since 6.0.0 The replacement now assumes decoded ampersands (i.e. plain "&" instead of "&amp;").
  */
-\class_alias('WP_Typography\\Vendor\\PHP_Typography\\Fixes\\Node_Fixes\\Style_Ampersands_Fix', 'PHP_Typography\\Fixes\\Node_Fixes\\Style_Ampersands_Fix', \false);
+\class_alias('WP_Typography\Vendor\PHP_Typography\Fixes\Node_Fixes\Style_Ampersands_Fix', 'PHP_Typography\Fixes\Node_Fixes\Style_Ampersands_Fix', \false);

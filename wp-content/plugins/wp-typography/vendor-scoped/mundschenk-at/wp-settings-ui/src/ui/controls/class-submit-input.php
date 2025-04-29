@@ -3,7 +3,7 @@
 /**
  *  This file is part of WordPress Settings UI.
  *
- *  Copyright 2017-2018 Peter Putzer.
+ *  Copyright 2017-2024 Peter Putzer.
  *
  *  This program is free software; you can redistribute it and/or
  *  modify it under the terms of the GNU General Public License
@@ -26,10 +26,41 @@
  */
 namespace WP_Typography\Vendor\Mundschenk\UI\Controls;
 
-use WP_Typography\Vendor\Mundschenk\UI\Control;
 use WP_Typography\Vendor\Mundschenk\Data_Storage\Options;
 /**
- * HTML <input> element.
+ * HTML submit <input> element.
+ *
+ * @phpstan-import-type Input_Arguments from Input
+ * @phpstan-type Submit_Arguments array{
+ *     tab_id: string,
+ *     section: string,
+ *     default: string|int,
+ *     button_class: string,
+ *     short?: ?string,
+ *     label: ?string,
+ *     help_text?: ?string,
+ *     inline_help?: bool,
+ *     attributes?: array<string,string>,
+ *     outer_attributes?: array<string,string>,
+ *     settings_args?: array<string,string>
+ * }
+ * @phpstan-type Complete_Submit_Arguments array{
+ *     input_type: string,
+ *     tab_id: string,
+ *     section?: string,
+ *     default: string|int,
+ *     button_class: string,
+ *     tab_id: string,
+ *     section: string,
+ *     short: ?string,
+ *     label: ?string,
+ *     help_text: ?string,
+ *     inline_help: bool,
+ *     attributes: array<string,string>,
+ *     outer_attributes: array<string,string>,
+ *     settings_args: array<string,string>,
+ *     sanitize_callback: ?callable,
+ * }
  */
 class Submit_Input extends Input
 {
@@ -49,7 +80,7 @@ class Submit_Input extends Input
      * Create a new input control object.
      *
      * @param Options $options      Options API handler.
-     * @param string  $options_key  Database key for the options array. Passing '' means that the control ID is used instead.
+     * @param ?string $options_key  Database key for the options array. Passing null means that the control ID is used instead.
      * @param string  $id           Control ID (equivalent to option name). Required.
      * @param array   $args {
      *    Optional and required arguments.
@@ -64,15 +95,21 @@ class Submit_Input extends Input
      * }
      *
      * @throws \InvalidArgumentException Missing argument.
+     *
+     * @phpstan-param Submit_Arguments $args
      */
-    public function __construct(Options $options, $options_key, $id, array $args)
+    public function __construct(Options $options, ?string $options_key, string $id, array $args)
     {
-        // Ensure that there is a button class argument.
+        /**
+         * Ensure that there is a button class argument.
+         *
+         * @phpstan-var Complete_Submit_Arguments $args
+         */
         $args = $this->prepare_args($args, ['button_class']);
         // Ensure proper button label handling.
         $this->button_label = $args['label'];
         $args['label'] = null;
-        // Force these addtional arguments.
+        // Force these additional arguments.
         $args['input_type'] = 'submit';
         // Store button class attribute.
         $this->button_class = $args['button_class'];
@@ -84,7 +121,7 @@ class Submit_Input extends Input
      *
      * @return string
      */
-    public function get_value()
+    public function get_value(): string
     {
         return $this->button_label;
     }
@@ -93,7 +130,7 @@ class Submit_Input extends Input
      *
      * @return string
      */
-    protected function get_id_and_class_markup()
+    protected function get_id_and_class_markup(): string
     {
         return parent::get_id_and_class_markup() . ' class="' . \esc_attr($this->button_class) . '"';
     }

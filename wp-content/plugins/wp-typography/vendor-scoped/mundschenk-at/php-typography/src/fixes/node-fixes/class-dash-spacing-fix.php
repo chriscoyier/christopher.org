@@ -42,15 +42,15 @@ class Dash_Spacing_Fix extends Abstract_Node_Fix
     // Mandatory UTF-8 modifier.
     const EM_DASH_SPACING = '/
 		(?:
-			\\s
+			\s
 			(' . U::EM_DASH . ')
-			\\s
+			\s
 		)
 		|
 		(?:
-			(?<=\\S)                   # lookbehind assertion
+			(?<=\S)                   # lookbehind assertion
 			(' . U::EM_DASH . ')
-			(?=\\S)                    # lookahead assertion
+			(?=\S)                    # lookahead assertion
 		)
 	/xu';
     /**
@@ -124,7 +124,7 @@ class Dash_Spacing_Fix extends Abstract_Node_Fix
      * @param string $interval            The dash character used for interval dashes.
      * @param string $interval_space      The space character used around interval dashes.
      */
-    private function update_dash_spacing_regex($parenthetical, $parenthetical_space, $interval, $interval_space) : void
+    private function update_dash_spacing_regex($parenthetical, $parenthetical_space, $interval, $interval_space): void
     {
         // Mandatory UTF-8 modifier.
         $this->parenthetical_dash_spacing = "/\n\t\t\t(?:\n\t\t\t\t\\s\n\t\t\t\t({$parenthetical})\n\t\t\t\t\\s\n\t\t\t)\n\t\t/xu";
@@ -143,4 +143,4 @@ class Dash_Spacing_Fix extends Abstract_Node_Fix
  *
  * @since 5.0.0
  */
-\class_alias('WP_Typography\\Vendor\\PHP_Typography\\Fixes\\Node_Fixes\\Dash_Spacing_Fix', 'PHP_Typography\\Fixes\\Node_Fixes\\Dash_Spacing_Fix', \false);
+\class_alias('WP_Typography\Vendor\PHP_Typography\Fixes\Node_Fixes\Dash_Spacing_Fix', 'PHP_Typography\Fixes\Node_Fixes\Dash_Spacing_Fix', \false);

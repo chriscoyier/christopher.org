@@ -23,9 +23,9 @@
       $hit_count = $hit_max - $hit_min + 1;
       $report_label = sprintf(__('Clicks %d-%d (%d Records)', 'pretty-link'), $hit_min, $hit_max, $hit_count);
       $hit_param_delim = (preg_match('#\?#',$hit_report_url)?'&':'?');
-
+      $csv_report_url = $hit_report_url . $hit_param_delim . 'prli_page=' . $i;
       ?>
-      <li><a href="<?php echo esc_url($hit_report_url . $hit_param_delim . 'prli_page=' . $i); ?>"><?php echo esc_html($report_label); ?></a></li>
+      <li><a href="<?php echo esc_url( wp_nonce_url( $csv_report_url, 'prli-csv-nonce' ) ); ?>"><?php echo esc_html($report_label); ?></a></li>
       <?php
     }
     ?>

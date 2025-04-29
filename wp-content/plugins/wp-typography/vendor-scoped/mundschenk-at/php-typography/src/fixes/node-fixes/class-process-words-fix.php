@@ -111,7 +111,7 @@ class Process_Words_Fix extends Abstract_Node_Fix
      *
      * @param Token_Fix $fix Required.
      */
-    public function register_token_fix(Token_Fix $fix) : void
+    public function register_token_fix(Token_Fix $fix): void
     {
         $this->token_fixes[] = $fix;
     }
@@ -120,7 +120,7 @@ class Process_Words_Fix extends Abstract_Node_Fix
      *
      * @param Cache $cache A hyphenator cache instance.
      */
-    public function update_hyphenator_cache(Cache $cache) : void
+    public function update_hyphenator_cache(Cache $cache): void
     {
         foreach ($this->token_fixes as $fix) {
             if ($fix instanceof Hyphenate_Fix) {
@@ -142,4 +142,4 @@ class Process_Words_Fix extends Abstract_Node_Fix
  *
  * @since 5.0.0
  */
-\class_alias('WP_Typography\\Vendor\\PHP_Typography\\Fixes\\Node_Fixes\\Process_Words_Fix', 'PHP_Typography\\Fixes\\Node_Fixes\\Process_Words_Fix', \false);
+\class_alias('WP_Typography\Vendor\PHP_Typography\Fixes\Node_Fixes\Process_Words_Fix', 'PHP_Typography\Fixes\Node_Fixes\Process_Words_Fix', \false);

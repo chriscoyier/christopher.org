@@ -75,3 +75,81 @@
   color: #dedede;
 }
 
+.prli-notice-wrapper {
+  padding: 0;
+  border: 1px solid #c3c3c4;
+  border-left: 18px solid #fc5034;
+  border-radius: 8px;
+}
+
+.prli-notice-wrapper.is-dismissible {
+  position: relative;
+  padding-right: 38px;
+}
+
+.prli-notice-wrapper-green {
+  border-left-color: #084f09;
+}
+
+.prli-notice-inner {
+  padding: 25px 80px;
+}
+
+.prli-notice-wrapper-green .prli-notice-inner:before {
+  position: absolute;
+  top: 25px;
+  left: 20px;
+  width: 42px;
+  height: 42px;
+  content: '';
+  background: url(../images/mpci-notice-icon-success.png) no-repeat;
+  background-size: 100%;
+}
+
+.prli-notice-inner h3 {
+  margin: 0 0 15px;
+  font-size: 18px;
+  font-weight: 600;
+}
+
+.prli-notice-inner p {
+  margin: 0 0 15px;
+  font-size: 15px;
+  line-height: 1.5;
+}
+
+.prli-notice-inner .prli-notice-actions {
+  margin: 0;
+  padding: 0;
+}
+
+.prli-notice-inner .prli-notice-actions .button-primary {
+  min-height: auto;
+  padding: 6px 13px;
+  background-color: #0085ba;
+  border: 1px solid #006799;
+  box-shadow: 0 2px 0 #006799;
+  border-radius: 3px;
+  color: #fff;
+  text-shadow: -1px 0px 1px #006799, 0px 1px 1px #006799, 1px 0px 1px #006799, 0px -1px 1px #006799;
+  font-size: 13px;
+  font-weight: 600;
+  line-height: 1.5;
+}
+
+.prli-notice-wrapper .notice-dismiss {
+  top: 10px;
+  right: 15px;
+  padding: 10px;
+  color: #484848;
+}
+
+.prli-notice-wrapper .notice-dismiss:before {
+  content: '\f158';
+  color: #787c82;
+  font-size: 21px;
+}
+
+.prli-notice-wrapper .notice-dismiss:hover:before {
+  color: #fc5034;
+}

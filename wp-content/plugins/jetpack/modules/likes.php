@@ -21,6 +21,7 @@
 // phpcs:disable Universal.Files.SeparateFunctionsFromOO.Mixed -- TODO: Move classes to appropriately-named class files.
 
 use Automattic\Jetpack\Assets;
+use Automattic\Jetpack\Status\Host;
 
 Assets::add_resource_hint(
 	array(
@@ -40,7 +41,6 @@ require_once __DIR__ . '/likes/jetpack-likes-settings.php';
  * Jetpack Like Class
  */
 class Jetpack_Likes {
-
 	/**
 	 * Jetpack_Likes_Settings object
 	 *
@@ -76,25 +76,25 @@ class Jetpack_Likes {
 		add_action( 'jetpack_activate_module_likes', array( $this, 'set_social_notifications_like' ) );
 		add_action( 'jetpack_deactivate_module_likes', array( $this, 'delete_social_notifications_like' ) );
 
-		Jetpack::enable_module_configurable( __FILE__ );
+		// The `enable_module_configurable` method doesn't exist in the WP.com loader implementation.
+		if ( ! ( new Host() )->is_wpcom_simple() ) {
+			Jetpack::enable_module_configurable( __FILE__ );
+		}
+
 		add_filter( 'jetpack_module_configuration_url_likes', array( $this, 'jetpack_likes_configuration_url' ) );
 		add_action( 'admin_print_scripts-settings_page_sharing', array( $this, 'load_jp_css' ) );
 		add_filter( 'sharing_show_buttons_on_row_start', array( $this, 'configuration_target_area' ) );
 
-		$active = Jetpack::get_active_modules();
+		$publicize_active  = Jetpack::is_module_active( 'publicize' );
+		$sharedaddy_active = Jetpack::is_module_active( 'sharedaddy' );
 
-		if ( ! in_array( 'sharedaddy', $active, true ) && ! in_array( 'publicize', $active, true ) ) {
-			// we don't have a sharing page yet.
-			add_action( 'admin_menu', array( $this->settings, 'sharing_menu' ) );
-		}
-
-		if ( in_array( 'publicize', $active, true ) && ! in_array( 'sharedaddy', $active, true ) ) {
+		if ( $publicize_active && ! $sharedaddy_active ) {
 			// we have a sharing page but not the global options area.
 			add_action( 'pre_admin_screen_sharing', array( $this->settings, 'sharing_block' ), 20 );
 			add_action( 'pre_admin_screen_sharing', array( $this->settings, 'updated_message' ), -10 );
 		}
 
-		if ( ! in_array( 'sharedaddy', $active, true ) ) {
+		if ( ! $sharedaddy_active ) {
 			add_action( 'admin_init', array( $this->settings, 'process_update_requests_if_sharedaddy_not_loaded' ) );
 			add_action( 'sharing_global_options', array( $this->settings, 'admin_settings_showbuttonon_init' ), 19 );
 			add_action( 'sharing_admin_update', array( $this->settings, 'admin_settings_showbuttonon_callback' ), 19 );
@@ -105,8 +105,6 @@ class Jetpack_Likes {
 		}
 
 		add_action( 'admin_init', array( $this, 'admin_discussion_likes_settings_init' ) ); // Likes notifications.
-
-		add_action( 'admin_bar_menu', array( $this, 'admin_bar_likes' ), 60 );
 
 		add_action( 'wp_enqueue_scripts', array( $this, 'load_styles_register_scripts' ) );
 
@@ -295,14 +293,16 @@ class Jetpack_Likes {
 		<style type="text/css">
 			.vers img { display: none; }
 			.metabox-prefs .vers img { display: inline; }
-			.fixed .column-likes { width: 5.5em; padding: 8px 0; text-align: left; }
+			.fixed .column-likes { width: 2.5em; padding: 4px 0; text-align: left; }
 			.fixed .column-stats { width: 5em; }
 			.fixed .column-likes .post-com-count {
 				-webkit-box-sizing: border-box;
 				-moz-box-sizing: border-box;
 				box-sizing: border-box;
 				display: inline-block;
-				padding: 0 8px;
+				padding: 0 4px;
+				min-width: 2em;
+				text-align: center;
 				height: 2em;
 				margin-top: 5px;
 				-webkit-border-radius: 5px;
@@ -432,9 +432,8 @@ class Jetpack_Likes {
 		* If the same post appears more then once on a page the page goes crazy
 		* we need a slightly more unique id / name for the widget wrapper.
 		*/
-		$uniqid = uniqid();
-
-		$src      = sprintf( 'https://widgets.wp.com/likes/#blog_id=%1$d&amp;post_id=%2$d&amp;origin=%3$s&amp;obj_id=%1$d-%2$d-%4$s', $blog_id, $post_id, $domain, $uniqid );
+		$uniqid   = uniqid();
+		$src      = sprintf( 'https://widgets.wp.com/likes/?ver=%1$s#blog_id=%2$d&amp;post_id=%3$d&amp;origin=%4$s&amp;obj_id=%2$d-%3$d-%5$s', rawurlencode( JETPACK__VERSION ), $blog_id, $post_id, $domain, $uniqid );
 		$name     = sprintf( 'like-post-frame-%1$d-%2$d-%3$s', $blog_id, $post_id, $uniqid );
 		$wrapper  = sprintf( 'like-post-wrapper-%1$d-%2$d-%3$s', $blog_id, $post_id, $uniqid );
 		$headline = sprintf(
@@ -444,6 +443,9 @@ class Jetpack_Likes {
 		);
 
 		$title = esc_html__( 'Like or Reblog', 'jetpack' );
+
+		/** This filter is documented in modules/likes/jetpack-likes-master-iframe.php */
+		$src = apply_filters( 'jetpack_likes_iframe_src', $src );
 
 		$html  = "<div class='sharedaddy sd-block sd-like jetpack-likes-widget-wrapper jetpack-likes-widget-unloaded' id='$wrapper' data-src='$src' data-name='$name' data-title='$title'>";
 		$html .= $headline;
@@ -456,74 +458,6 @@ class Jetpack_Likes {
 
 		return $content . $html;
 	}
-
-	/** Checks if admin bar is visible.*/
-	public function is_admin_bar_button_visible() {
-		global $wp_admin_bar;
-
-		if ( ! is_object( $wp_admin_bar ) ) {
-			return false;
-		}
-
-		if ( ( ! is_singular( 'post' ) && ! is_attachment() && ! is_page() ) ) {
-			return false;
-		}
-
-		if ( ! $this->settings->is_likes_visible() ) {
-			return false;
-		}
-
-		if ( ! $this->settings->is_post_likeable() ) {
-			return false;
-		}
-
-		/**
-		 * Filters whether the Like button is enabled in the admin bar.
-		 *
-		 * @module likes
-		 *
-		 * @since 2.2.0
-		 *
-		 * @param bool true Should the Like button be visible in the Admin bar. Default to true.
-		 */
-		return (bool) apply_filters( 'jetpack_admin_bar_likes_enabled', true );
-	}
-
-	/** Adds like section in admin bar. */
-	public function admin_bar_likes() {
-		global $wp_admin_bar;
-
-		$post_id = get_the_ID();
-
-		if ( ! is_numeric( $post_id ) || ! $this->is_admin_bar_button_visible() ) {
-			return;
-		}
-
-		$protocol = 'http';
-		if ( is_ssl() ) {
-			$protocol = 'https';
-		}
-		$blog_id   = Jetpack_Options::get_option( 'id' );
-		$url       = home_url();
-		$url_parts = wp_parse_url( $url );
-		$domain    = $url_parts['host'];
-
-		// Make sure to include the scripts before the iframe otherwise weird things happen.
-		add_action( 'wp_footer', 'jetpack_likes_master_iframe', 21 );
-
-		$src = sprintf( 'https://widgets.wp.com/likes/#blog_id=%2$d&amp;post_id=%3$d&amp;origin=%1$s://%4$s', $protocol, $blog_id, $post_id, $domain );
-
-		$html = "<iframe class='admin-bar-likes-widget jetpack-likes-widget' scrolling='no' frameBorder='0' name='admin-bar-likes-widget' src='$src'></iframe>";
-
-		$node = array(
-			'id'   => 'admin-bar-likes-widget',
-			'meta' => array(
-				'html' => $html,
-			),
-		);
-
-		$wp_admin_bar->add_node( $node );
-	}
 }
 
 /**
@@ -535,8 +469,14 @@ class Jetpack_Likes {
  * When it is set to 1, we enable likes on the post, regardless of the global setting.
  *
  * @param array $post - post data we're checking.
+ *
+ * @return bool
  */
 function jetpack_post_likes_get_value( array $post ) {
+	if ( ! isset( $post['id'] ) ) {
+		return false;
+	}
+
 	$post_likes_switched = get_post_meta( $post['id'], 'switch_like_status', true );
 
 	/** This filter is documented in modules/jetpack-likes-settings.php */
@@ -617,14 +557,5 @@ add_action( 'rest_api_init', 'jetpack_post_likes_register_rest_field' );
 // Some CPTs (e.g. Jetpack portfolios and testimonials) get registered with
 // restapi_theme_init because they depend on theme support, so let's also hook to that.
 add_action( 'restapi_theme_init', 'jetpack_post_likes_register_rest_field', 20 );
-
-/**
- * Set the Likes and Sharing Gutenberg extension availability.
- */
-function jetpack_post_likes_set_extension_availability() {
-	Jetpack_Gutenberg::set_extension_available( 'likes' );
-}
-
-add_action( 'jetpack_register_gutenberg_extensions', 'jetpack_post_likes_set_extension_availability' );
 
 Jetpack_Likes::init();

@@ -84,4 +84,4 @@ final class Simple_Quotes implements Quotes
  *
  * @since 5.0.0
  */
-\class_alias('WP_Typography\\Vendor\\PHP_Typography\\Settings\\Simple_Quotes', 'PHP_Typography\\Settings\\Simple_Quotes', \false);
+\class_alias('WP_Typography\Vendor\PHP_Typography\Settings\Simple_Quotes', 'PHP_Typography\Settings\Simple_Quotes', \false);

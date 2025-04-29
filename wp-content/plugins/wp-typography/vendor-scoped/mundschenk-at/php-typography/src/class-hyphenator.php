@@ -102,7 +102,7 @@ class Hyphenator
      *
      * @param array<string,string> $exceptions Optional. An array of words with all hyphenation points marked with a hard hyphen. Default empty array.
      */
-    public function set_custom_exceptions(array $exceptions = []) : void
+    public function set_custom_exceptions(array $exceptions = []): void
     {
         if (empty($exceptions) && empty($this->custom_exceptions)) {
             return;
@@ -297,7 +297,7 @@ class Hyphenator
                 foreach ($node->offsets() as $pattern_offset) {
                     $value = $pattern_offset[0];
                     $offset = $pattern_offset[1] + $start - 1;
-                    $word_pattern[$offset] = isset($word_pattern[$offset]) ? \max($word_pattern[$offset], $value) : $value;
+                    $word_pattern[$offset] = isset($word_pattern[$offset]) ? max($word_pattern[$offset], $value) : $value;
                 }
             }
         }
@@ -307,12 +307,12 @@ class Hyphenator
      * Merges hyphenation exceptions from the language file and custom hyphenation exceptions and
      * generates patterns for all of them.
      */
-    protected function merge_hyphenation_exceptions() : void
+    protected function merge_hyphenation_exceptions(): void
     {
         $exceptions = [];
         // Merge custom and language specific word hyphenations.
         if (!empty($this->pattern_exceptions) && !empty($this->custom_exceptions)) {
-            $exceptions = \array_merge($this->custom_exceptions, $this->pattern_exceptions);
+            $exceptions = array_merge($this->custom_exceptions, $this->pattern_exceptions);
         } elseif (!empty($this->pattern_exceptions)) {
             $exceptions = $this->pattern_exceptions;
         } elseif (!empty($this->custom_exceptions)) {
@@ -377,4 +377,4 @@ class Hyphenator
  *
  * @since 3.4.0
  */
-\class_alias('WP_Typography\\Vendor\\PHP_Typography\\Hyphenator', 'PHP_Typography\\Hyphenator', \false);
+\class_alias('WP_Typography\Vendor\PHP_Typography\Hyphenator', 'PHP_Typography\Hyphenator', \false);

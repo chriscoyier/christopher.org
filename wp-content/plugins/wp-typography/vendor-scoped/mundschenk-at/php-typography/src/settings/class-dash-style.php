@@ -112,4 +112,4 @@ abstract class Dash_Style
  *
  * @since 5.0.0
  */
-\class_alias('WP_Typography\\Vendor\\PHP_Typography\\Settings\\Dash_Style', 'PHP_Typography\\Settings\\Dash_Style', \false);
+\class_alias('WP_Typography\Vendor\PHP_Typography\Settings\Dash_Style', 'PHP_Typography\Settings\Dash_Style', \false);

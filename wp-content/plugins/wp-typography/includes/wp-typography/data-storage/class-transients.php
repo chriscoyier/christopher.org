@@ -2,7 +2,7 @@
 /**
  *  This file is part of wp-Typography.
  *
- *  Copyright 2017-2022 Peter Putzer.
+ *  Copyright 2017-2024 Peter Putzer.
  *
  *  This program is free software; you can redistribute it and/or
  *  modify it under the terms of the GNU General Public License
@@ -48,11 +48,14 @@ class Transients extends \WP_Typography\Vendor\Mundschenk\Data_Storage\Transient
 	/**
 	 * Cache the given object under the transient name.
 	 *
-	 * @param  string $transient Required.
-	 * @param  mixed  $object    Required.
-	 * @param  string $handle    Optional. A name passed to the filters.
+	 * @since  5.10.0 Parameter `$object` renamed to `$large_object` to prevent
+	 *                conflict with reserved keywords.
+	 *
+	 * @param  string $transient    The transient key.
+	 * @param  mixed  $large_object The object to store.
+	 * @param  string $handle       Optional. A name passed to the filters.
 	 */
-	public function cache_object( $transient, $object, $handle = '' ) : void {
+	public function cache_object( $transient, $large_object, $handle = '' ): void {
 		/**
 		 * Filters whether the PHP_Typography engine state should be cached.
 		 *
@@ -74,7 +77,7 @@ class Transients extends \WP_Typography\Vendor\Mundschenk\Data_Storage\Transient
 			 */
 			$duration = \apply_filters( 'typo_php_typography_caching_duration', 0, $handle );
 
-			$this->set_large_object( $transient, $object, $duration );
+			$this->set_large_object( $transient, $large_object, $duration );
 		}
 	}
 }

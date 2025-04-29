@@ -1,9 +1,10 @@
 <?php
 /*
-Plugin Name: Pretty Links
+Plugin Name: PrettyLinks
 Plugin URI: https://prettylinks.com/pl/plugin-uri
 Description: Shrink, track and share any URL using your website and brand!
-Version: 3.5.3
+Version: 3.6.15
+Requires PHP: 7.4
 Author: Pretty Links
 Author URI: http://prettylinks.com
 Text Domain: pretty-link
@@ -25,6 +26,8 @@ along with this program; if not, write to the Free Software
 Foundation, Inc., 59 Temple Place, Suite 330, Boston, MA  02111-1307  USA
 */
 if(!defined('ABSPATH')) { die('You are not allowed to call this page directly.'); }
+
+require_once __DIR__ . '/vendor-prefixed/autoload.php';
 
 define('PRLI_PLUGIN_SLUG','pretty-link/pretty-link.php');
 define('PRLI_PLUGIN_NAME','pretty-link');
@@ -51,11 +54,12 @@ define('PRLI_CSS_URL',PRLI_URL.'/css');
 define('PRLI_JS_URL',PRLI_URL.'/js');
 define('PRLI_IMAGES_URL',PRLI_URL.'/images');
 define('PRLI_VENDOR_LIB_URL',PRLI_URL.'/vendor/lib');
+define('PRLI_SCRIPT_URL',site_url('/index.php?plugin=prli'));
 
 define('PRLI_BROWSER_URL','https://d14715w921jdje.cloudfront.net/browser');
 define('PRLI_OS_URL','https://d14715w921jdje.cloudfront.net/os');
 
-define('PRLI_EDITION', 'pretty-link-pro');
+define('PRLI_EDITION', 'pretty-link-lite');
 
 /**
  * Returns current plugin version.
@@ -163,13 +167,6 @@ $prli_blogdescription = get_option('blogdescription');
 global $prli_options;
 $prli_options = PrliOptions::get_options();
 
-// i18n
-add_action('plugins_loaded', 'prli_load_textdomain');
-function prli_load_textdomain() {
-  $plugin_dir = basename(dirname(__FILE__));
-  load_plugin_textdomain('pretty-link', false, $plugin_dir.'/i18n/');
-}
-
 register_activation_hook( __FILE__, 'prli_activation' );
 function prli_activation() {
   add_option( 'prli_just_activated', true );
@@ -196,7 +193,7 @@ $prli_utils     = new PrliUtils();
 
 global $prli_db_version, $plp_db_version;
 
-$prli_db_version = 23; // this is the version of the database we're moving to
+$prli_db_version = 24; // this is the version of the database we're moving to
 $plp_db_version = 11; // this is the version of the database we're moving to
 
 global $prli_app_controller;
@@ -219,7 +216,9 @@ $plp_update = new PrliUpdateController();
 
 // Provide Back End Hooks to the Pro version of Pretty Link
 if($plp_update->is_installed()) {
-  require_once(PRLI_PATH.'/pro/pretty-link-pro.php');
+  add_action('after_setup_theme', function () {
+    require_once(PRLI_PATH.'/pro/pretty-link-pro.php');
+  });
 }
 
 require_once(PRLI_PATH.'/app/lib/PrliNotifications.php');

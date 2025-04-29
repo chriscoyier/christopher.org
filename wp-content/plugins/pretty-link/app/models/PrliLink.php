@@ -52,7 +52,7 @@ class PrliLink {
     }
 
     if(empty($values['name'])) {
-      if($values['redirect_type'] == 'pixel') {
+      if(in_array($values['redirect_type'], array('pixel', 'prettypay_link_stripe'), true)) {
         $values['name'] = $values['slug'];
       }
       else {
@@ -98,8 +98,7 @@ class PrliLink {
     $title = isset($values['name'])?trim($values['name']):'';
 
     if(empty($title)) {
-      error_log("REDIRECT TYPE: " . $values['redirect_type']);
-      if($values['redirect_type'] == 'pixel') {
+      if(in_array($values['redirect_type'], array('pixel', 'prettypay_link_stripe'), true)) {
         $title = $values['slug'];
       }
       else {
@@ -464,7 +463,8 @@ class PrliLink {
       'sponsored' => isset($values['sponsored']) ? 1 : 0,
       'param_forwarding' => isset($values['param_forwarding']) ? 1 : 0,
       'track_me' => isset($values['track_me']) ? 1 : 0,
-      'link_cpt_id' => isset($values['link_cpt_id']) && is_numeric($values['link_cpt_id']) ? (int) $values['link_cpt_id'] : 0
+      'link_cpt_id' => isset($values['link_cpt_id']) && is_numeric($values['link_cpt_id']) ? (int) $values['link_cpt_id'] : 0,
+      'prettypay_link' => isset($values['prettypay_link']) ? 1 : 0
     );
 
     return $sanitized;
@@ -476,7 +476,7 @@ class PrliLink {
     $values = $this->sanitize($values);
 
     $errors = array();
-    if( empty($values['url']) && $values['redirect_type'] != 'pixel' ) {
+    if( empty($values['url']) && !in_array($values['redirect_type'], array('pixel', 'prettypay_link_stripe'), true ) ) {
       $errors[] = __("Target URL can't be blank", 'pretty-link');
     }
 
@@ -744,5 +744,52 @@ class PrliLink {
     }
 
     return $groups;
+  }
+
+  public function count_links($prettypay_link = null) {
+    global $wpdb;
+
+    $query = "SELECT post_status, COUNT(*) AS num_posts
+              FROM {$wpdb->posts} p
+              JOIN {$wpdb->prefix}prli_links pl
+              ON pl.link_cpt_id = p.ID
+              WHERE post_type = %s";
+
+    if(is_user_logged_in()) {
+      $post_type_object = get_post_type_object(PrliLink::$cpt);
+
+      if(!current_user_can($post_type_object->cap->read_private_posts)) {
+        $query .= $wpdb->prepare(
+          " AND (post_status != 'private' OR (post_author = %d AND post_status = 'private'))",
+          get_current_user_id()
+        );
+      }
+    }
+
+    if(!is_null($prettypay_link)) {
+      $query .= $wpdb->prepare(
+        " AND pl.prettypay_link = %d",
+        $prettypay_link
+      );
+    }
+
+    $query .= ' GROUP BY post_status';
+
+    $results = (array)$wpdb->get_results($wpdb->prepare($query, PrliLink::$cpt), ARRAY_A);
+    $counts = array_fill_keys(get_post_stati(), 0);
+
+    foreach($results as $row) {
+      $counts[$row['post_status']] = $row['num_posts'];
+    }
+
+    return (object) $counts;
+  }
+
+  public function is_post_prettypay_link($post_id) {
+    global $wpdb;
+
+    $query = $wpdb->prepare("SELECT prettypay_link FROM {$wpdb->prefix}prli_links WHERE link_cpt_id = %d", $post_id);
+
+    return (bool) $wpdb->get_var($query);
   }
 }

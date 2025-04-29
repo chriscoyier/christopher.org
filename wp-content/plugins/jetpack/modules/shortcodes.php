@@ -46,18 +46,26 @@ function shortcode_new_to_old_params( $params, $old_format_support = false ) {
  * Load all available Jetpack shortcode files.
  */
 function jetpack_load_shortcodes() {
+	// Prevent third-party shortcode plugins when loading shortcode files.
+	// Format: shortcode => condition_when_to_skip
+	$shortcode_skips = array(
+		'soundcloud' => function_exists( 'soundcloud_shortcode' ), // SoundCloud Shortcodes plugin
+	);
+
 	$shortcode_includes = array();
 
 	foreach ( Jetpack::glob_php( __DIR__ . '/shortcodes' ) as $file ) {
 		$filename = substr( basename( $file ), 0, -4 );
 
-		$shortcode_includes[ $filename ] = $file;
+		if ( empty( $shortcode_skips[ $filename ] ) ) {
+			$shortcode_includes[ $filename ] = $file;
+		}
 	}
 
 	/**
 	 * This filter allows other plugins to override which shortcodes Jetpack loads.
 	 *
-	 * Fires as part of the `plugins_loaded` WP hook, so modifying code needs to be in a plugin, not in a theme's functions.php.
+	 * Fires as part of the `after_setup_theme` WP hook, so modifying code needs to be in a plugin, not in a theme's functions.php.
 	 *
 	 * @module shortcodes
 	 *
@@ -85,7 +93,7 @@ function jetpack_load_shortcodes() {
  * @return string $content    Replaced post content.
  */
 function jetpack_preg_replace_outside_tags( $pattern, $replacement, $content, $search = null ) {
-	if ( $search && false === strpos( $content, $search ) ) {
+	if ( $search && ! str_contains( $content, $search ) ) {
 		return $content;
 	}
 
@@ -113,7 +121,7 @@ function jetpack_preg_replace_outside_tags( $pattern, $replacement, $content, $s
  * @return string $content Replaced post content.
  */
 function jetpack_preg_replace_callback_outside_tags( $pattern, $callback, $content, $search = null ) {
-	if ( $search && false === strpos( $content, $search ) ) {
+	if ( $search && ! str_contains( $content, $search ) ) {
 		return $content;
 	}
 

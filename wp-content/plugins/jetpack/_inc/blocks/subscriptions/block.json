@@ -3,7 +3,7 @@
     "apiVersion": 3,
     "name": "jetpack/subscriptions",
     "title": "Subscribe",
-    "description": "Let readers subscribe to this blog's posts as a newsletter.",
+    "description": "Subscribe to this blog's posts as a newsletter.",
     "keywords": [
         "newsletter",
         "email",
@@ -25,27 +25,29 @@
     },
     "styles": [
         {
+            "name": "split",
+            "label": "Split",
+            "isDefault": true
+        },
+        {
             "name": "compact",
             "label": "Compact"
         },
         {
-            "name": "split",
-            "label": "Split",
-            "isDefault": true
+            "name": "button",
+            "label": "Button only"
         }
     ],
     "attributes": {
         "subscribePlaceholder": {
-            "type": "string",
-            "default": "Type your email…"
+            "type": "string"
         },
         "showSubscribersTotal": {
             "type": "boolean",
             "default": false
         },
         "includeSocialFollowers": {
-            "type": "boolean",
-            "default": true
+            "type": "boolean"
         },
         "buttonOnNewLine": {
             "type": "boolean",
@@ -55,8 +57,7 @@
             "type": "string"
         },
         "submitButtonText": {
-            "type": "string",
-            "default": "Subscribe"
+            "type": "string"
         },
         "emailFieldBackgroundColor": {
             "type": "string"
@@ -114,11 +115,23 @@
         },
         "successMessage": {
             "type": "string",
-            "default": "Success! An email was just sent to confirm your subscription. Please find the email now and click 'Confirm Follow' to start subscribing."
+            "default": "Success! An email was just sent to confirm your subscription. Please find the email now and click 'Confirm' to start subscribing."
+        },
+        "appSource": {
+            "type": "string"
+        },
+        "className": {
+            "type": "string"
+        },
+        "preselectNewsletterCategories": {
+            "type": "boolean",
+            "default": false
+        },
+        "selectedNewsletterCategoryIds": {
+            "type": "array",
+            "default": []
         }
     },
-    "editorScript": "file:../editor.js",
-    "editorStyle": "file:../editor.css",
-    "viewScript": "file:./view.js",
-    "style": "file:./view.css"
+    "example": {},
+    "editorScript": "jetpack-blocks-editor"
 }

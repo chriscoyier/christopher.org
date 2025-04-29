@@ -2,7 +2,7 @@
 /**
  *  This file is part of wp-Typography.
  *
- *  Copyright 2014-2022 Peter Putzer.
+ *  Copyright 2014-2024 Peter Putzer.
  *  Copyright 2009-2011 KINGdesk, LLC.
  *
  *  This program is free software; you can redistribute it and/or
@@ -27,14 +27,8 @@
 
 namespace WP_Typography\Components;
 
-use WP_Typography\Data_Storage\Options;
 use WP_Typography\Implementation;
-use WP_Typography\UI;
 use WP_Typography\Settings\Plugin_Configuration as Config;
-
-use PHP_Typography\PHP_Typography;
-use PHP_Typography\Settings\Dash_Style;
-use PHP_Typography\Settings\Quote_Style;
 
 /**
  * The public (non-admin) functionality of the plugin.
@@ -62,7 +56,7 @@ class Public_Interface implements Plugin_Component {
 	 *
 	 * @var int
 	 */
-	private $filter_priority = 9999;
+	private int $filter_priority = 9999;
 
 	/**
 	 * The plugin configuration.
@@ -111,7 +105,7 @@ class Public_Interface implements Plugin_Component {
 	 *
 	 * @since 5.7.0 Parameter $plugin removed.
 	 */
-	public function run() : void {
+	public function run(): void {
 		// Do not run our filters on the admin side or during a WP-CLI command.
 		if ( ! \is_admin() && ! \defined( 'WP_CLI' ) ) {
 			\add_action( 'init', [ $this, 'init' ] );
@@ -121,7 +115,7 @@ class Public_Interface implements Plugin_Component {
 	/**
 	 * Sets up filters and actions.
 	 */
-	public function init() : void {
+	public function init(): void {
 		$this->config = $this->api->get_config();
 
 		// Disable wptexturize filter if it conflicts with our settings.
@@ -156,7 +150,7 @@ class Public_Interface implements Plugin_Component {
 	/**
 	 * Adds content filter handlers.
 	 */
-	public function add_content_filters() : void {
+	public function add_content_filters(): void {
 
 		// Define the default filters.
 		$filters = [
@@ -210,7 +204,7 @@ class Public_Interface implements Plugin_Component {
 	 *
 	 * @param int $priority Filter priority.
 	 */
-	private function enable_content_filters( $priority ) : void {
+	private function enable_content_filters( $priority ): void {
 		\add_filter( 'comment_author',    [ $this->api, 'process' ], $priority );
 		\add_filter( 'comment_text',      [ $this->api, 'process' ], $priority );
 		\add_filter( 'comment_text',      [ $this->api, 'process' ], $priority );
@@ -237,7 +231,7 @@ class Public_Interface implements Plugin_Component {
 	 *
 	 * @param int $priority Filter priority.
 	 */
-	private function enable_heading_filters( $priority ) : void {
+	private function enable_heading_filters( $priority ): void {
 		\add_filter( 'the_title',    [ $this->api, 'process_title' ], $priority );
 		\add_filter( 'widget_title', [ $this->api, 'process_title' ], $priority );
 	}
@@ -247,16 +241,18 @@ class Public_Interface implements Plugin_Component {
 	 *
 	 * @since 5.5.3
 	 */
-	public function enqueue_styles() : void {
+	public function enqueue_styles(): void {
 		// Custom styles set via the CSS Hooks settings page.
-		$custom_styles = \trim( (string) $this->config[ Config::STYLE_CSS ] );
-		if ( ! empty( $custom_styles ) ) {
-			// Register and enqueue dummy stylesheet.
-			\wp_register_style( 'wp-typography-custom', '' ); // phpcs:ignore WordPress.WP.EnqueuedResourceParameters.MissingVersion -- only inline.
-			\wp_enqueue_style( 'wp-typography-custom' );
+		if ( $this->config[ Config::STYLE_CSS_INCLUDE ] ) {
+			$custom_styles = \trim( (string) $this->config[ Config::STYLE_CSS ] );
+			if ( ! empty( $custom_styles ) ) {
+				// Register and enqueue dummy stylesheet.
+				\wp_register_style( 'wp-typography-custom', '' ); // phpcs:ignore WordPress.WP.EnqueuedResourceParameters.MissingVersion -- only inline.
+				\wp_enqueue_style( 'wp-typography-custom' );
 
-			// Print the inline styles.
-			\wp_add_inline_style( 'wp-typography-custom', $this->clean_styles( $custom_styles ) );
+				// Print the inline styles.
+				\wp_add_inline_style( 'wp-typography-custom', $this->clean_styles( $custom_styles ) );
+			}
 		}
 
 		// The Safari bug workaround.
@@ -273,7 +269,7 @@ class Public_Interface implements Plugin_Component {
 	/**
 	 * Enqueues frontend JavaScript files.
 	 */
-	public function enqueue_scripts() : void {
+	public function enqueue_scripts(): void {
 		if ( $this->config[ Config::HYPHENATE_CLEAN_CLIPBOARD ] ) {
 			// Set up file suffix and plugin version.
 			$suffix     = ( \defined( 'SCRIPT_DEBUG' ) && \SCRIPT_DEBUG ) ? '' : '.min';
@@ -294,7 +290,7 @@ class Public_Interface implements Plugin_Component {
 	 *
 	 * @return string      Filtered string of CSS styles.
 	 */
-	protected function clean_styles( $css ) : string {
+	protected function clean_styles( $css ): string {
 		$cleaned = (string) \preg_replace( self::CLEAN_CSS_PATTERNS, self::CLEAN_CSS_REPLACEMENTS, $css );
 		$css     = '';
 

@@ -32,7 +32,7 @@
     <div class="updated notice notice-success is-dismissible"><p><strong><?php echo esc_html($update_message); ?></strong></p></div>
   <?php endif; ?>
 
-  <form name="form1" id="prli-options" method="post" action="<?php echo esc_url(admin_url('/admin.php?page=pretty-link-options')); ?>">
+  <form name="form1" id="prli-options" method="post" action="<?php echo esc_url(admin_url('edit.php?post_type=pretty-link&page=pretty-link-options')); ?>">
     <input type="hidden" name="<?php echo esc_attr($hidden_field_name); ?>" value="Y">
     <?php wp_nonce_field('update-options'); ?>
 
@@ -60,6 +60,7 @@
             <?php if(!$plp_update->is_installed() || $plp_update->is_installed() && is_plugin_active('pretty-link-product-displays/pretty-link-product-displays.php')): ?>
               <li><a data-id="product-display"><?php esc_html_e('Product Display', 'pretty-link'); ?></a></li>
             <?php endif; ?>
+            <li><a data-id="payments"><?php esc_html_e('Payments', 'pretty-link'); ?></a></li>
             <?php do_action('prli_admin_options_nav'); ?>
           </ul>
         </td>
@@ -1209,6 +1210,8 @@
 
           <?php endif; ?>
 
+          <?php require_once PRLI_VIEWS_PATH . '/admin/payments/options.php'; ?>
+
           <?php do_action('prli_admin_options_pages'); ?>
         </td>
       </tr>
@@ -1225,7 +1228,7 @@
     function repositionUpgrade(dataId) {
       var wrap = $('#' + dataId + ' .pretty-link-blur-wrap');
       var row = $('#' + dataId + ' .pretty-link-upgrade-tr');
-      var dialog = row.find('.pretty-link-upgrade');
+      var dialog = row.find('.pretty-link-popup');
       if ( dialog.data('offset') ) {
         dialog.css('top', '-' + dialog.data('offset') + 'px');
       } else if(row.is(':visible')) {

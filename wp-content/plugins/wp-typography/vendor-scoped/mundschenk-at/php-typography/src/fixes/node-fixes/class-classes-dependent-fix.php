@@ -52,7 +52,7 @@ abstract class Classes_Dependent_Fix extends Abstract_Node_Fix
     public function __construct($classes, $feed_compatible = \false)
     {
         parent::__construct($feed_compatible);
-        if (!\is_array($classes)) {
+        if (!is_array($classes)) {
             $classes = [$classes];
         }
         $this->classes_to_avoid = $classes;
@@ -83,7 +83,7 @@ abstract class Classes_Dependent_Fix extends Abstract_Node_Fix
      *
      * @return void
      */
-    protected abstract function apply_internal(\DOMText $textnode, Settings $settings, $is_title = \false);
+    abstract protected function apply_internal(\DOMText $textnode, Settings $settings, $is_title = \false);
 }
 /**
  * All fixes that depend on certain HTML classes not being present should extend this baseclass.
@@ -92,4 +92,4 @@ abstract class Classes_Dependent_Fix extends Abstract_Node_Fix
  *
  * @since 5.0.0
  */
-\class_alias('WP_Typography\\Vendor\\PHP_Typography\\Fixes\\Node_Fixes\\Classes_Dependent_Fix', 'PHP_Typography\\Fixes\\Node_Fixes\\Classes_Dependent_Fix', \false);
+\class_alias('WP_Typography\Vendor\PHP_Typography\Fixes\Node_Fixes\Classes_Dependent_Fix', 'PHP_Typography\Fixes\Node_Fixes\Classes_Dependent_Fix', \false);

@@ -67,4 +67,4 @@ interface Dashes
  *
  * @since 5.0.0
  */
-\class_alias('WP_Typography\\Vendor\\PHP_Typography\\Settings\\Dashes', 'PHP_Typography\\Settings\\Dashes', \false);
+\class_alias('WP_Typography\Vendor\PHP_Typography\Settings\Dashes', 'PHP_Typography\Settings\Dashes', \false);

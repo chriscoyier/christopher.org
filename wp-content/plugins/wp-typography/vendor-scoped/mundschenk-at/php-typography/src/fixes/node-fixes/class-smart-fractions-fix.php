@@ -42,49 +42,49 @@ use WP_Typography\Vendor\PHP_Typography\U;
  */
 class Smart_Fractions_Fix extends Abstract_Node_Fix
 {
-    const SPACING = '/\\b(\\d+)\\s(\\d+\\s?\\/\\s?\\d+)\\b/';
+    const SPACING = '/\b(\d+)\s(\d+\s?\/\s?\d+)\b/';
     const FRACTION_MATCHING = '/
 		# lookbehind assertion: makes sure we are not messing up a url
-		(?<=\\A|\\s|' . U::NO_BREAK_SPACE . '|' . U::NO_BREAK_NARROW_SPACE . ')
+		(?<=\A|\s|' . U::NO_BREAK_SPACE . '|' . U::NO_BREAK_NARROW_SPACE . ')
 
-		(\\d+)
+		(\d+)
 
 		# strip out any zero-width spaces inserted by wrap_hard_hyphens
-		(?:\\s?\\/\\s?' . U::ZERO_WIDTH_SPACE . '?)
+		(?:\s?\/\s?' . U::ZERO_WIDTH_SPACE . '?)
 
 		(
 			# lookahead assertion: do not make fractions from x:x if x > 1
 			(?:
 				# ignore x:x where x > 1
-				(?!\\1(?:[^0-9]|\\Z)) |
+				(?!\1(?:[^0-9]|\Z)) |
 
 				# but allow 1:1
-				(?=\\1)(?=1(?:[^0-9]|\\Z))
+				(?=\1)(?=1(?:[^0-9]|\Z))
 			)
 
 			# Any numbers, except those above
-			\\d+
+			\d+
 		)
 		(
 			# handle fractions followed by prime symbols
 			(?:' . U::SINGLE_PRIME . '|' . U::DOUBLE_PRIME . ')?
 
 			# handle ordinals after fractions
-			(?:\\<sup\\>(?:st|nd|rd|th)<\\/sup\\>)?
+			(?:\<sup\>(?:st|nd|rd|th)<\/sup\>)?
 
 			# makes sure we are not messing up a url
-			(?:\\Z|\\s|' . U::NO_BREAK_SPACE . '|' . U::NO_BREAK_NARROW_SPACE . '|\\.|,|\\!|\\?|\\)|\\;|\\:|\'|")
+			(?:\Z|\s|' . U::NO_BREAK_SPACE . '|' . U::NO_BREAK_NARROW_SPACE . '|\.|,|\!|\?|\)|\;|\:|\'|")
 		)
 		/Sxu';
     const ESCAPE_DATE_MM_YYYY = '/
 			# capture valid one- or two-digit months
-			( \\b (?: 0?[1-9] | 1[0-2] ) )
+			( \b (?: 0?[1-9] | 1[0-2] ) )
 
 			# capture any zero-width spaces inserted by wrap_hard_hyphens
-			(\\s?\\/\\s?' . U::ZERO_WIDTH_SPACE . '?)
+			(\s?\/\s?' . U::ZERO_WIDTH_SPACE . '?)
 
 			# handle 4-decimal years
-			( [12][0-9]{3}\\b )
+			( [12][0-9]{3}\b )
 
 		/Sxu';
     /**
@@ -114,7 +114,7 @@ class Smart_Fractions_Fix extends Abstract_Node_Fix
         for ($year = 1900; $year < 2100; ++$year) {
             $year_regex[] = "(?: ( {$year} ) (\\s?\\/\\s?" . U::ZERO_WIDTH_SPACE . '?) ( ' . ($year + 1) . ' ) )';
         }
-        $this->escape_consecutive_years = '/\\b (?| ' . \implode('|', $year_regex) . ' ) \\b/Sxu';
+        $this->escape_consecutive_years = '/\b (?| ' . implode('|', $year_regex) . ' ) \b/Sxu';
         // Replace fractions.
         $numerator_css = empty($css_numerator) ? '' : ' class="' . $css_numerator . '"';
         $denominator_css = empty($css_denominator) ? '' : ' class="' . $css_denominator . '"';
@@ -164,4 +164,4 @@ class Smart_Fractions_Fix extends Abstract_Node_Fix
  *
  * @since 5.0.0
  */
-\class_alias('WP_Typography\\Vendor\\PHP_Typography\\Fixes\\Node_Fixes\\Smart_Fractions_Fix', 'PHP_Typography\\Fixes\\Node_Fixes\\Smart_Fractions_Fix', \false);
+\class_alias('WP_Typography\Vendor\PHP_Typography\Fixes\Node_Fixes\Smart_Fractions_Fix', 'PHP_Typography\Fixes\Node_Fixes\Smart_Fractions_Fix', \false);

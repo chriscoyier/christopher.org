@@ -8,6 +8,9 @@
 namespace Automattic\Jetpack\Import\Endpoints;
 
 use Automattic\Jetpack\Sync\Settings;
+use WP_Error;
+use WP_REST_Request;
+use WP_REST_Response;
 
 if ( ! function_exists( 'post_exists' ) ) {
 	require_once ABSPATH . 'wp-admin/includes/post.php';
@@ -71,6 +74,9 @@ class Post extends \WP_REST_Posts_Controller {
 	 * @return WP_REST_Response|WP_Error Response object on success, or WP_Error object on failure.
 	 */
 	public function create_item( $request ) {
+		// Set the WP_IMPORTING constant to prevent sync notifications
+		$this->set_importing();
+
 		// Skip if the post already exists.
 		$post_id = \post_exists(
 			$request['title'],
@@ -81,7 +87,7 @@ class Post extends \WP_REST_Posts_Controller {
 		);
 
 		if ( $post_id ) {
-			return new \WP_Error(
+			return new WP_Error(
 				'post_exists',
 				__( 'Cannot create existing post.', 'jetpack-import' ),
 				array(
@@ -186,7 +192,7 @@ class Post extends \WP_REST_Posts_Controller {
 			$meta_keys,
 			function ( $key ) use ( $excluded_keys ) {
 				// We also don't want to include any oembed post meta because it gets created after a post created
-				return ! in_array( $key, $excluded_keys, true ) && strpos( $key, '_oembed' ) === false;
+				return ! in_array( $key, $excluded_keys, true ) && ! str_contains( $key, '_oembed' );
 			}
 		);
 		// Return the filtered array

@@ -44,7 +44,7 @@ class Space_Collapse_Fix extends Abstract_Node_Fix
     const COLLAPSE_NORMAL_SPACES = '/[' . RE::NORMAL_SPACES . ']+/Sxu';
     const COLLAPSE_NON_BREAKABLE_SPACES = '/(?:[' . RE::NORMAL_SPACES . ']|' . RE::HTML_SPACES . ')*' . U::NO_BREAK_SPACE . '(?:[' . RE::NORMAL_SPACES . ']|' . RE::HTML_SPACES . ')*/Sxu';
     const COLLAPSE_OTHER_SPACES = '/(?:[' . RE::NORMAL_SPACES . '])*(' . RE::HTML_SPACES . ')(?:[' . RE::NORMAL_SPACES . ']|' . RE::HTML_SPACES . ')*/Sxu';
-    const COLLAPSE_SPACES_AT_START_OF_BLOCK = '/\\A(?:[' . RE::NORMAL_SPACES . ']|' . RE::HTML_SPACES . ')+/Sxu';
+    const COLLAPSE_SPACES_AT_START_OF_BLOCK = '/\A(?:[' . RE::NORMAL_SPACES . ']|' . RE::HTML_SPACES . ')+/Sxu';
     /**
      * Apply the fix to a given textnode.
      *
@@ -93,4 +93,4 @@ class Space_Collapse_Fix extends Abstract_Node_Fix
  *
  * @since 5.0.0
  */
-\class_alias('WP_Typography\\Vendor\\PHP_Typography\\Fixes\\Node_Fixes\\Space_Collapse_Fix', 'PHP_Typography\\Fixes\\Node_Fixes\\Space_Collapse_Fix', \false);
+\class_alias('WP_Typography\Vendor\PHP_Typography\Fixes\Node_Fixes\Space_Collapse_Fix', 'PHP_Typography\Fixes\Node_Fixes\Space_Collapse_Fix', \false);

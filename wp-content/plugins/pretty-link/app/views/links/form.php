@@ -14,6 +14,11 @@
 
 <input type="hidden" name="<?php echo esc_attr(PrliLink::$nonce_str); ?>" value="<?php echo esc_attr($link_nonce); ?>" />
 
+<?php if($values['prettypay_link']) : ?>
+  <input type="hidden" name="prettypay_link" value="1">
+  <input type="hidden" id="redirect_type" name="redirect_type" value="prettypay_link_stripe">
+<?php endif; ?>
+
 <div id="pretty_link_errors" class="prli-hidden">
   <p><!-- This is where our errors will show up --></p>
 </div>

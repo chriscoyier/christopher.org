@@ -18,7 +18,7 @@ use Automattic\Jetpack\Assets;
 
 $GLOBALS['concatenate_scripts'] = false; // phpcs:ignore WordPress.WP.GlobalVariablesOverride.Prohibited
 
-Assets::add_resource_hint( '//c0.wp.com', 'dns-prefetch' );
+Assets::add_resource_hint( '//c0.wp.com', 'preconnect' );
 
 /**
  * Asset CDN module main class file.
@@ -300,7 +300,7 @@ class Jetpack_Photon_Static_Assets_CDN {
 	 * @return Boolean whether the file is a JS or CSS.
 	 */
 	public static function is_js_or_css_file( $path ) {
-		return ( false === strpos( $path, '?' ) ) && in_array( substr( $path, -3 ), array( 'css', '.js' ), true );
+		return ( ! str_contains( $path, '?' ) ) && in_array( substr( $path, -3 ), array( 'css', '.js' ), true );
 	}
 
 	/**

@@ -72,7 +72,7 @@ class Sharing_Service {
 				$config = array();
 
 				// Pre-load custom modules otherwise they won't know who they are
-				if ( substr( $id, 0, 7 ) === 'custom-' && is_array( $options[ $id ] ) ) {
+				if ( str_starts_with( $id, 'custom-' ) && is_array( $options[ $id ] ) ) {
 					$config = $options[ $id ];
 				}
 
@@ -105,9 +105,12 @@ class Sharing_Service {
 			'pinterest'        => 'Share_Pinterest',
 			'pocket'           => 'Share_Pocket',
 			'telegram'         => 'Share_Telegram',
+			'threads'          => 'Share_Threads',
 			'jetpack-whatsapp' => 'Jetpack_Share_WhatsApp',
 			'mastodon'         => 'Share_Mastodon',
 			'nextdoor'         => 'Share_Nextdoor',
+			'x'                => 'Share_X',
+			'bluesky'          => 'Share_Bluesky',
 			// deprecated.
 			'skype'            => 'Share_Skype',
 		);
@@ -293,8 +296,8 @@ class Sharing_Service {
 		if ( ! is_array( $enabled ) ) {
 			$enabled = array(
 				'visible' => array(
-					'twitter',
 					'facebook',
+					'x',
 				),
 				'hidden'  => array(),
 			);
@@ -498,7 +501,7 @@ class Sharing_Service {
 			}
 		}
 
-		if ( false === $this->global['sharing_label'] ) {
+		if ( false === $this->global['sharing_label'] || $this->global['sharing_label'] === 'Share this:' ) {
 			$this->global['sharing_label'] = $this->default_sharing_label;
 		}
 
@@ -508,12 +511,12 @@ class Sharing_Service {
 	/**
 	 * Save a sharing service for use.
 	 *
-	 * @param int            $id Sharing unique ID.
-	 * @param Sharing_Source $service Sharing service.
+	 * @param int                     $id Sharing unique ID.
+	 * @param Sharing_Advanced_Source $service Sharing service.
 	 *
 	 * @return void
 	 */
-	public function set_service( $id, Sharing_Source $service ) {
+	public function set_service( $id, Sharing_Advanced_Source $service ) {
 		// Update the options for this service
 		$options = get_option( 'sharing-options' );
 
@@ -695,13 +698,13 @@ class Sharing_Service_Total {
 	 * @param object $a Sharing_Service_Total object.
 	 * @param object $b Sharing_Service_Total object.
 	 *
-	 * @return bool
+	 * @return int -1, 0, or 1 if $a is <, =, or > $b
 	 */
 	public static function cmp( $a, $b ) {
 		if ( $a->total === $b->total ) {
-			return $a->name < $b->name;
+			return $b->name <=> $a->name;
 		}
-		return $a->total < $b->total;
+		return $b->total <=> $a->total;
 	}
 }
 
@@ -756,13 +759,13 @@ class Sharing_Post_Total {
 	 * @param object $a Sharing_Post_Total object.
 	 * @param object $b Sharing_Post_Total object.
 	 *
-	 * @return bool
+	 * @return int -1, 0, or 1 if $a is <, =, or > $b
 	 */
 	public static function cmp( $a, $b ) {
 		if ( $a->total === $b->total ) {
-			return $a->id < $b->id;
+			return $b->id <=> $a->id;
 		}
-		return $a->total < $b->total;
+		return $b->total <=> $a->total;
 	}
 }
 
@@ -927,7 +930,11 @@ function sharing_process_requests() {
 		}
 	}
 }
-add_action( 'template_redirect', 'sharing_process_requests', 9 );
+
+// phpcs:ignore WordPress.Security.NonceVerification.Recommended -- Only checking for the data being present.
+if ( isset( $_GET['share'] ) ) {
+	add_action( 'template_redirect', 'sharing_process_requests', 9 );
+}
 
 /**
  * Gets the url to customise the sharing buttons in Calypso.
@@ -953,7 +960,8 @@ function sharing_display( $text = '', $echo = false ) {
 		return $text;
 	}
 
-	if ( empty( $post ) ) {
+	// We require the post to not be empty and be an actual WordPress post object. If it's not - we just return.
+	if ( empty( $post ) || ! $post instanceof \WP_Post ) {
 		return $text;
 	}
 

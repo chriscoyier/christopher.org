@@ -1,11 +1,9 @@
-=== Plugin Name ===
+=== Redirection ===
 Contributors: johnny5
 Donate link: https://redirection.me/donation/
-Tags: redirect, htaccess, 301, 404, seo, permalink, apache, nginx, post, admin
-Requires at least: 5.8
-Tested up to: 6.3.1
-Stable tag: 5.3.10
-Requires PHP: 5.6
+Tags: redirect, htaccess, 301, 404, apache
+Tested up to: 6.8
+Stable tag: 5.5.2
 License: GPLv3
 
 Manage 301 redirects, track 404 errors, and improve your site. No knowledge of Apache or Nginx required.
@@ -20,7 +18,7 @@ It has been a WordPress plugin for over 10 years and has been recommended countl
 
 Full documentation can be found at [https://redirection.me](https://redirection.me)
 
-Redirection is compatible with PHP from 5.6 to 8.1.
+Redirection is compatible with PHP from 7.0 to 8.3.
 
 = Redirect manager =
 
@@ -157,6 +155,9 @@ The plugin works in a similar manner to how WordPress handles permalinks and sho
 
 == Upgrade Notice ==
 
+= 5.4 =
+* You may need to configure the IP header option if using a proxy
+
 = 3.0 =
 * Upgrades the database to support IPv6. Please backup your data and visit the Redirection settings to perform the upgrade
 * Switches to the WordPress REST API
@@ -180,6 +181,40 @@ The plugin works in a similar manner to how WordPress handles permalinks and sho
 == Changelog ==
 
 A x.1 version increase introduces new or updated features and can be considered to contain 'breaking' changes. A x.x.1 increase is purely a bug fix and introduces no new features, and can be considered as containing no breaking changes.
+
+= 5.5.2 =
+* Fix saving of x-frame-options
+* Fix CPT loading
+* Fix last access date changing on update
+* Remove newsletter option
+
+= 5.5.1 =
+* Fix problem with category pages and permalink migration
+* Don't report invalid JSON import as successful
+* Exclude CPTs without URLs for monitoring
+* Update for WP 6.7
+
+= 5.5.0 =
+* Multiple 'URL and WP page type' redirects will now work
+* Translations now use WP core
+
+= 5.4.2 - 27th January 2024 =
+* Remove Geo IP option (it may return)
+* Fix crash in agent info
+* Add new max-age header
+* Remove deprecated ini_set call
+* Don't double encode URLs when checking
+
+= 5.4.1 - 5th January 2024 =
+* Fix problem with some international URLs not appearing in the 404 log
+
+= 5.4 - 1st January 2024 =
+* Don't encode negative lookaheads
+* Remove port from server name
+* Importing into a disabled group now creates disabled items
+* Add option to pick IP header
+* Fix save of x-content-type-options: sniff
+* Fix save of multiple spaces
 
 = 5.3.10 - 2nd April 2023 =
 * Fix associated redirect setting not saving properly

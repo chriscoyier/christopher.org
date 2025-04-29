@@ -7,13 +7,13 @@
  * Author URI:        https://github.com/thebrandonallen/
  * Text Domain:       edit-author-slug
  * Domain Path:       /languages
- * Version:           1.8.4
- * Requires at least: 4.9
- * Requires PHP:      5.6
+ * Version:           1.9.1
+ * Requires at least: 5.8
+ * Requires PHP:      7.4
  * License:           GPLv2 or later
  * License URI:       https://www.gnu.org/licenses/old-licenses/gpl-2.0.html
  *
- * Copyright (C) 2009-2023  Brandon Allen (https://github.com/thebrandonallen)
+ * Copyright (C) 2009-2024  Brandon Allen (https://github.com/thebrandonallen)
  *
  * This program is free software; you can redistribute it and/or modify
  * it under the terms of the GNU General Public License as published by
@@ -32,7 +32,7 @@
  * @package Edit_Author_Slug
  * @subpackage Main
  * @author Brandon Allen
- * @version 1.8.4
+ * @version 1.9.1
  */
 
 // Exit if accessed directly.

@@ -65,4 +65,4 @@ class Smart_Ellipses_Fix extends Abstract_Node_Fix
  *
  * @since 5.0.0
  */
-\class_alias('WP_Typography\\Vendor\\PHP_Typography\\Fixes\\Node_Fixes\\Smart_Ellipses_Fix', 'PHP_Typography\\Fixes\\Node_Fixes\\Smart_Ellipses_Fix', \false);
+\class_alias('WP_Typography\Vendor\PHP_Typography\Fixes\Node_Fixes\Smart_Ellipses_Fix', 'PHP_Typography\Fixes\Node_Fixes\Smart_Ellipses_Fix', \false);

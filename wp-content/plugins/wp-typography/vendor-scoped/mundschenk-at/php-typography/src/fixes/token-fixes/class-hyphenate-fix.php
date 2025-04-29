@@ -142,7 +142,7 @@ class Hyphenate_Fix extends Abstract_Token_Fix
      *
      * @param Hyphenator\Cache $cache Required.
      */
-    public function set_hyphenator_cache(Hyphenator\Cache $cache) : void
+    public function set_hyphenator_cache(Hyphenator\Cache $cache): void
     {
         $this->cache = $cache;
     }
@@ -154,4 +154,4 @@ class Hyphenate_Fix extends Abstract_Token_Fix
  *
  * @since 5.0.0
  */
-\class_alias('WP_Typography\\Vendor\\PHP_Typography\\Fixes\\Token_Fixes\\Hyphenate_Fix', 'PHP_Typography\\Fixes\\Token_Fixes\\Hyphenate_Fix', \false);
+\class_alias('WP_Typography\Vendor\PHP_Typography\Fixes\Token_Fixes\Hyphenate_Fix', 'PHP_Typography\Fixes\Token_Fixes\Hyphenate_Fix', \false);

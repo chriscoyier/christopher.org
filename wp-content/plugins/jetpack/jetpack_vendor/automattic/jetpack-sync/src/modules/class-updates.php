@@ -77,6 +77,14 @@ class Updates extends Module {
 		add_action( 'jetpack_update_core_change', $callable );
 
 		add_filter(
+			'jetpack_sync_before_enqueue_jetpack_update_themes_change',
+			array(
+				$this,
+				'expand_themes',
+			)
+		);
+
+		add_filter(
 			'jetpack_sync_before_enqueue_jetpack_update_plugins_change',
 			array(
 				$this,
@@ -94,8 +102,6 @@ class Updates extends Module {
 			10,
 			2
 		);
-
-		add_action( 'automatic_updates_complete', $callable );
 
 		if ( is_multisite() ) {
 			add_filter( 'pre_update_site_option_wpmu_upgrade_site', array( $this, 'update_core_network_event' ), 10, 2 );
@@ -127,7 +133,6 @@ class Updates extends Module {
 	 */
 	public function init_before_send() {
 		add_filter( 'jetpack_sync_before_send_jetpack_full_sync_updates', array( $this, 'expand_updates' ) );
-		add_filter( 'jetpack_sync_before_send_jetpack_update_themes_change', array( $this, 'expand_themes' ) );
 	}
 
 	/**

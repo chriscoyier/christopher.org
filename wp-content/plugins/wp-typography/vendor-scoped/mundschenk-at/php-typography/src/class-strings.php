@@ -50,7 +50,7 @@ abstract class Strings
      *
      * @var string
      */
-    const RE_PARAMETER_SPLITTING = '/[\\s,]+/S';
+    const RE_PARAMETER_SPLITTING = '/[\s,]+/S';
     /**
      * An array of encodings in detection order.
      *
@@ -130,7 +130,7 @@ abstract class Strings
         // Deal with an array of character codes.
         $json = '"';
         foreach ($codes as $code) {
-            $json .= \sprintf('\\u%04x', $code);
+            $json .= \sprintf('\u%04x', $code);
         }
         $json .= '"';
         return \json_decode($json);
@@ -166,4 +166,4 @@ abstract class Strings
  *         'u'          : String
  * }
  */
-\class_alias('WP_Typography\\Vendor\\PHP_Typography\\Strings', 'PHP_Typography\\Strings', \false);
+\class_alias('WP_Typography\Vendor\PHP_Typography\Strings', 'PHP_Typography\Strings', \false);

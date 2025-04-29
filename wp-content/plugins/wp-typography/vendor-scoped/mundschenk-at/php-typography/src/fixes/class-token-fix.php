@@ -72,4 +72,4 @@ interface Token_Fix
  *
  * @since 5.0.0
  */
-\class_alias('WP_Typography\\Vendor\\PHP_Typography\\Fixes\\Token_Fix', 'PHP_Typography\\Fixes\\Token_Fix', \false);
+\class_alias('WP_Typography\Vendor\PHP_Typography\Fixes\Token_Fix', 'PHP_Typography\Fixes\Token_Fix', \false);

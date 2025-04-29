@@ -33,7 +33,9 @@
         'prli_url', 'redirect_type', 'slug', 'url_replacements', 'enable_expire', 'expire_type', 'expire_date',
         'expire_clicks', 'enable_expired_url', 'expired_url', 'dynamic_redirection', 'url_rotations[]',
         'target_url_weight', 'url_rotation_weights[]', 'prli_geo_url[]', 'prli_geo_countries[]', 'prli_tech_url[]',
-        'prli_time_url[]', 'prli_time_start[]', 'prli_time_end[]', 'delay'
+        'prli_time_url[]', 'prli_time_start[]', 'prli_time_end[]', 'delay', 'prli_stripe_line_items',
+        'prli_stripe_billing_address_collection', 'prli_stripe_shipping_address_collection',
+        'prli_stripe_shipping_address_allowed_countries[]'
       ];
 
       var args = prli_objectify_form($(this).serializeArray(), fields_to_validate);

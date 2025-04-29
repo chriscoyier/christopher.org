@@ -163,7 +163,7 @@ class PHP_Typography
      * @param Settings $settings   A settings object.
      * @param bool     $is_title   A flag indicating whether the HTML fragment in the DOM is a title.
      */
-    private function process_textnodes_internal(\DOMNode $body_node, callable $fixer, Settings $settings, bool $is_title) : void
+    private function process_textnodes_internal(\DOMNode $body_node, callable $fixer, Settings $settings, bool $is_title): void
     {
         // Get the list of tags that should be ignored.
         $xpath = new \DOMXPath($body_node->ownerDocument);
@@ -392,7 +392,7 @@ class PHP_Typography
      *
      * @param Hyphenator\Cache $cache A hyphenator cache instance.
      */
-    public function set_hyphenator_cache(Hyphenator\Cache $cache) : void
+    public function set_hyphenator_cache(Hyphenator\Cache $cache): void
     {
         $this->hyphenator_cache = $cache;
         // Change hyphenator cache for existing token fixes.
@@ -423,7 +423,7 @@ class PHP_Typography
             // We only want the JSON files.
             if ('.json' === \substr($file, -5)) {
                 $file_content = (string) \file_get_contents($path . $file);
-                if (\preg_match('/"language"\\s*:\\s*((".+")|(\'.+\'))\\s*,/', $file_content, $matches)) {
+                if (\preg_match('/"language"\s*:\s*((".+")|(\'.+\'))\s*,/', $file_content, $matches)) {
                     $language_name = \substr($matches[1], 1, -1);
                     $language_code = \substr($file, 0, -5);
                     $languages[$language_code] = $language_name;
@@ -475,4 +475,4 @@ class PHP_Typography
  *  @author Jeffrey D. King <jeff@kingdesk.com>
  *  @author Peter Putzer <github@mundschenk.at>
  */
-\class_alias('WP_Typography\\Vendor\\PHP_Typography\\PHP_Typography', 'PHP_Typography\\PHP_Typography', \false);
+\class_alias('WP_Typography\Vendor\PHP_Typography\PHP_Typography', 'PHP_Typography\PHP_Typography', \false);

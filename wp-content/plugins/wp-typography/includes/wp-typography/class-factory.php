@@ -2,7 +2,7 @@
 /**
  *  This file is part of wp-Typography.
  *
- *  Copyright 2017-2022 Peter Putzer.
+ *  Copyright 2017-2024 Peter Putzer.
  *
  *  This program is free software; you can redistribute it and/or
  *  modify it under the terms of the GNU General Public License
@@ -32,9 +32,10 @@ use WP_Typography\Data_Storage\Cache;
 use WP_Typography\Data_Storage\Options;
 use WP_Typography\Data_Storage\Transients;
 
+use WP_Typography\UI\Template;
+
 use WP_Typography\Integration\Container as Integrations;
 use WP_Typography\Settings\Basic_Locale_Settings;
-use WP_Typography\Settings\Locale_Settings;
 
 use WP_Typography\Exceptions\Object_Factory_Exception;
 
@@ -61,7 +62,7 @@ class Factory extends Dice {
 	 *
 	 * @var Factory
 	 */
-	private static $factory;
+	private static Factory $factory;
 
 	/**
 	 * Creates a new instance.
@@ -83,8 +84,8 @@ class Factory extends Dice {
 	 * @throws Object_Factory_Exception An exception is thrown if the factory cannot
 	 *                                  be created.
 	 */
-	public static function get() : self {
-		if ( ! self::$factory instanceof static ) {
+	public static function get(): self {
+		if ( ! isset( self::$factory ) ) {
 
 			// Create factory.
 			$factory = new static();
@@ -107,12 +108,16 @@ class Factory extends Dice {
 	 *
 	 * @return mixed[]
 	 */
-	protected function get_rules() : array {
+	protected function get_rules(): array {
 		return [
 			// Shared helpers.
 			Cache::class                           => self::SHARED,
 			Transients::class                      => self::SHARED,
 			Options::class                         => self::SHARED,
+			Template::class                        => [
+				'shared'          => true,
+				'constructParams' => [ \WP_TYPOGRAPHY_PLUGIN_PATH ],
+			],
 
 			// API implementation.
 			'substitutions'                        => [
@@ -240,10 +245,10 @@ class Factory extends Dice {
 	 *
 	 * @return string
 	 */
-	protected function get_plugin_version( $plugin_file ) : string {
+	protected function get_plugin_version( $plugin_file ): string {
 		// Load version from plugin data.
 		if ( ! \function_exists( 'get_plugin_data' ) ) {
-			require_once \ABSPATH . 'wp-admin/includes/plugin.php';
+			require_once \ABSPATH . 'wp-admin/includes/plugin.php'; // @phpstan-ignore requireOnce.fileNotFound
 		}
 
 		return \get_plugin_data( $plugin_file, false, false )['Version'];
@@ -265,7 +270,7 @@ class Factory extends Dice {
 	 *
 	 * @phpstan-return array<array<self::INSTANCE,class-string<Components\Plugin_Component>>>
 	 */
-	protected function get_components() : array {
+	protected function get_components(): array {
 		return [
 			[ self::INSTANCE => Components\Setup::class ],
 			[ self::INSTANCE => Components\Common::class ],
@@ -292,7 +297,7 @@ class Factory extends Dice {
 	 *
 	 * @phpstan-return array<array<self::INSTANCE,class-string<Integration\Plugin_Integration>>>
 	 */
-	protected function get_plugin_integrations() : array {
+	protected function get_plugin_integrations(): array {
 		return [
 			[ self::INSTANCE => Integration\ACF_Integration::class ],
 			[ self::INSTANCE => Integration\WooCommerce_Integration::class ],
@@ -312,9 +317,9 @@ class Factory extends Dice {
 	 *     }
 	 * }
 	 *
-	 * @phpstan-return array<array<self::INSTANCE,string>>>
+	 * @phpstan-return array<array<self::INSTANCE,string>>
 	 */
-	protected function get_supported_locales() : array {
+	protected function get_supported_locales(): array {
 		return [
 			[ self::INSTANCE => '$LocaleSwitzerland' ],
 			[ self::INSTANCE => '$LocaleUnitedStates' ],

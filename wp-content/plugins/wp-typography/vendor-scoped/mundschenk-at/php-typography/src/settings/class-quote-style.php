@@ -100,4 +100,4 @@ abstract class Quote_Style
  *
  * @since 5.0.0
  */
-\class_alias('WP_Typography\\Vendor\\PHP_Typography\\Settings\\Quote_Style', 'PHP_Typography\\Settings\\Quote_Style', \false);
+\class_alias('WP_Typography\Vendor\PHP_Typography\Settings\Quote_Style', 'PHP_Typography\Settings\Quote_Style', \false);

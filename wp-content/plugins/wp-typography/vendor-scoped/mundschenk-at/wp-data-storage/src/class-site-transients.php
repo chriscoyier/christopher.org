@@ -3,7 +3,7 @@
 /**
  * This file is part of mundschenk-at/wp-data-storage.
  *
- * Copyright 2018 Peter Putzer.
+ * Copyright 2018-2024 Peter Putzer.
  *
  * This program is free software; you can redistribute it and/or
  * modify it under the terms of the GNU General Public License
@@ -39,10 +39,10 @@ class Site_Transients extends Transients
      *
      * @return string[]
      */
-    public function get_keys_from_database()
+    public function get_keys_from_database(): array
     {
         // If we are not running on multisite, fall back to the parent implementation.
-        if (!\is_multisite()) {
+        if (!is_multisite()) {
             return parent::get_keys_from_database();
         }
         /**
@@ -51,9 +51,18 @@ class Site_Transients extends Transients
          * @var \wpdb
          */
         global $wpdb;
-        $results = $wpdb->get_results($wpdb->prepare("SELECT meta_key FROM {$wpdb->sitemeta} WHERE meta_key like %s and site_id = %d", self::TRANSIENT_SQL_PREFIX . "{$this->get_prefix()}%", \get_current_network_id()), \ARRAY_A);
-        // WPCS: db call ok, cache ok.
-        return \str_replace(self::TRANSIENT_SQL_PREFIX, '', \wp_list_pluck($results, 'meta_key'));
+        $results = $wpdb->get_results(
+            // phpcs:ignore WordPress.DB.DirectDatabaseQuery.DirectQuery, WordPress.DB.DirectDatabaseQuery.NoCaching
+            $wpdb->prepare('SELECT meta_key FROM %i WHERE meta_key like %s and site_id = %d', $wpdb->sitemeta, self::TRANSIENT_SQL_PREFIX . "{$this->get_prefix()}%", \get_current_network_id()),
+            \ARRAY_A
+        ) ?? [];
+        /**
+         * Retrieve the list of transients.
+         *
+         * @var string[] $meta_keys
+         */
+        $meta_keys = \wp_list_pluck($results, 'meta_key');
+        return \str_replace(self::TRANSIENT_SQL_PREFIX, '', $meta_keys);
     }
     /**
      * Retrieves a cached value.
@@ -63,7 +72,7 @@ class Site_Transients extends Transients
      *
      * @return mixed
      */
-    public function get($key, $raw = \false)
+    public function get(string $key, bool $raw = \false)
     {
         return \get_site_transient($raw ? $key : $this->get_key($key));
     }
@@ -77,7 +86,7 @@ class Site_Transients extends Transients
      *
      * @return bool True if the cache could be set successfully.
      */
-    public function set($key, $value, $duration = 0, $raw = \false)
+    public function set(string $key, $value, int $duration = 0, bool $raw = \false): bool
     {
         return \set_site_transient($raw ? $key : $this->get_key($key), $value, $duration);
     }
@@ -89,7 +98,7 @@ class Site_Transients extends Transients
      *
      * @return bool True on successful removal, false on failure.
      */
-    public function delete($key, $raw = \false)
+    public function delete(string $key, bool $raw = \false): bool
     {
         return \delete_site_transient($raw ? $key : $this->get_key($key));
     }

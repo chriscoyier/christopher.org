@@ -86,7 +86,7 @@ class Registry
      *
      * @throws \InvalidArgumentException Group is invalid.
      */
-    public function register_node_fix(Node_Fix $fix, $group) : void
+    public function register_node_fix(Node_Fix $fix, $group): void
     {
         if (isset($this->node_fixes[$group])) {
             $this->node_fixes[$group][] = $fix;
@@ -99,7 +99,7 @@ class Registry
      *
      * @param Token_Fix $fix Required.
      */
-    public function register_token_fix(Token_Fix $fix) : void
+    public function register_token_fix(Token_Fix $fix): void
     {
         $this->process_words_fix->register_token_fix($fix);
     }
@@ -108,7 +108,7 @@ class Registry
      *
      * @param Cache $cache A hyphenator cache instance.
      */
-    public function update_hyphenator_cache(Cache $cache) : void
+    public function update_hyphenator_cache(Cache $cache): void
     {
         $this->process_words_fix->update_hyphenator_cache($cache);
     }
@@ -120,7 +120,7 @@ class Registry
      * @param bool     $is_title Treat as title/heading tag if true.
      * @param bool     $is_feed  Check for feed compatibility if true.
      */
-    public function apply_fixes(\DOMText $textnode, Settings $settings, $is_title, $is_feed) : void
+    public function apply_fixes(\DOMText $textnode, Settings $settings, $is_title, $is_feed): void
     {
         foreach ($this->node_fixes as $fix_group) {
             foreach ($fix_group as $fix) {
@@ -138,4 +138,4 @@ class Registry
  *
  * @since 6.0.0
  */
-\class_alias('WP_Typography\\Vendor\\PHP_Typography\\Fixes\\Registry', 'PHP_Typography\\Fixes\\Registry', \false);
+\class_alias('WP_Typography\Vendor\PHP_Typography\Fixes\Registry', 'PHP_Typography\Fixes\Registry', \false);

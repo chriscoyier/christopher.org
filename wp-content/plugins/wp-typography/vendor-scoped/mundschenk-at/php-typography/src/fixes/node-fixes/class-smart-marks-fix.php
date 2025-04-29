@@ -38,7 +38,7 @@ use WP_Typography\Vendor\PHP_Typography\U;
  */
 class Smart_Marks_Fix extends Abstract_Node_Fix
 {
-    const ESCAPE_501C = '/\\b(501\\()(c)(\\)\\((?:[1-9]|[1-2][0-9])\\))/S';
+    const ESCAPE_501C = '/\b(501\()(c)(\)\((?:[1-9]|[1-2][0-9])\))/S';
     const MARKS = ['(c)' => U::COPYRIGHT, '(C)' => U::COPYRIGHT, '(r)' => U::REGISTERED_MARK, '(R)' => U::REGISTERED_MARK, '(p)' => U::SOUND_COPY_MARK, '(P)' => U::SOUND_COPY_MARK, '(sm)' => U::SERVICE_MARK, '(SM)' => U::SERVICE_MARK, '(tm)' => U::TRADE_MARK, '(TM)' => U::TRADE_MARK];
     /**
      * An array of marks to match.
@@ -96,4 +96,4 @@ class Smart_Marks_Fix extends Abstract_Node_Fix
  *
  * @since 5.0.0
  */
-\class_alias('WP_Typography\\Vendor\\PHP_Typography\\Fixes\\Node_Fixes\\Smart_Marks_Fix', 'PHP_Typography\\Fixes\\Node_Fixes\\Smart_Marks_Fix', \false);
+\class_alias('WP_Typography\Vendor\PHP_Typography\Fixes\Node_Fixes\Smart_Marks_Fix', 'PHP_Typography\Fixes\Node_Fixes\Smart_Marks_Fix', \false);

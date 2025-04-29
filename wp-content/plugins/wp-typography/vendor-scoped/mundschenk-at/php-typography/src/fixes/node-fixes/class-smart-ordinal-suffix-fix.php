@@ -48,7 +48,7 @@ class Smart_Ordinal_Suffix_Fix extends Abstract_Node_Fix
     const LATIN_SUFFIXES = 'o';
     // Ordinals with arabic numerals.
     const RE_ARABIC_ORDINALS = '/' . self::WORD_BOUNDARY_START . '
-		(\\d+)
+		(\d+)
 		(' . self::ENGLISH_SUFFIXES . '|' . self::FRENCH_SUFFIXES . '|' . self::LATIN_SUFFIXES . '
 		)' . self::WORD_BOUNDARY_END . '
 	/Sxu';
@@ -67,8 +67,8 @@ class Smart_Ordinal_Suffix_Fix extends Abstract_Node_Fix
     // Additional character classes.
     const ROMAN_NUMERALS = '[MDCLXVI]';
     // Zero-width spaces and soft hyphens should not be treated as word boundaries.
-    const WORD_BOUNDARY_START = '\\b(?<![' . U::SOFT_HYPHEN . U::ZERO_WIDTH_SPACE . '])';
-    const WORD_BOUNDARY_END = '\\b(?![' . U::SOFT_HYPHEN . U::ZERO_WIDTH_SPACE . '])';
+    const WORD_BOUNDARY_START = '\b(?<![' . U::SOFT_HYPHEN . U::ZERO_WIDTH_SPACE . '])';
+    const WORD_BOUNDARY_END = '\b(?![' . U::SOFT_HYPHEN . U::ZERO_WIDTH_SPACE . '])';
     /**
      * The replacement expression (depends on CSS class).
      *
@@ -117,4 +117,4 @@ class Smart_Ordinal_Suffix_Fix extends Abstract_Node_Fix
  *
  * @since 5.0.0
  */
-\class_alias('WP_Typography\\Vendor\\PHP_Typography\\Fixes\\Node_Fixes\\Smart_Ordinal_Suffix_Fix', 'PHP_Typography\\Fixes\\Node_Fixes\\Smart_Ordinal_Suffix_Fix', \false);
+\class_alias('WP_Typography\Vendor\PHP_Typography\Fixes\Node_Fixes\Smart_Ordinal_Suffix_Fix', 'PHP_Typography\Fixes\Node_Fixes\Smart_Ordinal_Suffix_Fix', \false);

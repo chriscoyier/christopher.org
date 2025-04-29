@@ -56,7 +56,7 @@ class Wrap_Emails_Fix extends Abstract_Token_Fix
         parent::__construct(Token_Fix::OTHER, $feed_compatible);
         $this->email_pattern = "/(?:\n\t\t\t\\A\n\t\t\t[a-z0-9\\!\\#\$\\%\\&\\'\\*\\+\\/\\=\\?\\^\\_\\`\\{\\|\\}\\~\\-]+\n\t\t\t(?:\n\t\t\t\t\\.\n\t\t\t\t[a-z0-9\\!\\#\$\\%\\&\\'\\*\\+\\/\\=\\?\\^\\_\\`\\{\\|\\}\\~\\-]+\n\t\t\t)*\n\t\t\t@\n\t\t\t(?:\n\t\t\t\t[a-z0-9]\n\t\t\t\t[a-z0-9\\-]{0,61}\n\t\t\t\t[a-z0-9]\n\t\t\t\t\\.\n\t\t\t)+\n\t\t\t(?:\n\t\t\t\t" . RE::top_level_domains() . '
 			)
-			\\Z
+			\Z
 		)/Sxi';
         // required modifiers: x (multiline pattern) i (case insensitive).
     }
@@ -92,4 +92,4 @@ class Wrap_Emails_Fix extends Abstract_Token_Fix
  *
  * @since 5.0.0
  */
-\class_alias('WP_Typography\\Vendor\\PHP_Typography\\Fixes\\Token_Fixes\\Wrap_Emails_Fix', 'PHP_Typography\\Fixes\\Token_Fixes\\Wrap_Emails_Fix', \false);
+\class_alias('WP_Typography\Vendor\PHP_Typography\Fixes\Token_Fixes\Wrap_Emails_Fix', 'PHP_Typography\Fixes\Token_Fixes\Wrap_Emails_Fix', \false);

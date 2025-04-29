@@ -74,11 +74,22 @@
           </div>
         </div>
         <div class="prlip-reason">
+          <div class="reason-image"><img src="<?php echo PRLI_IMAGES_URL . '/Customized_Checkout_Links.jpg'; ?>" alt=""></div>
+          <div class="reason-content">
+            <div class="reason-title"><h3><?php esc_html_e('Customized Checkout Links', 'pretty-link'); ?></h3></div>
+            <div class="reason-desc">
+              <p><?php esc_html_e('PrettyPay™ is here for when you\'re ready to start making money from your own creative projects. From doubling up on your content\'s profits to marketing those quirky crafts you love making, PrettyPay™ is ready to take your side hussle’s side hussle to the marketplace.', 'pretty-link'); ?></p>
+              <p><?php esc_html_e('Create personalized payment links powered by Stripe\'s reliable payment processing platform. Share them with your network, and watch as followers become your paying customers.', 'pretty-link'); ?></p>
+              <p><?php esc_html_e('*Upgrade to a Pretty Links Pro plan to avoid the 3% transaction fee on all sales.', 'pretty-link'); ?></p>
+            </div>
+          </div>
+        </div>
+        <div class="prlip-reason">
           <div class="reason-image"><img src="<?php echo PRLI_IMAGES_URL . '/Streamlined_Categories_Tags.png'; ?>" alt=""></div>
           <div class="reason-content">
             <div class="reason-title"><h3><?php esc_html_e('Streamlined Categories & Tags', 'pretty-link'); ?></h3></div>
             <div class="reason-desc">
-              <p><?php esc_html_e('As a content creator constantly on the move, juggling links across multiple platforms can be a chaotic experience. But fear not, because Pretty Links is here to bring order to the madness', 'pretty-link'); ?></p>
+              <p><?php esc_html_e('As a content creator constantly on the move, juggling links across multiple platforms can be a chaotic experience. But fear not, because Pretty Links is here to bring order to the madness.', 'pretty-link'); ?></p>
               <p><?php esc_html_e('Take link organization to the next level with custom link categories. Effortlessly sort and group your links based on affiliate programs, platforms, campaigns, or any criteria that help you stay in control and on top of your marketing game.', 'pretty-link'); ?></p>
               <p><?php esc_html_e('No more scrambling to find the right link. Everything is at your fingertips, neatly organized in one convenient location.', 'pretty-link'); ?></p>
             </div>
