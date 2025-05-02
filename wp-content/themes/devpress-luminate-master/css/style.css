@@ -396,7 +396,12 @@ body {
   flex-direction: column;
 }
 
-h1, h2, h3, h4, h5, h6 {
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
   font-family: "Oswald", "Helvetica Neue", sans-serif;
   font-weight: 400;
   margin-bottom: 0.5em;
@@ -415,7 +420,9 @@ h3 {
   font-size: 22px;
 }
 
-h4, h5, h6 {
+h4,
+h5,
+h6 {
   font-size: 18px;
 }
 
@@ -1113,7 +1120,9 @@ a:hover {
 }
 
 /* Post Meta */
-.category-meta:before, .tag-meta:before, .edit-meta:before {
+.category-meta:before,
+.tag-meta:before,
+.edit-meta:before {
   font-family: "luminate-icons";
   speak: none;
   font-style: normal;
@@ -1222,7 +1231,8 @@ a:hover {
   float: left;
 }
 
-.search-form input, .search-form button {
+.search-form input,
+.search-form button {
   margin: 0;
 }
 
@@ -1376,7 +1386,7 @@ a:hover {
   margin: 0;
   padding: 4% 6%;
   list-style: none;
-  border-bottom: 1px solid #F0F0F0;
+  border-bottom: 1px solid #f0f0f0;
 }
 
 .comment-list .children {
@@ -1388,7 +1398,9 @@ a:hover {
   margin: 0 0 15px;
 }
 
-.comment, .trackback, .pingback {
+.comment,
+.trackback,
+.pingback {
   position: relative;
   padding: 0 0 0 80px;
 }
@@ -1411,7 +1423,8 @@ a:hover {
   border-radius: 100%;
 }
 
-.trackback .avatar, .pingback .avatar {
+.trackback .avatar,
+.pingback .avatar {
   background: #ddd;
   color: #fff;
   font-size: 20px;
@@ -1494,7 +1507,9 @@ a:hover {
   margin-bottom: 2px;
 }
 
-#author, #email, #url {
+#author,
+#email,
+#url {
   width: 100%;
 }
 
@@ -1528,7 +1543,9 @@ a:hover {
 }
 
 @media screen and (min-width: 510px) {
-  #author, #email, #url {
+  #author,
+  #email,
+  #url {
     width: 50%;
   }
   #respond textarea {

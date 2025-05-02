@@ -243,13 +243,6 @@ function luminate_styles() {
 			"2"
 		);
 
-		// Use style-rtl.css for RTL layouts
-		wp_style_add_data(
-			'luminate-style',
-			'rtl',
-			'replace'
-		);
-
 		if ( is_page_template( 'templates/page-showcase.php' ) ) :
 			wp_enqueue_style(
 				'luminate-page-showcase',
@@ -266,13 +259,6 @@ function luminate_styles() {
 			get_template_directory_uri() . '/css/style.min.css',
 			array(),
 			"2"
-		);
-
-		// Use style-rtl.css for RTL layouts
-		wp_style_add_data(
-			'luminate-style',
-			'rtl',
-			'replace'
 		);
 
 		if ( is_page_template( 'templates/page-showcase.php' ) ) :
