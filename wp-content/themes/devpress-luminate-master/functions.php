@@ -240,7 +240,7 @@ function luminate_styles() {
 			'luminate-style',
 			get_template_directory_uri() . '/css/style.css',
 			array(),
-			LUMINATE_VERSION
+			"2"
 		);
 
 		// Use style-rtl.css for RTL layouts
